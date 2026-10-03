@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { processSlot, inputFor, slotKey, validate, deliveryKey } from '../src/core.js';
+import { processSlot, inputFor, slotKey, validate, deliveryKey, videoTitle } from '../src/core.js';
 import { createPost } from '../src/buffer.js';
 const post = { id: 'a', file: 'a b.mp4', title: 'Test', platforms: ['tiktok', 'youtube'] };
 const env = { BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', R2_PUBLIC_BASE_URL: 'https://media.example.com' };
@@ -56,4 +56,20 @@ test('Buffer distingue succès, rejet et résultat incertain', async () => {
   assert.equal((await createPost({}, key, fake({ data: { createPost: { message: 'Queue full' } } }))).status, 'rejected');
   await assert.rejects(createPost({}, key, async () => ({ ok: false, status: 502 })));
   await assert.rejects(createPost({}, key, fake({ errors: [{ message: 'invalid' }] })));
+});
+
+test('titre du fichier et URL encodée, avec priorité au titre personnalisé', () => {
+  assert.equal(videoTitle({ file: 'folder/Les_bienfaits_du_miel.MP4' }), 'Les bienfaits du miel');
+  assert.equal(videoTitle({ url: 'https://media.example.com/Mon%20titre_%C3%A9t%C3%A9.mp4?token=abc' }), 'Mon titre été');
+  assert.equal(videoTitle({ file: 'x.mp4', title: '  Mon titre  ' }), 'Mon titre');
+  assert.equal(videoTitle({ file: 'x.mp4', title: 'Autre', youtube: { title: 'Spécifique' } }), 'Spécifique');
+  assert.equal(videoTitle({ file: 'عسل_تمارة.mp4' }), 'عسل تمارة');
+  assert.equal(videoTitle({ file: 'a'.repeat(99) + '🍯.mp4' }).length, 99);
+});
+test('YouTube accepte un titre automatique et la légende utilise le titre si absent', () => {
+  const p = { ...post, title: '', file: 'Mon_short.mp4' };
+  validate([p]); const input = inputFor(p, 'youtube', env);
+  assert.equal(input.metadata.youtube.title, 'Mon short'); assert.equal(input.text, 'Mon short');
+  assert.throws(() => validate([{ ...p, title: 'a'.repeat(101) }]));
+  assert.throws(() => validate([{ ...p, file: '.mp4' }]));
 });

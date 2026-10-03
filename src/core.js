@@ -3,6 +3,20 @@ export const deliveryKey = (id, platform) => JSON.stringify([id, platform]);
 export function slotKey(now = new Date()) {
   return `${now.toISOString().slice(0, 10)}-${now.getUTCHours() < 12 ? 'morning' : 'evening'}`;
 }
+export function videoTitle(post) {
+  const custom = post.youtube?.title ?? post.title;
+  if (custom !== undefined && typeof custom !== 'string') throw new Error(`Titre invalide: ${post.id}`);
+  if (custom?.trim()) return custom.trim();
+  let filename = typeof post.file === 'string' ? post.file.split('/').pop() : '';
+  if (!filename && post.url) {
+    const basename = new URL(post.url).pathname.split('/').pop();
+    try { filename = decodeURIComponent(basename); } catch { filename = basename; }
+  }
+  const clean = (filename || '').replace(/\.(mp4|mov|m4v|webm|mkv)$/i, '').replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+  let title = '';
+  for (const char of clean) { if (title.length + char.length > 100) break; title += char; }
+  return title.trim();
+}
 export function validate(posts) {
   if (!Array.isArray(posts)) throw new Error('posts.json doit être une liste');
   const ids = new Set();
@@ -12,7 +26,7 @@ export function validate(posts) {
     if (p.enabled === false) continue;
     if (!Array.isArray(p.platforms) || !p.platforms.length || new Set(p.platforms).size !== p.platforms.length || p.platforms.some(x => !platforms.includes(x))) throw new Error(`Plateformes invalides: ${p.id}`);
     if (!p.url && (!p.file || p.file.startsWith('/') || p.file.split('/').includes('..'))) throw new Error(`Fichier invalide: ${p.id}`);
-    if (p.platforms.includes('youtube') && (typeof p.title !== 'string' || !p.title.trim() || p.title.length > 100)) throw new Error(`Titre YouTube invalide: ${p.id}`);
+    if (p.platforms.includes('youtube') && (!videoTitle(p) || videoTitle(p).length > 100)) throw new Error(`Titre YouTube invalide: ${p.id}`);
   }
 }
 export function inputFor(post, platform, env) {
@@ -22,8 +36,8 @@ export function inputFor(post, platform, env) {
   if (!post.url && !base) throw new Error('R2_PUBLIC_BASE_URL manquante');
   const url = post.url || `${base.replace(/\/$/, '')}/${post.file.split('/').map(encodeURIComponent).join('/')}`;
   if (new URL(url).protocol !== 'https:') throw new Error('La vidéo doit avoir une URL HTTPS');
-  const input = { channelId, text: post.text || '', schedulingType: 'automatic', mode: 'addToQueue', needsApproval: false, assets: [{ video: { url } }] };
-  if (platform === 'youtube') input.metadata = { youtube: { title: post.title, categoryId: '22', madeForKids: false, privacy: 'public', ...post.youtube, isAiGenerated: post.isAiGenerated === true } };
+  const input = { channelId, text: post.text || videoTitle(post), schedulingType: 'automatic', mode: 'addToQueue', needsApproval: false, assets: [{ video: { url } }] };
+  if (platform === 'youtube') input.metadata = { youtube: { categoryId: '22', madeForKids: false, privacy: 'public', ...post.youtube, title: videoTitle(post), isAiGenerated: post.isAiGenerated === true } };
   if (platform === 'tiktok') input.metadata = { tiktok: { isAiGenerated: post.isAiGenerated === true } };
   if (platform === 'instagram') input.metadata = { instagram: { type: 'reel', shouldShareToFeed: true, isAiGenerated: post.isAiGenerated === true } };
   return input;

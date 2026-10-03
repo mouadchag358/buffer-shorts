@@ -45,7 +45,7 @@ Modifier `posts.json`. Les vidéos sont prises dans l'ordre. Mettre `enabled: tr
 ]
 ```
 
-`file` doit correspondre au nom de l'objet R2. `url` peut remplacer `file` pour utiliser une URL HTTPS directe. Le titre YouTube est obligatoire, maximum 100 caractères. Adapter catégorie, public enfant et déclaration de contenu IA au contenu réel. Les formats et limites propres aux réseaux et au plan Buffer continuent de s'appliquer. Une vidéo sur deux réseaux crée deux posts Buffer. `queued` signifie ajouté à Buffer, pas publié avec succès : surveiller les erreurs de publication dans Buffer.
+`file` doit correspondre au nom de l'objet R2. `url` peut remplacer `file` pour utiliser une URL HTTPS directe. Si `title` est absent ou vide, le titre YouTube vient automatiquement du nom du fichier vidéo : extension retirée, `_` remplacés par des espaces, espaces superflus supprimés, limite de 100 caractères. Pour une URL directe, le nom est récupéré dans son chemin et décodé. Exemple : `Les_bienfaits_du_miel.mp4` → `Les bienfaits du miel`. Un titre personnalisé dans `title` (ou `youtube.title`) reste prioritaire et doit respecter les 100 caractères. Si `text` est vide, ce titre sert également de légende. Il s'agit du nom du fichier, pas d'une lecture du texte affiché dans la vidéo ni de ses métadonnées internes. Adapter catégorie, public enfant et déclaration de contenu IA au contenu réel. Les formats et limites propres aux réseaux et au plan Buffer continuent de s'appliquer. Une vidéo sur deux réseaux crée deux posts Buffer. `queued` signifie ajouté à Buffer, pas publié avec succès : surveiller les erreurs de publication dans Buffer.
 
 Pour générer le manifeste des 500 vidéos d'un dossier local :
 

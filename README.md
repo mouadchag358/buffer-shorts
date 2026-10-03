@@ -76,3 +76,7 @@ Pour débloquer une réponse incertaine, vérifier la file et l'historique Buffe
 - [R2 : SDK S3](https://developers.cloudflare.com/r2/examples/aws/aws-sdk-js-v3/)
 - [R2 : jetons](https://developers.cloudflare.com/r2/api/tokens/)
 - [GitHub : fuseaux et planifications](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
+
+## Demande immédiate
+
+Une modification de `.github/requests/publish-now.json` lance le workflow **Publier une vidéo maintenant**. Donner un nouvel `id` pour chaque demande autorisée. Ce workflow utilise `shareNow` sur les trois réseaux, conserve les protections et partage la même concurrence que le workflow planifié. Une relance avec le même ID ignore les destinations déjà acceptées. Une demande immédiate s'ajoute aux créneaux quotidiens de 23 h et 01 h.

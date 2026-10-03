@@ -67,3 +67,13 @@ test('les trois réseaux reçoivent la même date customScheduled', async () => 
     env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' }, persist: async () => {}, checkMedia: async () => {}, send: async input => { sent.push(input); return { status: 'queued', bufferId: 'ok' }; } });
   assert.equal(sent.length, 3); assert.ok(sent.every(i => i.mode === 'customScheduled' && i.dueAt === target.dueAt));
 });
+
+test('publication immédiate et relance de la même demande sans doublon', async () => {
+  const posts = postsFromKeys(['now.mp4']), sent = [];
+  const state = { version: 1, slots: {}, deliveries: {} };
+  const options = { posts, state, slot: 'manual-request1', mode: 'shareNow',
+    env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' },
+    persist: async () => {}, checkMedia: async () => {}, send: async input => { sent.push(input); return { status: 'queued', bufferId: 'ok' }; } };
+  await processSlot(options); await processSlot(options);
+  assert.equal(sent.length, 3); assert.ok(sent.every(i => i.mode === 'shareNow' && !i.dueAt));
+});

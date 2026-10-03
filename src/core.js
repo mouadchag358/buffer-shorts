@@ -34,7 +34,7 @@ export function inputFor(post, platform, env) {
   if (platform === 'instagram') input.metadata = { instagram: { type: 'reel', shouldShareToFeed: true, isAiGenerated: post.isAiGenerated === true } };
   return input;
 }
-export async function processSlot({ posts, state, slot, env, persist, send, checkMedia, dryRun = false, dueAt }) {
+export async function processSlot({ posts, state, slot, env, persist, send, checkMedia, dryRun = false, dueAt, mode }) {
   validate(posts);
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');
   if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer puis corriger state.json (voir README)');
@@ -42,7 +42,7 @@ export async function processSlot({ posts, state, slot, env, persist, send, chec
   const post = assigned ? posts.find(p => p.id === assigned) : posts.find(p => p.enabled !== false && p.platforms.some(platform => state.deliveries[deliveryKey(p.id, platform)]?.status !== 'queued'));
   if (!post) { if (assigned) throw new Error('Le post du créneau a été retiré'); return []; }
   if (post.enabled === false) return [];
-  const work = post.platforms.filter(platform => state.deliveries[deliveryKey(post.id, platform)]?.status !== 'queued').map(platform => ({ platform, input: { ...inputFor(post, platform, env), ...(dueAt ? { mode: 'customScheduled', dueAt } : {}) } }));
+  const work = post.platforms.filter(platform => state.deliveries[deliveryKey(post.id, platform)]?.status !== 'queued').map(platform => ({ platform, input: { ...inputFor(post, platform, env), ...(mode === 'shareNow' ? { mode: 'shareNow' } : dueAt ? { mode: 'customScheduled', dueAt } : {}) } }));
   if (!work.length || dryRun) return work;
   await checkMedia(work[0].input.assets[0].video.url);
   state.slots[slot] = post.id;

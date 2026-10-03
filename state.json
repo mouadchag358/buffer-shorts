@@ -1,1 +1,11 @@
-{"version":1,"slots":{},"deliveries":{}}
+{
+  "version": 1,
+  "slots": {},
+  "deliveries": {},
+  "r2ListingRequests": {
+    "day": "2026-10-03",
+    "count": 1,
+    "lastAt": 1791069227492,
+    "pauseUntil": 0
+  }
+}

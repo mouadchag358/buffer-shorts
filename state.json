@@ -1,7 +1,15 @@
 {
   "version": 1,
-  "slots": {},
-  "deliveries": {},
+  "slots": {
+    "manual-user-20261003-231810": "r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8"
+  },
+  "deliveries": {
+    "[\"r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8\",\"tiktok\"]": {
+      "status": "sending",
+      "channelId": "6ac17c67ea19ca0bde6a2233",
+      "updatedAt": "2026-10-03T23:20:16.530Z"
+    }
+  },
   "r2ListingRequests": {
     "day": "2026-10-03",
     "count": 1,

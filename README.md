@@ -1,11 +1,11 @@
 # Shorts → R2 → Buffer
 
-Node.js 24 sans dépendances. Une vidéo par passage, matin et soir, sur TikTok et YouTube Shorts. Facebook et Instagram peuvent être ajoutés. Le projet n'est pas connecté aux comptes : le post d'exemple est désactivé.
+Node.js 24 sans dépendances. Une vidéo par passage, matin et soir, sur TikTok, YouTube Shorts et Instagram Reels. Facebook peut être ajouté. Le projet n'est pas connecté aux comptes : le post d'exemple est désactivé.
 
 ## Configuration
 
 1. Téléverser les MP4 dans un bucket Cloudflare R2 Standard. Configurer un domaine public. Les URL doivent renvoyer directement les vidéos sans connexion avec `Content-Type: video/mp4`. Une URL publique `r2.dev` convient aux tests mais est limitée ; préférer un domaine personnalisé pour la production. Garder les vidéos accessibles jusqu'à leur publication effective. Ce projet ne supprime pas de fichiers.
-2. Connecter TikTok et YouTube dans Buffer et configurer deux créneaux de publication quotidiens pour chaque chaîne, après les passages GitHub. Le script ajoute à la file avec `addToQueue`. Buffer détermine l'heure de publication selon les créneaux et les posts déjà présents.
+2. Connecter TikTok, YouTube et Instagram dans Buffer et configurer deux créneaux de publication quotidiens pour chaque chaîne, après les passages GitHub. Le script ajoute à la file avec `addToQueue`. Buffer détermine l'heure de publication selon les créneaux et les posts déjà présents.
 3. Dans GitHub → Settings → Secrets and variables → Actions, ajouter les paramètres suivants.
 
 | Type | Nom | Valeur |
@@ -16,7 +16,7 @@ Node.js 24 sans dépendances. Une vidéo par passage, matin et soir, sur TikTok 
 | Variable | `BUFFER_YOUTUBE_CHANNEL_ID` | ID YouTube |
 | Variable | `R2_PUBLIC_BASE_URL` | Exemple : `https://videos.example.com` |
 | Variable | `BUFFER_FACEBOOK_CHANNEL_ID` | Facultatif |
-| Variable | `BUFFER_INSTAGRAM_CHANNEL_ID` | Facultatif |
+| Variable | `BUFFER_INSTAGRAM_CHANNEL_ID` | ID Instagram |
 
 Aucune clé R2 n'est nécessaire : le script transmet les URL publiques. Ne pas mettre la clé Buffer dans le code. Le workflow doit pouvoir écrire sur la branche par défaut ; une protection interdisant les commits du bot bloque les checkpoints et donc les envois.
 
@@ -38,14 +38,14 @@ Modifier `posts.json`. Les vidéos sont prises dans l'ordre. Mettre `enabled: tr
     "file": "short001.mp4",
     "title": "Titre du Short",
     "text": "Description #shorts",
-    "platforms": ["tiktok", "youtube"],
+    "platforms": ["tiktok", "youtube", "instagram"],
     "youtube": { "categoryId": "22", "madeForKids": false, "privacy": "public" },
     "isAiGenerated": false
   }
 ]
 ```
 
-`file` doit correspondre au nom de l'objet R2. `url` peut remplacer `file` pour utiliser une URL HTTPS directe. Si `title` est absent ou vide, le titre YouTube vient automatiquement du nom du fichier vidéo : extension retirée, `_` remplacés par des espaces, espaces superflus supprimés, limite de 100 caractères. Pour une URL directe, le nom est récupéré dans son chemin et décodé. Exemple : `Les_bienfaits_du_miel.mp4` → `Les bienfaits du miel`. Un titre personnalisé dans `title` (ou `youtube.title`) reste prioritaire et doit respecter les 100 caractères. Si `text` est vide, ce titre sert également de légende. Il s'agit du nom du fichier, pas d'une lecture du texte affiché dans la vidéo ni de ses métadonnées internes. Adapter catégorie, public enfant et déclaration de contenu IA au contenu réel. Les formats et limites propres aux réseaux et au plan Buffer continuent de s'appliquer. Une vidéo sur deux réseaux crée deux posts Buffer. `queued` signifie ajouté à Buffer, pas publié avec succès : surveiller les erreurs de publication dans Buffer.
+`file` doit correspondre au nom de l'objet R2. `url` peut remplacer `file` pour utiliser une URL HTTPS directe. Si `title` est absent ou vide, le titre YouTube vient automatiquement du nom du fichier vidéo : extension retirée, `_` remplacés par des espaces, espaces superflus supprimés, limite de 100 caractères. Pour une URL directe, le nom est récupéré dans son chemin et décodé. Exemple : `Les_bienfaits_du_miel.mp4` → `Les bienfaits du miel`. Un titre personnalisé dans `title` (ou `youtube.title`) reste prioritaire et doit respecter les 100 caractères. Si `text` est vide, ce titre sert également de légende. Il s'agit du nom du fichier, pas d'une lecture du texte affiché dans la vidéo ni de ses métadonnées internes. Adapter catégorie, public enfant et déclaration de contenu IA au contenu réel. Les formats et limites propres aux réseaux et au plan Buffer continuent de s'appliquer. Une vidéo sur les trois réseaux crée trois posts Buffer. Instagram est envoyé au format Reel, également partagé dans le fil. `queued` signifie ajouté à Buffer, pas publié avec succès : surveiller les erreurs de publication dans Buffer.
 
 Pour générer le manifeste des 500 vidéos d'un dossier local :
 

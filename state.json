@@ -5,9 +5,10 @@
   },
   "deliveries": {
     "[\"r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8\",\"tiktok\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17c67ea19ca0bde6a2233",
-      "updatedAt": "2026-10-03T23:20:16.530Z"
+      "updatedAt": "2026-10-03T23:20:29.268Z",
+      "bufferId": "6ac18db3fec59133948b95c9"
     }
   },
   "r2ListingRequests": {

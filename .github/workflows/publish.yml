@@ -1,7 +1,8 @@
 name: Envoyer les Shorts à Buffer
 on:
   schedule:
-    - cron: '17 7,19 * * *'
+    - cron: '17 22,0 * * *'
+      timezone: 'Africa/Casablanca'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -25,6 +26,11 @@ jobs:
       BUFFER_FACEBOOK_CHANNEL_ID: ${{ vars.BUFFER_FACEBOOK_CHANNEL_ID }}
       BUFFER_INSTAGRAM_CHANNEL_ID: ${{ vars.BUFFER_INSTAGRAM_CHANNEL_ID }}
       R2_PUBLIC_BASE_URL: ${{ vars.R2_PUBLIC_BASE_URL }}
+      R2_ACCOUNT_ID: ${{ vars.R2_ACCOUNT_ID || '26f5f1d1273dff54524414e342225b93' }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME || 'reels' }}
+      R2_PREFIX: ${{ vars.R2_PREFIX }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       PERSIST_GIT: 'true'
     steps:
       - uses: actions/checkout@v5
@@ -33,6 +39,7 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '24'
+      - run: npm ci --ignore-scripts
       - run: npm test
       - name: Configurer les checkpoints
         run: |

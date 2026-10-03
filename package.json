@@ -12,5 +12,8 @@
     "channels": "node src/channels.js",
     "test": "node --test",
     "manifest": "node src/manifest.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1146.0"
   }
 }

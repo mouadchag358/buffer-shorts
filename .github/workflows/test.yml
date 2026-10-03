@@ -1,7 +1,7 @@
 name: Tests
 on:
   push:
-    paths: ['src/**', 'test/**', 'package.json', '.github/workflows/**']
+    paths: ['src/**', 'test/**', 'package.json', 'package-lock.json', '.github/workflows/**']
   pull_request:
 permissions:
   contents: read
@@ -13,4 +13,5 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '24'
+      - run: npm ci --ignore-scripts
       - run: npm test

@@ -77,3 +77,17 @@ test('publication immédiate et relance de la même demande sans doublon', async
   await processSlot(options); await processSlot(options);
   assert.equal(sent.length, 3); assert.ok(sent.every(i => i.mode === 'shareNow' && !i.dueAt));
 });
+
+test('YouTube refuse la vidéo horizontale mais Instagram continue et TikTok reste unique', async () => {
+  const posts = postsFromKeys(['horizontal.mp4']), sent = [];
+  const state = { version: 1, slots: {}, deliveries: {} };
+  const options = { posts, state, slot: 'manual-reject', mode: 'shareNow',
+    env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' },
+    persist: async () => {}, checkMedia: async () => {}, send: async input => {
+      sent.push(input.channelId);
+      return input.channelId === 'yt' ? { status: 'rejected', error: 'Invalid post: Video must be vertical (portrait orientation) for YouTube Shorts.' } : { status: 'queued', bufferId: 'ok' };
+    } };
+  await assert.rejects(processSlot(options), /rejected/);
+  assert.deepEqual(sent, ['tt','yt','ig']);
+  await processSlot(options); assert.equal(sent.length, 3);
+});

@@ -1,6 +1,6 @@
 import { readFile, writeFile, rename } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
-import { processSlot } from './core.js';
+import { processSlot, isFinalDelivery } from './core.js';
 import { createPost } from './buffer.js';
 import { mediaChecker } from './media.js';
 import { loadCatalog } from './catalog.js';
@@ -29,7 +29,7 @@ try {
   const assigned = state.slots?.[target.key];
   if (assigned) {
     const existing = (await read('posts.json')).find(p => p.id === assigned);
-    if (existing && existing.platforms.every(p => state.deliveries[JSON.stringify([assigned, p])]?.status === 'queued')) {
+    if (existing && existing.platforms.every(p => isFinalDelivery(state.deliveries[JSON.stringify([assigned, p])]))) {
       console.log('Créneau déjà préparé; aucun appel réseau'); process.exit(0);
     }
   }
@@ -37,7 +37,7 @@ try {
   if (JSON.stringify(await read('posts.json')) !== JSON.stringify(posts)) {
     await writeFile('posts.json', JSON.stringify(posts, null, 2) + '\n'); await persist(state);
   }
-  const next = assigned ? posts.find(p => p.id === assigned) : posts.find(p => p.platforms.some(platform => state.deliveries[JSON.stringify([p.id, platform])]?.status !== 'queued'));
+  const next = assigned ? posts.find(p => p.id === assigned) : posts.find(p => p.platforms.some(platform => !isFinalDelivery(state.deliveries[JSON.stringify([p.id, platform])])));
   if (!next) { console.log('Aucune vidéo restante'); process.exit(0); }
   const env = await discoverChannels(next.platforms);
   const checkMedia = mediaChecker({ state, persist });

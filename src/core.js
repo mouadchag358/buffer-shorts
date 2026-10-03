@@ -1,4 +1,5 @@
 const platforms = ['tiktok', 'youtube', 'facebook', 'instagram'];
+export const isFinalDelivery = d => d?.status === 'queued' || (d?.status === 'rejected' && /Video must be vertical.*YouTube Shorts/i.test(d.error || ''));
 export const deliveryKey = (id, platform) => JSON.stringify([id, platform]);
 export function slotKey(now = new Date()) {
   return `${now.toISOString().slice(0, 10)}-${now.getUTCHours() < 12 ? 'morning' : 'evening'}`;
@@ -39,13 +40,14 @@ export async function processSlot({ posts, state, slot, env, persist, send, chec
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');
   if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer puis corriger state.json (voir README)');
   const assigned = state.slots[slot];
-  const post = assigned ? posts.find(p => p.id === assigned) : posts.find(p => p.enabled !== false && p.platforms.some(platform => state.deliveries[deliveryKey(p.id, platform)]?.status !== 'queued'));
+  const post = assigned ? posts.find(p => p.id === assigned) : posts.find(p => p.enabled !== false && p.platforms.some(platform => !isFinalDelivery(state.deliveries[deliveryKey(p.id, platform)])));
   if (!post) { if (assigned) throw new Error('Le post du créneau a été retiré'); return []; }
   if (post.enabled === false) return [];
-  const work = post.platforms.filter(platform => state.deliveries[deliveryKey(post.id, platform)]?.status !== 'queued').map(platform => ({ platform, input: { ...inputFor(post, platform, env), ...(mode === 'shareNow' ? { mode: 'shareNow' } : dueAt ? { mode: 'customScheduled', dueAt } : {}) } }));
+  const work = post.platforms.filter(platform => !isFinalDelivery(state.deliveries[deliveryKey(post.id, platform)])).map(platform => ({ platform, input: { ...inputFor(post, platform, env), ...(mode === 'shareNow' ? { mode: 'shareNow' } : dueAt ? { mode: 'customScheduled', dueAt } : {}) } }));
   if (!work.length || dryRun) return work;
   await checkMedia(work[0].input.assets[0].video.url);
   state.slots[slot] = post.id;
+  const failures = [];
   for (const { platform, input } of work) {
     const key = deliveryKey(post.id, platform);
     state.deliveries[key] = { status: 'sending', channelId: input.channelId, updatedAt: new Date().toISOString() };
@@ -55,7 +57,9 @@ export async function processSlot({ posts, state, slot, env, persist, send, chec
     catch { result = { status: 'uncertain', error: 'Vérifier Buffer avant de réessayer' }; }
     state.deliveries[key] = { ...state.deliveries[key], ...result, updatedAt: new Date().toISOString() };
     await persist(state);
-    if (result.status !== 'queued') throw new Error(`Envoi ${result.status}: ${post.id}/${platform}. Consulter state.json.`);
+    if (result.status === 'uncertain') throw new Error(`Envoi uncertain: ${post.id}/${platform}. Consulter state.json.`);
+    if (result.status !== 'queued') failures.push(platform);
   }
+  if (failures.length) throw new Error(`Envoi rejected: ${post.id}/${failures.join(', ')}. Les autres réseaux ont été traités; consulter state.json.`);
   return work;
 }

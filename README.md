@@ -80,3 +80,5 @@ Pour débloquer une réponse incertaine, vérifier la file et l'historique Buffe
 ## Demande immédiate
 
 Une modification de `.github/requests/publish-now.json` lance le workflow **Publier une vidéo maintenant**. Donner un nouvel `id` pour chaque demande autorisée. Ce workflow utilise `shareNow` sur les trois réseaux, conserve les protections et partage la même concurrence que le workflow planifié. Une relance avec le même ID ignore les destinations déjà acceptées. Une demande immédiate s'ajoute aux créneaux quotidiens de 23 h et 01 h.
+
+Un refus explicite sur un réseau n'empêche pas l'envoi aux suivants. Une réponse incertaine bloque toujours les envois pour éviter les doublons. Les vidéos refusées comme non verticales pour YouTube Shorts sont ignorées pour cette destination aux prochaines relances, avec l'erreur conservée dans le suivi. Corriger le format et supprimer uniquement l'entrée rejetée pour réessayer YouTube.

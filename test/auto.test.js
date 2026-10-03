@@ -4,11 +4,32 @@ import { nextPublication } from '../src/schedule.js';
 import { discoverChannels } from '../src/discovery.js';
 import { loadCatalog, postsFromKeys } from '../src/catalog.js';
 import { processSlot } from '../src/core.js';
-test('23h et 01h au Maroc, y compris pendant le changement de fuseau', () => {
-  assert.deepEqual(nextPublication(new Date('2026-10-03T21:17:00Z'), true), { key: '2026-10-03-23h', dueAt: '2026-10-03T22:00:00.000Z' });
-  assert.deepEqual(nextPublication(new Date('2026-10-03T23:17:00Z'), true), { key: '2026-10-04-01h', dueAt: '2026-10-04T00:00:00.000Z' });
-  assert.equal(nextPublication(new Date('2026-02-28T22:17:00Z'), true).dueAt, '2026-02-28T23:00:00.000Z');
-  assert.equal(nextPublication(new Date('2026-10-03T10:00:00Z'), true), null);
+const localParts = date => Object.fromEntries(new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Africa/Casablanca', year: 'numeric', month: '2-digit', day: '2-digit',
+  hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+}).formatToParts(date).map(p => [p.type, p.value]));
+function localTime(day, hour, minute) {
+  const nominal = Date.parse(`${day}T${hour}:${minute}:00Z`);
+  // Construire l'instant d'entrée selon les règles IANA du runtime, sans présumer UTC+1.
+  for (let offset = -180; offset <= 180; offset++) {
+    const date = new Date(nominal + offset * 60000), p = localParts(date);
+    if (`${p.year}-${p.month}-${p.day}` === day && Number(p.hour) === Number(hour) && Number(p.minute) === Number(minute)) return date;
+  }
+  throw new Error('Heure locale introuvable');
+}
+test('23h et 01h au Maroc, avec les règles IANA du runtime', () => {
+  for (const day of ['2026-10-03', '2026-02-28']) {
+    const evening = localTime(day, '22', '17');
+    const target = nextPublication(evening, true);
+    assert.ok(target); assert.equal(target.key, `${day}-23h`);
+    assert.equal(Number(localParts(new Date(target.dueAt)).hour), 23);
+    assert.equal(Number(localParts(new Date(target.dueAt)).minute), 0);
+    assert.equal(new Date(target.dueAt) - evening, 43 * 60000);
+    const morning = nextPublication(localTime(day, '00', '17'), true);
+    assert.ok(morning); assert.equal(morning.key, `${day}-01h`);
+    assert.equal(Number(localParts(new Date(morning.dueAt)).hour), 1);
+    assert.equal(nextPublication(localTime(day, '10', '00'), true), null);
+  }
 });
 test('récupération des organisations et IDs liés avec refus des choix ambigus', async () => {
   const responses = [{ account: { organizations: [{ id: 'org' }] } }, { channels: [{ id: 'tt', service: 'tiktok' }, { id: 'yt', service: 'youtube' }, { id: 'ig', service: 'instagram' }] }];

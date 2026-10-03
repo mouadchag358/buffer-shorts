@@ -46,7 +46,7 @@ Le maximum du script est donc 2 listings + 4 vérifications par jour UTC. En usa
 
 ## Essai
 
-Actions → Envoyer les Shorts à Buffer → Run workflow. Le choix `dry_run` est activé par défaut : le script lit R2 et les comptes Buffer, actualise le catalogue et les compteurs, mais ne crée aucun post Buffer. Décocher pour programmer réellement. Le workflow doit pouvoir commit/push sur la branche par défaut.
+Actions → Envoyer les Shorts à Buffer → Run workflow. Le choix `dry_run` est activé par défaut : le script lit R2 et les comptes Buffer, actualise le catalogue et les compteurs, vérifie aussi l’URL publique de la prochaine vidéo, mais ne crée aucun post Buffer. Une modification du fichier du workflow lance également cette simulation de connexion automatiquement. Décocher pour programmer réellement. Le workflow doit pouvoir commit/push sur la branche par défaut.
 
 En local avec Node.js 24 :
 

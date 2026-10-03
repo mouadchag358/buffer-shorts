@@ -39,6 +39,7 @@ try {
   const env = await discoverChannels(next.platforms);
   const checkMedia = mediaChecker({ state, persist });
   const work = await processSlot({ posts, state, slot: target.key, dueAt: target.dueAt, env, persist, send: input => createPost(input, env), checkMedia, dryRun });
+  if (dryRun && work.length) await checkMedia(work[0].input.assets[0].video.url);
   console.log(`${dryRun ? 'Simulation' : 'Programmation'}: ${work.length} destination(s), ${target.key}, ${target.dueAt}`);
   for (const item of work) console.log(item.platform);
 } catch (error) { console.error(error.message); process.exitCode = 1; }

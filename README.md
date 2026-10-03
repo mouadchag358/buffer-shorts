@@ -85,3 +85,11 @@ GitHub et Buffer ne partagent pas de transaction. La stratégie privilégie le b
 - [YouTube](https://developers.buffer.com/types/YoutubePostMetadataInput.html)
 - [R2 public](https://developers.cloudflare.com/r2/buckets/public-buckets/)
 - [GitHub schedule](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
+
+## Protection des accès Cloudflare R2
+
+Le script utilise l'URL publique R2, sans clé Cloudflare, sans upload, suppression ou liste du bucket. Avant un envoi à Buffer, il fait uniquement une requête `HEAD` pour vérifier la vidéo.
+
+Cette vérification est limitée à **1 appel par exécution et 4 appels par jour UTC**, toutes URL vidéo confondues. Le compteur `mediaRequests` est commit/push dans `state.json` avant l'appel : les erreurs et relances manuelles comptent aussi. Au moins 10 secondes doivent séparer deux vérifications. Il n'y a aucune nouvelle tentative ou redirection automatique. Une réponse HTTP 429 stoppe le workflow et suspend les vérifications au moins une heure, ou davantage si `Retry-After` l'exige.
+
+Un passage normal fait une seule vérification pour les trois réseaux ; deux passages font donc deux requêtes du script par jour. Buffer et les réseaux téléchargent ensuite les vidéos de leur côté : ces accès externes ne sont pas plafonnés par ce compteur. Les simulations et créneaux déjà envoyés ne font aucune vérification. Ne pas supprimer le compteur pour contourner la limite. La persistance des limites dépend de la conservation de `state.json` et du workflow sérialisé ; éviter les exécutions locales simultanées.

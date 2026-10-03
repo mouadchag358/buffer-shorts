@@ -2,6 +2,7 @@ import { readFile, writeFile, rename } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { processSlot, slotKey } from './core.js';
 import { createPost } from './buffer.js';
+import { mediaChecker } from './media.js';
 const dryRun = process.argv.includes('--dry-run');
 const read = async path => JSON.parse(await readFile(path, 'utf8'));
 async function persist(state) {
@@ -13,12 +14,11 @@ async function persist(state) {
     execFileSync('git', ['push', 'origin', 'HEAD'], { stdio: 'inherit' });
   }
 }
-async function checkMedia(url) {
-  const response = await fetch(url, { method: 'HEAD', signal: AbortSignal.timeout(30000) });
-  if (!response.ok || !(response.headers.get('content-type') || '').startsWith('video/')) throw new Error('URL vidéo inaccessible ou Content-Type différent de video/*');
-}
+
 try {
-  const work = await processSlot({ posts: await read('posts.json'), state: await read('state.json'), slot: slotKey(), env: process.env, persist, send: input => createPost(input, process.env), checkMedia, dryRun });
+  const state = await read('state.json');
+  const checkMedia = mediaChecker({ state, persist });
+  const work = await processSlot({ posts: await read('posts.json'), state, slot: slotKey(), env: process.env, persist, send: input => createPost(input, process.env), checkMedia, dryRun });
   console.log(`${dryRun ? 'Simulation' : 'Envoi'}: ${work.length} destination(s)`);
   for (const item of work) console.log(item.platform);
 } catch (error) { console.error(error.message); process.exitCode = 1; }

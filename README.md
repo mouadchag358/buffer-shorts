@@ -1,6 +1,6 @@
 # R2 → Buffer : TikTok, YouTube Shorts, Instagram Reels
 
-Le workflow lit automatiquement les vidéos MP4 du bucket R2 `reels`, génère `posts.json`, récupère les comptes liés à Buffer et programme une vidéo sur les trois réseaux à **23 h et 01 h, fuseau Africa/Casablanca**. Les noms de fichiers servent de titres et de légendes (`عسل_تمارة.mp4` → `عسل تمارة`).
+Le workflow lit automatiquement les vidéos MP4 du bucket R2 `reels`, génère `posts.json`, récupère les comptes liés à Buffer et programme une vidéo sur les trois réseaux à **23 h et 01 h, fuseau Africa/Casablanca**. Chaque vidéo reçoit le titre et la légende génériques `#fyp #fy #viral #ai`. Le nom du fichier sert uniquement à retrouver la vidéo et à conserver son ID stable.
 
 ## Paramètres GitHub
 
@@ -32,7 +32,7 @@ GitHub peut retarder ou manquer un lancement. Les exécutions planifiées ne pr�
 
 Les MP4 sont triés par nom. Le nom complet de l'objet détermine un ID stable : l'ajout d'une vidéo ne change pas les IDs des autres. Le catalogue est mis en cache une fois par jour UTC dans `state.json`. `posts.json` est généré et commit automatiquement, avec des entrées actives pour les trois réseaux. Il n'est plus nécessaire de l'éditer manuellement ; les modifications manuelles peuvent être écrasées par la synchronisation.
 
-Les fichiers sont considérés prêts à publier dès qu'ils sont dans le bucket ou le préfixe choisi. Ne placer à cet endroit que les vidéos destinées aux trois réseaux. Les titres sont limités à 100 caractères. Les valeurs YouTube par défaut sont catégorie People & Blogs (`22`), public, non destiné aux enfants et contenu IA non déclaré. Adapter `postsFromKeys` dans `src/catalog.js` si le contenu nécessite d'autres déclarations.
+Les fichiers sont considérés prêts à publier dès qu'ils sont dans le bucket ou le préfixe choisi. Ne placer à cet endroit que les vidéos destinées aux trois réseaux. Les titres personnalisés restent limités à 100 caractères. Le hashtag `#ai` ne remplace pas les déclarations de contenu IA exigées par les réseaux. Les valeurs YouTube par défaut sont catégorie People & Blogs (`22`), public, non destiné aux enfants et contenu IA non déclaré. Adapter `postsFromKeys` dans `src/catalog.js` si le contenu nécessite d'autres déclarations.
 
 Une page de 1000 objets maximum est lue. Si le bucket contient davantage d'objets, le script s'arrête sans pagination : utiliser `R2_PREFIX` pour réduire le périmètre. Les vidéos restent sur R2 ; le runner ne les télécharge pas. Conserver les URL publiques jusqu'à la publication effective. Le projet ne supprime pas les vidéos.
 

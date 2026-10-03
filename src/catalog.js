@@ -4,7 +4,7 @@ import { videoTitle } from './core.js';
 export function postsFromKeys(keys) {
   return [...new Set(keys)].filter(k => /\.mp4$/i.test(k)).sort().map(file => ({
     id: 'r2-' + createHash('sha256').update(file).digest('hex'), enabled: true, file,
-    title: videoTitle({ file }), text: '', platforms: ['tiktok', 'youtube', 'instagram'],
+    title: videoTitle({}), text: videoTitle({}), platforms: ['tiktok', 'youtube', 'instagram'],
     youtube: { categoryId: '22', madeForKids: false, privacy: 'public' }, isAiGenerated: false
   }));
 }
@@ -21,7 +21,11 @@ export function defaultList(env) {
 }
 export async function loadCatalog({ state, persist, env = process.env, now = Date.now(), list }) {
   const day = new Date(now).toISOString().slice(0, 10);
-  if (state.catalog?.day === day && Array.isArray(state.catalog.posts)) return state.catalog.posts;
+  if (state.catalog?.day === day && Array.isArray(state.catalog.posts)) {
+    const posts = state.catalog.posts.map(p => ({ ...p, title: videoTitle({}), text: videoTitle({}) }));
+    if (JSON.stringify(posts) !== JSON.stringify(state.catalog.posts)) { state.catalog.posts = posts; await persist(state); }
+    return posts;
+  }
   const prior = state.r2ListingRequests;
   if (prior && (!Number.isSafeInteger(prior.count) || prior.count < 0 || !Number.isFinite(prior.lastAt) || !Number.isFinite(prior.pauseUntil))) throw new Error('Compteur de listing R2 invalide');
   if (prior?.pauseUntil > now) throw new Error('Listing R2 en pause');

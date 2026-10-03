@@ -18,10 +18,10 @@ test('récupération des organisations et IDs liés avec refus des choix ambigus
   await assert.rejects(discoverChannels(['tiktok'], { BUFFER_ORGANIZATION_ID: 'org' }, async () => ({ channels: [{ id: 'a', service: 'tiktok' }, { id: 'b', service: 'tiktok' }] })), /2 comptes/);
   await assert.rejects(discoverChannels(['tiktok'], {}, async () => ({ account: { organizations: [] } })), /organisations/);
 });
-test('listing R2 en cache, IDs stables, titres arabes et catalogue MP4 seul', async () => {
+test('listing R2 en cache, IDs stables, hashtags génériques et catalogue MP4 seul', async () => {
   const state = {}; let calls = 0, saves = 0;
   const options = { state, now: Date.parse('2026-10-03T08:00:00Z'), persist: async () => { saves++; }, list: async () => { calls++; assert.equal(state.r2ListingRequests.count, 1); return { Contents: [{ Key: 'عسل_تمارة.mp4' }, { Key: 'image.jpg' }] }; } };
-  const posts = await loadCatalog(options); assert.equal(posts[0].title, 'عسل تمارة'); assert.equal(posts.length, 1);
+  const posts = await loadCatalog(options); assert.equal(posts[0].title, '#fyp #fy #viral #ai'); assert.equal(posts.length, 1);
   await loadCatalog(options); assert.equal(calls, 1); assert.equal(saves, 2);
   assert.equal(posts[0].id, postsFromKeys(['other.mp4','عسل_تمارة.mp4']).find(p => p.file === 'عسل_تمارة.mp4').id);
 });

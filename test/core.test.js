@@ -58,18 +58,16 @@ test('Buffer distingue succès, rejet et résultat incertain', async () => {
   await assert.rejects(createPost({}, key, fake({ errors: [{ message: 'invalid' }] })));
 });
 
-test('titre du fichier et URL encodée, avec priorité au titre personnalisé', () => {
-  assert.equal(videoTitle({ file: 'folder/Les_bienfaits_du_miel.MP4' }), 'Les bienfaits du miel');
-  assert.equal(videoTitle({ url: 'https://media.example.com/Mon%20titre_%C3%A9t%C3%A9.mp4?token=abc' }), 'Mon titre été');
-  assert.equal(videoTitle({ file: 'x.mp4', title: '  Mon titre  ' }), 'Mon titre');
-  assert.equal(videoTitle({ file: 'x.mp4', title: 'Autre', youtube: { title: 'Spécifique' } }), 'Spécifique');
-  assert.equal(videoTitle({ file: 'عسل_تمارة.mp4' }), 'عسل تمارة');
-  assert.equal(videoTitle({ file: 'a'.repeat(99) + '🍯.mp4' }).length, 99);
+test('hashtags génériques avec priorité au titre personnalisé', () => {
+  assert.equal(videoTitle({ file: 'folder/vid.mp4' }), '#fyp #fy #viral #ai');
+  assert.equal(videoTitle({ url: 'https://example.com/vid.mp4' }), '#fyp #fy #viral #ai');
+  assert.equal(videoTitle({ title: '  Mon titre  ' }), 'Mon titre');
+  assert.equal(videoTitle({ title: 'Autre', youtube: { title: 'Spécifique' } }), 'Spécifique');
 });
-test('YouTube accepte un titre automatique et la légende utilise le titre si absent', () => {
+test('YouTube et légendes utilisent les hashtags par défaut', () => {
   const p = { ...post, title: '', file: 'Mon_short.mp4' };
   validate([p]); const input = inputFor(p, 'youtube', env);
-  assert.equal(input.metadata.youtube.title, 'Mon short'); assert.equal(input.text, 'Mon short');
+  assert.equal(input.metadata.youtube.title, '#fyp #fy #viral #ai');
+  assert.equal(input.text, '#fyp #fy #viral #ai');
   assert.throws(() => validate([{ ...p, title: 'a'.repeat(101) }]));
-  assert.throws(() => validate([{ ...p, file: '.mp4' }]));
 });

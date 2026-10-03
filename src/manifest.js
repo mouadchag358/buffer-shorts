@@ -1,0 +1,8 @@
+import { readdir, writeFile, access } from 'node:fs/promises';
+const directory = process.argv[2];
+if (!directory) throw new Error('Usage: npm run manifest -- /chemin/videos');
+try { await access('posts.generated.json'); throw new Error('posts.generated.json existe déjà'); }
+catch (e) { if (e.code !== 'ENOENT') throw e; }
+const files = (await readdir(directory)).filter(f => f.toLowerCase().endsWith('.mp4')).sort();
+await writeFile('posts.generated.json', JSON.stringify(files.map((file, i) => ({ id: `short${String(i + 1).padStart(3, '0')}`, enabled: false, file, title: file.replace(/\.mp4$/i, '').slice(0, 100), text: '#shorts', platforms: ['tiktok', 'youtube'], youtube: { categoryId: '22', madeForKids: false, privacy: 'public' }, isAiGenerated: false })), null, 2) + '\n', { flag: 'wx' });
+console.log(`${files.length} entrées créées dans posts.generated.json (désactivées, à relire).`);

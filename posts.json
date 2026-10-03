@@ -1,0 +1,19 @@
+[
+  {
+    "id": "short001",
+    "enabled": false,
+    "file": "short001.mp4",
+    "title": "Mon premier Short",
+    "text": "Description de la vidéo #shorts",
+    "platforms": [
+      "tiktok",
+      "youtube"
+    ],
+    "youtube": {
+      "categoryId": "22",
+      "madeForKids": false,
+      "privacy": "public"
+    },
+    "isAiGenerated": false
+  }
+]

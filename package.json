@@ -1,0 +1,16 @@
+{
+  "name": "buffer-shorts",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/run.js",
+    "dry-run": "node src/run.js --dry-run",
+    "channels": "node src/channels.js",
+    "test": "node --test",
+    "manifest": "node src/manifest.js"
+  }
+}

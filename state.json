@@ -34,6 +34,11 @@
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "updatedAt": "2026-10-04T12:20:28.315Z",
       "error": "Invalid post: Video must be vertical (portrait orientation) for YouTube Shorts."
+    },
+    "[\"r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "updatedAt": "2026-10-04T12:20:29.399Z"
     }
   },
   "r2ListingRequests": {

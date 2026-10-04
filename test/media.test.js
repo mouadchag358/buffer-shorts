@@ -39,3 +39,12 @@ test('intervalle minimum et compteur invalide bloquent le réseau', async () => 
   s.state.mediaRequests.count = 'invalid'; s.advance(20000);
   await assert.rejects(mediaChecker(s.options)('https://example.com/a.mp4'), /invalide/); assert.equal(s.calls, 1);
 });
+
+test('deux créneaux autorisent deux HEAD espacés sans dépasser le budget quotidien', async () => {
+  const s = setup(), check = mediaChecker({ ...s.options, maxPerRun: 2 });
+  await check('https://example.com/a.mp4');
+  await assert.rejects(check('https://example.com/b.mp4'), /rapprochées/);
+  s.advance(10000); await check('https://example.com/b.mp4');
+  s.advance(10000); await assert.rejects(check('https://example.com/c.mp4'), /Limite R2/);
+  assert.equal(s.calls, 2);
+});

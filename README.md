@@ -24,9 +24,9 @@ Créer la clé S3 dans Cloudflare R2 → Manage R2 API Tokens, avec **Object Rea
 
 ## Horaires
 
-GitHub lance la préparation à **22:17 et 00:17**, heure du Maroc, pour programmer la prochaine publication à **23:00 ou 01:00**. `customScheduled` et `dueAt` sont transmis à Buffer : ces horaires ne dépendent pas du calendrier de la file Buffer. Le fuseau suit les changements d'heure du Maroc. Les horaires restent des cibles de programmation ; Buffer et les réseaux peuvent publier avec retard.
+GitHub lance la préparation à **10:17 et 20:17**, heure du Maroc, pour préparer les deux prochaines publications à **23:00 et 01:00**. `customScheduled` et `dueAt` sont transmis à Buffer : ces horaires ne dépendent pas du calendrier de la file Buffer. Le fuseau suit les changements d'heure du Maroc. Les horaires restent des cibles de programmation ; Buffer et les réseaux peuvent publier avec retard.
 
-GitHub peut retarder ou manquer un lancement. Les exécutions planifiées ne préparent qu'un créneau situé entre 10 et 90 minutes dans le futur : les créneaux manqués ne sont pas envoyés en rafale. Une relance manuelle prépare le prochain créneau situé au moins 10 minutes dans le futur. Le suivi par date/créneau empêche de sélectionner une autre vidéo quand ce créneau est déjà programmé.
+GitHub peut retarder ou manquer un lancement. Chaque exécution prépare les deux prochains créneaux au moins 10 minutes dans le futur, plusieurs heures à l'avance. Le second lancement réutilise les checkpoints sans renvoyer les vidéos. Les créneaux manqués ne sont pas envoyés en rafale. Le suivi par date/créneau empêche de sélectionner une autre vidéo quand ce créneau est déjà programmé.
 
 ## Catalogue automatique
 
@@ -39,7 +39,7 @@ Une page de 1000 objets maximum est lue. Si le bucket contient davantage d'objet
 ## Limites Cloudflare
 
 - Listing : **2 tentatives maximum par jour UTC**, sans nouvelle tentative automatique, sans pagination ; cache après succès. Une erreur compte comme tentative. HTTP 429 impose une pause d'une heure.
-- Vérification vidéo par `HEAD` : **1 par exécution, 4 par jour UTC**, sans nouvelle tentative ni redirection automatique ; HTTP 429 impose au moins une heure de pause ou davantage selon `Retry-After`.
+- Vérification vidéo par `HEAD` : **2 par exécution, 4 par jour UTC**, sans nouvelle tentative ni redirection automatique ; HTTP 429 impose au moins une heure de pause ou davantage selon `Retry-After`.
 - Compteurs commit/push avant chaque appel, intervalle minimum de 10 secondes pour chaque type de requête.
 
 Le maximum du script est donc 2 listings + 4 vérifications par jour UTC. En usage normal : un listing et deux vérifications (parfois deux listings autour de minuit UTC). Les téléchargements de Buffer et des réseaux restent indépendants de ces limites. Ne pas effacer les compteurs ni lancer plusieurs exécutions locales simultanées.
@@ -82,3 +82,5 @@ Pour débloquer une réponse incertaine, vérifier la file et l'historique Buffe
 Une modification de `.github/requests/publish-now.json` lance le workflow **Publier une vidéo maintenant**. Donner un nouvel `id` pour chaque demande autorisée. Ce workflow utilise `shareNow` sur les trois réseaux, conserve les protections et partage la même concurrence que le workflow planifié. Une relance avec le même ID ignore les destinations déjà acceptées. Une demande immédiate s'ajoute aux créneaux quotidiens de 23 h et 01 h.
 
 Un refus explicite sur un réseau n'empêche pas l'envoi aux suivants. Une réponse incertaine bloque toujours les envois pour éviter les doublons. Les vidéos refusées comme non verticales pour YouTube Shorts sont ignorées pour cette destination aux prochaines relances, avec l'erreur conservée dans le suivi. Corriger le format et supprimer uniquement l'entrée rejetée pour réessayer YouTube.
+
+Le workflow **Vérifier les publications Buffer** lit le statut réel et les liens des dix derniers posts, sans créer de publication ni appeler R2. `queued` dans state.json signifie accepté par Buffer, pas une preuve de publication.

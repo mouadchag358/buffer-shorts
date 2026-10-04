@@ -3,7 +3,7 @@ on:
   push:
     paths: ['.github/workflows/publish.yml']
   schedule:
-    - cron: '17 22,0 * * *'
+    - cron: '17 10,20 * * *'
       timezone: 'Africa/Casablanca'
   workflow_dispatch:
     inputs:

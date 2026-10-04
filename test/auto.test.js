@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { nextPublication } from '../src/schedule.js';
+import { nextPublication, nextPublications } from '../src/schedule.js';
 import { discoverChannels } from '../src/discovery.js';
 import { loadCatalog, postsFromKeys } from '../src/catalog.js';
 import { processSlot } from '../src/core.js';
@@ -28,7 +28,7 @@ test('23h et 01h au Maroc, avec les règles IANA du runtime', () => {
     const morning = nextPublication(localTime(day, '00', '17'), true);
     assert.ok(morning); assert.equal(morning.key, `${day}-01h`);
     assert.equal(Number(localParts(new Date(morning.dueAt)).hour), 1);
-    assert.equal(nextPublication(localTime(day, '10', '00'), true), null);
+    assert.equal(nextPublication(localTime(day, '10', '00'), true).key, `${day}-23h`);
   }
 });
 test('récupération des organisations et IDs liés avec refus des choix ambigus', async () => {
@@ -96,4 +96,13 @@ test('le cache de titres génériques est actualisé sans appel R2', async () =>
   const state = { catalog: { day: '2026-10-04', posts: [{ file: 'Un_titre.mp4', title: '#fyp', text: '#fyp' }] } };
   const posts = await loadCatalog({ state, now: Date.parse('2026-10-04T08:00:00Z'), persist: async () => {}, list: async () => { throw new Error('Ne doit pas appeler R2'); } });
   assert.equal(posts[0].title, 'Un titre'); assert.equal(posts[0].text, 'Un titre\n#fyp #fy #viral #ai');
+});
+
+test('deux créneaux futurs malgré le retard de GitHub, jamais de rattrapage en rafale', () => {
+  for (const hour of ['02', '10', '20']) {
+    const now = localTime('2026-10-04', hour, '41');
+    const targets = nextPublications(now);
+    assert.deepEqual(targets.map(t => t.key), ['2026-10-04-23h', '2026-10-05-01h']);
+    assert.ok(targets.every(t => new Date(t.dueAt) - now >= 10 * 60000));
+  }
 });

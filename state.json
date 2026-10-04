@@ -53,6 +53,11 @@
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "updatedAt": "2026-10-04T12:20:42.306Z",
       "bufferId": "6ac2449a11a7340ba0264e7d"
+    },
+    "[\"r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "updatedAt": "2026-10-04T12:20:43.361Z"
     }
   },
   "r2ListingRequests": {

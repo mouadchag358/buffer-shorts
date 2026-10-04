@@ -2,7 +2,7 @@
 const MAX_PER_DAY = 4;
 const MAX_PER_RUN = 1;
 const MIN_INTERVAL_MS = 10_000;
-export function mediaChecker({ state, persist, fetcher = fetch, now = () => Date.now(), maxPerRun = MAX_PER_RUN }) {
+export function mediaChecker({ state, persist, fetcher = fetch, now = () => Date.now(), maxPerRun = MAX_PER_RUN, extraRequestDay }) {
   if (![1, 2].includes(maxPerRun)) throw new Error('Budget média invalide');
   let calls = 0;
   return async function checkMedia(url) {
@@ -13,7 +13,9 @@ export function mediaChecker({ state, persist, fetcher = fetch, now = () => Date
     if (prior?.pauseUntil > timestamp) throw new Error('Vérifications R2 en pause après une réponse 429');
     if (prior && timestamp - prior.lastAt < MIN_INTERVAL_MS) throw new Error('Vérifications R2 trop rapprochées');
     const count = prior?.day === day ? prior.count : 0;
-    if (calls >= maxPerRun || count >= MAX_PER_DAY) throw new Error(`Limite R2 atteinte: ${maxPerRun} vérification(s) par exécution, 4 par jour UTC`);
+    // Une demande manuelle datée peut réserver une seule requête supplémentaire.
+    const dailyLimit = MAX_PER_DAY + (extraRequestDay === day ? 1 : 0);
+    if (calls >= maxPerRun || count >= dailyLimit) throw new Error(`Limite R2 atteinte: ${maxPerRun} vérification(s) par exécution, ${dailyLimit} par jour UTC`);
     // Sauvegarde AVANT toute requête, même si celle-ci échoue ou est interrompue.
     state.mediaRequests = { day, count: count + 1, lastAt: timestamp, pauseUntil: prior?.pauseUntil || 0 };
     calls += 1;

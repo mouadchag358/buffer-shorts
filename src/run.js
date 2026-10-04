@@ -38,7 +38,7 @@ try {
   const next = posts.find(p => p.enabled !== false && p.platforms.some(platform => !isFinalDelivery(state.deliveries[JSON.stringify([p.id, platform])])));
   if (!next) { console.log('Aucune vidéo restante'); process.exit(0); }
   const env = await discoverChannels([...new Set(posts.filter(p => p.enabled !== false).flatMap(p => p.platforms))]);
-  const rawCheck = mediaChecker({ state, persist, maxPerRun: 2 });
+  const rawCheck = mediaChecker({ state, persist, maxPerRun: publishNow ? 1 : 2, extraRequestDay: publishNow ? request.extraMediaRequestDay : undefined });
   let lastCheck;
   const checkMedia = async url => {
     if (lastCheck) await delay(Math.max(0, 10000 - (Date.now() - lastCheck)));

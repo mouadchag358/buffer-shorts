@@ -84,3 +84,5 @@ Une modification de `.github/requests/publish-now.json` lance le workflow **Publ
 Un refus explicite sur un réseau n'empêche pas l'envoi aux suivants. Une réponse incertaine bloque toujours les envois pour éviter les doublons. Les vidéos refusées comme non verticales pour YouTube Shorts sont ignorées pour cette destination aux prochaines relances, avec l'erreur conservée dans le suivi. Corriger le format et supprimer uniquement l'entrée rejetée pour réessayer YouTube.
 
 Le workflow **Vérifier les publications Buffer** lit le statut réel et les liens des dix derniers posts, sans créer de publication ni appeler R2. `queued` dans state.json signifie accepté par Buffer, pas une preuve de publication.
+
+Une demande immédiate autorisée peut réserver un HEAD supplémentaire avec `extraMediaRequestDay` (date UTC). Le plafond de cette date passe de 4 à 5, jamais davantage ; une seule requête par exécution immédiate. Les pauses 429 et checkpoints restent obligatoires.

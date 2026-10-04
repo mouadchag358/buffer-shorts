@@ -48,3 +48,16 @@ test('deux créneaux autorisent deux HEAD espacés sans dépasser le budget quot
   s.advance(10000); await assert.rejects(check('https://example.com/c.mp4'), /Limite R2/);
   assert.equal(s.calls, 2);
 });
+
+test('demande immédiate datée: un seul HEAD supplémentaire, sans remise à zéro du budget', async () => {
+  const s = setup();
+  for (let i = 0; i < 4; i++) { await mediaChecker(s.options)('https://example.com/a.mp4'); s.advance(20000); }
+  await assert.rejects(mediaChecker(s.options)('https://example.com/b.mp4'), /Limite/);
+  const options = { ...s.options, extraRequestDay: '2026-10-03' };
+  await mediaChecker(options)('https://example.com/b.mp4'); s.advance(20000);
+  await assert.rejects(mediaChecker(options)('https://example.com/c.mp4'), /Limite/);
+  assert.equal(s.calls, 5);
+  s.advance(86400000);
+  for (let i = 0; i < 4; i++) { await mediaChecker(options)('https://example.com/a.mp4'); s.advance(20000); }
+  await assert.rejects(mediaChecker(options)('https://example.com/b.mp4'), /Limite/);
+});

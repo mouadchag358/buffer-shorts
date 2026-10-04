@@ -1644,5 +1644,9 @@
     "count": 5,
     "lastAt": 1791116788721,
     "pauseUntil": 0
+  },
+  "queueSync": {
+    "lastAttemptAt": "2026-10-04T12:49:55.458Z",
+    "status": "running"
   }
 }

@@ -8,10 +8,15 @@
   },
   "deliveries": {
     "[\"r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "updatedAt": "2026-10-03T23:20:29.268Z",
-      "bufferId": "6ac18db3fec59133948b95c9"
+      "bufferId": "6ac18db3fec59133948b95c9",
+      "bufferStatus": "sent",
+      "dueAt": "2026-10-03T23:20:19.090Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z",
+      "externalLink": "https://tiktok.com/@ranclipo/video/7692585399000026376",
+      "sentAt": "2026-10-03T23:21:01.570Z"
     },
     "[\"r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8\",\"youtube\"]": {
       "status": "rejected",
@@ -20,16 +25,24 @@
       "error": "Invalid post: Video must be vertical (portrait orientation) for YouTube Shorts."
     },
     "[\"r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "updatedAt": "2026-10-03T23:23:48.834Z",
-      "bufferId": "6ac18e7a7d53b827e0f24ff2"
+      "bufferId": "6ac18e7a7d53b827e0f24ff2",
+      "bufferStatus": "sent",
+      "dueAt": "2026-10-03T23:23:38.667Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z",
+      "externalLink": "https://www.instagram.com/reel/DeDO0geEmlD/",
+      "sentAt": "2026-10-03T23:24:36.639Z"
     },
     "[\"r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0\",\"tiktok\"]": {
       "status": "queued",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "updatedAt": "2026-10-04T12:20:24.840Z",
-      "bufferId": "6ac24488fb26f2c2fb5e24a2"
+      "bufferId": "6ac24488fb26f2c2fb5e24a2",
+      "bufferStatus": "scheduled",
+      "dueAt": "2026-10-04T23:00:00.000Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z"
     },
     "[\"r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0\",\"youtube\"]": {
       "status": "rejected",
@@ -41,43 +54,70 @@
       "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "updatedAt": "2026-10-04T12:20:31.628Z",
-      "bufferId": "6ac2448ffb26f2c2fb5e25f1"
+      "bufferId": "6ac2448ffb26f2c2fb5e25f1",
+      "bufferStatus": "scheduled",
+      "dueAt": "2026-10-04T23:00:00.000Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z"
     },
     "[\"r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8\",\"tiktok\"]": {
       "status": "queued",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "updatedAt": "2026-10-04T12:20:38.592Z",
-      "bufferId": "6ac24496d8dbde86e14685b1"
+      "bufferId": "6ac24496d8dbde86e14685b1",
+      "bufferStatus": "scheduled",
+      "dueAt": "2026-10-05T01:00:00.000Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z"
     },
     "[\"r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "updatedAt": "2026-10-04T12:20:42.306Z",
-      "bufferId": "6ac2449a11a7340ba0264e7d"
+      "bufferId": "6ac2449a11a7340ba0264e7d",
+      "bufferStatus": "scheduled",
+      "dueAt": "2026-10-05T01:00:00.000Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z"
     },
     "[\"r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8\",\"instagram\"]": {
       "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "updatedAt": "2026-10-04T12:20:45.500Z",
-      "bufferId": "6ac2449da486988a6e160a7f"
+      "bufferId": "6ac2449da486988a6e160a7f",
+      "bufferStatus": "scheduled",
+      "dueAt": "2026-10-05T01:00:00.000Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z"
     },
     "[\"r2-56dba377a7f33278080928d1d32ad33965578271e1fd3135e28e4ff18876d47e\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "updatedAt": "2026-10-04T12:26:42.560Z",
-      "bufferId": "6ac245f811a7340ba0269cfb"
+      "bufferId": "6ac245f811a7340ba0269cfb",
+      "bufferStatus": "sent",
+      "dueAt": "2026-10-04T12:26:32.308Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z",
+      "externalLink": "https://tiktok.com/@ranclipo/video/7692788084085148980",
+      "sentAt": "2026-10-04T12:28:15.852Z"
     },
     "[\"r2-56dba377a7f33278080928d1d32ad33965578271e1fd3135e28e4ff18876d47e\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "updatedAt": "2026-10-04T12:26:48.930Z",
-      "bufferId": "6ac24605365aeab50be14185"
+      "bufferId": "6ac24605365aeab50be14185",
+      "bufferStatus": "sent",
+      "dueAt": "2026-10-04T12:26:45.806Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z",
+      "externalLink": "https://www.youtube.com/watch?v=4B1hrO2zy2w",
+      "sentAt": "2026-10-04T12:26:48.047Z"
     },
     "[\"r2-56dba377a7f33278080928d1d32ad33965578271e1fd3135e28e4ff18876d47e\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "updatedAt": "2026-10-04T12:27:02.253Z",
-      "bufferId": "6ac2460c6f5f5d018da0f0fa"
+      "bufferId": "6ac2460c6f5f5d018da0f0fa",
+      "bufferStatus": "sent",
+      "dueAt": "2026-10-04T12:26:52.067Z",
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z",
+      "externalLink": "https://www.instagram.com/reel/DeEocoCjoOy/",
+      "sentAt": "2026-10-04T12:27:48.423Z"
     }
   },
   "r2ListingRequests": {

@@ -1,0 +1,24 @@
+name: Vérifier les publications Buffer
+on:
+  push:
+    paths: ['.github/workflows/status.yml', '.github/requests/status.json']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: buffer-shorts
+  cancel-in-progress: false
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - run: node src/status.js

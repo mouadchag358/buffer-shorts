@@ -28,6 +28,11 @@
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "updatedAt": "2026-10-04T12:20:24.840Z",
       "bufferId": "6ac24488fb26f2c2fb5e24a2"
+    },
+    "[\"r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0\",\"youtube\"]": {
+      "status": "sending",
+      "channelId": "6ac17ba1ea19ca0bde6a0976",
+      "updatedAt": "2026-10-04T12:20:25.919Z"
     }
   },
   "r2ListingRequests": {

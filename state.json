@@ -66,6 +66,11 @@
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "updatedAt": "2026-10-04T12:26:42.560Z",
       "bufferId": "6ac245f811a7340ba0269cfb"
+    },
+    "[\"r2-56dba377a7f33278080928d1d32ad33965578271e1fd3135e28e4ff18876d47e\",\"youtube\"]": {
+      "status": "sending",
+      "channelId": "6ac17ba1ea19ca0bde6a0976",
+      "updatedAt": "2026-10-04T12:26:43.585Z"
     }
   },
   "r2ListingRequests": {

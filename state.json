@@ -62,9 +62,10 @@
       "bufferId": "6ac2449da486988a6e160a7f"
     },
     "[\"r2-56dba377a7f33278080928d1d32ad33965578271e1fd3135e28e4ff18876d47e\",\"tiktok\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17c67ea19ca0bde6a2233",
-      "updatedAt": "2026-10-04T12:26:29.936Z"
+      "updatedAt": "2026-10-04T12:26:42.560Z",
+      "bufferId": "6ac245f811a7340ba0269cfb"
     }
   },
   "r2ListingRequests": {

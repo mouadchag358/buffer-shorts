@@ -46,13 +46,13 @@ export async function getPost(id, env, request = graphql) {
   if (!post?.id) throw new Error('Post Buffer introuvable');
   return post;
 }
-export async function reschedulePost(id, dueAt, env, request = graphql) {
+export async function reschedulePost(id, dueAt, env, request = graphql, content = {}) {
   const data = await request(`mutation Reschedule($input: EditPostInput!) {
     editPost(input: $input) {
       ... on PostActionSuccess { post { id status dueAt } }
       ... on MutationError { message }
     }
-  }`, { input: { id, dueAt, mode: 'customScheduled', schedulingType: 'automatic' } }, env);
+  }`, { input: { ...content, id, dueAt, mode: 'customScheduled', schedulingType: 'automatic' } }, env);
   if (!data.editPost?.post?.id) throw new Error(data.editPost?.message || 'Modification Buffer incertaine');
   return data.editPost.post;
 }

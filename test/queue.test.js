@@ -99,8 +99,8 @@ function localTime(day, hour) {
 test('migration des anciens créneaux sans recréation, uniquement posts connus', async () => {
   const s = setup(); const dueAt = localTime('2026-10-04','23').toISOString();
   const remote = [{ id: 'owned', channelId: 'tiktok', status: 'scheduled', dueAt }, { id: 'external', channelId: 'instagram', status: 'scheduled', dueAt }];
-  s.state.deliveries.a = { status: 'queued', bufferId: 'owned' }; let edits = 0;
-  const options = { state: s.state, remote, channels, now, persist: s.options.persist, edit: async (id, date) => { edits++; assert.equal(id,'owned'); assert.equal(s.saved.at(-1).deliveries.a.scheduleUpdate.status,'pending'); return { id, status: 'scheduled', dueAt: date }; } };
+  s.state.deliveries[deliveryKey('0','tiktok')] = { status: 'queued', bufferId: 'owned' }; let edits = 0;
+  const options = { state: s.state, remote, channels, now, posts: s.posts, env: s.env, persist: s.options.persist, edit: async (id, date, content) => { edits++; assert.equal(id,'owned'); assert.equal(s.saved.at(-1).deliveries[deliveryKey('0','tiktok')].scheduleUpdate.status,'pending'); assert.equal(content.assets[0].video.url,'https://example.com/0.mp4'); assert.ok(content.text); assert.equal(content.channelId,undefined); assert.equal(content.needsApproval,undefined); return { id, status: 'scheduled', dueAt: date }; } };
   await migrateOldSlots(options); await migrateOldSlots(options);
   assert.equal(edits,1); assert.equal(localParts(new Date(remote[0].dueAt)).hour,'00'); assert.equal(remote[1].dueAt,dueAt);
 });

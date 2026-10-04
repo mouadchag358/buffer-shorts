@@ -12,6 +12,8 @@ async function persist(state) {
   await rename('state.json.tmp', 'state.json');
   if (process.env.PERSIST_GIT === 'true') {
     execFileSync('git', ['add', 'state.json', 'posts.json'], { stdio: 'inherit' });
+    try { execFileSync('git', ['diff', '--cached', '--quiet']); return; }
+    catch (error) { if (error.status !== 1) throw error; }
     execFileSync('git', ['commit', '-m', 'Record Buffer queue checkpoint [skip ci]'], { stdio: 'inherit' });
     execFileSync('git', ['push', 'origin', 'HEAD'], { stdio: 'inherit' });
   }
@@ -31,7 +33,8 @@ try {
   const { env, channels } = await resolveQueueChannels(['tiktok', 'instagram', 'youtube']);
   const remote = await queuedPosts(env.BUFFER_ORGANIZATION_ID, channels.map(c => c.id), env);
   if (!dryRun) await reconcileDeliveries({ state, remote, get: id => getPost(id, env), persist, now });
-  await migrateOldSlots({ state, remote, channels, edit: (id, dueAt) => reschedulePost(id, dueAt, env), persist, now, dryRun });
+  const existingPosts = await read('posts.json');
+  await migrateOldSlots({ state, remote, channels, posts: existingPosts, env, edit: (id, dueAt, content) => reschedulePost(id, dueAt, env, undefined, content), persist, now, dryRun });
   // L'existence des objets est confirmée par le catalogue R2. Buffer valide la vidéo
   // lors de createPost; aucun HEAD supplémentaire dans le remplissage des files.
   const posts = dryRun ? (state.catalog?.posts || await read('posts.json')) : await loadCatalog({ state, persist, env });

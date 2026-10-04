@@ -22,7 +22,7 @@ export async function reconcileDeliveries({ state, remote, get, persist, now }) 
   }
   await persist(state);
 }
-export async function migrateOldSlots({ state, remote, channels, edit, persist, now, dryRun = false }) {
+export async function migrateOldSlots({ state, remote, channels, edit, persist, now, dryRun = false, posts = [], env = {} }) {
   const byId = new Map(Object.entries(state.deliveries).filter(([, d]) => d.bufferId).map(([key, d]) => [d.bufferId, { key, delivery: d }]));
   // Ne modifier que les posts de ce bot encore programmés aux anciens horaires.
   for (const post of remote) {
@@ -35,7 +35,11 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
     if (!dryRun) {
       record.delivery.scheduleUpdate = { status: 'pending', dueAt: target.dueAt };
       await persist(state); // L'édition est idempotente; une relance lit d'abord le statut distant.
-      const result = await edit(post.id, target.dueAt);
+      const sourceId = JSON.parse(record.key)[0];
+      const source = posts.find(p => p.id === sourceId);
+      if (!source) throw new Error('Source vidéo introuvable pour déplacer le post');
+      const { channelId, needsApproval, mode, ...content } = inputFor(source, channel.service, env);
+      const result = await edit(post.id, target.dueAt, { ...content, text: post.text ?? content.text });
       if (result.status !== 'scheduled' || Date.parse(result.dueAt) !== Date.parse(target.dueAt)) throw new Error('Horaire Buffer non confirmé après modification');
       Object.assign(record.delivery, { dueAt: target.dueAt, bufferStatus: result.status, scheduleUpdate: { status: 'done', dueAt: target.dueAt } });
       await persist(state);

@@ -57,7 +57,11 @@
       "bufferId": "6ac2448ffb26f2c2fb5e25f1",
       "bufferStatus": "scheduled",
       "dueAt": "2026-10-04T23:00:00.000Z",
-      "lastCheckedAt": "2026-10-04T12:49:55.458Z"
+      "lastCheckedAt": "2026-10-04T12:49:55.458Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-05T00:00:00.000Z"
+      }
     },
     "[\"r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8\",\"tiktok\"]": {
       "status": "queued",

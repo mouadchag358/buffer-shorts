@@ -1,7 +1,8 @@
 {
   "version": 1,
   "slots": {
-    "manual-user-20261003-231810": "r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8"
+    "manual-user-20261003-231810": "r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8",
+    "2026-10-04-23h": "r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0"
   },
   "deliveries": {
     "[\"r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8\",\"tiktok\"]": {
@@ -21,6 +22,11 @@
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "updatedAt": "2026-10-03T23:23:48.834Z",
       "bufferId": "6ac18e7a7d53b827e0f24ff2"
+    },
+    "[\"r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0\",\"tiktok\"]": {
+      "status": "sending",
+      "channelId": "6ac17c67ea19ca0bde6a2233",
+      "updatedAt": "2026-10-04T12:20:22.390Z"
     }
   },
   "r2ListingRequests": {

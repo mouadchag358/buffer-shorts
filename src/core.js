@@ -1,5 +1,5 @@
 const platforms = ['tiktok', 'youtube', 'facebook', 'instagram'];
-export const isFinalDelivery = d => d?.status === 'queued' || (d?.status === 'rejected' && /Video must be vertical.*YouTube Shorts/i.test(d.error || ''));
+export const isFinalDelivery = d => ['queued', 'published', 'failed_in_buffer'].includes(d?.status) || (d?.status === 'rejected' && /Video must be vertical.*YouTube Shorts/i.test(d.error || ''));
 export const deliveryKey = (id, platform) => JSON.stringify([id, platform]);
 export function slotKey(now = new Date()) {
   return `${now.toISOString().slice(0, 10)}-${now.getUTCHours() < 12 ? 'morning' : 'evening'}`;

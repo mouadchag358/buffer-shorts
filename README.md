@@ -22,11 +22,15 @@ Dans Settings → Secrets and variables → Actions :
 
 Créer la clé S3 dans Cloudflare R2 → Manage R2 API Tokens, avec **Object Read only** pour le bucket `reels`. Les deux valeurs R2 sont des secrets GitHub. L'URL publique seule ne permet pas de lister les objets. Les IDs Buffer sont récupérés avec la clé API ; le script refuse de choisir silencieusement entre plusieurs comptes d'un même réseau.
 
-## Horaires
+## Horaires et remplissage
 
-GitHub lance la préparation à **10:17 et 20:17**, heure du Maroc, pour préparer les deux prochaines publications à **23:00 et 01:00**. `customScheduled` et `dueAt` sont transmis à Buffer : ces horaires ne dépendent pas du calendrier de la file Buffer. Le fuseau suit les changements d'heure du Maroc. Les horaires restent des cibles de programmation ; Buffer et les réseaux peuvent publier avec retard.
+Le bot maintient **3 vidéos programmées d’avance par réseau** (TikTok, Instagram et YouTube). Il compte les posts `scheduled` et `sending` dans Buffer et ajoute uniquement ce qui manque. Les vidéos sortent aux créneaux **00:00 et 02:00, Africa/Casablanca** : trois vidéos couvrent donc plusieurs jours, par exemple lundi 00h, lundi 02h, mardi 00h.
 
-GitHub peut retarder ou manquer un lancement. Chaque exécution prépare les deux prochains créneaux au moins 10 minutes dans le futur, plusieurs heures à l'avance. Le second lancement réutilise les checkpoints sans renvoyer les vidéos. Les créneaux manqués ne sont pas envoyés en rafale. Le suivi par date/créneau empêche de sélectionner une autre vidéo quand ce créneau est déjà programmé.
+GitHub vérifie chaque heure à la minute 17. Le script appelle Buffer et R2 uniquement si **12 heures** se sont écoulées depuis son dernier passage, enregistré avant le réseau. Les erreurs consomment aussi ce passage. Un lancement manuel force la synchronisation. Buffer publie aux dates `dueAt`, indépendamment du remplissage. Les posts déjà prévus par ce bot à 23h/01h sont déplacés vers le prochain créneau 00h/02h avec `editPost`, sans les recréer.
+
+Chaque réseau a sa propre sélection. Un refus explicite de vidéo horizontale sur YouTube Shorts est conservé, puis le bot essaie la suivante dans le même créneau. Les autres refus arrêtent uniquement ce réseau. Une réponse incertaine arrête toute nouvelle création. Le maximum est de 18 tentatives de création par passage et de 12 par réseau ; aucune nouvelle tentative automatique sur erreur réseau. Une page Buffer de 100 posts maximum est lue, sans pagination ; 12 lectures maximum pour réconcilier les envois précédents. Les posts ajoutés hors de ce bot sont comptés mais ne sont pas modifiés.
+
+Le workflow **Compléter les files Buffer maintenant** se lance en modifiant `.github/requests/sync.json` avec un nouvel `id`. Une demande terminée n’est pas répétée. Le workflow de publication immédiate reste disponible et utilise une nouvelle vidéo hors de la file programmée.
 
 ## Catalogue automatique
 
@@ -39,10 +43,11 @@ Une page de 1000 objets maximum est lue. Si le bucket contient davantage d'objet
 ## Limites Cloudflare
 
 - Listing : **2 tentatives maximum par jour UTC**, sans nouvelle tentative automatique, sans pagination ; cache après succès. Une erreur compte comme tentative. HTTP 429 impose une pause d'une heure.
-- Vérification vidéo par `HEAD` : **2 par exécution, 4 par jour UTC**, sans nouvelle tentative ni redirection automatique ; HTTP 429 impose au moins une heure de pause ou davantage selon `Retry-After`.
+- Remplissage : aucun HEAD ; le catalogue confirme les objets et Buffer valide les vidéos.
+- Publication immédiate par `HEAD` : **2 par exécution, 4 par jour UTC**, sans nouvelle tentative ni redirection automatique ; HTTP 429 impose au moins une heure de pause ou davantage selon `Retry-After`.
 - Compteurs commit/push avant chaque appel, intervalle minimum de 10 secondes pour chaque type de requête.
 
-Le maximum du script est donc 2 listings + 4 vérifications par jour UTC. En usage normal : un listing et deux vérifications (parfois deux listings autour de minuit UTC). Les téléchargements de Buffer et des réseaux restent indépendants de ces limites. Ne pas effacer les compteurs ni lancer plusieurs exécutions locales simultanées.
+Le maximum du script est donc 2 listings + 4 vérifications par jour UTC. En remplissage normal : un listing par jour UTC et aucune vérification HEAD. Les téléchargements de Buffer et des réseaux restent indépendants de ces limites. Ne pas effacer les compteurs ni lancer plusieurs exécutions locales simultanées.
 
 ## Essai
 
@@ -79,7 +84,7 @@ Pour débloquer une réponse incertaine, vérifier la file et l'historique Buffe
 
 ## Demande immédiate
 
-Une modification de `.github/requests/publish-now.json` lance le workflow **Publier une vidéo maintenant**. Donner un nouvel `id` pour chaque demande autorisée. Ce workflow utilise `shareNow` sur les trois réseaux, conserve les protections et partage la même concurrence que le workflow planifié. Une relance avec le même ID ignore les destinations déjà acceptées. Une demande immédiate s'ajoute aux créneaux quotidiens de 23 h et 01 h.
+Une modification de `.github/requests/publish-now.json` lance le workflow **Publier une vidéo maintenant**. Donner un nouvel `id` pour chaque demande autorisée. Ce workflow utilise `shareNow` sur les trois réseaux, conserve les protections et partage la même concurrence que le workflow planifié. Une relance avec le même ID ignore les destinations déjà acceptées. Une demande immédiate s'ajoute aux créneaux quotidiens de 00 h et 02 h.
 
 Un refus explicite sur un réseau n'empêche pas l'envoi aux suivants. Une réponse incertaine bloque toujours les envois pour éviter les doublons. Les vidéos refusées comme non verticales pour YouTube Shorts sont ignorées pour cette destination aux prochaines relances, avec l'erreur conservée dans le suivi. Corriger le format et supprimer uniquement l'entrée rejetée pour réessayer YouTube.
 

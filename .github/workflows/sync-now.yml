@@ -1,15 +1,7 @@
-name: Maintenir trois vidéos par réseau
+name: Compléter les files Buffer maintenant
 on:
   push:
-    paths: ['.github/workflows/publish.yml']
-  schedule:
-    - cron: '17 * * * *'
-  workflow_dispatch:
-    inputs:
-      dry_run:
-        description: Simulation des files sans envoi
-        type: boolean
-        default: true
+    paths: ['.github/requests/sync.json']
 permissions:
   contents: write
 concurrency:
@@ -46,12 +38,5 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - name: Envoyer ou simuler
-        env:
-          DRY_RUN: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
-        run: |
-          if [ "$DRY_RUN" = "true" ]; then
-            npm run dry-run
-          else
-            npm start
-          fi
+      - name: Synchronisation des files demandée
+        run: node src/sync-run.js --force

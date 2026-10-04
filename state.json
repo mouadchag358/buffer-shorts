@@ -55,9 +55,10 @@
       "bufferId": "6ac2449a11a7340ba0264e7d"
     },
     "[\"r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
-      "updatedAt": "2026-10-04T12:20:43.361Z"
+      "updatedAt": "2026-10-04T12:20:45.500Z",
+      "bufferId": "6ac2449da486988a6e160a7f"
     }
   },
   "r2ListingRequests": {

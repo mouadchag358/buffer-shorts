@@ -3,7 +3,8 @@
   "slots": {
     "manual-user-20261003-231810": "r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8",
     "2026-10-04-23h": "r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0",
-    "2026-10-05-01h": "r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8"
+    "2026-10-05-01h": "r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8",
+    "manual-user-20261004-122434": "r2-56dba377a7f33278080928d1d32ad33965578271e1fd3135e28e4ff18876d47e"
   },
   "deliveries": {
     "[\"r2-ae5f4cede9c7007410d7221d0f77d3bb53411b64d3a1f15012c4384f925736d8\",\"tiktok\"]": {
@@ -59,6 +60,11 @@
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "updatedAt": "2026-10-04T12:20:45.500Z",
       "bufferId": "6ac2449da486988a6e160a7f"
+    },
+    "[\"r2-56dba377a7f33278080928d1d32ad33965578271e1fd3135e28e4ff18876d47e\",\"tiktok\"]": {
+      "status": "sending",
+      "channelId": "6ac17c67ea19ca0bde6a2233",
+      "updatedAt": "2026-10-04T12:26:29.936Z"
     }
   },
   "r2ListingRequests": {

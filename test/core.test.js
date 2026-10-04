@@ -58,16 +58,21 @@ test('Buffer distingue succès, rejet et résultat incertain', async () => {
   await assert.rejects(createPost({}, key, fake({ errors: [{ message: 'invalid' }] })));
 });
 
-test('hashtags génériques avec priorité au titre personnalisé', () => {
-  assert.equal(videoTitle({ file: 'folder/vid.mp4' }), '#fyp #fy #viral #ai');
-  assert.equal(videoTitle({ url: 'https://example.com/vid.mp4' }), '#fyp #fy #viral #ai');
+test('titres des fichiers avec priorité au titre personnalisé', () => {
+  assert.equal(videoTitle({ file: 'folder/vid.mp4' }), 'vid');
+  assert.equal(videoTitle({ url: 'https://example.com/Mon%20titre_%C3%A9t%C3%A9.mp4' }), 'Mon titre été');
   assert.equal(videoTitle({ title: '  Mon titre  ' }), 'Mon titre');
   assert.equal(videoTitle({ title: 'Autre', youtube: { title: 'Spécifique' } }), 'Spécifique');
 });
-test('YouTube et légendes utilisent les hashtags par défaut', () => {
+test('YouTube utilise le titre du fichier par défaut', () => {
   const p = { ...post, title: '', file: 'Mon_short.mp4' };
   validate([p]); const input = inputFor(p, 'youtube', env);
-  assert.equal(input.metadata.youtube.title, '#fyp #fy #viral #ai');
-  assert.equal(input.text, '#fyp #fy #viral #ai');
+  assert.equal(input.metadata.youtube.title, 'Mon short');
+  assert.equal(input.text, 'Mon short');
   assert.throws(() => validate([{ ...p, title: 'a'.repeat(101) }]));
+});
+
+test('titres arabes et limite YouTube sans couper un emoji', () => {
+  assert.equal(videoTitle({ file: 'عسل_تمارة.mp4' }), 'عسل تمارة');
+  assert.equal(videoTitle({ file: 'a'.repeat(99) + '🍯.mp4' }).length, 99);
 });

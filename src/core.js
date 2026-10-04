@@ -8,7 +8,15 @@ export function videoTitle(post) {
   const custom = post.youtube?.title ?? post.title;
   if (custom !== undefined && typeof custom !== 'string') throw new Error(`Titre invalide: ${post.id}`);
   if (custom?.trim()) return custom.trim();
-  return '#fyp #fy #viral #ai';
+  let filename = typeof post.file === 'string' ? post.file.split('/').pop() : '';
+  if (!filename && post.url) {
+    const basename = new URL(post.url).pathname.split('/').pop();
+    try { filename = decodeURIComponent(basename); } catch { filename = basename; }
+  }
+  const clean = (filename || '').replace(/\.(mp4|mov|m4v|webm|mkv)$/i, '').replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+  let title = '';
+  for (const char of clean) { if (title.length + char.length > 100) break; title += char; }
+  return title.trim() || '#fyp #fy #viral #ai';
 }
 export function validate(posts) {
   if (!Array.isArray(posts)) throw new Error('posts.json doit être une liste');

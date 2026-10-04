@@ -1,6 +1,6 @@
 # R2 → Buffer : TikTok, YouTube Shorts, Instagram Reels
 
-Le workflow lit automatiquement les vidéos MP4 du bucket R2 `reels`, génère `posts.json`, récupère les comptes liés à Buffer et programme une vidéo sur les trois réseaux à **23 h et 01 h, fuseau Africa/Casablanca**. Chaque vidéo reçoit le titre et la légende génériques `#fyp #fy #viral #ai`. Le nom du fichier sert uniquement à retrouver la vidéo et à conserver son ID stable.
+Le workflow lit automatiquement les vidéos MP4 du bucket R2 `reels`, génère `posts.json`, récupère les comptes liés à Buffer et programme une vidéo sur les trois réseaux à **23 h et 01 h, fuseau Africa/Casablanca**. Le titre vient du nom du fichier vidéo : extension retirée, `_` remplacés par des espaces et limite de 100 caractères. La légende contient ce titre suivi de `#fyp #fy #viral #ai`. Les noms servent aussi à conserver les IDs stables. Il ne s'agit pas d'une extraction des métadonnées internes ni du texte affiché dans la vidéo.
 
 ## Paramètres GitHub
 

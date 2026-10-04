@@ -140,10 +140,12 @@
       "sentAt": "2026-10-04T12:27:48.423Z"
     },
     "[\"r2-e85149ab59858a34a0344dc8bf3cb07edbb3a440667844b3281478153d41d6d7\",\"tiktok\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-06T00:00:00.000Z",
-      "updatedAt": "2026-10-04T12:53:35.382Z"
+      "updatedAt": "2026-10-04T12:53:35.382Z",
+      "bufferId": "6ac24c5f11a7340ba0279ffb",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

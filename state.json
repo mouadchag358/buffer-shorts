@@ -91,10 +91,10 @@
       "updatedAt": "2026-10-04T12:20:45.500Z",
       "bufferId": "6ac2449da486988a6e160a7f",
       "bufferStatus": "scheduled",
-      "dueAt": "2026-10-05T01:00:00.000Z",
+      "dueAt": "2026-10-05T02:00:00.000Z",
       "lastCheckedAt": "2026-10-04T12:53:35.382Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-05T02:00:00.000Z"
       }
     },

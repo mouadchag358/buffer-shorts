@@ -29,8 +29,10 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
     const record = byId.get(post.id), channel = channels.find(c => c.id === post.channelId);
     if (!record || !channel || blocked(channel) || post.status !== 'scheduled' || !post.dueAt || Date.parse(post.dueAt) <= now.getTime() + 10 * 60000) continue;
     const p = localParts(new Date(post.dueAt));
-    if (!['23', '01'].includes(p.hour) || p.minute !== '00') continue;
-    const target = queueTargets(new Date(post.dueAt), 1)[0];
+    if (['23:00', '00:20', '01:40', '03:00'].includes(p.hour + ':' + p.minute)) continue;
+    const occupied = new Set(remote.filter(other => other.id !== post.id && other.channelId === post.channelId && pending(other)).map(other => other.dueAt));
+    const target = queueTargets(now, 10).find(t => !occupied.has(t.dueAt));
+    if (!target) throw new Error('Aucun créneau libre pour la migration');
     if (remote.some(other => other.id !== post.id && other.channelId === post.channelId && other.dueAt === target.dueAt)) throw new Error('Collision de créneaux pendant la migration');
     if (!dryRun) {
       record.delivery.scheduleUpdate = { status: 'pending', dueAt: target.dueAt };
@@ -60,7 +62,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     const summary = { platform, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
     summaries.push(summary);
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
-    while (summary.queued < 3 && summary.attempts < 12 && attempts < 18) {
+    while (summary.queued < 4 && summary.attempts < 12 && attempts < 18) {
       // Un rejet de format YouTube est définitif pour ce fichier. Les autres rejets arrêtent ce réseau.
       const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !portraitRejection(working.deliveries[deliveryKey(p.id, platform)]));
       if (!post) { summary.errors.push('Plus de vidéos disponibles'); break; }
@@ -92,7 +94,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
         if (!portraitRejection(result)) { summary.errors.push(result.error || 'Refus Buffer'); break; }
       }
     }
-    if (summary.queued < 3 && !summary.errors.length) summary.errors.push('Budget de tentatives atteint');
+    if (summary.queued < 4 && !summary.errors.length) summary.errors.push('Budget de tentatives atteint');
     log(JSON.stringify(summary));
   }
   return summaries;

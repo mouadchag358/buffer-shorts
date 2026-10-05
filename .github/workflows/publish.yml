@@ -1,4 +1,4 @@
-name: Maintenir trois vidéos par réseau
+name: Maintenir quatre vidéos par réseau
 on:
   push:
     paths: ['.github/workflows/publish.yml']

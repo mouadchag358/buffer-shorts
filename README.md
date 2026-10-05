@@ -1,6 +1,6 @@
 # R2 → Buffer : TikTok, YouTube Shorts, Instagram Reels
 
-Le workflow lit automatiquement les vidéos MP4 du bucket R2 `reels`, génère `posts.json`, récupère les comptes liés à Buffer et programme une vidéo sur les trois réseaux à **23 h et 01 h, fuseau Africa/Casablanca**. Le titre vient du nom du fichier vidéo : extension retirée, `_` remplacés par des espaces et limite de 100 caractères. La légende contient ce titre suivi de `#fyp #fy #viral #ai`. Les noms servent aussi à conserver les IDs stables. Il ne s'agit pas d'une extraction des métadonnées internes ni du texte affiché dans la vidéo.
+Le workflow lit automatiquement les vidéos MP4 du bucket R2 `reels`, génère `posts.json`, récupère les comptes liés à Buffer et programme une vidéo sur les trois réseaux à **23h00, 00h20, 01h40 et 03h00, fuseau Africa/Casablanca**. Le titre vient du nom du fichier vidéo : extension retirée, `_` remplacés par des espaces et limite de 100 caractères. La légende contient ce titre suivi de `#fyp #fy #viral #ai`. Les noms servent aussi à conserver les IDs stables. Il ne s'agit pas d'une extraction des métadonnées internes ni du texte affiché dans la vidéo.
 
 ## Paramètres GitHub
 
@@ -24,9 +24,9 @@ Créer la clé S3 dans Cloudflare R2 → Manage R2 API Tokens, avec **Object Rea
 
 ## Horaires et remplissage
 
-Le bot maintient **3 vidéos programmées d’avance par réseau** (TikTok, Instagram et YouTube). Il compte les posts `scheduled` et `sending` dans Buffer et ajoute uniquement ce qui manque. Les vidéos sortent aux créneaux **00:00 et 02:00, Africa/Casablanca** : trois vidéos couvrent donc plusieurs jours, par exemple lundi 00h, lundi 02h, mardi 00h.
+Le bot maintient **4 vidéos programmées d’avance par réseau** (TikTok, Instagram et YouTube). Il compte les posts `scheduled` et `sending` dans Buffer et ajoute uniquement ce qui manque. Les vidéos sortent aux créneaux **23:00, 00:20, 01:40 et 03:00, Africa/Casablanca**, soit quatre vidéos par réseau et par nuit.
 
-GitHub vérifie chaque heure à la minute 17. Le script appelle Buffer et R2 uniquement si **12 heures** se sont écoulées depuis son dernier passage, enregistré avant le réseau. Les erreurs consomment aussi ce passage. Un lancement manuel force la synchronisation. Buffer publie aux dates `dueAt`, indépendamment du remplissage. Les posts déjà prévus par ce bot à 23h/01h sont déplacés vers le prochain créneau 00h/02h avec `editPost`, sans les recréer.
+GitHub vérifie chaque heure à la minute 17. Le script appelle Buffer et R2 uniquement si **12 heures** se sont écoulées depuis son dernier passage, enregistré avant le réseau. Les erreurs consomment aussi ce passage. Un lancement manuel force la synchronisation. Buffer publie aux dates `dueAt`, indépendamment du remplissage. Les posts déjà prévus par ce bot aux anciens horaires sont déplacés vers les prochains créneaux libres avec `editPost`, sans les recréer.
 
 Chaque réseau a sa propre sélection. Un refus explicite de vidéo horizontale sur YouTube Shorts est conservé, puis le bot essaie la suivante dans le même créneau. Les autres refus arrêtent uniquement ce réseau. Une réponse incertaine arrête toute nouvelle création. Le maximum est de 18 tentatives de création par passage et de 12 par réseau ; aucune nouvelle tentative automatique sur erreur réseau. Une page Buffer de 100 posts maximum est lue, sans pagination ; 12 lectures maximum pour réconcilier les envois précédents. Les posts ajoutés hors de ce bot sont comptés mais ne sont pas modifiés.
 
@@ -84,7 +84,7 @@ Pour débloquer une réponse incertaine, vérifier la file et l'historique Buffe
 
 ## Demande immédiate
 
-Une modification de `.github/requests/publish-now.json` lance le workflow **Publier une vidéo maintenant**. Donner un nouvel `id` pour chaque demande autorisée. Ce workflow utilise `shareNow` sur les trois réseaux, conserve les protections et partage la même concurrence que le workflow planifié. Une relance avec le même ID ignore les destinations déjà acceptées. Une demande immédiate s'ajoute aux créneaux quotidiens de 00 h et 02 h.
+Une modification de `.github/requests/publish-now.json` lance le workflow **Publier une vidéo maintenant**. Donner un nouvel `id` pour chaque demande autorisée. Ce workflow utilise `shareNow` sur les trois réseaux, conserve les protections et partage la même concurrence que le workflow planifié. Une relance avec le même ID ignore les destinations déjà acceptées. Une demande immédiate s'ajoute aux créneaux quotidiens de 23h00, 00h20, 01h40 et 03h00.
 
 Un refus explicite sur un réseau n'empêche pas l'envoi aux suivants. Une réponse incertaine bloque toujours les envois pour éviter les doublons. Les vidéos refusées comme non verticales pour YouTube Shorts sont ignorées pour cette destination aux prochaines relances, avec l'erreur conservée dans le suivi. Corriger le format et supprimer uniquement l'entrée rejetée pour réessayer YouTube.
 

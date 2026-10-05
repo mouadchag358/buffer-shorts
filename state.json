@@ -398,6 +398,12 @@
       "updatedAt": "2026-10-05T20:41:24.732Z",
       "bufferId": "6ac40b9f5b14a0191169a7c9",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-6cea629479505589ac1c59a5e965933288ee7cff1d6621c9f330db578b189e33\",\"youtube\"]": {
+      "status": "sending",
+      "channelId": "6ac17ba1ea19ca0bde6a0976",
+      "dueAt": "2026-10-07T03:00:00.000Z",
+      "updatedAt": "2026-10-05T20:41:24.732Z"
     }
   },
   "r2ListingRequests": {

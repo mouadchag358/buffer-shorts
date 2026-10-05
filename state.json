@@ -156,7 +156,7 @@
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c5f11a7340ba0279ffb",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-05T23:00:00.000Z"
@@ -169,7 +169,7 @@
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c6211a7340ba027a06b",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-05T23:00:00.000Z"
@@ -200,7 +200,7 @@
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c716f5f5d018da20a67",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-05T23:00:00.000Z"
@@ -213,7 +213,7 @@
       "updatedAt": "2026-10-05T00:56:35.263Z",
       "bufferId": "6ac2f5cbfe1389e413491882",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-06T00:20:00.000Z"
@@ -226,7 +226,7 @@
       "updatedAt": "2026-10-05T00:56:35.263Z",
       "bufferId": "6ac2f5cefe1389e4134918ca",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-06T00:20:00.000Z"
@@ -239,7 +239,7 @@
       "updatedAt": "2026-10-05T00:56:35.263Z",
       "bufferId": "6ac2f5d169a169193a53daa9",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-06T00:20:00.000Z"
@@ -252,7 +252,7 @@
       "updatedAt": "2026-10-05T16:01:36.833Z",
       "bufferId": "6ac3c9e772f57e3e1947de84",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-06T01:40:00.000Z"
@@ -265,7 +265,7 @@
       "updatedAt": "2026-10-05T16:01:36.833Z",
       "bufferId": "6ac3c9ecda066553d755e582",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-06T01:40:00.000Z"
@@ -278,7 +278,7 @@
       "updatedAt": "2026-10-05T16:01:36.833Z",
       "bufferId": "6ac3c9f1887446fa05fa5c38",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-06T01:40:00.000Z"
@@ -290,7 +290,8 @@
       "dueAt": "2026-10-06T03:00:00.000Z",
       "updatedAt": "2026-10-05T20:18:52.681Z",
       "bufferId": "6ac406474e17d6a1b25654b6",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z"
     },
     "[\"r2-fd2ed108d9aed9aeaa91ab67d5ca4bb14d0372cc6edf4e32dfc38266d86e733c\",\"instagram\"]": {
       "status": "queued",
@@ -298,7 +299,8 @@
       "dueAt": "2026-10-06T03:00:00.000Z",
       "updatedAt": "2026-10-05T20:18:52.681Z",
       "bufferId": "6ac4064b38629554e3401dcd",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z"
     },
     "[\"r2-fd2ed108d9aed9aeaa91ab67d5ca4bb14d0372cc6edf4e32dfc38266d86e733c\",\"youtube\"]": {
       "status": "queued",
@@ -306,7 +308,8 @@
       "dueAt": "2026-10-06T03:00:00.000Z",
       "updatedAt": "2026-10-05T20:18:52.681Z",
       "bufferId": "6ac4064e38629554e3401e17",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T20:41:24.732Z"
     }
   },
   "r2ListingRequests": {

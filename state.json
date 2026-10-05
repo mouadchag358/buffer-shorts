@@ -156,7 +156,7 @@
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c5f11a7340ba0279ffb",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T16:01:36.833Z"
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     },
     "[\"r2-e85149ab59858a34a0344dc8bf3cb07edbb3a440667844b3281478153d41d6d7\",\"instagram\"]": {
       "status": "queued",
@@ -165,7 +165,7 @@
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c6211a7340ba027a06b",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T16:01:36.833Z"
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     },
     "[\"r2-e85149ab59858a34a0344dc8bf3cb07edbb3a440667844b3281478153d41d6d7\",\"youtube\"]": {
       "status": "published",
@@ -192,7 +192,7 @@
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c716f5f5d018da20a67",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T16:01:36.833Z"
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     },
     "[\"r2-de1dca9626ad13f75cf90dd3687ac84c6ce881dc34d990d2b9d64885a6232de4\",\"tiktok\"]": {
       "status": "queued",
@@ -201,7 +201,7 @@
       "updatedAt": "2026-10-05T00:56:35.263Z",
       "bufferId": "6ac2f5cbfe1389e413491882",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T16:01:36.833Z"
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     },
     "[\"r2-de1dca9626ad13f75cf90dd3687ac84c6ce881dc34d990d2b9d64885a6232de4\",\"instagram\"]": {
       "status": "queued",
@@ -210,7 +210,7 @@
       "updatedAt": "2026-10-05T00:56:35.263Z",
       "bufferId": "6ac2f5cefe1389e4134918ca",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T16:01:36.833Z"
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     },
     "[\"r2-de1dca9626ad13f75cf90dd3687ac84c6ce881dc34d990d2b9d64885a6232de4\",\"youtube\"]": {
       "status": "queued",
@@ -219,7 +219,7 @@
       "updatedAt": "2026-10-05T00:56:35.263Z",
       "bufferId": "6ac2f5d169a169193a53daa9",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T16:01:36.833Z"
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     },
     "[\"r2-ba6e9a16f310720191e98e1541518da4f78d1898af76af2ea1bf3f23c3ffdcf1\",\"tiktok\"]": {
       "status": "queued",
@@ -227,7 +227,8 @@
       "dueAt": "2026-10-07T00:00:00.000Z",
       "updatedAt": "2026-10-05T16:01:36.833Z",
       "bufferId": "6ac3c9e772f57e3e1947de84",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     },
     "[\"r2-ba6e9a16f310720191e98e1541518da4f78d1898af76af2ea1bf3f23c3ffdcf1\",\"instagram\"]": {
       "status": "queued",
@@ -235,7 +236,8 @@
       "dueAt": "2026-10-07T00:00:00.000Z",
       "updatedAt": "2026-10-05T16:01:36.833Z",
       "bufferId": "6ac3c9ecda066553d755e582",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     },
     "[\"r2-ba6e9a16f310720191e98e1541518da4f78d1898af76af2ea1bf3f23c3ffdcf1\",\"youtube\"]": {
       "status": "queued",
@@ -243,7 +245,8 @@
       "dueAt": "2026-10-07T00:00:00.000Z",
       "updatedAt": "2026-10-05T16:01:36.833Z",
       "bufferId": "6ac3c9f1887446fa05fa5c38",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
     }
   },
   "r2ListingRequests": {

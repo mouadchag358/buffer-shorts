@@ -24,11 +24,11 @@ Créer la clé S3 dans Cloudflare R2 → Manage R2 API Tokens, avec **Object Rea
 
 ## Horaires et remplissage
 
-Le bot maintient **4 vidéos programmées d’avance par réseau** (TikTok, Instagram et YouTube). Il compte les posts `scheduled` et `sending` dans Buffer et ajoute uniquement ce qui manque. Les vidéos sortent aux créneaux **23:00, 00:20, 01:40 et 03:00, Africa/Casablanca**, soit quatre vidéos par réseau et par nuit.
+Le bot maintient **8 vidéos programmées d’avance par réseau** (4 pour la prochaine nuit et 4 pour la suivante) (TikTok, Instagram et YouTube). Il compte les posts `scheduled` et `sending` dans Buffer et ajoute uniquement ce qui manque. Les vidéos sortent aux créneaux **23:00, 00:20, 01:40 et 03:00, Africa/Casablanca**, soit quatre vidéos par réseau et par nuit.
 
 GitHub vérifie chaque heure à la minute 17. Le script appelle Buffer et R2 uniquement si **12 heures** se sont écoulées depuis son dernier passage, enregistré avant le réseau. Les erreurs consomment aussi ce passage. Un lancement manuel force la synchronisation. Buffer publie aux dates `dueAt`, indépendamment du remplissage. Les posts déjà prévus par ce bot aux anciens horaires sont déplacés vers les prochains créneaux libres avec `editPost`, sans les recréer.
 
-Chaque réseau a sa propre sélection. Un refus explicite de vidéo horizontale sur YouTube Shorts est conservé, puis le bot essaie la suivante dans le même créneau. Les autres refus arrêtent uniquement ce réseau. Une réponse incertaine arrête toute nouvelle création. Le maximum est de 18 tentatives de création par passage et de 12 par réseau ; aucune nouvelle tentative automatique sur erreur réseau. Une page Buffer de 100 posts maximum est lue, sans pagination ; 12 lectures maximum pour réconcilier les envois précédents. Les posts ajoutés hors de ce bot sont comptés mais ne sont pas modifiés.
+Chaque réseau a sa propre sélection. Un refus explicite de vidéo horizontale sur YouTube Shorts est conservé, puis le bot essaie la suivante dans le même créneau. Les autres refus arrêtent uniquement ce réseau. Une réponse incertaine arrête toute nouvelle création. Le maximum est de 30 tentatives de création par passage et de 12 par réseau ; aucune nouvelle tentative automatique sur erreur réseau. Une page Buffer de 100 posts maximum est lue, sans pagination ; 24 lectures maximum pour réconcilier les envois précédents. Les posts ajoutés hors de ce bot sont comptés mais ne sont pas modifiés.
 
 Le workflow **Compléter les files Buffer maintenant** se lance en modifiant `.github/requests/sync.json` avec un nouvel `id`. Une demande terminée n’est pas répétée. Le workflow de publication immédiate reste disponible et utilise une nouvelle vidéo hors de la file programmée.
 

@@ -11,7 +11,7 @@ export async function reconcileDeliveries({ state, remote, get, persist, now }) 
     if (!delivery.bufferId || delivery.status !== 'queued') continue;
     let post = active.get(delivery.bufferId);
     if (!post) {
-      if (++reads > 12) throw new Error('Limite de 12 lectures de réconciliation atteinte');
+      if (++reads > 24) throw new Error('Limite de 24 lectures de réconciliation atteinte');
       post = await get(delivery.bufferId);
       if (pending(post)) { remote.push(post); active.set(post.id, post); }
     }
@@ -62,7 +62,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     const summary = { platform, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
     summaries.push(summary);
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
-    while (summary.queued < 4 && summary.attempts < 12 && attempts < 18) {
+    while (summary.queued < 8 && summary.attempts < 12 && attempts < 30) {
       // Un rejet de format YouTube est définitif pour ce fichier. Les autres rejets arrêtent ce réseau.
       const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !portraitRejection(working.deliveries[deliveryKey(p.id, platform)]));
       if (!post) { summary.errors.push('Plus de vidéos disponibles'); break; }
@@ -94,7 +94,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
         if (!portraitRejection(result)) { summary.errors.push(result.error || 'Refus Buffer'); break; }
       }
     }
-    if (summary.queued < 4 && !summary.errors.length) summary.errors.push('Budget de tentatives atteint');
+    if (summary.queued < 8 && !summary.errors.length) summary.errors.push('Budget de tentatives atteint');
     log(JSON.stringify(summary));
   }
   return summaries;

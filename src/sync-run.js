@@ -42,12 +42,12 @@ try {
     await writeFile('posts.json', JSON.stringify(posts, null, 2) + '\n'); await persist(state);
   }
   const summaries = await fillQueues({ posts, state, remote, channels, env, persist, send: input => createPost(input, env), now, dryRun });
-  const complete = summaries.every(s => s.queued >= 4 && !s.errors.length);
+  const complete = summaries.every(s => s.queued >= 8 && !s.errors.length);
   if (!dryRun) {
     state.queueSync = { ...state.queueSync, status: complete ? 'complete' : 'partial', lastCompletedAt: now.toISOString(), summaries,
       ...(request && complete ? { completedRequestId: request.id } : {}) };
     await persist(state);
   }
-  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 4 vidéos par réseau, créneaux 23h00/00h20/01h40/03h00, intervalle 12h`);
+  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 8 vidéos par réseau, créneaux 23h00/00h20/01h40/03h00, intervalle 12h`);
   if (!complete) throw new Error('Files incomplètes: consulter les résultats par réseau');
 } catch (error) { console.error(error.message); process.exitCode = 1; }

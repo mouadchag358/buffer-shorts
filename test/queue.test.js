@@ -12,46 +12,46 @@ function setup() {
   const posts = Array.from({ length: 20 }, (_, i) => ({ id: String(i), file: `${i}.mp4`, platforms: channels.map(c => c.service) }));
   return { state, saved, sent, env, posts, options: { posts, state, remote: [], channels, env, now, log: () => {}, persist: async s => saved.push(structuredClone(s)), send: async input => { assert.ok(saved.at(-1)); sent.push(input); return { status: 'queued', bufferId: `buffer-${sent.length}` }; } } };
 }
-test('4 vidéos par réseau, 23h00, 00h20, 01h40 et 03h00, relance sans doublon ou ajout', async () => {
+test('8 vidéos par réseau, 23h00, 00h20, 01h40 et 03h00, relance sans doublon ou ajout', async () => {
   const s = setup(); const summaries = await fillQueues(s.options);
-  assert.equal(s.sent.length, 12); assert.ok(summaries.every(s => s.queued === 4));
+  assert.equal(s.sent.length, 24); assert.ok(summaries.every(s => s.queued === 8));
   for (const channel of channels) {
     const items = s.sent.filter(i => i.channelId === channel.id);
-    assert.deepEqual(items.map(i => i.dueAt), queueTargets(now).map(t => t.dueAt));
+    assert.deepEqual(items.map(i => i.dueAt), queueTargets(now, 8).map(t => t.dueAt));
     assert.ok(items.every(i => ['23:00','00:20','01:40','03:00'].includes(localParts(new Date(i.dueAt)).hour + ':' + localParts(new Date(i.dueAt)).minute)));
   }
-  await fillQueues(s.options); assert.equal(s.sent.length, 12);
+  await fillQueues(s.options); assert.equal(s.sent.length, 24);
 });
 test('une publication libère une place sans republier la vidéo précédente', async () => {
   const s = setup(); await fillQueues(s.options);
   const removed = s.options.remote.shift(); s.options.now = new Date(removed.dueAt);
   const result = await fillQueues(s.options);
-  assert.equal(s.sent.length, 13); assert.equal(result[0].added, 1);
+  assert.equal(s.sent.length, 25); assert.equal(result[0].added, 1);
   assert.notEqual(s.sent.at(-1).assets[0].video.url, s.sent[0].assets[0].video.url);
 });
-test('refus des Shorts horizontaux: 4 vidéos YouTube différentes, sans renvoi aux autres réseaux', async () => {
+test('refus des Shorts horizontaux: 8 vidéos YouTube différentes, sans renvoi aux autres réseaux', async () => {
   const s = setup(); s.options.send = async input => {
     s.sent.push(input);
     return input.channelId === 'youtube' && /\/[01]\.mp4$/.test(input.assets[0].video.url)
       ? { status: 'rejected', error: 'Video must be vertical for YouTube Shorts' } : { status: 'queued', bufferId: `id-${s.sent.length}` };
   };
   const summaries = await fillQueues(s.options);
-  assert.ok(summaries.every(s => s.queued === 4)); assert.equal(summaries[2].rejected, 2);
-  assert.equal(s.sent.filter(i => i.channelId === 'tiktok').length, 4);
+  assert.ok(summaries.every(s => s.queued === 8)); assert.equal(summaries[2].rejected, 2);
+  assert.equal(s.sent.filter(i => i.channelId === 'tiktok').length, 8);
   const yt = s.sent.filter(i => i.channelId === 'youtube');
   assert.equal(yt[0].dueAt, yt[1].dueAt); assert.equal(yt[1].dueAt, yt[2].dueAt);
-  await fillQueues(s.options); assert.equal(s.sent.length, 14);
+  await fillQueues(s.options); assert.equal(s.sent.length, 26);
 });
 test('refus non lié au format: arrêter ce réseau, continuer les suivants', async () => {
   const s = setup(); s.options.send = async input => { s.sent.push(input); return input.channelId === 'tiktok' ? { status: 'rejected', error: 'Queue full' } : { status: 'queued', bufferId: `id-${s.sent.length}` }; };
   const result = await fillQueues(s.options); assert.equal(result[0].attempts, 1);
-  assert.equal(result[1].queued, 4); assert.equal(result[2].queued, 4);
+  assert.equal(result[1].queued, 8); assert.equal(result[2].queued, 8);
 });
 test('budget borné même si tous les fichiers YouTube sont horizontaux', async () => {
   const s = setup(); s.options.send = async input => input.channelId === 'youtube'
     ? { status: 'rejected', error: 'Video must be vertical for YouTube Shorts' } : { status: 'queued', bufferId: `id-${Math.random()}` };
   const result = await fillQueues(s.options);
-  assert.equal(result[2].attempts, 10); assert.equal(result.reduce((n,s) => n+s.attempts, 0), 18);
+  assert.equal(result[2].attempts, 12); assert.equal(result.reduce((n,s) => n+s.attempts, 0), 28);
 });
 test('réponse incertaine et checkpoint échoué: aucun nouvel envoi', async () => {
   const s = setup(); s.options.send = async () => { throw new Error('timeout'); };
@@ -65,16 +65,16 @@ test('simulation et comptes en pause: sans mutation durable', async () => {
   s.options.dryRun = true; s.options.channels = [{ ...channels[0], isQueuePaused: true }, ...channels.slice(1)];
   const result = await fillQueues(s.options);
   assert.deepEqual(s.state, before); assert.equal(s.sent.length+s.saved.length, 0);
-  assert.equal(result[0].queued, 0); assert.equal(result[1].queued, 4);
+  assert.equal(result[0].queued, 0); assert.equal(result[1].queued, 8);
 });
 test('posts externes comptés, collision évitée et source déjà présente réconciliée', async () => {
   const s = setup(), targets = queueTargets(now);
   s.options.remote.push({ id: 'external', channelId: 'tiktok', status: 'scheduled', dueAt: targets[0].dueAt, assets: [] });
   const result = await fillQueues(s.options);
-  assert.equal(result[0].added, 3); assert.equal(s.sent[0].dueAt, targets[1].dueAt);
+  assert.equal(result[0].added, 7); assert.equal(s.sent[0].dueAt, targets[1].dueAt);
   const t = setup(); t.options.remote.push({ id: 'found', channelId: 'tiktok', status: 'scheduled', dueAt: targets[0].dueAt, assets: [{ source: 'https://example.com/0.mp4' }] });
   await fillQueues(t.options); assert.equal(t.state.deliveries[deliveryKey('0','tiktok')].bufferId, 'found');
-  assert.equal(t.sent.filter(i=>i.channelId==='tiktok').length, 3);
+  assert.equal(t.sent.filter(i=>i.channelId==='tiktok').length, 7);
 });
 test('réconciliation des statuts réel sent et error, sans remettre ces vidéos dans la file', async () => {
   const s = setup(); s.state.deliveries = { a: { status: 'queued', bufferId: 'sent' }, b: { status: 'queued', bufferId: 'error' }, c: { status: 'queued', bufferId: 'active' } };
@@ -116,7 +116,7 @@ test('post actif absent de la liste ajouté au comptage après lecture individue
   s.state.deliveries[deliveryKey('0','tiktok')] = { status: 'queued', bufferId:'lagging' };
   await reconcileDeliveries({ state:s.state, remote, now, persist:s.options.persist, get:async()=>({id:'lagging',channelId:'tiktok',status:'scheduled',dueAt:queueTargets(now)[0].dueAt}) });
   s.options.remote = remote; const result = await fillQueues(s.options);
-  assert.equal(result[0].queued,4); assert.equal(result[0].added,3);
+  assert.equal(result[0].queued,8); assert.equal(result[0].added,7);
 });
 
 test('quatre créneaux exacts à cheval sur minuit, aussi pendant Ramadan', () => {

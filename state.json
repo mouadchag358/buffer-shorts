@@ -36,17 +36,19 @@
       "sentAt": "2026-10-03T23:24:36.639Z"
     },
     "[\"r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "updatedAt": "2026-10-04T12:20:24.840Z",
       "bufferId": "6ac24488fb26f2c2fb5e24a2",
-      "bufferStatus": "scheduled",
+      "bufferStatus": "sent",
       "dueAt": "2026-10-05T00:00:00.000Z",
-      "lastCheckedAt": "2026-10-04T12:53:35.382Z",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-05T00:00:00.000Z"
-      }
+      },
+      "externalLink": "https://tiktok.com/@ranclipo/video/7692966835616075009",
+      "sentAt": "2026-10-05T00:02:15.484Z"
     },
     "[\"r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0\",\"youtube\"]": {
       "status": "rejected",
@@ -55,17 +57,19 @@
       "error": "Invalid post: Video must be vertical (portrait orientation) for YouTube Shorts."
     },
     "[\"r2-6612909666eae42d0a2007458b406cea0fff81a88d8ce422ade40796230999c0\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "updatedAt": "2026-10-04T12:20:31.628Z",
       "bufferId": "6ac2448ffb26f2c2fb5e25f1",
-      "bufferStatus": "scheduled",
+      "bufferStatus": "sent",
       "dueAt": "2026-10-05T00:00:00.000Z",
-      "lastCheckedAt": "2026-10-04T12:53:35.382Z",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-05T00:00:00.000Z"
-      }
+      },
+      "externalLink": "https://www.instagram.com/reel/DeF3044D4n_/",
+      "sentAt": "2026-10-05T00:01:01.275Z"
     },
     "[\"r2-a354c897da7616562d424d10ae07350116de77ce4fd26381bfa64cb6b643c4f8\",\"tiktok\"]": {
       "status": "queued",
@@ -74,7 +78,7 @@
       "bufferId": "6ac24496d8dbde86e14685b1",
       "bufferStatus": "scheduled",
       "dueAt": "2026-10-05T02:00:00.000Z",
-      "lastCheckedAt": "2026-10-04T12:53:35.382Z",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-05T02:00:00.000Z"
@@ -87,7 +91,7 @@
       "bufferId": "6ac2449a11a7340ba0264e7d",
       "bufferStatus": "scheduled",
       "dueAt": "2026-10-05T02:00:00.000Z",
-      "lastCheckedAt": "2026-10-04T12:53:35.382Z",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-05T02:00:00.000Z"
@@ -100,7 +104,7 @@
       "bufferId": "6ac2449da486988a6e160a7f",
       "bufferStatus": "scheduled",
       "dueAt": "2026-10-05T02:00:00.000Z",
-      "lastCheckedAt": "2026-10-04T12:53:35.382Z",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-05T02:00:00.000Z"
@@ -145,7 +149,8 @@
       "dueAt": "2026-10-06T00:00:00.000Z",
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c5f11a7340ba0279ffb",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z"
     },
     "[\"r2-e85149ab59858a34a0344dc8bf3cb07edbb3a440667844b3281478153d41d6d7\",\"instagram\"]": {
       "status": "queued",
@@ -153,15 +158,19 @@
       "dueAt": "2026-10-06T00:00:00.000Z",
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c6211a7340ba027a06b",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z"
     },
     "[\"r2-e85149ab59858a34a0344dc8bf3cb07edbb3a440667844b3281478153d41d6d7\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-05T00:00:00.000Z",
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c6611a7340ba027a100",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z",
+      "externalLink": "https://www.youtube.com/watch?v=iXyfzlJJtnc",
+      "sentAt": "2026-10-05T00:00:09.152Z"
     },
     "[\"r2-6bb44552cecabb892ba8794446ef2cc8ad606aa76b516a78d42a3108fb7b72f3\",\"youtube\"]": {
       "status": "rejected",
@@ -176,7 +185,8 @@
       "dueAt": "2026-10-06T00:00:00.000Z",
       "updatedAt": "2026-10-04T12:53:35.382Z",
       "bufferId": "6ac24c716f5f5d018da20a67",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-05T00:56:35.263Z"
     }
   },
   "r2ListingRequests": {

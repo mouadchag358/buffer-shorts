@@ -3172,49 +3172,52 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-05T20:18:52.681Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-05T16:01:36.833Z",
+    "status": "complete",
+    "lastCompletedAt": "2026-10-05T20:18:52.681Z",
     "summaries": [
       {
         "platform": "tiktok",
-        "queued": 3,
+        "queued": 4,
         "added": 1,
         "rejected": 0,
         "attempts": 1,
         "errors": [],
         "dueAt": [
-          "2026-10-06T00:00:00.000Z",
-          "2026-10-06T02:00:00.000Z",
-          "2026-10-07T00:00:00.000Z"
+          "2026-10-05T23:00:00.000Z",
+          "2026-10-06T00:20:00.000Z",
+          "2026-10-06T01:40:00.000Z",
+          "2026-10-06T03:00:00.000Z"
         ]
       },
       {
         "platform": "instagram",
-        "queued": 3,
+        "queued": 4,
         "added": 1,
         "rejected": 0,
         "attempts": 1,
         "errors": [],
         "dueAt": [
-          "2026-10-06T00:00:00.000Z",
-          "2026-10-06T02:00:00.000Z",
-          "2026-10-07T00:00:00.000Z"
+          "2026-10-05T23:00:00.000Z",
+          "2026-10-06T00:20:00.000Z",
+          "2026-10-06T01:40:00.000Z",
+          "2026-10-06T03:00:00.000Z"
         ]
       },
       {
         "platform": "youtube",
-        "queued": 3,
+        "queued": 4,
         "added": 1,
         "rejected": 0,
         "attempts": 1,
         "errors": [],
         "dueAt": [
-          "2026-10-06T00:00:00.000Z",
-          "2026-10-06T02:00:00.000Z",
-          "2026-10-07T00:00:00.000Z"
+          "2026-10-05T23:00:00.000Z",
+          "2026-10-06T00:20:00.000Z",
+          "2026-10-06T01:40:00.000Z",
+          "2026-10-06T03:00:00.000Z"
         ]
       }
     ],
-    "completedRequestId": "queue-three-20261004-1250"
+    "completedRequestId": "manual-four-20261005-195836"
   }
 }

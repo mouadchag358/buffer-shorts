@@ -222,7 +222,11 @@
       "updatedAt": "2026-10-05T00:56:35.263Z",
       "bufferId": "6ac2f5cefe1389e4134918ca",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-05T20:18:52.681Z"
+      "lastCheckedAt": "2026-10-05T20:18:52.681Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-06T00:20:00.000Z"
+      }
     },
     "[\"r2-de1dca9626ad13f75cf90dd3687ac84c6ce881dc34d990d2b9d64885a6232de4\",\"youtube\"]": {
       "status": "queued",

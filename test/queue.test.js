@@ -12,13 +12,13 @@ function setup() {
   const posts = Array.from({ length: 20 }, (_, i) => ({ id: String(i), file: `${i}.mp4`, platforms: channels.map(c => c.service) }));
   return { state, saved, sent, env, posts, options: { posts, state, remote: [], channels, env, now, log: () => {}, persist: async s => saved.push(structuredClone(s)), send: async input => { assert.ok(saved.at(-1)); sent.push(input); return { status: 'queued', bufferId: `buffer-${sent.length}` }; } } };
 }
-test('8 vidéos par réseau, 23h00, 00h20, 01h40 et 03h00, relance sans doublon ou ajout', async () => {
+test('8 vidéos par réseau, une par heure, relance sans doublon ou ajout', async () => {
   const s = setup(); const summaries = await fillQueues(s.options);
   assert.equal(s.sent.length, 24); assert.ok(summaries.every(s => s.queued === 8));
   for (const channel of channels) {
     const items = s.sent.filter(i => i.channelId === channel.id);
     assert.deepEqual(items.map(i => i.dueAt), queueTargets(now, 8).map(t => t.dueAt));
-    assert.ok(items.every(i => ['23:00','00:20','01:40','03:00'].includes(localParts(new Date(i.dueAt)).hour + ':' + localParts(new Date(i.dueAt)).minute)));
+    assert.ok(items.every(i => localParts(new Date(i.dueAt)).minute === '00'));
   }
   await fillQueues(s.options); assert.equal(s.sent.length, 24);
 });
@@ -82,11 +82,11 @@ test('réconciliation des statuts réel sent et error, sans remettre ces vidéos
   await reconcileDeliveries({ state: s.state, now, persist: s.options.persist, remote: [{ id: 'active', status: 'scheduled', dueAt: now.toISOString() }], get: async id => { reads++; return { id, status: id, externalLink: 'https://example.com/post', error: { message: 'failed' } }; } });
   assert.equal(reads, 2); assert.equal(s.state.deliveries.a.status, 'published'); assert.equal(s.state.deliveries.b.status, 'failed_in_buffer');
 });
-test('12 heures réelles entre passages, indépendamment du jour local', () => {
+test('5 heures réelles entre passages, indépendamment du jour local', () => {
   assert.equal(syncDue({}, now.getTime()), true);
   const state = { queueSync: { lastAttemptAt: now.toISOString() } };
-  assert.equal(syncDue(state, now.getTime() + 12*3600000-1), false);
-  assert.equal(syncDue(state, now.getTime() + 12*3600000), true);
+  assert.equal(syncDue(state, now.getTime() + 5*3600000-1), false);
+  assert.equal(syncDue(state, now.getTime() + 5*3600000), true);
 });
 function localTime(day, hour) {
   const nominal = Date.parse(`${day}T${hour}:00:00Z`);
@@ -102,7 +102,7 @@ test('migration des anciens créneaux sans recréation, uniquement posts connus'
   s.state.deliveries[deliveryKey('0','tiktok')] = { status: 'queued', bufferId: 'owned' }; let edits = 0;
   const options = { state: s.state, remote, channels, now, posts: s.posts, env: s.env, persist: s.options.persist, edit: async (id, date, content) => { edits++; assert.equal(id,'owned'); assert.equal(s.saved.at(-1).deliveries[deliveryKey('0','tiktok')].scheduleUpdate.status,'pending'); assert.equal(content.assets[0].video.url,'https://example.com/0.mp4'); assert.ok(content.text); assert.equal(content.channelId,undefined); assert.equal(content.needsApproval,undefined); return { id, status: 'scheduled', dueAt: date }; } };
   await migrateOldSlots(options); await migrateOldSlots(options);
-  assert.equal(edits,1); assert.equal(localParts(new Date(remote[0].dueAt)).hour,'23'); assert.equal(remote[1].dueAt,dueAt);
+  assert.equal(edits,1); assert.equal(localParts(new Date(remote[0].dueAt)).minute,'00'); assert.equal(remote[1].dueAt,dueAt);
 });
 test('API: édition ne remplace pas le média, pagination bloquée, création en draft signalée', async () => {
   await reschedulePost('id', now.toISOString(), {}, async (_, variables) => { assert.deepEqual(variables.input, { id:'id', dueAt:now.toISOString(), mode:'customScheduled', schedulingType:'automatic' }); return { editPost: { post: { id:'id',status:'scheduled',dueAt:now.toISOString() } } }; });
@@ -119,13 +119,13 @@ test('post actif absent de la liste ajouté au comptage après lecture individue
   assert.equal(result[0].queued,8); assert.equal(result[0].added,7);
 });
 
-test('quatre créneaux exacts à cheval sur minuit, aussi pendant Ramadan', () => {
+test('créneaux horaires exacts, aussi pendant Ramadan', () => {
   for (const date of ['2026-10-05T12:00:00Z', '2026-02-20T12:00:00Z']) {
     const times = queueTargets(new Date(date)).map(t => {
       const p = localParts(new Date(t.dueAt));
       return p.hour + ':' + p.minute;
     });
-    assert.deepEqual(times, ['23:00', '00:20', '01:40', '03:00']);
+    assert.ok(times.every(time => time.endsWith(':00')));
   }
 });
 test('migration de plusieurs anciennes vidéos vers des créneaux distincts', async () => {

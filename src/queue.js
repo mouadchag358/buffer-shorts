@@ -24,12 +24,12 @@ export async function reconcileDeliveries({ state, remote, get, persist, now }) 
 }
 export async function migrateOldSlots({ state, remote, channels, edit, persist, now, dryRun = false, posts = [], env = {} }) {
   const byId = new Map(Object.entries(state.deliveries).filter(([, d]) => d.bufferId).map(([key, d]) => [d.bufferId, { key, delivery: d }]));
-  // Ne modifier que les posts de ce bot encore programmés aux anciens horaires.
+  // Ne modifier que les posts de ce bot encore programmés hors des nouveaux créneaux horaires.
   for (const post of remote) {
     const record = byId.get(post.id), channel = channels.find(c => c.id === post.channelId);
     if (!record || !channel || blocked(channel) || post.status !== 'scheduled' || !post.dueAt || Date.parse(post.dueAt) <= now.getTime() + 10 * 60000) continue;
     const p = localParts(new Date(post.dueAt));
-    if (['23:00', '00:20', '01:40', '03:00'].includes(p.hour + ':' + p.minute)) continue;
+    if (p.minute === '00') continue;
     const occupied = new Set(remote.filter(other => other.id !== post.id && other.channelId === post.channelId && pending(other)).map(other => other.dueAt));
     const target = queueTargets(now, 10).find(t => !occupied.has(t.dueAt));
     if (!target) throw new Error('Aucun créneau libre pour la migration');

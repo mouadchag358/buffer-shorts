@@ -97,7 +97,7 @@ function localTime(day, hour) {
   throw new Error('Local time unavailable');
 }
 test('migration des anciens créneaux sans recréation, uniquement posts connus', async () => {
-  const s = setup(); const dueAt = localTime('2026-10-05','02').toISOString();
+  const s = setup(); const dueAt = new Date(localTime('2026-10-05','02').getTime() + 20 * 60000).toISOString();
   const remote = [{ id: 'owned', channelId: 'tiktok', status: 'scheduled', dueAt }, { id: 'external', channelId: 'instagram', status: 'scheduled', dueAt }];
   s.state.deliveries[deliveryKey('0','tiktok')] = { status: 'queued', bufferId: 'owned' }; let edits = 0;
   const options = { state: s.state, remote, channels, now, posts: s.posts, env: s.env, persist: s.options.persist, edit: async (id, date, content) => { edits++; assert.equal(id,'owned'); assert.equal(s.saved.at(-1).deliveries[deliveryKey('0','tiktok')].scheduleUpdate.status,'pending'); assert.equal(content.assets[0].video.url,'https://example.com/0.mp4'); assert.ok(content.text); assert.equal(content.channelId,undefined); assert.equal(content.needsApproval,undefined); return { id, status: 'scheduled', dueAt: date }; } };
@@ -130,7 +130,7 @@ test('créneaux horaires exacts, aussi pendant Ramadan', () => {
 });
 test('migration de plusieurs anciennes vidéos vers des créneaux distincts', async () => {
   const s = setup();
-  const remote = ['00','02'].map((hour, i) => ({ id: 'old-' + i, channelId:'tiktok', status:'scheduled', dueAt:localTime('2026-10-05',hour).toISOString() }));
+  const remote = [['00',20],['02',40]].map(([hour, minute], i) => ({ id: 'old-' + i, channelId:'tiktok', status:'scheduled', dueAt:new Date(localTime('2026-10-05',hour).getTime() + minute * 60000).toISOString() }));
   remote.forEach((p,i) => { s.state.deliveries[deliveryKey(String(i),'tiktok')] = {status:'queued',bufferId:p.id}; });
   await migrateOldSlots({state:s.state,remote,channels,now,posts:s.posts,env:s.env,persist:s.options.persist,edit:async(id,dueAt)=>({id,dueAt,status:'scheduled'})});
   assert.deepEqual(remote.map(p=>p.dueAt),queueTargets(now,2).map(t=>t.dueAt));

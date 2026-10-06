@@ -716,10 +716,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-320d9893be3f107ccc47b2f1e2252b73880ee6e669e30837fe65aae46cf40219\",\"youtube\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T04:00:00.000Z",
-      "updatedAt": "2026-10-06T23:50:22.181Z"
+      "updatedAt": "2026-10-06T23:50:22.181Z",
+      "bufferId": "6ac5896ec5e4a189c2f765b4",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

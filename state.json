@@ -658,6 +658,12 @@
       "updatedAt": "2026-10-06T23:50:22.181Z",
       "bufferId": "6ac58952b8cf36ab20bdb333",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-fd142238740d4b4afb9b908cba86e760f5b0fd868e252da45d010e91aceb3178\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-07T01:00:00.000Z",
+      "updatedAt": "2026-10-06T23:50:22.181Z"
     }
   },
   "r2ListingRequests": {

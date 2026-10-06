@@ -24,7 +24,7 @@ try {
   const request = process.argv.includes('--force') ? await read('.github/requests/sync.json') : null;
   if (request && !/^[a-zA-Z0-9_-]{1,100}$/.test(request.id || '')) throw new Error('Demande de synchronisation invalide');
   if (!dryRun && request && state.queueSync?.completedRequestId === request.id) { console.log('Demande déjà effectuée; aucun appel réseau'); process.exit(0); }
-  if (!dryRun && !forced && !syncDue(state, now.getTime())) { console.log('Moins de 12 heures depuis le dernier passage: aucun appel Buffer ou R2'); process.exit(0); }
+  if (!dryRun && !forced && !syncDue(state, now.getTime())) { console.log('Moins de 5 heures depuis le dernier passage: aucun appel Buffer ou R2'); process.exit(0); }
   if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer avant de continuer');
   if (!dryRun) {
     state.queueSync = { ...state.queueSync, lastAttemptAt: now.toISOString(), status: 'running' };
@@ -48,6 +48,6 @@ try {
       ...(request && complete ? { completedRequestId: request.id } : {}) };
     await persist(state);
   }
-  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 8 vidéos par réseau, créneaux 23h00/00h20/01h40/03h00, intervalle 12h`);
+  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 8 vidéos par réseau, une vidéo par heure, intervalle de synchronisation 5h`);
   if (!complete) throw new Error('Files incomplètes: consulter les résultats par réseau');
 } catch (error) { console.error(error.message); process.exitCode = 1; }

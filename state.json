@@ -572,13 +572,13 @@
     "[\"r2-fd142238740d4b4afb9b908cba86e760f5b0fd868e252da45d010e91aceb3178\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-08T01:40:00.000Z",
+      "dueAt": "2026-10-06T22:00:00.000Z",
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb725eb2d92e7a5e8894",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-06T17:58:36.121Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-06T22:00:00.000Z"
       }
     },

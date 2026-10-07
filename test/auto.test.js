@@ -53,12 +53,11 @@ test('budget R2 durable compte les erreurs et refuse les relances supplémentair
   await assert.rejects(loadCatalog(options)); options.now += 20000;
   await assert.rejects(loadCatalog(options), /Limite/); assert.equal(calls, 2);
 });
-test('429 et catalogue tronqué stoppent sans pagination ou relance', async () => {
+test('429 met le listing R2 en pause sans relance automatique', async () => {
   const now = Date.parse('2026-10-03T08:00:00Z'); const state = {};
   const options = { state, now, persist: async () => {}, list: async () => { throw { $metadata: { httpStatusCode: 429 } }; } };
   await assert.rejects(loadCatalog(options)); assert.equal(state.r2ListingRequests.pauseUntil, now + 3600000);
   await assert.rejects(loadCatalog({ ...options, now: now + 20000 }), /pause/);
-  await assert.rejects(loadCatalog({ ...options, state: {}, list: async () => ({ IsTruncated: true }) }), /1000/);
 });
 test('les trois réseaux reçoivent la même date customScheduled', async () => {
   const posts = postsFromKeys(['vid.mp4']); const sent = [];

@@ -993,6 +993,12 @@
       "bufferStatus": "error",
       "lastCheckedAt": "2026-10-07T14:52:10.107Z",
       "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
+    },
+    "[\"r2-ca5dc3853581a413abe9075a53e3125d37ec6eecfb68fd0620055c936e59bce3\",\"tiktok\"]": {
+      "status": "sending",
+      "channelId": "6ac17c67ea19ca0bde6a2233",
+      "dueAt": "2026-10-07T16:00:00.000Z",
+      "updatedAt": "2026-10-07T14:52:10.107Z"
     }
   },
   "r2ListingRequests": {

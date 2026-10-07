@@ -498,7 +498,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb539ba2a17d6c8a4d72",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
       "descriptionUpdatedAt": "2026-10-07T14:52:19.317Z"
     },
     "[\"r2-cd5d45ff266a2ecc5f2c10e0483b778b3323b883648c18545304ee607c4d3e85\",\"tiktok\"]": {
@@ -537,7 +537,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb5cf3da78683bb713c0",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
       "descriptionUpdatedAt": "2026-10-07T14:52:22.421Z"
     },
     "[\"r2-6cea629479505589ac1c59a5e965933288ee7cff1d6621c9f330db578b189e33\",\"instagram\"]": {
@@ -547,7 +547,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb609ba2a17d6c8a542e",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z"
     },
     "[\"r2-cd5d45ff266a2ecc5f2c10e0483b778b3323b883648c18545304ee607c4d3e85\",\"instagram\"]": {
       "status": "published",
@@ -586,7 +586,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb6992d1ee01a6ab7bc7",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z"
     },
     "[\"r2-cd5d45ff266a2ecc5f2c10e0483b778b3323b883648c18545304ee607c4d3e85\",\"youtube\"]": {
       "status": "queued",
@@ -595,7 +595,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb6c92d1ee01a6ab7c88",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
       "descriptionUpdatedAt": "2026-10-07T14:52:17.718Z",
       "youtubeTitleUpdatedTo": "Dr. Doom gotta lock in 💀 Avengers Doomsday (2026) marvel cinema edit(720P HD) 🔥 #Shorts"
     },
@@ -636,7 +636,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb765786a94a0be6b612",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
       "descriptionUpdatedAt": "2026-10-07T14:52:20.769Z",
       "youtubeTitleUpdatedTo": "GTA 5 - Jump Stunts EP.27 Free To Use NO COPYRIGHT GAMEPLAY(480P) 🔥 #Shorts"
     },
@@ -857,14 +857,15 @@
       "sentAt": "2026-10-07T14:04:24.151Z"
     },
     "[\"r2-81378a1825b29005dda1ea5d903a05458378f1eb49cb9512d1c4460cafd3ea62\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T15:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a3158829b4601ca7099",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
-      "descriptionUpdatedAt": "2026-10-07T14:52:16.188Z"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "descriptionUpdatedAt": "2026-10-07T14:52:16.188Z",
+      "error": "TikTok has detected a large number of posts published through the API for this channel. Wait 24 hours before trying to publish again."
     },
     "[\"r2-af8fad6e11fe6bbf67ab868395e9542d5731b176cb65b739ea1700021770d750\",\"instagram\"]": {
       "status": "published",
@@ -922,13 +923,15 @@
       "sentAt": "2026-10-07T14:02:30.750Z"
     },
     "[\"r2-81378a1825b29005dda1ea5d903a05458378f1eb49cb9512d1c4460cafd3ea62\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T15:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a44e9ee972c35d29c76",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "externalLink": "https://www.instagram.com/reel/DeMoebeEebC/",
+      "sentAt": "2026-10-07T15:02:53.668Z"
     },
     "[\"r2-af8fad6e11fe6bbf67ab868395e9542d5731b176cb65b739ea1700021770d750\",\"youtube\"]": {
       "status": "published",
@@ -995,124 +998,160 @@
       "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
     },
     "[\"r2-ca5dc3853581a413abe9075a53e3125d37ec6eecfb68fd0620055c936e59bce3\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T16:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65ca994bb0cda4b2271fa",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "TikTok has detected a large number of posts published through the API for this channel. Wait 24 hours before trying to publish again."
     },
     "[\"r2-865951f88a2fc18d5af7cdb6dfc2de1d8a86f3afd868b59fd96cc80d0554a1fe\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T17:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65caec1b4a8d1c3cbb4fe",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "TikTok has detected a large number of posts published through the API for this channel. Wait 24 hours before trying to publish again."
     },
     "[\"r2-53d849b18de49f51129f84639566fa1822a693298a2e1d050dd79c9254c7d50b\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T18:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cb1a91c545235ecafb2",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "TikTok has detected a large number of posts published through the API for this channel. Wait 24 hours before trying to publish again."
     },
     "[\"r2-c30c0f7de664ae79a3b05259d61b850b3de72c660b2a8d22f540f7672d865d6a\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T19:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cb5a91c545235ecb04d",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "TikTok has detected a large number of posts published through the API for this channel. Wait 24 hours before trying to publish again."
     },
     "[\"r2-b57448e29d1b0e772a02b7ac485e694b7624c5ca6e55801cb70e2e2ddf4ed95a\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T20:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cb9b18d387ab082f37a",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "externalLink": "https://tiktok.com/@ranclipo/video/7694018221795511604",
+      "sentAt": "2026-10-07T20:01:17.249Z"
     },
     "[\"r2-ca5dc3853581a413abe9075a53e3125d37ec6eecfb68fd0620055c936e59bce3\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T16:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cbcb18d387ab082f413",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "externalLink": "https://www.instagram.com/reel/DeMvRgwjKhL/",
+      "sentAt": "2026-10-07T16:01:07.758Z"
     },
     "[\"r2-865951f88a2fc18d5af7cdb6dfc2de1d8a86f3afd868b59fd96cc80d0554a1fe\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T17:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cc0a91c545235ecb1d6",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "externalLink": "https://www.instagram.com/reel/DeM2NGgEpQV/",
+      "sentAt": "2026-10-07T17:01:54.156Z"
     },
     "[\"r2-53d849b18de49f51129f84639566fa1822a693298a2e1d050dd79c9254c7d50b\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T18:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cc5c1b4a8d1c3cbb76b",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "externalLink": "https://www.instagram.com/reel/DeM9D1YjtW1/",
+      "sentAt": "2026-10-07T18:02:19.656Z"
     },
     "[\"r2-c30c0f7de664ae79a3b05259d61b850b3de72c660b2a8d22f540f7672d865d6a\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T19:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cc8c1b4a8d1c3cbb7b8",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "externalLink": "https://www.instagram.com/reel/DeND5xwDTEF/",
+      "sentAt": "2026-10-07T19:01:51.333Z"
     },
     "[\"r2-b57448e29d1b0e772a02b7ac485e694b7624c5ca6e55801cb70e2e2ddf4ed95a\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T20:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cccb18d387ab082f6d3",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "externalLink": "https://www.instagram.com/reel/DeNKyTJDhkH/",
+      "sentAt": "2026-10-07T20:01:33.880Z"
     },
     "[\"r2-ca5dc3853581a413abe9075a53e3125d37ec6eecfb68fd0620055c936e59bce3\",\"youtube\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T16:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cd0a91c545235ecb436",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
     },
     "[\"r2-865951f88a2fc18d5af7cdb6dfc2de1d8a86f3afd868b59fd96cc80d0554a1fe\",\"youtube\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T17:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cd3c1b4a8d1c3cbb96a",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
     },
     "[\"r2-53d849b18de49f51129f84639566fa1822a693298a2e1d050dd79c9254c7d50b\",\"youtube\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T18:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cd794bb0cda4b2277d1",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
     },
     "[\"r2-c30c0f7de664ae79a3b05259d61b850b3de72c660b2a8d22f540f7672d865d6a\",\"youtube\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T19:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cdac1b4a8d1c3cbba2c",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
     },
     "[\"r2-b57448e29d1b0e772a02b7ac485e694b7624c5ca6e55801cb70e2e2ddf4ed95a\",\"youtube\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T20:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65cdea91c545235ecb597",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z",
+      "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
     },
     "[\"r2-e0a25f37fab476b371dd11708927a376ffacc804282416a576fe8bdb1552f2b7\",\"youtube\"]": {
       "status": "queued",
@@ -1120,7 +1159,8 @@
       "dueAt": "2026-10-07T21:00:00.000Z",
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65ce3a91c545235ecb610",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-07T20:04:47.132Z"
     }
   },
   "r2ListingRequests": {

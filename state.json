@@ -1231,10 +1231,12 @@
       "error": "Invalid post: Video height must be at least 360px for TikTok."
     },
     "[\"r2-e0a25f37fab476b371dd11708927a376ffacc804282416a576fe8bdb1552f2b7\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T21:00:00.000Z",
-      "updatedAt": "2026-10-07T20:04:47.132Z"
+      "updatedAt": "2026-10-07T20:04:47.132Z",
+      "bufferId": "6ac6a6122a8ddf9255ccb71b",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

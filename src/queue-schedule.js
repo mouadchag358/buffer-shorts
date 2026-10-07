@@ -35,7 +35,7 @@ export function platformQueueTargets(now = new Date(), platform = 'instagram', c
   const targets = [];
   const nowParts = localParts(now);
   const today = `${nowParts.year}-${nowParts.month}-${nowParts.day}`;
-  const startProbe = new Date(now.getTime() + 12 * 3600000);
+  const startProbe = new Date(now.getTime() + 10 * 60000);
   const allowedHours = new Set(['00', '06', '12', '18']);
 
   // YouTube/TikTok: 4 publications par jour, à partir de demain (heure Maroc).

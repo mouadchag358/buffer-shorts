@@ -49,6 +49,47 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
     post.dueAt = target.dueAt;
   }
 }
+
+export async function refreshScheduledDescriptions({ posts, state, remote, channels, env, edit, persist, dryRun = false }) {
+  const channelById = new Map(channels.map(channel => [channel.id, channel]));
+  const byBufferId = new Map(
+    Object.entries(state.deliveries || {})
+      .filter(([, delivery]) => delivery?.bufferId)
+      .map(([key, delivery]) => [delivery.bufferId, { key, delivery }])
+  );
+  let updated = 0;
+
+  for (const remotePost of remote) {
+    if (remotePost.status !== 'scheduled') continue;
+    const channel = channelById.get(remotePost.channelId);
+    if (!channel || !['youtube', 'tiktok'].includes(channel.service)) continue;
+
+    const record = byBufferId.get(remotePost.id);
+    if (!record) continue;
+    const [postId, platform] = JSON.parse(record.key);
+    if (platform !== channel.service) continue;
+
+    const source = posts.find(post => post.id === postId);
+    if (!source) continue;
+
+    const { channelId, needsApproval, mode, ...content } = inputFor(source, platform, env);
+    const desiredText = content.text;
+    if (!desiredText || remotePost.text === desiredText) continue;
+
+    if (!dryRun) {
+      const result = await edit(remotePost.id, remotePost.dueAt, { ...content, text: desiredText });
+      if (result.status !== 'scheduled') throw new Error(`Description Buffer non confirmée: ${remotePost.id}`);
+      record.delivery.descriptionUpdatedAt = new Date().toISOString();
+      await persist(state);
+    }
+
+    remotePost.text = desiredText;
+    updated++;
+  }
+
+  return updated;
+}
+
 export async function fillQueues({ posts, state, remote, channels, env, persist, send, now = new Date(), dryRun = false, log = console.log }) {
   validate(posts);
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');

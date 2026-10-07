@@ -1003,10 +1003,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-865951f88a2fc18d5af7cdb6dfc2de1d8a86f3afd868b59fd96cc80d0554a1fe\",\"tiktok\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T17:00:00.000Z",
-      "updatedAt": "2026-10-07T14:52:10.107Z"
+      "updatedAt": "2026-10-07T14:52:10.107Z",
+      "bufferId": "6ac65caec1b4a8d1c3cbb4fe",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

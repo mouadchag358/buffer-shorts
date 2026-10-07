@@ -1318,10 +1318,12 @@
       "error": "Invalid post: Video height must be at least 360px for YouTube Shorts., Video must be vertical (portrait orientation) for YouTube Shorts."
     },
     "[\"r2-c60498ef64b7012eb2f0f99f176473078019b36a6d87f002d09ff9652a6621a1\",\"youtube\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-09T18:00:47.132Z",
-      "updatedAt": "2026-10-07T20:04:47.132Z"
+      "updatedAt": "2026-10-07T20:04:47.132Z",
+      "bufferId": "6ac6a63ae385dfed92326574",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

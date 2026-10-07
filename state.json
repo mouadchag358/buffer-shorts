@@ -494,14 +494,14 @@
     "[\"r2-6cea629479505589ac1c59a5e965933288ee7cff1d6621c9f330db578b189e33\",\"tiktok\"]": {
       "status": "queued",
       "channelId": "6ac17c67ea19ca0bde6a2233",
-      "dueAt": "2026-10-07T23:00:00.000Z",
+      "dueAt": "2026-10-08T00:00:47.132Z",
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb539ba2a17d6c8a4d72",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-07T20:04:47.132Z",
       "descriptionUpdatedAt": "2026-10-07T14:52:19.317Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-08T00:00:47.132Z"
       }
     },

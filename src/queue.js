@@ -74,12 +74,18 @@ export async function refreshScheduledDescriptions({ posts, state, remote, chann
 
     const { channelId, needsApproval, mode, ...content } = inputFor(source, platform, env);
     const desiredText = content.text;
-    if (!desiredText || remotePost.text === desiredText) continue;
+    const desiredYoutubeTitle = platform === 'youtube' ? content.metadata?.youtube?.title : null;
+    const textNeedsUpdate = Boolean(desiredText) && remotePost.text !== desiredText;
+    const titleNeedsUpdate = platform === 'youtube'
+      && Boolean(desiredYoutubeTitle)
+      && record.delivery.youtubeTitleUpdatedTo !== desiredYoutubeTitle;
+    if (!textNeedsUpdate && !titleNeedsUpdate) continue;
 
     if (!dryRun) {
       const result = await edit(remotePost.id, remotePost.dueAt, { ...content, text: desiredText });
-      if (result.status !== 'scheduled') throw new Error(`Description Buffer non confirmée: ${remotePost.id}`);
-      record.delivery.descriptionUpdatedAt = new Date().toISOString();
+      if (result.status !== 'scheduled') throw new Error(`Modification Buffer non confirmée: ${remotePost.id}`);
+      if (textNeedsUpdate) record.delivery.descriptionUpdatedAt = new Date().toISOString();
+      if (titleNeedsUpdate) record.delivery.youtubeTitleUpdatedTo = desiredYoutubeTitle;
       await persist(state);
     }
 

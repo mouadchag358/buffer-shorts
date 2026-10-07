@@ -48,6 +48,19 @@ export function videoTitle(post) {
   for (const char of clean) { if (title.length + char.length > 100) break; title += char; }
   return title.trim() || '#fyp #fy #viral #ai';
 }
+
+export function youtubeTitle(post) {
+  const base = videoTitle(post).replace(/\s*#shorts\s*$/i, '').trim();
+  const suffixes = [' 🔥 #Shorts', ' 👀 #Shorts', ' 😮 #Shorts'];
+  const suffix = suffixes[stableIndex(post.id || post.file || post.url, suffixes.length)];
+  let result = '';
+  const maxBaseLength = 100 - suffix.length;
+  for (const char of base) {
+    if (result.length + char.length > maxBaseLength) break;
+    result += char;
+  }
+  return (result.trim() || 'Short').trim() + suffix;
+}
 export function validate(posts) {
   if (!Array.isArray(posts)) throw new Error('posts.json doit être une liste');
   const ids = new Set();
@@ -57,7 +70,7 @@ export function validate(posts) {
     if (p.enabled === false) continue;
     if (!Array.isArray(p.platforms) || !p.platforms.length || new Set(p.platforms).size !== p.platforms.length || p.platforms.some(x => !platforms.includes(x))) throw new Error(`Plateformes invalides: ${p.id}`);
     if (!p.url && (!p.file || p.file.startsWith('/') || p.file.split('/').includes('..'))) throw new Error(`Fichier invalide: ${p.id}`);
-    if (p.platforms.includes('youtube') && (!videoTitle(p) || videoTitle(p).length > 100)) throw new Error(`Titre YouTube invalide: ${p.id}`);
+    if (p.platforms.includes('youtube') && (!youtubeTitle(p) || youtubeTitle(p).length > 100)) throw new Error(`Titre YouTube invalide: ${p.id}`);
   }
 }
 export function inputFor(post, platform, env) {
@@ -68,7 +81,7 @@ export function inputFor(post, platform, env) {
   const url = post.url || `${base.replace(/\/$/, '')}/${post.file.split('/').map(encodeURIComponent).join('/')}`;
   if (new URL(url).protocol !== 'https:') throw new Error('La vidéo doit avoir une URL HTTPS');
   const input = { channelId, text: platformText(post, platform), schedulingType: 'automatic', mode: 'addToQueue', needsApproval: false, assets: [{ video: { url } }] };
-  if (platform === 'youtube') input.metadata = { youtube: { categoryId: '22', madeForKids: false, privacy: 'public', ...post.youtube, title: videoTitle(post), isAiGenerated: post.isAiGenerated === true } };
+  if (platform === 'youtube') input.metadata = { youtube: { categoryId: '22', madeForKids: false, privacy: 'public', ...post.youtube, title: youtubeTitle(post), isAiGenerated: post.isAiGenerated === true } };
   if (platform === 'tiktok') input.metadata = { tiktok: { isAiGenerated: post.isAiGenerated === true } };
   if (platform === 'instagram') input.metadata = { instagram: { type: 'reel', shouldShareToFeed: true, isAiGenerated: post.isAiGenerated === true } };
   return input;

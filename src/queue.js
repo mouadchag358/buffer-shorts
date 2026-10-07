@@ -24,28 +24,46 @@ export async function reconcileDeliveries({ state, remote, get, persist, now }) 
 }
 export async function migrateOldSlots({ state, remote, channels, edit, persist, now, dryRun = false, posts = [], env = {} }) {
   const byId = new Map(Object.entries(state.deliveries).filter(([, d]) => d.bufferId).map(([key, d]) => [d.bufferId, { key, delivery: d }]));
-  // Ne modifier que les posts de ce bot encore programmés hors des nouveaux créneaux horaires.
+
   for (const post of remote) {
     const record = byId.get(post.id), channel = channels.find(c => c.id === post.channelId);
-    if (!record || !channel || blocked(channel) || post.status !== 'scheduled' || !post.dueAt || Date.parse(post.dueAt) <= now.getTime() + 10 * 60000) continue;
-    const p = localParts(new Date(post.dueAt));
-    if (p.minute === '00') continue;
-    const occupied = new Set(remote.filter(other => other.id !== post.id && other.channelId === post.channelId && pending(other)).map(other => other.dueAt));
-    const target = queueTargets(now, 10).find(t => !occupied.has(t.dueAt));
+    if (!record || !channel || blocked(channel) || post.status !== 'scheduled' || !post.dueAt) continue;
+
+    const platform = channel.service;
+    const currentParts = localParts(new Date(post.dueAt));
+    const currentDay = `${currentParts.year}-${currentParts.month}-${currentParts.day}`;
+    const nowParts = localParts(now);
+    const today = `${nowParts.year}-${nowParts.month}-${nowParts.day}`;
+
+    let needsMove = false;
+    if (platform === 'instagram') {
+      needsMove = currentParts.minute !== '00';
+    } else if (['youtube', 'tiktok'].includes(platform)) {
+      needsMove = currentDay === today || currentParts.minute !== '00' || !['00', '06', '12', '18'].includes(currentParts.hour);
+    } else {
+      continue;
+    }
+
+    if (!needsMove) continue;
+
+    const occupied = new Set(remote.filter(other => other.id !== post.id && other.channelId === channel.id && pending(other)).map(other => other.dueAt));
+    const target = platformQueueTargets(now, platform, 10).find(t => !occupied.has(t.dueAt));
     if (!target) throw new Error('Aucun créneau libre pour la migration');
-    if (remote.some(other => other.id !== post.id && other.channelId === post.channelId && other.dueAt === target.dueAt)) throw new Error('Collision de créneaux pendant la migration');
+    if (remote.some(other => other.id !== post.id && other.channelId === channel.id && other.dueAt === target.dueAt)) throw new Error('Collision de créneaux pendant la migration');
+
     if (!dryRun) {
       record.delivery.scheduleUpdate = { status: 'pending', dueAt: target.dueAt };
-      await persist(state); // L'édition est idempotente; une relance lit d'abord le statut distant.
+      await persist(state);
       const sourceId = JSON.parse(record.key)[0];
       const source = posts.find(p => p.id === sourceId);
       if (!source) throw new Error('Source vidéo introuvable pour déplacer le post');
-      const { channelId, needsApproval, mode, ...content } = inputFor(source, channel.service, env);
+      const { channelId, needsApproval, mode, ...content } = inputFor(source, platform, env);
       const result = await edit(post.id, target.dueAt, { ...content, text: post.text ?? content.text });
       if (result.status !== 'scheduled' || Date.parse(result.dueAt) !== Date.parse(target.dueAt)) throw new Error('Horaire Buffer non confirmé après modification');
       Object.assign(record.delivery, { dueAt: target.dueAt, bufferStatus: result.status, scheduleUpdate: { status: 'done', dueAt: target.dueAt } });
       await persist(state);
     }
+
     post.dueAt = target.dueAt;
   }
 }

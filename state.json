@@ -1009,6 +1009,12 @@
       "updatedAt": "2026-10-07T14:52:10.107Z",
       "bufferId": "6ac65caec1b4a8d1c3cbb4fe",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-53d849b18de49f51129f84639566fa1822a693298a2e1d050dd79c9254c7d50b\",\"tiktok\"]": {
+      "status": "sending",
+      "channelId": "6ac17c67ea19ca0bde6a2233",
+      "dueAt": "2026-10-07T18:00:00.000Z",
+      "updatedAt": "2026-10-07T14:52:10.107Z"
     }
   },
   "r2ListingRequests": {

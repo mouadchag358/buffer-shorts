@@ -498,7 +498,8 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb539ba2a17d6c8a4d72",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "descriptionUpdatedAt": "2026-10-07T14:52:19.317Z"
     },
     "[\"r2-cd5d45ff266a2ecc5f2c10e0483b778b3323b883648c18545304ee607c4d3e85\",\"tiktok\"]": {
       "status": "published",

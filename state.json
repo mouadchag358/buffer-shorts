@@ -542,7 +542,11 @@
       "bufferId": "6ac4cb5cf3da78683bb713c0",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-07T20:04:47.132Z",
-      "descriptionUpdatedAt": "2026-10-07T14:52:22.421Z"
+      "descriptionUpdatedAt": "2026-10-07T14:52:22.421Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-08T06:00:47.132Z"
+      }
     },
     "[\"r2-6cea629479505589ac1c59a5e965933288ee7cff1d6621c9f330db578b189e33\",\"instagram\"]": {
       "status": "queued",

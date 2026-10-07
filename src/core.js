@@ -1,6 +1,36 @@
 const platforms = ['tiktok', 'youtube', 'facebook', 'instagram'];
 export const isFinalDelivery = d => ['queued', 'published', 'failed_in_buffer'].includes(d?.status) || (d?.status === 'rejected' && /Video must be vertical.*YouTube Shorts/i.test(d.error || ''));
 export const deliveryKey = (id, platform) => JSON.stringify([id, platform]);
+
+const PLATFORM_HASHTAGS = {
+  youtube: [
+    '#Shorts #YouTubeShorts #Viral #Trending #AI',
+    '#Shorts #ViralVideo #TrendingShorts #AIvideo #YouTubeShorts',
+    '#YouTubeShorts #ShortsFeed #TrendingNow #Viral #AI'
+  ],
+  tiktok: [
+    '#fyp #foryou #viral #trending #ai',
+    '#foryoupage #viralvideo #tiktokviral #trending #ai',
+    '#fyp #viral #trend #aitiktok #foryou'
+  ]
+};
+
+function stableIndex(value, length) {
+  let hash = 0;
+  for (const char of String(value || '')) hash = (hash * 31 + char.codePointAt(0)) >>> 0;
+  return hash % length;
+}
+
+export function platformText(post, platform) {
+  const custom = post.descriptions?.[platform];
+  if (custom !== undefined) {
+    if (typeof custom !== 'string') throw new Error(`Description invalide: ${post.id}/${platform}`);
+    if (custom.trim()) return custom.trim();
+  }
+  const hashtags = PLATFORM_HASHTAGS[platform];
+  if (hashtags) return hashtags[stableIndex(post.id || post.file || post.url, hashtags.length)];
+  return post.text || videoTitle(post);
+}
 export function slotKey(now = new Date()) {
   return `${now.toISOString().slice(0, 10)}-${now.getUTCHours() < 12 ? 'morning' : 'evening'}`;
 }
@@ -37,7 +67,7 @@ export function inputFor(post, platform, env) {
   if (!post.url && !base) throw new Error('R2_PUBLIC_BASE_URL manquante');
   const url = post.url || `${base.replace(/\/$/, '')}/${post.file.split('/').map(encodeURIComponent).join('/')}`;
   if (new URL(url).protocol !== 'https:') throw new Error('La vidéo doit avoir une URL HTTPS');
-  const input = { channelId, text: post.text || videoTitle(post), schedulingType: 'automatic', mode: 'addToQueue', needsApproval: false, assets: [{ video: { url } }] };
+  const input = { channelId, text: platformText(post, platform), schedulingType: 'automatic', mode: 'addToQueue', needsApproval: false, assets: [{ video: { url } }] };
   if (platform === 'youtube') input.metadata = { youtube: { categoryId: '22', madeForKids: false, privacy: 'public', ...post.youtube, title: videoTitle(post), isAiGenerated: post.isAiGenerated === true } };
   if (platform === 'tiktok') input.metadata = { tiktok: { isAiGenerated: post.isAiGenerated === true } };
   if (platform === 'instagram') input.metadata = { instagram: { type: 'reel', shouldShareToFeed: true, isAiGenerated: post.isAiGenerated === true } };

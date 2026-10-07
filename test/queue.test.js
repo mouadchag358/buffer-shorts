@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fillQueues, migrateOldSlots, reconcileDeliveries } from '../src/queue.js';
-import { queueTargets, localParts, syncDue } from '../src/queue-schedule.js';
+import { queueTargets, platformQueueTargets, localParts, syncDue } from '../src/queue-schedule.js';
 import { deliveryKey } from '../src/core.js';
 import { queuedPosts, reschedulePost, createPost } from '../src/buffer.js';
 const now = new Date('2026-10-04T12:00:00Z');
@@ -12,12 +12,12 @@ function setup() {
   const posts = Array.from({ length: 20 }, (_, i) => ({ id: String(i), file: `${i}.mp4`, platforms: channels.map(c => c.service) }));
   return { state, saved, sent, env, posts, options: { posts, state, remote: [], channels, env, now, log: () => {}, persist: async s => saved.push(structuredClone(s)), send: async input => { assert.ok(saved.at(-1)); sent.push(input); return { status: 'queued', bufferId: `buffer-${sent.length}` }; } } };
 }
-test('8 vidéos par réseau, une par heure, relance sans doublon ou ajout', async () => {
+test('8 vidéos en avance: Instagram horaire, YouTube/TikTok 4 par jour', async () => {
   const s = setup(); const summaries = await fillQueues(s.options);
   assert.equal(s.sent.length, 24); assert.ok(summaries.every(s => s.queued === 8));
   for (const channel of channels) {
     const items = s.sent.filter(i => i.channelId === channel.id);
-    assert.deepEqual(items.map(i => i.dueAt), queueTargets(now, 8).map(t => t.dueAt));
+    assert.deepEqual(items.map(i => i.dueAt), platformQueueTargets(now, channel.service, 8).map(t => t.dueAt));
     assert.ok(items.every(i => localParts(new Date(i.dueAt)).minute === '00'));
   }
   await fillQueues(s.options); assert.equal(s.sent.length, 24);
@@ -68,7 +68,7 @@ test('simulation et comptes en pause: sans mutation durable', async () => {
   assert.equal(result[0].queued, 0); assert.equal(result[1].queued, 8);
 });
 test('posts externes comptés, collision évitée et source déjà présente réconciliée', async () => {
-  const s = setup(), targets = queueTargets(now);
+  const s = setup(), targets = platformQueueTargets(now, 'tiktok');
   s.options.remote.push({ id: 'external', channelId: 'tiktok', status: 'scheduled', dueAt: targets[0].dueAt, assets: [] });
   const result = await fillQueues(s.options);
   assert.equal(result[0].added, 7); assert.equal(s.sent[0].dueAt, targets[1].dueAt);
@@ -114,7 +114,7 @@ test('API: édition ne remplace pas le média, pagination bloquée, création en
 test('post actif absent de la liste ajouté au comptage après lecture individuelle', async () => {
   const s = setup(), remote = [];
   s.state.deliveries[deliveryKey('0','tiktok')] = { status: 'queued', bufferId:'lagging' };
-  await reconcileDeliveries({ state:s.state, remote, now, persist:s.options.persist, get:async()=>({id:'lagging',channelId:'tiktok',status:'scheduled',dueAt:queueTargets(now)[0].dueAt}) });
+  await reconcileDeliveries({ state:s.state, remote, now, persist:s.options.persist, get:async()=>({id:'lagging',channelId:'tiktok',status:'scheduled',dueAt:platformQueueTargets(now,'tiktok')[0].dueAt}) });
   s.options.remote = remote; const result = await fillQueues(s.options);
   assert.equal(result[0].queued,8); assert.equal(result[0].added,7);
 });
@@ -133,5 +133,5 @@ test('migration de plusieurs anciennes vidéos vers des créneaux distincts', as
   const remote = [['00',20],['02',40]].map(([hour, minute], i) => ({ id: 'old-' + i, channelId:'tiktok', status:'scheduled', dueAt:new Date(localTime('2026-10-05',hour).getTime() + minute * 60000).toISOString() }));
   remote.forEach((p,i) => { s.state.deliveries[deliveryKey(String(i),'tiktok')] = {status:'queued',bufferId:p.id}; });
   await migrateOldSlots({state:s.state,remote,channels,now,posts:s.posts,env:s.env,persist:s.options.persist,edit:async(id,dueAt)=>({id,dueAt,status:'scheduled'})});
-  assert.deepEqual(remote.map(p=>p.dueAt),queueTargets(now,2).map(t=>t.dueAt));
+  assert.deepEqual(remote.map(p=>p.dueAt),platformQueueTargets(now,'tiktok',2).map(t=>t.dueAt));
 });

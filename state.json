@@ -597,7 +597,11 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-07T20:04:47.132Z",
       "descriptionUpdatedAt": "2026-10-07T14:52:17.718Z",
-      "youtubeTitleUpdatedTo": "Dr. Doom gotta lock in 💀 Avengers Doomsday (2026) marvel cinema edit(720P HD) 🔥 #Shorts"
+      "youtubeTitleUpdatedTo": "Dr. Doom gotta lock in 💀 Avengers Doomsday (2026) marvel cinema edit(720P HD) 🔥 #Shorts",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-08T06:00:47.132Z"
+      }
     },
     "[\"r2-ea13e259331cee4c16ce18b8337787a387bf3ca48286c4d1eba051c2edc059fb\",\"youtube\"]": {
       "status": "published",

@@ -25,3 +25,27 @@ export function syncDue(state, now = Date.now()) {
   if (!Number.isFinite(previous)) throw new Error('Date de synchronisation invalide');
   return now - previous >= 5 * 3600000;
 }
+
+
+export function platformQueueTargets(now = new Date(), platform = 'instagram', count = 8) {
+  if (platform === 'instagram') return queueTargets(now, count);
+  if (!['youtube', 'tiktok'].includes(platform)) return queueTargets(now, count);
+  if (!Number.isInteger(count) || count < 1 || count > 10) throw new Error('Nombre de créneaux invalide');
+
+  const targets = [];
+  const nowParts = localParts(now);
+  const today = `${nowParts.year}-${nowParts.month}-${nowParts.day}`;
+  const startProbe = new Date(now.getTime() + 12 * 3600000);
+  const allowedHours = new Set(['00', '06', '12', '18']);
+
+  // YouTube/TikTok: 4 publications par jour, à partir de demain (heure Maroc).
+  for (let i = 0; i < 4 * 24 * 60; i++) {
+    const date = new Date(startProbe.getTime() + i * 60000);
+    const p = localParts(date);
+    const day = `${p.year}-${p.month}-${p.day}`;
+    if (day === today || p.minute !== '00' || !allowedHours.has(p.hour)) continue;
+    targets.push({ key: `${day}-${p.hour}h00`, dueAt: date.toISOString() });
+    if (targets.length === count) return targets;
+  }
+  throw new Error('Aucun créneau plateforme trouvé');
+}

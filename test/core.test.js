@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { processSlot, inputFor, slotKey, validate, deliveryKey, videoTitle } from '../src/core.js';
+import { processSlot, inputFor, slotKey, validate, deliveryKey, videoTitle, youtubeTitle } from '../src/core.js';
 import { createPost } from '../src/buffer.js';
 const post = { id: 'a', file: 'a b.mp4', title: 'Test', platforms: ['tiktok', 'youtube'] };
 const env = { BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', R2_PUBLIC_BASE_URL: 'https://media.example.com' };
@@ -42,7 +42,7 @@ test('prévalidation des destinations avant envoi', async () => {
 test('URL encodée et titre/catégorie YouTube', () => {
   const input = inputFor(post, 'youtube', env);
   assert.equal(input.assets[0].video.url, 'https://media.example.com/a%20b.mp4');
-  assert.equal(input.metadata.youtube.title, 'Test'); assert.equal(input.metadata.youtube.categoryId, '22');
+  assert.equal(input.metadata.youtube.title, 'Test 👀 #Shorts'); assert.equal(input.metadata.youtube.categoryId, '22');
 });
 test('validation et créneaux UTC', () => {
   assert.throws(() => validate([post, post]));
@@ -64,12 +64,12 @@ test('titres des fichiers avec priorité au titre personnalisé', () => {
   assert.equal(videoTitle({ title: '  Mon titre  ' }), 'Mon titre');
   assert.equal(videoTitle({ title: 'Autre', youtube: { title: 'Spécifique' } }), 'Spécifique');
 });
-test('YouTube utilise le titre du fichier par défaut', () => {
+test('YouTube utilise le titre du fichier par défaut et ajoute #Shorts', () => {
   const p = { ...post, title: '', file: 'Mon_short.mp4' };
   validate([p]); const input = inputFor(p, 'youtube', env);
-  assert.equal(input.metadata.youtube.title, 'Mon short');
-  assert.equal(input.text, 'Mon short');
-  assert.throws(() => validate([{ ...p, title: 'a'.repeat(101) }]));
+  assert.equal(input.metadata.youtube.title, 'Mon short 👀 #Shorts');
+  assert.match(input.text, /#Shorts|#YouTubeShorts/);
+  assert.ok(youtubeTitle({ ...p, title: 'a'.repeat(101) }).length <= 100);
 });
 
 test('titres arabes et limite YouTube sans couper un emoji', () => {

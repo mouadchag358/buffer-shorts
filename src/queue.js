@@ -1,5 +1,5 @@
 import { deliveryKey, inputFor, validate } from './core.js';
-import { queueTargets, localParts } from './queue-schedule.js';
+import { queueTargets, platformQueueTargets, localParts } from './queue-schedule.js';
 const pending = p => ['scheduled', 'sending'].includes(p.status);
 const accepted = d => ['queued', 'published', 'failed_in_buffer'].includes(d?.status);
 const portraitRejection = d => d?.status === 'rejected' && /Video must be vertical.*YouTube Shorts/i.test(d.error || '');
@@ -109,7 +109,8 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     const summary = { platform, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
     summaries.push(summary);
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
-    while (summary.queued < 8 && summary.attempts < 12 && attempts < 30) {
+    const queueGoal = platform === 'instagram' ? 8 : 8;
+    while (summary.queued < queueGoal && summary.attempts < 12 && attempts < 30) {
       // Un rejet de format YouTube est définitif pour ce fichier. Les autres rejets arrêtent ce réseau.
       const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !portraitRejection(working.deliveries[deliveryKey(p.id, platform)]));
       if (!post) { summary.errors.push('Plus de vidéos disponibles'); break; }
@@ -118,7 +119,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
       const existing = remote.find(p => p.channelId === channel.id && p.assets?.some(a => a.source === input.assets[0].video.url));
       if (existing) { working.deliveries[key] = { status: 'queued', bufferId: existing.id, channelId: channel.id, dueAt: existing.dueAt, bufferStatus: existing.status }; if (!dryRun) await persist(state); continue; }
       const occupied = new Set(remote.filter(p => p.channelId === channel.id && pending(p)).map(p => p.dueAt));
-      const target = queueTargets(now, 10).find(t => !occupied.has(t.dueAt));
+      const target = platformQueueTargets(now, platform, 10).find(t => !occupied.has(t.dueAt));
       if (!target) throw new Error('Aucun créneau libre');
       Object.assign(input, { mode: 'customScheduled', dueAt: target.dueAt });
       attempts++; summary.attempts++;
@@ -141,7 +142,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
         if (!portraitRejection(result)) { summary.errors.push(result.error || 'Refus Buffer'); break; }
       }
     }
-    if (summary.queued < 8 && !summary.errors.length) summary.errors.push('Budget de tentatives atteint');
+    if (summary.queued < queueGoal && !summary.errors.length) summary.errors.push('Budget de tentatives atteint');
     log(JSON.stringify(summary));
   }
   return summaries;

@@ -857,7 +857,8 @@
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a3158829b4601ca7099",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "descriptionUpdatedAt": "2026-10-07T14:52:16.188Z"
     },
     "[\"r2-af8fad6e11fe6bbf67ab868395e9542d5731b176cb65b739ea1700021770d750\",\"instagram\"]": {
       "status": "published",

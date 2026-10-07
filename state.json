@@ -932,10 +932,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-81378a1825b29005dda1ea5d903a05458378f1eb49cb9512d1c4460cafd3ea62\",\"youtube\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T15:00:00.000Z",
-      "updatedAt": "2026-10-07T09:00:04.157Z"
+      "updatedAt": "2026-10-07T09:00:04.157Z",
+      "bufferId": "6ac60a58050915f9a70eb3a1",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

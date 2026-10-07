@@ -818,6 +818,12 @@
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a27ec8d0b69d56cfdaf",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-ea2b889ce40736e4bde0f8edef9528d450f71803dd99ca9740c7923e15a85e12\",\"tiktok\"]": {
+      "status": "sending",
+      "channelId": "6ac17c67ea19ca0bde6a2233",
+      "dueAt": "2026-10-07T13:00:00.000Z",
+      "updatedAt": "2026-10-07T09:00:04.157Z"
     }
   },
   "r2ListingRequests": {

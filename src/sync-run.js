@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process';
 import { resolveQueueChannels } from './discovery.js';
 import { queuedPosts, getPost, reschedulePost, createPost } from './buffer.js';
 import { loadCatalog } from './catalog.js';
-import { reconcileDeliveries, migrateOldSlots, fillQueues } from './queue.js';
+import { reconcileDeliveries, migrateOldSlots, refreshScheduledDescriptions, fillQueues } from './queue.js';
 import { syncDue } from './queue-schedule.js';
 const read = async path => JSON.parse(await readFile(path, 'utf8'));
 const dryRun = process.argv.includes('--dry-run');
@@ -41,6 +41,8 @@ try {
   if (!dryRun && JSON.stringify(await read('posts.json')) !== JSON.stringify(posts)) {
     await writeFile('posts.json', JSON.stringify(posts, null, 2) + '\n'); await persist(state);
   }
+  const descriptionsUpdated = await refreshScheduledDescriptions({ posts, state, remote, channels, env, edit: (id, dueAt, content) => reschedulePost(id, dueAt, env, undefined, content), persist, dryRun });
+  console.log(`Descriptions programmées mises à jour: ${descriptionsUpdated}`);
   const summaries = await fillQueues({ posts, state, remote, channels, env, persist, send: input => createPost(input, env), now, dryRun });
   const complete = summaries.every(s => s.queued >= 8 && !s.errors.length);
   if (!dryRun) {

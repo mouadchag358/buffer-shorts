@@ -906,6 +906,12 @@
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a4b58829b4601ca7abb",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-17aee374730f1faf3b3bbb2203e4b353772f0e8f9d86070a42d7b155dcd4ccdf\",\"youtube\"]": {
+      "status": "sending",
+      "channelId": "6ac17ba1ea19ca0bde6a0976",
+      "dueAt": "2026-10-07T12:00:00.000Z",
+      "updatedAt": "2026-10-07T09:00:04.157Z"
     }
   },
   "r2ListingRequests": {

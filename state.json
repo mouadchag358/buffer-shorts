@@ -498,7 +498,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb539ba2a17d6c8a4d72",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T09:00:04.157Z"
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
     },
     "[\"r2-cd5d45ff266a2ecc5f2c10e0483b778b3323b883648c18545304ee607c4d3e85\",\"tiktok\"]": {
       "status": "published",
@@ -536,7 +536,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb5cf3da78683bb713c0",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T09:00:04.157Z"
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
     },
     "[\"r2-6cea629479505589ac1c59a5e965933288ee7cff1d6621c9f330db578b189e33\",\"instagram\"]": {
       "status": "queued",
@@ -545,7 +545,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb609ba2a17d6c8a542e",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T09:00:04.157Z"
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
     },
     "[\"r2-cd5d45ff266a2ecc5f2c10e0483b778b3323b883648c18545304ee607c4d3e85\",\"instagram\"]": {
       "status": "published",
@@ -584,7 +584,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb6992d1ee01a6ab7bc7",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T09:00:04.157Z"
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
     },
     "[\"r2-cd5d45ff266a2ecc5f2c10e0483b778b3323b883648c18545304ee607c4d3e85\",\"youtube\"]": {
       "status": "queued",
@@ -593,7 +593,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb6c92d1ee01a6ab7c88",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T09:00:04.157Z"
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
     },
     "[\"r2-ea13e259331cee4c16ce18b8337787a387bf3ca48286c4d1eba051c2edc059fb\",\"youtube\"]": {
       "status": "published",
@@ -632,7 +632,7 @@
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb765786a94a0be6b612",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-07T09:00:04.157Z"
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
     },
     "[\"r2-fd142238740d4b4afb9b908cba86e760f5b0fd868e252da45d010e91aceb3178\",\"tiktok\"]": {
       "status": "published",
@@ -796,44 +796,59 @@
       "sentAt": "2026-10-07T06:00:12.855Z"
     },
     "[\"r2-af8fad6e11fe6bbf67ab868395e9542d5731b176cb65b739ea1700021770d750\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T10:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a20050915f9a70e9bdd",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://tiktok.com/@ranclipo/video/7693863587969830165",
+      "sentAt": "2026-10-07T10:03:36.546Z"
     },
     "[\"r2-7b73327c93744d1dd72bbec0b4ffcb5446334edb4ea117b8ae63012e87f35dae\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T11:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a2358829b4601ca67c0",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://tiktok.com/@ranclipo/video/7693879626354937108",
+      "sentAt": "2026-10-07T11:04:16.987Z"
     },
     "[\"r2-17aee374730f1faf3b3bbb2203e4b353772f0e8f9d86070a42d7b155dcd4ccdf\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T12:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a27ec8d0b69d56cfdaf",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://tiktok.com/@ranclipo/video/7693894791645383957",
+      "sentAt": "2026-10-07T12:03:07.551Z"
     },
     "[\"r2-ea2b889ce40736e4bde0f8edef9528d450f71803dd99ca9740c7923e15a85e12\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T13:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a2aec8d0b69d56cfff9",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://tiktok.com/@ranclipo/video/7693910487008070932",
+      "sentAt": "2026-10-07T13:04:17.058Z"
     },
     "[\"r2-ce8f9cc173d91f5dbfa44d27e526799f63a21d148216c21283ef816fe0acedaa\",\"tiktok\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17c67ea19ca0bde6a2233",
       "dueAt": "2026-10-07T14:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a2d31ca0cc1c27b2004",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://tiktok.com/@ranclipo/video/7693925929256602901",
+      "sentAt": "2026-10-07T14:04:24.151Z"
     },
     "[\"r2-81378a1825b29005dda1ea5d903a05458378f1eb49cb9512d1c4460cafd3ea62\",\"tiktok\"]": {
       "status": "queued",
@@ -841,47 +856,63 @@
       "dueAt": "2026-10-07T15:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a3158829b4601ca7099",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
     },
     "[\"r2-af8fad6e11fe6bbf67ab868395e9542d5731b176cb65b739ea1700021770d750\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T10:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a3558829b4601ca719b",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.instagram.com/reel/DeMGERDlAIn/",
+      "sentAt": "2026-10-07T10:00:52.951Z"
     },
     "[\"r2-7b73327c93744d1dd72bbec0b4ffcb5446334edb4ea117b8ae63012e87f35dae\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T11:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a3831ca0cc1c27b233a",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.instagram.com/reel/DeMM6CkjRP7/",
+      "sentAt": "2026-10-07T11:01:43.705Z"
     },
     "[\"r2-17aee374730f1faf3b3bbb2203e4b353772f0e8f9d86070a42d7b155dcd4ccdf\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T12:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a3be72849271d019797",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.instagram.com/reel/DeMT1rICB7U/",
+      "sentAt": "2026-10-07T12:01:11.756Z"
     },
     "[\"r2-ea2b889ce40736e4bde0f8edef9528d450f71803dd99ca9740c7923e15a85e12\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T13:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a3e58829b4601ca73eb",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.instagram.com/reel/DeMaveSE8OV/",
+      "sentAt": "2026-10-07T13:02:04.120Z"
     },
     "[\"r2-ce8f9cc173d91f5dbfa44d27e526799f63a21d148216c21283ef816fe0acedaa\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-07T14:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a41e72849271d0199f8",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.instagram.com/reel/DeMhk9kiQo6/",
+      "sentAt": "2026-10-07T14:02:30.750Z"
     },
     "[\"r2-81378a1825b29005dda1ea5d903a05458378f1eb49cb9512d1c4460cafd3ea62\",\"instagram\"]": {
       "status": "queued",
@@ -889,55 +920,72 @@
       "dueAt": "2026-10-07T15:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a44e9ee972c35d29c76",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z"
     },
     "[\"r2-af8fad6e11fe6bbf67ab868395e9542d5731b176cb65b739ea1700021770d750\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T10:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a48e9ee972c35d29d0e",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.youtube.com/watch?v=Nw8Dj5kYNe8",
+      "sentAt": "2026-10-07T10:00:11.630Z"
     },
     "[\"r2-7b73327c93744d1dd72bbec0b4ffcb5446334edb4ea117b8ae63012e87f35dae\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T11:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a4b58829b4601ca7abb",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.youtube.com/watch?v=i4PB17hH7oM",
+      "sentAt": "2026-10-07T11:00:09.207Z"
     },
     "[\"r2-17aee374730f1faf3b3bbb2203e4b353772f0e8f9d86070a42d7b155dcd4ccdf\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T12:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a4eec8d0b69d56d0fda",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.youtube.com/shorts/o6P6eSvqmVA",
+      "sentAt": "2026-10-07T12:00:22.263Z"
     },
     "[\"r2-ea2b889ce40736e4bde0f8edef9528d450f71803dd99ca9740c7923e15a85e12\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-07T13:00:00.000Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a52e72849271d01a05d",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "externalLink": "https://www.youtube.com/shorts/STQmcr7xOMk",
+      "sentAt": "2026-10-07T13:00:35.800Z"
     },
     "[\"r2-ce8f9cc173d91f5dbfa44d27e526799f63a21d148216c21283ef816fe0acedaa\",\"youtube\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-07T14:00:00.000Z",
+      "dueAt": "2026-10-07T14:41:15.124Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a55ec8d0b69d56d11f8",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
     },
     "[\"r2-81378a1825b29005dda1ea5d903a05458378f1eb49cb9512d1c4460cafd3ea62\",\"youtube\"]": {
-      "status": "queued",
+      "status": "failed_in_buffer",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-07T15:00:00.000Z",
+      "dueAt": "2026-10-07T14:44:38.721Z",
       "updatedAt": "2026-10-07T09:00:04.157Z",
       "bufferId": "6ac60a58050915f9a70eb3a1",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "error",
+      "lastCheckedAt": "2026-10-07T14:52:10.107Z",
+      "error": "You've hit the daily video upload limit for an unverified YouTube account. Verify your account and retry sharing your post."
     }
   },
   "r2ListingRequests": {

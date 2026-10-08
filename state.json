@@ -1211,13 +1211,13 @@
     "[\"r2-193ec5a7648fbd578e30c4c3fe3ea43201aada7f5528cceccc1ced87b6c594b0\",\"tiktok\"]": {
       "status": "queued",
       "channelId": "6ac17c67ea19ca0bde6a2233",
-      "dueAt": "2026-10-08T18:00:47.132Z",
+      "dueAt": "2026-10-09T06:00:21.954Z",
       "updatedAt": "2026-10-07T20:04:47.132Z",
       "bufferId": "6ac6a5fc4fd14839c72498c2",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-08T09:14:21.954Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-09T06:00:21.954Z"
       }
     },

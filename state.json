@@ -1413,6 +1413,12 @@
       "updatedAt": "2026-10-08T09:14:21.954Z",
       "bufferId": "6ac75f175d76b00cd8331634",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-a31ed5b2a0814db4c0836158265de90ea4a30a86be1900ad36cee30aecf91347\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-08T14:00:00.000Z",
+      "updatedAt": "2026-10-08T09:14:21.954Z"
     }
   },
   "r2ListingRequests": {

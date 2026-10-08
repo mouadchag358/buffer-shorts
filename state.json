@@ -19831,8 +19831,8 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-08T21:45:50.273Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-08T17:25:08.462Z",
+    "status": "partial",
+    "lastCompletedAt": "2026-10-08T21:45:50.273Z",
     "summaries": [
       {
         "platform": "tiktok",
@@ -19853,19 +19853,14 @@
       },
       {
         "platform": "instagram",
-        "queued": 4,
-        "added": 4,
+        "queued": 0,
+        "added": 0,
         "rejected": 1,
-        "attempts": 5,
+        "attempts": 1,
         "errors": [
           "Invalid post: Video frame rate must be at least 23 fps for Instagram Reels."
         ],
-        "dueAt": [
-          "2026-10-08T18:00:00.000Z",
-          "2026-10-08T19:00:00.000Z",
-          "2026-10-08T20:00:00.000Z",
-          "2026-10-08T21:00:00.000Z"
-        ]
+        "dueAt": []
       },
       {
         "platform": "youtube",

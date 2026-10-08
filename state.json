@@ -1249,11 +1249,10 @@
       "lastCheckedAt": "2026-10-08T21:45:50.273Z"
     },
     "[\"r2-23e182fd73e82d0ed0fe085efbd23a0d67cc97cfa89a37c184c6cc41bf7033ff\",\"tiktok\"]": {
-      "status": "rejected",
+      "status": "sending",
       "channelId": "6ac17c67ea19ca0bde6a2233",
-      "dueAt": "2026-10-09T00:00:08.462Z",
-      "updatedAt": "2026-10-08T17:25:08.462Z",
-      "error": "Invalid post: Video height must be at least 360px for TikTok."
+      "dueAt": "2026-10-09T00:00:50.273Z",
+      "updatedAt": "2026-10-08T21:45:50.273Z"
     },
     "[\"r2-e0a25f37fab476b371dd11708927a376ffacc804282416a576fe8bdb1552f2b7\",\"instagram\"]": {
       "status": "published",

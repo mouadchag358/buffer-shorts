@@ -15,7 +15,17 @@ async function persist(state) {
   if (process.env.PERSIST_GIT === 'true') {
     execFileSync('git', ['add', 'state.json', 'posts.json'], { stdio: 'inherit' });
     execFileSync('git', ['commit', '-m', 'Record Buffer delivery checkpoint [skip ci]'], { stdio: 'inherit' });
-    execFileSync('git', ['push', 'origin', 'HEAD'], { stdio: 'inherit' });
+    // Retenter uniquement le checkpoint Git, jamais l'envoi Buffer.
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        execFileSync('git', ['push', 'origin', 'HEAD'], { stdio: 'inherit' });
+        break;
+      } catch (error) {
+        if (attempt === 3) throw error;
+        console.warn(`Git push refusé (tentative ${attempt}/3); nouvel essai sans nouvel envoi Buffer.`);
+        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, attempt * 3000);
+      }
+    }
   }
 }
 

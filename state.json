@@ -654,7 +654,7 @@
     "[\"r2-f3b436a7cab1916ae9f6a1092ec78e27608788bcc2736005b01febf34616e13d\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-08T12:00:47.132Z",
+      "dueAt": "2026-10-09T00:00:21.954Z",
       "updatedAt": "2026-10-06T10:19:54.600Z",
       "bufferId": "6ac4cb765786a94a0be6b612",
       "bufferStatus": "scheduled",
@@ -662,7 +662,7 @@
       "descriptionUpdatedAt": "2026-10-07T14:52:20.769Z",
       "youtubeTitleUpdatedTo": "GTA 5 - Jump Stunts EP.27 Free To Use NO COPYRIGHT GAMEPLAY(480P) 🔥 #Shorts",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-09T00:00:21.954Z"
       }
     },

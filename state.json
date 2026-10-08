@@ -1535,10 +1535,11 @@
       "sentAt": "2026-10-08T21:01:57.131Z"
     },
     "[\"r2-422d4fe2a89ee12f062e92c786efefb3c9864c51d3eb73c7e2c419b0f46dfebf\",\"instagram\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-08T22:00:00.000Z",
-      "updatedAt": "2026-10-08T21:45:50.273Z"
+      "updatedAt": "2026-10-08T21:45:50.273Z",
+      "error": "Invalid post: Video frame rate must be at least 23 fps for Instagram Reels."
     }
   },
   "r2ListingRequests": {

@@ -1215,7 +1215,11 @@
       "updatedAt": "2026-10-07T20:04:47.132Z",
       "bufferId": "6ac6a5fc4fd14839c72498c2",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-08T09:14:21.954Z"
+      "lastCheckedAt": "2026-10-08T09:14:21.954Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-09T06:00:21.954Z"
+      }
     },
     "[\"r2-9c0dcb0812064b7f826660607469cc3f70b6fec716cab406fd089110ccff3531\",\"tiktok\"]": {
       "status": "queued",

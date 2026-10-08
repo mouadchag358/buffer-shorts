@@ -76,3 +76,11 @@ test('titres arabes et limite YouTube sans couper un emoji', () => {
   assert.equal(videoTitle({ file: 'عسل_تمارة.mp4' }), 'عسل تمارة');
   assert.equal(videoTitle({ file: 'a'.repeat(99) + '🍯.mp4' }).length, 99);
 });
+
+test('miniature Instagram à 1 seconde seulement', () => {
+  const instagram = inputFor(post, 'instagram', { ...env, BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' });
+  assert.equal(instagram.assets[0].video.metadata.thumbnailOffset, 1000);
+  for (const platform of ['youtube', 'tiktok']) {
+    assert.equal(inputFor(post, platform, env).assets[0].video.metadata, undefined);
+  }
+});

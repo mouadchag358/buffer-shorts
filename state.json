@@ -1700,6 +1700,12 @@
       "bufferId": "6ac8bd7bf96589ad5ba0124c",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-09T11:45:04.506Z"
+    },
+    "[\"r2-8f36d4a772eb1eb6ee5915e5275e97b62993dfdb8332c9f6312a502bd739adbe\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-09T12:00:00.000Z",
+      "updatedAt": "2026-10-09T11:45:04.506Z"
     }
   },
   "r2ListingRequests": {

@@ -1776,6 +1776,12 @@
       "dueAt": "2026-10-09T14:00:00.000Z",
       "updatedAt": "2026-10-09T11:46:45.542Z",
       "error": "Invalid post: Video frame rate must be at least 24 fps for Facebook Reels., Video width must be at least 540px for Facebook Reels., Video height must be at least 960px for Facebook Reels., Video aspect ratio is too narrow for Facebook Reels."
+    },
+    "[\"r2-f8a9cee9324ab80e2394ef903b5b3f093a9b2d7e3f21605d5e7c4a364c7c29ab\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-09T14:00:00.000Z",
+      "updatedAt": "2026-10-09T11:46:45.542Z"
     }
   },
   "r2ListingRequests": {

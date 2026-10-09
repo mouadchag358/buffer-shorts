@@ -2,7 +2,15 @@ import { deliveryKey, inputFor, validate } from './core.js';
 import { queueTargets, platformQueueTargets, localParts } from './queue-schedule.js';
 const pending = p => ['scheduled', 'sending'].includes(p.status);
 const accepted = d => ['queued', 'published', 'failed_in_buffer'].includes(d?.status);
-const portraitRejection = d => d?.status === 'rejected' && /Video must be vertical.*YouTube Shorts/i.test(d.error || '');
+// Les rejets explicites de format sont propres au réseau: on saute seulement
+// ces vidéos incompatibles, sans masquer les autres refus Buffer.
+const formatRejection = (delivery, platform) => {
+  if (delivery?.status !== 'rejected') return false;
+  const message = delivery.error || '';
+  if (platform === 'youtube') return /Video must be vertical.*YouTube Shorts/i.test(message);
+  if (platform === 'instagram') return /Video frame rate must be at least \d+(?:\.\d+)?\s*fps for Instagram Reels/i.test(message);
+  return false;
+};
 const blocked = c => c.isQueuePaused || c.isDisconnected || c.isLocked;
 export async function reconcileDeliveries({ state, remote, get, persist, now }) {
   const active = new Map(remote.map(p => [p.id, p]));
@@ -129,8 +137,8 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
     const queueGoal = platform === 'instagram' ? 8 : 8;
     while (summary.queued < queueGoal && summary.attempts < 12 && attempts < 30) {
-      // Un rejet de format YouTube est définitif pour ce fichier. Les autres rejets arrêtent ce réseau.
-      const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !portraitRejection(working.deliveries[deliveryKey(p.id, platform)]));
+      // Un refus explicite de format ne bloque pas le réseau: passer à la prochaine vidéo.
+      const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !formatRejection(working.deliveries[deliveryKey(p.id, platform)], platform));
       if (!post) { summary.errors.push('Plus de vidéos disponibles'); break; }
       const key = deliveryKey(post.id, platform);
       const input = inputFor(post, platform, env);
@@ -157,7 +165,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
         summary.queued++; summary.added++; summary.dueAt.push(target.dueAt);
       } else {
         summary.rejected++;
-        if (!portraitRejection(result)) { summary.errors.push(result.error || 'Refus Buffer'); break; }
+        if (!formatRejection(result, platform)) { summary.errors.push(result.error || 'Refus Buffer'); break; }
       }
     }
     if (summary.queued < queueGoal && !summary.errors.length) summary.errors.push('Budget de tentatives atteint');

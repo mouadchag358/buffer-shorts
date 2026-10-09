@@ -1981,6 +1981,12 @@
       "updatedAt": "2026-10-09T19:20:31.303Z",
       "bufferId": "6ac93ec7bba9419ccbdb3dae",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-04da31aa896eecd766caa67ef0162087dd3fb07e5f7191271cbd7f366d780c17\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-10T02:00:00.000Z",
+      "updatedAt": "2026-10-09T19:20:31.303Z"
     }
   },
   "r2ListingRequests": {

@@ -2042,6 +2042,12 @@
       "updatedAt": "2026-10-09T20:19:20.499Z",
       "bufferId": "6ac94c58c4de2d2b1205ad9c",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-bc162e18b436837742cf82722d1c332aa1808c63112b7b990c862adf54c68d8b\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-10T01:00:00.000Z",
+      "updatedAt": "2026-10-09T20:19:20.499Z"
     }
   },
   "r2ListingRequests": {

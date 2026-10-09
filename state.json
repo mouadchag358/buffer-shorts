@@ -1710,10 +1710,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-5cb01a38b439136ede3c82fdace67b557e728b031e7e5b809628fb4030d65195\",\"facebook\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-09T13:00:00.000Z",
-      "updatedAt": "2026-10-09T11:45:04.506Z"
+      "updatedAt": "2026-10-09T11:45:04.506Z",
+      "bufferId": "6ac8d3ce406b4b86055575f7",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

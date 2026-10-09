@@ -1,4 +1,5 @@
 name: Diagnostic Buffer sans publication
+# Inspection en lecture seule des posts programmés
 on:
   push:
     paths: ['.github/workflows/diagnose-buffer.yml']

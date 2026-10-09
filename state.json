@@ -20120,29 +20120,33 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-09T11:46:45.542Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-09T11:45:04.506Z",
+    "status": "partial",
+    "lastCompletedAt": "2026-10-09T11:46:45.542Z",
     "summaries": [
       {
         "platform": "facebook",
-        "queued": 2,
-        "added": 2,
-        "rejected": 1,
-        "attempts": 3,
+        "queued": 6,
+        "added": 4,
+        "rejected": 8,
+        "attempts": 12,
         "errors": [
-          "Invalid post: Video height must be at least 960px for Facebook Reels."
+          "Budget de tentatives atteint"
         ],
         "dueAt": [
           "2026-10-09T12:00:00.000Z",
-          "2026-10-09T13:00:00.000Z"
+          "2026-10-09T13:00:00.000Z",
+          "2026-10-09T14:00:00.000Z",
+          "2026-10-09T15:00:00.000Z",
+          "2026-10-09T16:00:00.000Z",
+          "2026-10-09T17:00:00.000Z"
         ]
       },
       {
         "platform": "instagram",
         "queued": 8,
-        "added": 1,
-        "rejected": 1,
-        "attempts": 2,
+        "added": 0,
+        "rejected": 0,
+        "attempts": 0,
         "errors": [],
         "dueAt": [
           "2026-10-09T12:00:00.000Z",

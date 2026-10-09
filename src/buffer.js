@@ -6,7 +6,17 @@ export async function graphql(query, variables, env = process.env, fetcher = fet
   });
   if (!response.ok) throw new Error(`Buffer HTTP ${response.status}; résultat à vérifier`);
   const body = await response.json();
-  if (body.errors?.length) throw new Error('Erreur GraphQL; résultat à vérifier dans Buffer');
+  if (body.errors?.length) {
+    // Explicitly missing old posts can be retired safely without replaying them.
+    // Other GraphQL errors remain blocking: never retry an uncertain write.
+    if (body.errors.every(error => error?.extensions?.code === 'NOT_FOUND'
+        && /^Post not found for id:/i.test(error.message || ''))) {
+      const missing = new Error('Ancien post Buffer introuvable');
+      missing.code = 'BUFFER_POST_NOT_FOUND';
+      throw missing;
+    }
+    throw new Error('Erreur GraphQL; résultat à vérifier dans Buffer');
+  }
   if (!body.data) throw new Error('Réponse Buffer inattendue');
   return body.data;
 }

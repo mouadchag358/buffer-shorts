@@ -1,7 +1,7 @@
 import { deliveryKey, inputFor, validate } from './core.js';
 import { queueTargets, platformQueueTargets, localParts } from './queue-schedule.js';
 const pending = p => ['scheduled', 'sending'].includes(p.status);
-const accepted = d => ['queued', 'published', 'failed_in_buffer'].includes(d?.status);
+const accepted = d => ['queued', 'published', 'failed_in_buffer', 'missing_in_buffer'].includes(d?.status);
 // Les rejets explicites de format sont propres au réseau: on saute seulement
 // ces vidéos incompatibles, sans masquer les autres refus Buffer.
 const formatRejection = (delivery, platform) => {
@@ -12,15 +12,31 @@ const formatRejection = (delivery, platform) => {
   return false;
 };
 const blocked = c => c.isQueuePaused || c.isDisconnected || c.isLocked;
-export async function reconcileDeliveries({ state, remote, get, persist, now }) {
+export async function reconcileDeliveries({ state, remote, get, persist, now, channels }) {
   const active = new Map(remote.map(p => [p.id, p]));
   let reads = 0;
+  const enabledChannels = channels ? new Set(channels.map(channel => channel.id)) : null;
   for (const delivery of Object.values(state.deliveries)) {
+    // Old TikTok checkpoints are no longer part of the selected channels.
+    if (enabledChannels && !enabledChannels.has(delivery.channelId)) continue;
     if (!delivery.bufferId || delivery.status !== 'queued') continue;
     let post = active.get(delivery.bufferId);
     if (!post) {
       if (++reads > 24) throw new Error('Limite de 24 lectures de réconciliation atteinte');
-      post = await get(delivery.bufferId);
+      try {
+        post = await get(delivery.bufferId);
+      } catch (error) {
+        if (error?.code !== 'BUFFER_POST_NOT_FOUND') throw error;
+        // Never silently post this source again: it may have been published
+        // before Buffer removed its historical record.
+        Object.assign(delivery, {
+          status: 'missing_in_buffer',
+          error: 'Ancien post absent de Buffer; republication désactivée pour éviter un doublon',
+          lastCheckedAt: now.toISOString()
+        });
+        await persist(state);
+        continue;
+      }
       if (pending(post)) { remote.push(post); active.set(post.id, post); }
     }
     Object.assign(delivery, { bufferStatus: post.status, dueAt: post.dueAt, lastCheckedAt: now.toISOString() });
@@ -122,11 +138,51 @@ export async function refreshScheduledDescriptions({ posts, state, remote, chann
   return updated;
 }
 
+
+// Initialise Facebook UNE SEULE FOIS à partir du dernier Reel Instagram confirmé.
+// Le checkpoint conserve les IDs ignorés pour ne pas rejouer le vieux catalogue,
+// même si de nouvelles vidéos sont ajoutées dans R2 ultérieurement.
+export async function initFacebookFromInstagram({ posts, state, persist, dryRun = false }) {
+  if (state.resume?.facebookFromInstagram) return state.resume.facebookFromInstagram;
+  if (Object.keys(state.deliveries).some(key => {
+    try { return JSON.parse(key)[1] === 'facebook'; } catch { return false; }
+  })) return null; // Une page ayant déjà commencé ne doit pas être réinitialisée.
+
+  const instagram = Object.entries(state.deliveries).flatMap(([key, delivery]) => {
+    try {
+      const [id, network] = JSON.parse(key);
+      return network === 'instagram' && delivery.status === 'published' && delivery.sentAt
+        ? [{ id, sentAt: delivery.sentAt }] : [];
+    } catch { return []; }
+  });
+  if (!instagram.length) return null;
+  instagram.sort((a, b) => Date.parse(b.sentAt) - Date.parse(a.sentAt));
+  const latest = instagram[0];
+  const position = posts.findIndex(post => post.id === latest.id);
+  if (position < 0) throw new Error('Dernière vidéo Instagram absente du catalogue R2 : reprise Facebook bloquée');
+
+  const skipped = new Set(posts.slice(0, position + 1).map(post => post.id));
+  // Also skip any older Instagram videos outside the current lexical sequence.
+  instagram.forEach(delivery => skipped.add(delivery.id));
+  const checkpoint = {
+    lastInstagramPostId: latest.id,
+    lastInstagramSentAt: latest.sentAt,
+    skippedPostIds: [...skipped]
+  };
+  state.resume = { ...state.resume, facebookFromInstagram: checkpoint };
+  if (!dryRun) await persist(state);
+  return checkpoint;
+}
+
 export async function fillQueues({ posts, state, remote, channels, env, persist, send, now = new Date(), dryRun = false, log = console.log }) {
   validate(posts);
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');
   if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer avant toute nouvelle création');
   const working = dryRun ? structuredClone(state) : state;
+  const resume = channels.some(c => c.service === 'facebook')
+    ? await initFacebookFromInstagram({ posts, state: working, persist, dryRun })
+    : null;
+  const facebookSkipped = new Set(resume?.skippedPostIds || []);
   let attempts = 0;
   const summaries = [];
   for (const channel of channels) {
@@ -138,7 +194,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     const queueGoal = platform === 'instagram' ? 8 : 8;
     while (summary.queued < queueGoal && summary.attempts < 12 && attempts < 30) {
       // Un refus explicite de format ne bloque pas le réseau: passer à la prochaine vidéo.
-      const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !formatRejection(working.deliveries[deliveryKey(p.id, platform)], platform));
+      const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && (platform !== 'facebook' || !facebookSkipped.has(p.id)) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !formatRejection(working.deliveries[deliveryKey(p.id, platform)], platform));
       if (!post) { summary.errors.push('Plus de vidéos disponibles'); break; }
       const key = deliveryKey(post.id, platform);
       const input = inputFor(post, platform, env);

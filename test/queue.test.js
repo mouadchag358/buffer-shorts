@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { fillQueues, migrateOldSlots, reconcileDeliveries } from '../src/queue.js';
+import { fillQueues, initFacebookFromInstagram, migrateOldSlots, reconcileDeliveries } from '../src/queue.js';
 import { queueTargets, platformQueueTargets, localParts, syncDue } from '../src/queue-schedule.js';
 import { deliveryKey } from '../src/core.js';
 import { queuedPosts, reschedulePost, createPost } from '../src/buffer.js';
@@ -169,4 +169,52 @@ test('Facebook reprend exactement la cadence horaire Instagram avec huit Reels e
   assert.ok(sent.every(p => p.metadata?.facebook?.type === 'reel'));
   await fillQueues(options);
   assert.equal(sent.length, 8);
+});
+
+test('reprendre Facebook à la dernière vidéo réellement publiée sur Instagram', async () => {
+  const posts = Array.from({ length: 15 }, (_, i) => ({ id: 'video-' + i, file: 'video-' + i + '.mp4', platforms: ['instagram','facebook'] }));
+  const state = { version: 1, slots: {}, deliveries: {
+    [deliveryKey('video-9', 'instagram')]: { status: 'published', sentAt: '2026-10-07T00:00:00Z' },
+    [deliveryKey('video-2', 'instagram')]: { status: 'published', sentAt: '2026-10-09T10:01:04Z' },
+    [deliveryKey('video-3', 'instagram')]: { status: 'queued', bufferId: 'already-scheduled', dueAt: now.toISOString() }
+  } };
+  const sent = [], saved = [];
+  const options = { posts, state, channels: [{ service:'facebook',id:'fb' }], remote: [], env: {
+    BUFFER_FACEBOOK_CHANNEL_ID:'fb',R2_PUBLIC_BASE_URL:'https://example.com'
+  }, now, persist: async s => saved.push(structuredClone(s)), log: () => {},
+  send: async input => { sent.push(input); return { status:'queued',bufferId:'fb-'+sent.length }; } };
+  const result = await fillQueues(options);
+  assert.equal(result[0].queued, 8);
+  assert.deepEqual(sent.slice(0,1).map(x=>x.assets[0].video.url),['https://example.com/video-3.mp4']);
+  assert.ok(!sent.some(x=>/video-9.mp4/.test(x.assets[0].video.url)));
+  assert.equal(state.resume.facebookFromInstagram.lastInstagramPostId,'video-2');
+  assert.ok(state.resume.facebookFromInstagram.skippedPostIds.includes('video-9'));
+  assert.ok(saved.length >= 1);
+  await fillQueues(options);
+  assert.equal(sent.length, 8);
+  // Historical marker cannot be recalculated when newer Instagram posts go live.
+  state.deliveries[deliveryKey('video-12', 'instagram')]={ status:'published', sentAt:'2026-10-10T00:00:00Z' };
+  const checkpoint = await initFacebookFromInstagram({ posts, state, persist: async()=>{} });
+  assert.equal(checkpoint.lastInstagramPostId, 'video-2');
+});
+
+test('ignore les anciennes chaînes TikTok et garde les posts Buffer introuvables sans les republier', async () => {
+  const state = { version: 1, slots: {}, deliveries: {
+    [deliveryKey('old','tiktok')]: { status:'queued', bufferId:'old-tiktok', channelId:'tt' },
+    [deliveryKey('gone','instagram')]: { status:'queued', bufferId:'missing-ig', channelId:'ig' },
+    [deliveryKey('fine','instagram')]: { status:'queued', bufferId:'valid-ig', channelId:'ig' }
+  }};
+  let calls=0, saves=0;
+  await reconcileDeliveries({ state, remote: [], channels:[{id:'ig',service:'instagram'}], now,
+    persist: async()=>{saves++}, get: async id=>{
+      calls++;
+      if(id==='old-tiktok') throw Error('Ne doit pas être interrogé');
+      if(id==='missing-ig') { const error = Error('Ancien post absent'); error.code='BUFFER_POST_NOT_FOUND'; throw error; }
+      return {id,status:'sent',sentAt:now.toISOString()};
+    }});
+  assert.equal(calls,2);
+  assert.equal(state.deliveries[deliveryKey('old','tiktok')].status,'queued');
+  assert.equal(state.deliveries[deliveryKey('gone','instagram')].status,'missing_in_buffer');
+  assert.equal(state.deliveries[deliveryKey('fine','instagram')].status,'published');
+  assert.ok(saves>=2);
 });

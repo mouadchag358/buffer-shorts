@@ -43,7 +43,7 @@ try {
   }
   const { env, channels } = await resolveQueueChannels(['facebook', 'instagram', 'youtube']);
   const remote = await queuedPosts(env.BUFFER_ORGANIZATION_ID, channels.map(c => c.id), env);
-  if (!dryRun) await reconcileDeliveries({ state, remote, get: id => getPost(id, env), persist, now });
+  if (!dryRun) await reconcileDeliveries({ state, remote, get: id => getPost(id, env), persist, now, channels });
   const existingPosts = await read('posts.json');
   await migrateOldSlots({ state, remote, channels, posts: existingPosts, env, edit: (id, dueAt, content) => reschedulePost(id, dueAt, env, undefined, content), persist, now, dryRun });
   // L'existence des objets est confirmée par le catalogue R2. Buffer valide la vidéo

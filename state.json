@@ -1989,6 +1989,12 @@
       "updatedAt": "2026-10-09T19:20:31.303Z",
       "bufferId": "6ac93ecbf91f772d456d8203",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-dc8191d9b0a0b73c32494a8a421879ca32cc9255b984a4cdecd4f28042d630ce\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-10T03:00:00.000Z",
+      "updatedAt": "2026-10-09T19:20:31.303Z"
     }
   },
   "r2ListingRequests": {

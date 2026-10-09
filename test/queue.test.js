@@ -42,6 +42,25 @@ test('refus des Shorts horizontaux: 8 vidéos YouTube différentes, sans renvoi 
   assert.equal(yt[0].dueAt, yt[1].dueAt); assert.equal(yt[1].dueAt, yt[2].dueAt);
   await fillQueues(s.options); assert.equal(s.sent.length, 26);
 });
+
+test('Instagram: ignorer les Reels sous 23 fps, remplir la file sans retenter les rejets', async () => {
+  const s = setup();
+  s.options.send = async input => {
+    s.sent.push(input);
+    return input.channelId === 'instagram' && /\/[01]\.mp4$/.test(input.assets[0].video.url)
+      ? { status: 'rejected', error: 'Invalid post: Video frame rate must be at least 23 fps for Instagram Reels.' }
+      : { status: 'queued', bufferId: `id-${s.sent.length}` };
+  };
+  const summaries = await fillQueues(s.options);
+  assert.ok(summaries.every(summary => summary.queued === 8));
+  assert.equal(summaries[1].rejected, 2);
+  assert.equal(summaries[1].added, 8);
+  assert.equal(s.sent.filter(input => input.channelId === 'instagram').length, 10);
+  assert.equal(s.state.deliveries[deliveryKey('0','instagram')].status, 'rejected');
+  await fillQueues(s.options);
+  assert.equal(s.sent.length, 26);
+});
+
 test('refus non lié au format: arrêter ce réseau, continuer les suivants', async () => {
   const s = setup(); s.options.send = async input => { s.sent.push(input); return input.channelId === 'tiktok' ? { status: 'rejected', error: 'Queue full' } : { status: 'queued', bufferId: `id-${s.sent.length}` }; };
   const result = await fillQueues(s.options); assert.equal(result[0].attempts, 1);

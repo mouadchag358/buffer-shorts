@@ -20029,38 +20029,39 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-09T11:45:04.506Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-09T10:09:49.012Z",
+    "status": "partial",
+    "lastCompletedAt": "2026-10-09T11:45:04.506Z",
     "summaries": [
       {
-        "platform": "tiktok",
-        "queued": 1,
-        "added": 0,
+        "platform": "facebook",
+        "queued": 2,
+        "added": 2,
         "rejected": 1,
-        "attempts": 1,
+        "attempts": 3,
         "errors": [
-          "Invalid post: Video height must be at least 360px for TikTok."
+          "Invalid post: Video height must be at least 960px for Facebook Reels."
         ],
         "dueAt": [
-          "2026-10-10T00:00:41.042Z"
+          "2026-10-09T12:00:00.000Z",
+          "2026-10-09T13:00:00.000Z"
         ]
       },
       {
         "platform": "instagram",
         "queued": 8,
         "added": 1,
-        "rejected": 0,
-        "attempts": 1,
+        "rejected": 1,
+        "attempts": 2,
         "errors": [],
         "dueAt": [
-          "2026-10-09T11:00:00.000Z",
           "2026-10-09T12:00:00.000Z",
           "2026-10-09T13:00:00.000Z",
           "2026-10-09T14:00:00.000Z",
           "2026-10-09T15:00:00.000Z",
           "2026-10-09T16:00:00.000Z",
           "2026-10-09T17:00:00.000Z",
-          "2026-10-09T18:00:00.000Z"
+          "2026-10-09T18:00:00.000Z",
+          "2026-10-09T19:00:00.000Z"
         ]
       },
       {

@@ -228,3 +228,29 @@ test('Facebook saute les vidéos trop petites sans renvoi ni blocage de la file'
   assert.equal(result[0].queued,8);assert.equal(result[0].rejected,2);assert.equal(sends.length,10);
   await fillQueues(opts);assert.equal(sends.length,10);
 });
+
+test('Facebook ignore les Reels de plus de 90 secondes sans les retenter', async () => {
+  const posts = Array.from({ length: 14 }, (_, i) => ({ id: 'duration-' + i, file: i + '.mp4', platforms: ['facebook'] }));
+  const state = { version: 1, slots: {}, deliveries: {} };
+  const sent = [];
+  const options = {
+    posts, state, remote: [], channels: [{ id: 'fb', service: 'facebook' }],
+    env: { BUFFER_FACEBOOK_CHANNEL_ID: 'fb', R2_PUBLIC_BASE_URL: 'https://example.com' },
+    now, persist: async () => {}, log: () => {},
+    send: async input => {
+      sent.push(input);
+      const url = input.assets[0].video.url;
+      return (url.endsWith('/0.mp4') || url.endsWith('/1.mp4'))
+        ? { status: 'rejected', error: 'Invalid post: Video must be no longer than 1m 30s for Facebook Reels.' }
+        : { status: 'queued', bufferId: 'fb-' + sent.length };
+    }
+  };
+  const result = await fillQueues(options);
+  assert.equal(result[0].queued, 8);
+  assert.equal(result[0].rejected, 2);
+  assert.equal(result[0].errors.length, 0);
+  assert.equal(sent.length, 10);
+  assert.equal(state.deliveries[deliveryKey('duration-0', 'facebook')].status, 'rejected');
+  await fillQueues(options);
+  assert.equal(sent.length, 10);
+});

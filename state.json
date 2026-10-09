@@ -19961,8 +19961,8 @@
     "pauseUntil": 0
   },
   "queueSync": {
-    "lastAttemptAt": "2026-10-09T09:05:41.042Z",
-    "status": "partial",
+    "lastAttemptAt": "2026-10-09T10:09:49.012Z",
+    "status": "running",
     "lastCompletedAt": "2026-10-09T09:05:41.042Z",
     "summaries": [
       {

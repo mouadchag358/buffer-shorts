@@ -9,6 +9,7 @@ const formatRejection = (delivery, platform) => {
   const message = delivery.error || '';
   if (platform === 'youtube') return /Video must be vertical.*YouTube Shorts/i.test(message);
   if (platform === 'instagram') return /Video frame rate must be at least \d+(?:\.\d+)?\s*fps for Instagram Reels/i.test(message);
+  if (platform === 'facebook') return /Video height must be at least \d+px for Facebook Reels/i.test(message);
   return false;
 };
 const blocked = c => c.isQueuePaused || c.isDisconnected || c.isLocked;

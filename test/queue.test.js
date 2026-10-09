@@ -218,3 +218,13 @@ test('ignore les anciennes chaînes TikTok et garde les posts Buffer introuvable
   assert.equal(state.deliveries[deliveryKey('fine','instagram')].status,'published');
   assert.ok(saves>=2);
 });
+
+test('Facebook saute les vidéos trop petites sans renvoi ni blocage de la file', async () => {
+  const posts = Array.from({ length: 12 }, (_, i) => ({ id:'f'+i, file:i+'.mp4', platforms:['facebook'] }));
+  const state={version:1,slots:{},deliveries:{},resume:{facebookFromInstagram:{lastInstagramPostId:'f-start',lastInstagramSentAt:'2026-10-09T10:00:00Z',skippedPostIds:[]}}};
+  const sends=[];const opts={posts,state,remote:[],channels:[{id:'fb',service:'facebook'}],env:{BUFFER_FACEBOOK_CHANNEL_ID:'fb',R2_PUBLIC_BASE_URL:'https://example.com'},now,persist:async()=>{},log:()=>{},
+    send:async input=>{sends.push(input);return /\/0\.mp4$|\/1\.mp4$/.test(input.assets[0].video.url)?{status:'rejected',error:'Invalid post: Video height must be at least 960px for Facebook Reels.'}:{status:'queued',bufferId:'fb-'+sends.length}}};
+  const result=await fillQueues(opts);
+  assert.equal(result[0].queued,8);assert.equal(result[0].rejected,2);assert.equal(sends.length,10);
+  await fillQueues(opts);assert.equal(sends.length,10);
+});

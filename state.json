@@ -1691,10 +1691,12 @@
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l4F6TOyu 3999081576486726830 👀 #Shorts"
     },
     "[\"r2-24ee8a3f00675cf152dc93a84efa1487d65803669cbdd075cd6519578ac3a9b5\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-09T18:00:00.000Z",
-      "updatedAt": "2026-10-09T10:09:49.012Z"
+      "updatedAt": "2026-10-09T10:09:49.012Z",
+      "bufferId": "6ac8bd7bf96589ad5ba0124c",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

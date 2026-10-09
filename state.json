@@ -1381,7 +1381,7 @@
       "updatedAt": "2026-10-07T20:04:47.132Z",
       "bufferId": "6ac6a6324fd14839c724a0be",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 7-fLShc 3999178772955404095 🔥 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -1402,7 +1402,7 @@
       "updatedAt": "2026-10-07T20:04:47.132Z",
       "bufferId": "6ac6a63ae385dfed92326574",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 79SESoDY 3999178690159870168 😮 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -1504,7 +1504,7 @@
       "updatedAt": "2026-10-08T09:14:21.954Z",
       "bufferId": "6ac75f28c68b2ba37af6cffe",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 7 6ESm62 3999178870548491958 🔥 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -1518,7 +1518,7 @@
       "updatedAt": "2026-10-08T09:14:21.954Z",
       "bufferId": "6ac75f2c5d76b00cd8331f2f",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 8BWYyBXZ 3999178969676518873 🔥 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -1588,13 +1588,15 @@
       "sentAt": "2026-10-09T10:01:04.374Z"
     },
     "[\"r2-47bfaf0f0cfd389bbcd183ad54182f566a52abf934495fb970e0ad341a975698\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-09T11:00:00.000Z",
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae84a981976dfac6749c",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
+      "externalLink": "https://www.instagram.com/reel/DeRWiVTjtQJ/",
+      "sentAt": "2026-10-09T11:01:10.934Z"
     },
     "[\"r2-8f36d4a772eb1eb6ee5915e5275e97b62993dfdb8332c9f6312a502bd739adbe\",\"instagram\"]": {
       "status": "queued",
@@ -1603,7 +1605,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae87f50ee21ac045f47f",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z"
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z"
     },
     "[\"r2-5cb01a38b439136ede3c82fdace67b557e728b031e7e5b809628fb4030d65195\",\"instagram\"]": {
       "status": "queued",
@@ -1612,7 +1614,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae8beba50495e0a74f2d",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z"
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z"
     },
     "[\"r2-0ffea8e2081bc0af1a941ed4800dab2fe3ee95440336a5802fc65f4f8365d298\",\"instagram\"]": {
       "status": "queued",
@@ -1621,7 +1623,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae8e2fb5bb53de199558",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z"
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z"
     },
     "[\"r2-28b3bd51f61a8e14fca04d0e6a13e5ad061a3570fb38d12be817235ef6375140\",\"instagram\"]": {
       "status": "queued",
@@ -1630,7 +1632,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae91599dfbfee2dc21be",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z"
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z"
     },
     "[\"r2-2be28dc8b07c0d5f862fc274304232f21f467eb5945da81dce82fa667f28364d\",\"instagram\"]": {
       "status": "queued",
@@ -1639,7 +1641,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae954936802f8bcf44ff",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z"
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z"
     },
     "[\"r2-7023b0b1f78148fa2c95720910960ca6abe23c0f1f4be002b862d6b3931c11f6\",\"instagram\"]": {
       "status": "queued",
@@ -1648,7 +1650,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae98599dfbfee2dc228a",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z"
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z"
     },
     "[\"r2-339b78fe1a15224507464f5741fbb4d6892f9ac00a248bec700e9864161713cc\",\"youtube\"]": {
       "status": "queued",
@@ -1657,7 +1659,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae9beba50495e0a7515f",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l0cYSKp4 3999081325734177400 👀 #Shorts"
     },
     "[\"r2-a31ed5b2a0814db4c0836158265de90ea4a30a86be1900ad36cee30aecf91347\",\"youtube\"]": {
@@ -1667,7 +1669,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae9eeba50495e0a751c0",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l1soy5Tz 3999081411910538483 😮 #Shorts"
     },
     "[\"r2-225cdc979b42a49d0382fd7e76f02318e6baa831b6070b72103214a75f5b4533\",\"youtube\"]": {
@@ -1677,7 +1679,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8aea12fb5bb53de1997e8",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l247zq2z 3999081493833887155 😮 #Shorts"
     },
     "[\"r2-9c4b10019f040fef4a0514a85fd471c46b820b31ccb281cd88f65d3acfed2f13\",\"youtube\"]": {
@@ -1687,7 +1689,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8aea5a981976dfac67c59",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-09T10:09:49.012Z",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l4F6TOyu 3999081576486726830 👀 #Shorts"
     },
     "[\"r2-24ee8a3f00675cf152dc93a84efa1487d65803669cbdd075cd6519578ac3a9b5\",\"instagram\"]": {
@@ -1696,7 +1698,8 @@
       "dueAt": "2026-10-09T18:00:00.000Z",
       "updatedAt": "2026-10-09T10:09:49.012Z",
       "bufferId": "6ac8bd7bf96589ad5ba0124c",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-09T11:45:04.506Z"
     }
   },
   "r2ListingRequests": {

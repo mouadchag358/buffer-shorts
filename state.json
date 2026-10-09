@@ -1373,14 +1373,14 @@
     "[\"r2-6d52e4ed13ec672041bfd8e0be9aa24578bb3f4de910e4c53d5c0b2071f9c742\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-09T12:00:47.132Z",
+      "dueAt": "2026-10-10T06:00:41.042Z",
       "updatedAt": "2026-10-07T20:04:47.132Z",
       "bufferId": "6ac6a6324fd14839c724a0be",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-09T09:05:41.042Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 7-fLShc 3999178772955404095 🔥 #Shorts",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-10T06:00:41.042Z"
       }
     },

@@ -154,3 +154,19 @@ test('migration de plusieurs anciennes vidéos vers des créneaux distincts', as
   await migrateOldSlots({state:s.state,remote,channels,now,posts:s.posts,env:s.env,persist:s.options.persist,edit:async(id,dueAt)=>({id,dueAt,status:'scheduled'})});
   assert.deepEqual(remote.map(p=>p.dueAt),platformQueueTargets(now,'tiktok',2).map(t=>t.dueAt));
 });
+
+test('Facebook reprend exactement la cadence horaire Instagram avec huit Reels en avance', async () => {
+  const channel = { id: 'facebook', service: 'facebook' };
+  const state = { version: 1, slots: {}, deliveries: {} }, sent = [];
+  const env = { BUFFER_FACEBOOK_CHANNEL_ID: 'facebook', R2_PUBLIC_BASE_URL: 'https://example.com' };
+  const posts = Array.from({ length: 12 }, (_, i) => ({ id: 'fb-' + i, file: 'fb-' + i + '.mp4', platforms: ['facebook'] }));
+  const options = { posts, state, remote: [], channels: [channel], env, now, persist: async () => {}, log: () => {},
+    send: async input => { sent.push(input); return { status: 'queued', bufferId: 'fb-' + sent.length }; } };
+  const summaries = await fillQueues(options);
+  assert.equal(summaries[0].queued, 8);
+  assert.equal(sent.length, 8);
+  assert.deepEqual(sent.map(p => p.dueAt), platformQueueTargets(now, 'instagram', 8).map(t => t.dueAt));
+  assert.ok(sent.every(p => p.metadata?.facebook?.type === 'reel'));
+  await fillQueues(options);
+  assert.equal(sent.length, 8);
+});

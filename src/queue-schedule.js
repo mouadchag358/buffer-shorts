@@ -28,7 +28,7 @@ export function syncDue(state, now = Date.now()) {
 
 
 export function platformQueueTargets(now = new Date(), platform = 'instagram', count = 8) {
-  if (platform === 'instagram') return queueTargets(now, count);
+  if (platform === 'instagram' || platform === 'facebook') return queueTargets(now, count);
   if (!['youtube', 'tiktok'].includes(platform)) return queueTargets(now, count);
   if (!Number.isInteger(count) || count < 1 || count > 10) throw new Error('Nombre de créneaux invalide');
 

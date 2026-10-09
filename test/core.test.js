@@ -84,3 +84,11 @@ test('miniature Instagram à 1 seconde seulement', () => {
     assert.equal(inputFor(post, platform, env).assets[0].video.metadata, undefined);
   }
 });
+
+test('les vidéos Facebook sont programmées comme Reels', () => {
+  const input = inputFor({ id: 'fb', file: 'video.mp4', platforms: ['facebook'] }, 'facebook',
+    { BUFFER_FACEBOOK_CHANNEL_ID: 'page', R2_PUBLIC_BASE_URL: 'https://example.com' });
+  assert.equal(input.channelId, 'page');
+  assert.deepEqual(input.metadata, { facebook: { type: 'reel' } });
+  assert.equal(input.assets[0].video.metadata, undefined);
+});

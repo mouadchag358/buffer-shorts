@@ -44,7 +44,7 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
     const today = `${nowParts.year}-${nowParts.month}-${nowParts.day}`;
 
     let needsMove = false;
-    if (platform === 'instagram') {
+    if (platform === 'instagram' || platform === 'facebook') {
       needsMove = currentParts.minute !== '00';
     } else if (['youtube', 'tiktok'].includes(platform)) {
       needsMove = currentDay === today || currentParts.minute !== '00' || !['00', '06', '12', '18'].includes(currentParts.hour);

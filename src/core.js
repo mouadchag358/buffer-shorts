@@ -83,6 +83,7 @@ export function inputFor(post, platform, env) {
   const input = { channelId, text: platformText(post, platform), schedulingType: 'automatic', mode: 'addToQueue', needsApproval: false, assets: [{ video: { url } }] };
   if (platform === 'youtube') input.metadata = { youtube: { categoryId: '22', madeForKids: false, privacy: 'public', ...post.youtube, title: youtubeTitle(post), isAiGenerated: post.isAiGenerated === true } };
   if (platform === 'tiktok') input.metadata = { tiktok: { isAiGenerated: post.isAiGenerated === true } };
+  if (platform === 'facebook') input.metadata = { facebook: { type: 'reel' } };
   if (platform === 'instagram') {
     input.metadata = { instagram: { type: 'reel', shouldShareToFeed: true, isAiGenerated: post.isAiGenerated === true } };
     // Buffer choisit la miniature des Reels à 1 seconde (offset en millisecondes).

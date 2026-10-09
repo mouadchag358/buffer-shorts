@@ -8,7 +8,7 @@ const PAGE_SIZE = 1000;
 export function postsFromKeys(keys) {
   return [...new Set(keys)].filter(k => /\.mp4$/i.test(k)).sort().map(file => ({
     id: 'r2-' + createHash('sha256').update(file).digest('hex'), enabled: true, file,
-    title: videoTitle({ file }), text: `${videoTitle({ file })}\n#fyp #fy #viral #ai`, platforms: ['tiktok', 'youtube', 'instagram'],
+    title: videoTitle({ file }), text: `${videoTitle({ file })}\n#fyp #fy #viral #ai`, platforms: ['facebook', 'youtube', 'instagram'],
     youtube: { categoryId: '22', madeForKids: false, privacy: 'public' }, isAiGenerated: false
   }));
 }
@@ -69,7 +69,7 @@ export function defaultList(env) {
 export async function loadCatalog({ state, persist, env = process.env, now = Date.now(), list }) {
   const day = new Date(now).toISOString().slice(0, 10);
   if (state.catalog?.day === day && Array.isArray(state.catalog.posts)) {
-    const posts = state.catalog.posts.map(p => ({ ...p, title: videoTitle({ file: p.file }), text: `${videoTitle({ file: p.file })}\n#fyp #fy #viral #ai` }));
+    const posts = state.catalog.posts.map(p => ({ ...p, platforms: ['facebook', 'youtube', 'instagram'], title: videoTitle({ file: p.file }), text: `${videoTitle({ file: p.file })}\n#fyp #fy #viral #ai` }));
     if (JSON.stringify(posts) !== JSON.stringify(state.catalog.posts)) {
       state.catalog.posts = posts;
       await persist(state);

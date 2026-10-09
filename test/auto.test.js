@@ -32,17 +32,17 @@ test('23h et 01h au Maroc, avec les règles IANA du runtime', () => {
   }
 });
 test('récupération des organisations et IDs liés avec refus des choix ambigus', async () => {
-  const responses = [{ account: { organizations: [{ id: 'org' }] } }, { channels: [{ id: 'tt', service: 'tiktok' }, { id: 'yt', service: 'youtube' }, { id: 'ig', service: 'instagram' }] }];
+  const responses = [{ account: { organizations: [{ id: 'org' }] } }, { channels: [{ id: 'tt', service: 'facebook' }, { id: 'yt', service: 'youtube' }, { id: 'ig', service: 'instagram' }] }];
   let calls = 0;
-  const resolved = await discoverChannels(['tiktok', 'youtube', 'instagram'], {}, async () => responses[calls++]);
+  const resolved = await discoverChannels(['facebook', 'youtube', 'instagram'], {}, async () => responses[calls++]);
   assert.equal(calls, 2); assert.equal(resolved.BUFFER_INSTAGRAM_CHANNEL_ID, 'ig');
-  await assert.rejects(discoverChannels(['tiktok'], { BUFFER_ORGANIZATION_ID: 'org' }, async () => ({ channels: [{ id: 'a', service: 'tiktok' }, { id: 'b', service: 'tiktok' }] })), /2 comptes/);
-  await assert.rejects(discoverChannels(['tiktok'], {}, async () => ({ account: { organizations: [] } })), /organisations/);
+  await assert.rejects(discoverChannels(['facebook'], { BUFFER_ORGANIZATION_ID: 'org' }, async () => ({ channels: [{ id: 'a', service: 'facebook' }, { id: 'b', service: 'facebook' }] })), /2 comptes/);
+  await assert.rejects(discoverChannels(['facebook'], {}, async () => ({ account: { organizations: [] } })), /organisations/);
 });
 test('listing R2 en cache, IDs stables, titres des fichiers et catalogue MP4 seul', async () => {
   const state = {}; let calls = 0, saves = 0;
   const options = { state, now: Date.parse('2026-10-03T08:00:00Z'), persist: async () => { saves++; }, list: async () => { calls++; assert.equal(state.r2ListingRequests.count, 1); return { Contents: [{ Key: 'عسل_تمارة.mp4' }, { Key: 'image.jpg' }] }; } };
-  const posts = await loadCatalog(options); assert.equal(posts[0].title, 'عسل تمارة'); assert.equal(posts[0].text, 'عسل تمارة\n#fyp #fy #viral #ai'); assert.equal(posts.length, 1);
+  const posts = await loadCatalog(options); assert.deepEqual(posts[0].platforms, ['facebook', 'youtube', 'instagram']); assert.equal(posts[0].title, 'عسل تمارة'); assert.equal(posts[0].text, 'عسل تمارة\n#fyp #fy #viral #ai'); assert.equal(posts.length, 1);
   await loadCatalog(options); assert.equal(calls, 1); assert.equal(saves, 2);
   assert.equal(posts[0].id, postsFromKeys(['other.mp4','عسل_تمارة.mp4']).find(p => p.file === 'عسل_تمارة.mp4').id);
 });
@@ -63,7 +63,7 @@ test('les trois réseaux reçoivent la même date customScheduled', async () => 
   const posts = postsFromKeys(['vid.mp4']); const sent = [];
   const target = nextPublication(new Date('2026-10-03T21:17:00Z'));
   await processSlot({ posts, state: { version: 1, slots: {}, deliveries: {} }, slot: target.key, dueAt: target.dueAt,
-    env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' }, persist: async () => {}, checkMedia: async () => {}, send: async input => { sent.push(input); return { status: 'queued', bufferId: 'ok' }; } });
+    env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_FACEBOOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' }, persist: async () => {}, checkMedia: async () => {}, send: async input => { sent.push(input); return { status: 'queued', bufferId: 'ok' }; } });
   assert.equal(sent.length, 3); assert.ok(sent.every(i => i.mode === 'customScheduled' && i.dueAt === target.dueAt));
 });
 
@@ -71,17 +71,17 @@ test('publication immédiate et relance de la même demande sans doublon', async
   const posts = postsFromKeys(['now.mp4']), sent = [];
   const state = { version: 1, slots: {}, deliveries: {} };
   const options = { posts, state, slot: 'manual-request1', mode: 'shareNow',
-    env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' },
+    env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_FACEBOOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' },
     persist: async () => {}, checkMedia: async () => {}, send: async input => { sent.push(input); return { status: 'queued', bufferId: 'ok' }; } };
   await processSlot(options); await processSlot(options);
   assert.equal(sent.length, 3); assert.ok(sent.every(i => i.mode === 'shareNow' && !i.dueAt));
 });
 
-test('YouTube refuse la vidéo horizontale mais Instagram continue et TikTok reste unique', async () => {
+test('YouTube refuse la vidéo horizontale mais Instagram continue et Facebook reste unique', async () => {
   const posts = postsFromKeys(['horizontal.mp4']), sent = [];
   const state = { version: 1, slots: {}, deliveries: {} };
   const options = { posts, state, slot: 'manual-reject', mode: 'shareNow',
-    env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' },
+    env: { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_FACEBOOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' },
     persist: async () => {}, checkMedia: async () => {}, send: async input => {
       sent.push(input.channelId);
       return input.channelId === 'yt' ? { status: 'rejected', error: 'Invalid post: Video must be vertical (portrait orientation) for YouTube Shorts.' } : { status: 'queued', bufferId: 'ok' };
@@ -94,7 +94,7 @@ test('YouTube refuse la vidéo horizontale mais Instagram continue et TikTok res
 test('le cache de titres génériques est actualisé sans appel R2', async () => {
   const state = { catalog: { day: '2026-10-04', posts: [{ file: 'Un_titre.mp4', title: '#fyp', text: '#fyp' }] } };
   const posts = await loadCatalog({ state, now: Date.parse('2026-10-04T08:00:00Z'), persist: async () => {}, list: async () => { throw new Error('Ne doit pas appeler R2'); } });
-  assert.equal(posts[0].title, 'Un titre'); assert.equal(posts[0].text, 'Un titre\n#fyp #fy #viral #ai');
+  assert.deepEqual(posts[0].platforms, ['facebook', 'youtube', 'instagram']); assert.equal(posts[0].title, 'Un titre'); assert.equal(posts[0].text, 'Un titre\n#fyp #fy #viral #ai');
 });
 
 test('deux créneaux futurs malgré le retard de GitHub, jamais de rattrapage en rafale', () => {

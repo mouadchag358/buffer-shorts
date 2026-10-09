@@ -1,59 +1,52 @@
-# R2 → Buffer : TikTok, YouTube Shorts, Instagram Reels
+# R2 → Buffer : Facebook Reels, Instagram Reels et YouTube Shorts
 
-Le workflow lit automatiquement les vidéos MP4 du bucket R2 `reels`, génère `posts.json`, récupère les comptes liés à Buffer et programme une vidéo sur les trois réseaux à **23h00, 00h20, 01h40 et 03h00, fuseau Africa/Casablanca**. Le titre vient du nom du fichier vidéo : extension retirée, `_` remplacés par des espaces et limite de 100 caractères. La légende contient ce titre suivi de `#fyp #fy #viral #ai`. Les noms servent aussi à conserver les IDs stables. Il ne s'agit pas d'une extraction des métadonnées internes ni du texte affiché dans la vidéo.
+Ce projet automatise les vidéos MP4 du bucket Cloudflare R2 `reels` vers **une page Facebook, Instagram et YouTube**, via Buffer. TikTok a été remplacé par Facebook pour les nouveaux posts.
 
-## Paramètres GitHub
+## Fréquence des publications (fuseau Africa/Casablanca)
 
-Dans Settings → Secrets and variables → Actions :
-
-| Type | Nom | Valeur |
+| Réseau | Cadence | Nombre de posts programmés d'avance |
 | --- | --- | --- |
-| Secret | `BUFFER_API_KEY` | Clé Buffer déjà configurée |
-| Secret | `R2_ACCESS_KEY_ID` | ID de clé API S3 R2 avec accès aux objets en lecture |
-| Secret | `R2_SECRET_ACCESS_KEY` | Secret correspondant à cette clé R2 |
-| Variable | `R2_PUBLIC_BASE_URL` | URL publique R2 déjà configurée |
-| Variable | `R2_ACCOUNT_ID` | Facultatif : compte Cloudflare configuré dans le workflow |
-| Variable | `R2_BUCKET_NAME` | Facultatif, `reels` par défaut |
-| Variable | `R2_PREFIX` | Facultatif : sous-dossier à lire |
-| Variable | `BUFFER_ORGANIZATION_ID` | Facultatif, nécessaire si plusieurs organisations Buffer |
-| Variable | `BUFFER_TIKTOK_CHANNEL_ID` | Facultatif, nécessaire si plusieurs comptes TikTok |
-| Variable | `BUFFER_YOUTUBE_CHANNEL_ID` | Facultatif, nécessaire si plusieurs comptes YouTube |
-| Variable | `BUFFER_INSTAGRAM_CHANNEL_ID` | Facultatif, nécessaire si plusieurs comptes Instagram |
+| Facebook Reels | Une vidéo par heure, à la minute 00 | 8 |
+| Instagram Reels | Une vidéo par heure, à la minute 00 | 8 |
+| YouTube Shorts | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
 
-Créer la clé S3 dans Cloudflare R2 → Manage R2 API Tokens, avec **Object Read only** pour le bucket `reels`. Les deux valeurs R2 sont des secrets GitHub. L'URL publique seule ne permet pas de lister les objets. Les IDs Buffer sont récupérés avec la clé API ; le script refuse de choisir silencieusement entre plusieurs comptes d'un même réseau.
+GitHub Actions vérifie la file toutes les 5 heures environ. Les posts déjà programmés sont comptabilisés avant tout nouvel envoi, et les vidéos sont identifiées de manière stable pour éviter les doublons. Buffer publie aux horaires `dueAt` même lorsque GitHub Actions n'est pas actif.
 
-## Horaires et remplissage
+## Configuration GitHub
 
-Le bot maintient **8 vidéos programmées d’avance par réseau** (4 pour la prochaine nuit et 4 pour la suivante) (TikTok, Instagram et YouTube). Il compte les posts `scheduled` et `sending` dans Buffer et ajoute uniquement ce qui manque. Les vidéos sortent aux créneaux **23:00, 00:20, 01:40 et 03:00, Africa/Casablanca**, soit quatre vidéos par réseau et par nuit.
+Dans **Settings → Secrets and variables → Actions** :
 
-GitHub vérifie chaque heure à la minute 17. Le script appelle Buffer et R2 uniquement si **12 heures** se sont écoulées depuis son dernier passage, enregistré avant le réseau. Les erreurs consomment aussi ce passage. Un lancement manuel force la synchronisation. Buffer publie aux dates `dueAt`, indépendamment du remplissage. Les posts déjà prévus par ce bot aux anciens horaires sont déplacés vers les prochains créneaux libres avec `editPost`, sans les recréer.
+| Type | Nom | Signification |
+| --- | --- | --- |
+| Secret | `BUFFER_API_KEY` | Clé API Buffer |
+| Variable | `BUFFER_ORGANIZATION_ID` | Organisation Buffer |
+| Variable | `BUFFER_FACEBOOK_CHANNEL_ID` | ID Buffer de la **page Facebook** connectée |
+| Variable | `BUFFER_INSTAGRAM_CHANNEL_ID` | ID du compte Instagram |
+| Variable | `BUFFER_YOUTUBE_CHANNEL_ID` | ID de la chaîne YouTube |
+| Variable | `R2_PUBLIC_BASE_URL` | URL publique des vidéos |
+| Variable | `R2_ACCOUNT_ID` | Identifiant du compte Cloudflare R2 |
+| Variable | `R2_BUCKET_NAME` | Nom du bucket, `reels` par défaut |
+| Variable | `R2_PREFIX` | Sous-dossier éventuel |
+| Secret | `R2_ACCESS_KEY_ID` | Identifiant S3 R2 avec accès lecture |
+| Secret | `R2_SECRET_ACCESS_KEY` | Secret S3 R2 |
 
-Chaque réseau a sa propre sélection. Un refus explicite de vidéo horizontale sur YouTube Shorts est conservé, puis le bot essaie la suivante dans le même créneau. Les autres refus arrêtent uniquement ce réseau. Une réponse incertaine arrête toute nouvelle création. Le maximum est de 30 tentatives de création par passage et de 12 par réseau ; aucune nouvelle tentative automatique sur erreur réseau. Une page Buffer de 100 posts maximum est lue, sans pagination ; 24 lectures maximum pour réconcilier les envois précédents. Les posts ajoutés hors de ce bot sont comptés mais ne sont pas modifiés.
+Les chaînes Buffer sont détectées automatiquement lorsqu'une seule chaîne de chaque réseau existe. Dans le cas contraire, renseigner leur ID.
 
-Le workflow **Compléter les files Buffer maintenant** se lance en modifiant `.github/requests/sync.json` avec un nouvel `id`. Une demande terminée n’est pas répétée. Le workflow de publication immédiate reste disponible et utilise une nouvelle vidéo hors de la file programmée.
+## Fonctionnement
 
-## Catalogue automatique
+- `src/catalog.js` liste les MP4 et construit les destinations Facebook, Instagram et YouTube. Il remplace les anciennes destinations TikTok dans le catalogue mis en cache.
+- `src/core.js` précise `metadata.facebook.type = 'reel'` pour les publications Facebook.
+- `src/queue-schedule.js` génère pour Facebook les mêmes créneaux horaires qu'Instagram.
+- `src/sync-run.js` remplit la file de ces trois réseaux et conserve les protections existantes contre les appels excessifs.
+- `state.json` conserve les checkpoints, les identifiants Buffer et les compteurs R2. Ne pas le remettre à zéro pour reprogrammer une vidéo : risque de doublons.
 
-Les MP4 sont triés par nom. Le nom complet de l'objet détermine un ID stable : l'ajout d'une vidéo ne change pas les IDs des autres. Le catalogue est mis en cache une fois par jour UTC dans `state.json`. `posts.json` est généré et commit automatiquement, avec des entrées actives pour les trois réseaux. Il n'est plus nécessaire de l'éditer manuellement ; les modifications manuelles peuvent être écrasées par la synchronisation.
+Les **anciennes vidéos TikTok déjà prévues dans Buffer restent programmées** : cette modification arrête seulement la création de nouveaux posts TikTok.
 
-Les fichiers sont considérés prêts à publier dès qu'ils sont dans le bucket ou le préfixe choisi. Ne placer à cet endroit que les vidéos destinées aux trois réseaux. Les titres personnalisés restent limités à 100 caractères. Le hashtag `#ai` ne remplace pas les déclarations de contenu IA exigées par les réseaux. Les valeurs YouTube par défaut sont catégorie People & Blogs (`22`), public, non destiné aux enfants et contenu IA non déclaré. Adapter `postsFromKeys` dans `src/catalog.js` si le contenu nécessite d'autres déclarations.
+## Utilisation
 
-Une page de 1000 objets maximum est lue. Si le bucket contient davantage d'objets, le script s'arrête sans pagination : utiliser `R2_PREFIX` pour réduire le périmètre. Les vidéos restent sur R2 ; le runner ne les télécharge pas. Conserver les URL publiques jusqu'à la publication effective. Le projet ne supprime pas les vidéos.
+La planification ordinaire se lance par `.github/workflows/publish.yml`. Le workflow `sync-now.yml` permet une synchronisation manuelle via `.github/requests/sync.json`. Le workflow `publish-now.yml` permet une publication immédiate via `.github/requests/publish-now.json`.
 
-## Limites Cloudflare
-
-- Listing : **2 tentatives maximum par jour UTC**, sans nouvelle tentative automatique, sans pagination ; cache après succès. Une erreur compte comme tentative. HTTP 429 impose une pause d'une heure.
-- Remplissage : aucun HEAD ; le catalogue confirme les objets et Buffer valide les vidéos.
-- Publication immédiate par `HEAD` : **2 par exécution, 4 par jour UTC**, sans nouvelle tentative ni redirection automatique ; HTTP 429 impose au moins une heure de pause ou davantage selon `Retry-After`.
-- Compteurs commit/push avant chaque appel, intervalle minimum de 10 secondes pour chaque type de requête.
-
-Le maximum du script est donc 2 listings + 4 vérifications par jour UTC. En remplissage normal : un listing par jour UTC et aucune vérification HEAD. Les téléchargements de Buffer et des réseaux restent indépendants de ces limites. Ne pas effacer les compteurs ni lancer plusieurs exécutions locales simultanées.
-
-## Essai
-
-Actions → Envoyer les Shorts à Buffer → Run workflow. Le choix `dry_run` est activé par défaut : le script lit R2 et les comptes Buffer, actualise le catalogue et les compteurs, vérifie aussi l’URL publique de la prochaine vidéo, mais ne crée aucun post Buffer. Une modification du fichier du workflow lance également cette simulation de connexion automatiquement. Décocher pour programmer réellement. Le workflow doit pouvoir commit/push sur la branche par défaut.
-
-En local avec Node.js 24 :
+Pour tester en local avec Node.js 24 :
 
 ```bash
 npm ci --ignore-scripts
@@ -61,33 +54,6 @@ npm test
 node --env-file=.env src/run.js --dry-run
 ```
 
-Copier `.env.example` vers `.env` et renseigner les valeurs, sans commit des secrets. Les essais locaux ne doivent pas se chevaucher avec le workflow de production.
+Copier `.env.example` vers `.env` pour l'exécution locale, sans jamais committer les secrets.
 
-## Suivi et incident
-
-`state.json` conserve les IDs Buffer, les créneaux, les compteurs R2 et le catalogue. Chaque envoi a un checkpoint durable avant l'appel, puis après le résultat. `queued` signifie accepté par Buffer, pas publié avec succès. Surveiller les erreurs de publication dans Buffer.
-
-- `queued` : ne sera pas renvoyé.
-- `rejected` : refus explicite, corriger puis relancer pour le prochain créneau.
-- `sending` ou `uncertain` : les envois sont bloqués jusqu'à vérification humaine.
-
-Pour débloquer une réponse incertaine, vérifier la file et l'historique Buffer. Si le post existe, mettre l'entrée à `queued` avec son `bufferId`. Si l'absence est confirmée, supprimer uniquement cette entrée de `deliveries`, commit et relancer. Ne pas effacer les suivis sans vérifier : cela pourrait créer des doublons. GitHub et Buffer ne partagent pas de transaction ; en cas d'ambiguïté, le script privilégie le blocage.
-
-## Références
-
-- [Buffer : organisations](https://developers.buffer.com/examples/get-organizations.html)
-- [Buffer : chaînes](https://developers.buffer.com/examples/get-channels.html)
-- [Buffer : programmation](https://developers.buffer.com/guides/posts-and-scheduling.html)
-- [R2 : SDK S3](https://developers.cloudflare.com/r2/examples/aws/aws-sdk-js-v3/)
-- [R2 : jetons](https://developers.cloudflare.com/r2/api/tokens/)
-- [GitHub : fuseaux et planifications](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
-
-## Demande immédiate
-
-Une modification de `.github/requests/publish-now.json` lance le workflow **Publier une vidéo maintenant**. Donner un nouvel `id` pour chaque demande autorisée. Ce workflow utilise `shareNow` sur les trois réseaux, conserve les protections et partage la même concurrence que le workflow planifié. Une relance avec le même ID ignore les destinations déjà acceptées. Une demande immédiate s'ajoute aux créneaux quotidiens de 23h00, 00h20, 01h40 et 03h00.
-
-Un refus explicite sur un réseau n'empêche pas l'envoi aux suivants. Une réponse incertaine bloque toujours les envois pour éviter les doublons. Les vidéos refusées comme non verticales pour YouTube Shorts sont ignorées pour cette destination aux prochaines relances, avec l'erreur conservée dans le suivi. Corriger le format et supprimer uniquement l'entrée rejetée pour réessayer YouTube.
-
-Le workflow **Vérifier les publications Buffer** lit le statut réel et les liens des dix derniers posts, sans créer de publication ni appeler R2. `queued` dans state.json signifie accepté par Buffer, pas une preuve de publication.
-
-Une demande immédiate autorisée peut réserver un HEAD supplémentaire avec `extraMediaRequestDay` (date UTC). Le plafond de cette date passe de 4 à 5, jamais davantage ; une seule requête par exécution immédiate. Les pauses 429 et checkpoints restent obligatoires.
+**Attention** : accepter un Reel dans la file Buffer ne garantit ni la publication finale par Facebook ni l'éligibilité à la monétisation.

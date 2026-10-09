@@ -55,6 +55,17 @@ try {
       'query DiagnosePosts($input: PostsInput!) { posts(first: 1, input: $input) { edges { node { id channelId status dueAt text assets { source } } } pageInfo { hasNextPage } } }',
       { input: { organizationId: orgId, filter: { channelIds: ids, status: ['scheduled', 'sending'] }, sort: [{ field: 'dueAt', direction: 'asc' }] } });
   }
+  const { readFile } = await import('node:fs/promises');
+  const state = JSON.parse(await readFile('state.json', 'utf8'));
+  const previous = [...new Set(Object.values(state.deliveries || {}).filter(d => d.bufferId && d.status === 'queued').map(d => d.bufferId))];
+  console.log('Anciennes publications à réconcilier:', previous.length);
+  let tested = 0;
+  for (const id of previous.slice(0, 24)) {
+    tested++;
+    await readOnly('STATUT_POST_' + tested,
+      'query DiagnosePost($input: PostInput!) { post(input: $input) { id channelId status dueAt sentAt externalLink error { message } } }',
+      { input: { id } });
+  }
   console.log('Diagnostic en lecture seule terminé : aucune publication créée.');
 } catch (error) {
   console.error('DIAGNOSTIC ECHEC:', sanitize(error.message));

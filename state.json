@@ -1515,7 +1515,11 @@
       "bufferId": "6ac75f2c5d76b00cd8331f2f",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-09T09:05:41.042Z",
-      "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 8BWYyBXZ 3999178969676518873 🔥 #Shorts"
+      "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 8BWYyBXZ 3999178969676518873 🔥 #Shorts",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-10T12:00:41.042Z"
+      }
     },
     "[\"r2-c06c2b89bd829933eca87c2388f673fe43f01770ef8cee9f96ec39a865e38bca\",\"instagram\"]": {
       "status": "published",

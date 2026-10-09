@@ -1957,6 +1957,12 @@
       "updatedAt": "2026-10-09T19:20:31.303Z",
       "bufferId": "6ac93ebdf91f772d456d7fe5",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-cf884c6513ab914677b51fc39559407b1a6d8e5be5c1ee04e9fbe5dd7fc09c7c\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-09T23:00:00.000Z",
+      "updatedAt": "2026-10-09T19:20:31.303Z"
     }
   },
   "r2ListingRequests": {

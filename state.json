@@ -1991,10 +1991,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-dc8191d9b0a0b73c32494a8a421879ca32cc9255b984a4cdecd4f28042d630ce\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-10T03:00:00.000Z",
-      "updatedAt": "2026-10-09T19:20:31.303Z"
+      "updatedAt": "2026-10-09T19:20:31.303Z",
+      "bufferId": "6ac93ed8d9cab260a79eb21f",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

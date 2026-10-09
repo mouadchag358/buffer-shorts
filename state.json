@@ -1732,10 +1732,12 @@
       "error": "Invalid post: Video frame rate must be at least 23 fps for Instagram Reels."
     },
     "[\"r2-f8a9cee9324ab80e2394ef903b5b3f093a9b2d7e3f21605d5e7c4a364c7c29ab\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-09T19:00:00.000Z",
-      "updatedAt": "2026-10-09T11:45:04.506Z"
+      "updatedAt": "2026-10-09T11:45:04.506Z",
+      "bufferId": "6ac8d3d926e224ee545e88f6",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

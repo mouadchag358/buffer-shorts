@@ -2573,10 +2573,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-32d28380e12833fa53c6da5471e0690225ce3d5f59275ccc316dcd07e4d0ceaf\",\"facebook\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-11T03:00:00.000Z",
-      "updatedAt": "2026-10-10T23:35:01.306Z"
+      "updatedAt": "2026-10-10T23:35:01.306Z",
+      "bufferId": "6acacbbeed92ed8fa5e5a9e9",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -2245,6 +2245,12 @@
       "updatedAt": "2026-10-10T05:55:57.861Z",
       "bufferId": "6ac9d3a3bba9419ccbf00c8e",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-c18700402ae83ea9e8e94941e17672f91814046f415ce5ddf63969f016a5c820\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-10T09:00:00.000Z",
+      "updatedAt": "2026-10-10T05:55:57.861Z"
     }
   },
   "r2ListingRequests": {

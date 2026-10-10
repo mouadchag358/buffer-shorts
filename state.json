@@ -2627,10 +2627,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-e30b358e772789300115c351b019678930317ade5923419b8b58392b4d0b320d\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-11T01:00:00.000Z",
-      "updatedAt": "2026-10-10T23:35:01.306Z"
+      "updatedAt": "2026-10-10T23:35:01.306Z",
+      "bufferId": "6acacbd3d9cab260a7de2546",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

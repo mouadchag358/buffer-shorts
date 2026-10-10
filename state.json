@@ -2205,6 +2205,12 @@
       "updatedAt": "2026-10-10T05:55:57.861Z",
       "bufferId": "6ac9d395ed92ed8fa5bad5d1",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-c6c6080dc324ab994fc61776f427861d0d9a8aafc672e98a88ea729164d0804c\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-10T11:00:00.000Z",
+      "updatedAt": "2026-10-10T05:55:57.861Z"
     }
   },
   "r2ListingRequests": {

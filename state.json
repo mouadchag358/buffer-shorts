@@ -2344,10 +2344,11 @@
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l5y7y a5 3999081693549688505 🔥 #Shorts"
     },
     "[\"r2-259d731bf809a2dd17cab98c6e2fcfcf7b2b47374f52fae46ae0b88ecae0b59d\",\"facebook\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-10T14:00:00.000Z",
-      "updatedAt": "2026-10-10T12:07:18.786Z"
+      "updatedAt": "2026-10-10T12:07:18.786Z",
+      "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     }
   },
   "r2ListingRequests": {

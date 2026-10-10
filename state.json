@@ -2231,10 +2231,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-e82a17eac5c4ddbaef3484a4bd3e80f4f027074cb351e0c0a38dbbc206423897\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-10T07:00:00.000Z",
-      "updatedAt": "2026-10-10T05:55:57.861Z"
+      "updatedAt": "2026-10-10T05:55:57.861Z",
+      "bufferId": "6ac9d3a0b07d37ac97612188",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

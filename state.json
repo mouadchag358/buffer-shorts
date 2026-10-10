@@ -2526,6 +2526,12 @@
       "lastCheckedAt": "2026-10-10T23:35:01.306Z",
       "externalLink": "https://www.instagram.com/reel/DeU5Hb4DpUk/",
       "sentAt": "2026-10-10T20:01:50.752Z"
+    },
+    "[\"r2-0007ec07e926643f2bf48f6e94bbe23536c9c76698881eec56e41ca138a5b56e\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-11T00:00:00.000Z",
+      "updatedAt": "2026-10-10T23:35:01.306Z"
     }
   },
   "r2ListingRequests": {

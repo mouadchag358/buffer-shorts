@@ -2405,10 +2405,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-6d0dda29db10ec4e685228fa487d1affc405c236d3a514de99f1ff6c085c2293\",\"facebook\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-10T19:00:00.000Z",
-      "updatedAt": "2026-10-10T12:07:18.786Z"
+      "updatedAt": "2026-10-10T12:07:18.786Z",
+      "bufferId": "6aca2a9ad9cab260a7c2ba3e",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

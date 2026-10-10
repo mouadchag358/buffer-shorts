@@ -2473,6 +2473,12 @@
       "updatedAt": "2026-10-10T12:07:18.786Z",
       "bufferId": "6aca2ab4b07d37ac977059b4",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-ff28214c9bda4b98a19b6d0941c0c2b730b713d57656ffa548e1b01382a787d9\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-10T20:00:00.000Z",
+      "updatedAt": "2026-10-10T12:07:18.786Z"
     }
   },
   "r2ListingRequests": {

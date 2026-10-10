@@ -2213,6 +2213,12 @@
       "updatedAt": "2026-10-10T05:55:57.861Z",
       "bufferId": "6ac9d397c4de2d2b121861f5",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-21bab78ab2169d390d1933be14b3e4ec63410d699aae09afd3b2c595cc72543d\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-10T12:00:00.000Z",
+      "updatedAt": "2026-10-10T05:55:57.861Z"
     }
   },
   "r2ListingRequests": {

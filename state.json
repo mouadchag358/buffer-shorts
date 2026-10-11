@@ -3133,6 +3133,12 @@
       "updatedAt": "2026-10-11T13:47:24.499Z",
       "bufferId": "6acb9387c4de2d2b1261e3d2",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-b0d20d9cc3e9cbbf0a453d4aef93ffb07694864c3393fbb95cfcfae5ea6878fc\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-11T21:00:00.000Z",
+      "updatedAt": "2026-10-11T13:47:24.499Z"
     }
   },
   "r2ListingRequests": {

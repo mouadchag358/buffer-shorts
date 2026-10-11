@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { fillQueues, initFacebookFromInstagram, migrateOldSlots, reconcileDeliveries } from '../src/queue.js';
+import { fillQueues, initFacebookFromInstagram, migrateOldSlots, reconcileDeliveries, refreshScheduledDescriptions } from '../src/queue.js';
 import { queueTargets, platformQueueTargets, localParts, syncDue } from '../src/queue-schedule.js';
 import { deliveryKey } from '../src/core.js';
 import { queuedPosts, reschedulePost, createPost } from '../src/buffer.js';
@@ -253,4 +253,26 @@ test('Facebook ignore les Reels de plus de 90 secondes sans les retenter', async
   assert.equal(state.deliveries[deliveryKey('duration-0', 'facebook')].status, 'rejected');
   await fillQueues(options);
   assert.equal(sent.length, 10);
+});
+
+test('Facebook captions are updated on already scheduled Buffer Reels, without resending videos', async () => {
+  const post = { id: 'clip-fb', file: 'clip-fb.mp4', title: 'Original title', text: 'Old caption', platforms: ['facebook'] };
+  const env = { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_FACEBOOK_CHANNEL_ID: 'fb' };
+  const remote = [{ id: 'buffer-fb', channelId: 'fb', status: 'scheduled', dueAt: now.toISOString(), text: 'Old caption' }];
+  const state = { deliveries: { [deliveryKey(post.id, 'facebook')]: { status: 'queued', bufferId: 'buffer-fb' } } };
+  const edits = []; let saves = 0;
+  const opts = { posts: [post], state, remote, channels: [{ id: 'fb', service: 'facebook' }], env,
+    persist: async () => { saves++; }, edit: async (id, dueAt, content) => {
+      edits.push({ id, dueAt, content });
+      return { id, status: 'scheduled', dueAt };
+    } };
+  assert.equal(await refreshScheduledDescriptions(opts), 1);
+  assert.equal(edits.length, 1);
+  assert.equal(edits[0].id, 'buffer-fb');
+  assert.equal(edits[0].content.assets[0].video.url, 'https://example.com/clip-fb.mp4');
+  assert.match(edits[0].content.text, /#FacebookReels/);
+  assert.equal(remote[0].text, edits[0].content.text);
+  assert.ok(saves > 0);
+  assert.equal(await refreshScheduledDescriptions(opts), 0);
+  assert.equal(edits.length, 1);
 });

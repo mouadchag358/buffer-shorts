@@ -2358,14 +2358,14 @@
     "[\"r2-0499f54748f3b6ab407d9fb6293ef98c0b0e3f460fa693ea42f3b2015925d572\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-11T18:00:57.861Z",
+      "dueAt": "2026-10-13T06:00:36.017Z",
       "updatedAt": "2026-10-10T05:55:57.861Z",
       "bufferId": "6ac9d3b6f91f772d45820d3d",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-11T05:50:36.017Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l5y7y a5 3999081693549688505 🔥 #Shorts",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-13T06:00:36.017Z"
       }
     },

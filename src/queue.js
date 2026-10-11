@@ -56,18 +56,10 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
 
     const platform = channel.service;
     const currentParts = localParts(new Date(post.dueAt));
-    const currentDay = `${currentParts.year}-${currentParts.month}-${currentParts.day}`;
-    const nowParts = localParts(now);
-    const today = `${nowParts.year}-${nowParts.month}-${nowParts.day}`;
-
-    let needsMove = false;
-    if (platform === 'instagram' || platform === 'facebook') {
-      needsMove = currentParts.minute !== '00';
-    } else if (['youtube', 'tiktok'].includes(platform)) {
-      needsMove = currentDay === today || currentParts.minute !== '00' || !['00', '06', '12', '18'].includes(currentParts.hour);
-    } else {
-      continue;
-    }
+    if (!['facebook', 'instagram', 'youtube', 'tiktok'].includes(platform)) continue;
+    // Ne déplacer que les anciennes publications hors des quatre heures fixes.
+    // Les créneaux valides sont préservés, notamment ceux déjà planifiés aujourd'hui.
+    const needsMove = currentParts.minute !== '00' || !['00', '06', '12', '18'].includes(currentParts.hour);
 
     if (!needsMove) continue;
 

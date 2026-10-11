@@ -15,6 +15,19 @@ const PLATFORM_HASHTAGS = {
   ]
 };
 
+const FACEBOOK_CAPTIONS = [
+  "👀 You have to see this! What do you think? 🔥\n#FacebookReels #Viral #Trending #MustWatch #Reels",
+  "🔥 This clip is worth a second look! Would you watch it again? 👇\n#FacebookReels #ViralVideo #TrendingNow #Reels",
+  "😲 What's your reaction to this moment? Tell us below! 💬\n#FacebookReels #WatchThis #Viral #Trending",
+  "😂 Which part caught your attention? Drop a comment! 👇\n#FacebookReels #FunnyMoments #Reels #Viral",
+  "👀 Keep watching and tell us what you noticed! 🔥\n#FacebookReels #MustWatch #Trending #ViralClips",
+  "🤯 One clip, so many reactions! What's yours? 💬\n#FacebookReels #ViralVideo #Reels #Trending",
+  "⚡ Would you share this with a friend? Tag them! 👇\n#FacebookReels #ShareThis #TrendingNow #Reels",
+  "🔥 A moment you might want to replay! What stood out to you? 👀\n#FacebookReels #WatchAgain #Viral #Reels",
+  "😮 Watch closely! What would you say about this? 💭\n#FacebookReels #Trending #MustWatch #ViralVideo",
+  "👀 This one's for your feed! Rate this clip from 1 to 10! 🔥\n#FacebookReels #Reels #Viral #TrendingNow"
+];
+
 function stableIndex(value, length) {
   let hash = 0;
   for (const char of String(value || '')) hash = (hash * 31 + char.codePointAt(0)) >>> 0;
@@ -27,6 +40,7 @@ export function platformText(post, platform) {
     if (typeof custom !== 'string') throw new Error(`Description invalide: ${post.id}/${platform}`);
     if (custom.trim()) return custom.trim();
   }
+  if (platform === 'facebook') return FACEBOOK_CAPTIONS[stableIndex(post.id || post.file || post.url, FACEBOOK_CAPTIONS.length)];
   const hashtags = PLATFORM_HASHTAGS[platform];
   if (hashtags) return hashtags[stableIndex(post.id || post.file || post.url, hashtags.length)];
   return post.text || videoTitle(post);

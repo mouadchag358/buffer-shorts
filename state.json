@@ -3088,7 +3088,11 @@
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8efeb07d37ac97a9e93a",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T16:18:33.493Z"
+      "lastCheckedAt": "2026-10-11T16:18:33.493Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-12T12:00:33.493Z"
+      }
     },
     "[\"r2-1f54654f08c14577fceef70aa14bd9187ecb97e8acbe3210a1a23d170189c55c\",\"instagram\"]": {
       "status": "queued",

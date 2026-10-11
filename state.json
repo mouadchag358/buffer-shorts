@@ -2763,6 +2763,12 @@
       "updatedAt": "2026-10-11T05:50:36.017Z",
       "bufferId": "6acb23cff91f772d45b98c65",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-5da8469fb0866a8a50dedcf9c0a405e5dcb3e7ad87a176ac54a4b9aeb423ba59\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-11T09:00:00.000Z",
+      "updatedAt": "2026-10-11T05:50:36.017Z"
     }
   },
   "r2ListingRequests": {

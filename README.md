@@ -6,8 +6,8 @@ Ce projet automatise les vidéos MP4 du bucket Cloudflare R2 `reels` vers **une 
 
 | Réseau | Cadence | Nombre de posts programmés d'avance |
 | --- | --- | --- |
-| Facebook Reels | Une vidéo par heure, à la minute 00 | 8 |
-| Instagram Reels | Une vidéo par heure, à la minute 00 | 8 |
+| Facebook Reels | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
+| Instagram Reels | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
 | YouTube Shorts | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
 
 GitHub Actions vérifie la file toutes les 5 heures environ. Les posts déjà programmés sont comptabilisés avant tout nouvel envoi, et les vidéos sont identifiées de manière stable pour éviter les doublons. Buffer publie aux horaires `dueAt` même lorsque GitHub Actions n'est pas actif.
@@ -36,7 +36,7 @@ Les chaînes Buffer sont détectées automatiquement lorsqu'une seule chaîne de
 
 - `src/catalog.js` liste les MP4 et construit les destinations Facebook, Instagram et YouTube. Il remplace les anciennes destinations TikTok dans le catalogue mis en cache.
 - `src/core.js` précise `metadata.facebook.type = 'reel'` pour les publications Facebook.
-- `src/queue-schedule.js` génère pour Facebook les mêmes créneaux horaires qu'Instagram.
+- `src/queue-schedule.js` génère pour les trois réseaux les quatre créneaux 00h, 06h, 12h et 18h.
 - `src/sync-run.js` remplit la file de ces trois réseaux et conserve les protections existantes contre les appels excessifs.
 - `state.json` conserve les checkpoints, les identifiants Buffer et les compteurs R2. Ne pas le remettre à zéro pour reprogrammer une vidéo : risque de doublons.
 

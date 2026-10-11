@@ -15,6 +15,35 @@ const PLATFORM_HASHTAGS = {
   ]
 };
 
+const YOUTUBE_HOOK_TITLES = [
+  "Did You Catch That? 👀 #Shorts #Viral",
+  "This Clip Deserves a Replay! 🔥 #Shorts #Trending",
+  "Wait... What Do You Think? 😳 #Shorts #Viral",
+  "Watch Closely! 👀 #Shorts #Trending",
+  "Would You Watch This Again? 🔥 #Shorts #Viral",
+  "Rate This Clip from 1 to 10! ⭐ #Shorts #Viral",
+  "What's Your Reaction? 😮 #Shorts #Trending",
+  "One Clip, So Many Reactions! 🤯 #Shorts #Viral",
+  "Which Part Stood Out to You? 👇 #Shorts #Trending",
+  "Watch and Tell Me What You Think! 👀 #Shorts #Viral",
+  "How Would You React? 😮 #Shorts #Trending",
+  "Did You Notice That? 👀 #Shorts #Viral"
+];
+const YOUTUBE_HOOK_DESCRIPTIONS = [
+  "👀 Did you catch that? Watch and tell us what you think!\n#Shorts #YouTubeShorts #Viral #Trending",
+  "🔥 Worth another watch? Share your reaction below!\n#Shorts #YouTubeShorts #Trending #ViralVideo",
+  "😮 What was your first reaction? Leave a comment!\n#Shorts #Viral #YouTubeShorts #TrendingNow",
+  "👀 Watch closely and tell us what stood out!\n#Shorts #Trending #YouTubeShorts #MustWatch",
+  "💬 Would you watch this again? Tell us why!\n#Shorts #Viral #YouTubeShorts #WatchAgain",
+  "⭐ Rate this clip from 1 to 10 in the comments!\n#Shorts #YouTubeShorts #Viral #Trending",
+  "😲 We want to hear your reaction! Comment below.\n#Shorts #Trending #YouTubeShorts #Viral",
+  "🤯 What's your take on this clip? Let us know!\n#Shorts #YouTubeShorts #ViralVideo #Trending",
+  "👇 Which part caught your attention? Tell us!\n#Shorts #YouTubeShorts #Trending #Viral",
+  "🔥 What did you think of this moment? Comment!\n#Shorts #Viral #YouTubeShorts #TrendingNow",
+  "😮 How would you react? Join the conversation!\n#Shorts #Trending #YouTubeShorts #Viral",
+  "👀 Did you notice something interesting? Share below!\n#Shorts #YouTubeShorts #Viral #Trending"
+];
+
 const FACEBOOK_CAPTIONS = [
   "👀 You have to see this! What do you think? 🔥\n#FacebookReels #Viral #Trending #MustWatch #Reels",
   "🔥 This clip is worth a second look! Would you watch it again? 👇\n#FacebookReels #ViralVideo #TrendingNow #Reels",
@@ -41,6 +70,7 @@ export function platformText(post, platform) {
     if (custom.trim()) return custom.trim();
   }
   if (platform === 'facebook') return FACEBOOK_CAPTIONS[stableIndex(post.id || post.file || post.url, FACEBOOK_CAPTIONS.length)];
+  if (platform === 'youtube') return YOUTUBE_HOOK_DESCRIPTIONS[stableIndex(post.id || post.file || post.url, YOUTUBE_HOOK_DESCRIPTIONS.length)];
   const hashtags = PLATFORM_HASHTAGS[platform];
   if (hashtags) return hashtags[stableIndex(post.id || post.file || post.url, hashtags.length)];
   return post.text || videoTitle(post);
@@ -64,16 +94,14 @@ export function videoTitle(post) {
 }
 
 export function youtubeTitle(post) {
-  const base = videoTitle(post).replace(/\s*#shorts\s*$/i, '').trim();
-  const suffixes = [' 🔥 #Shorts', ' 👀 #Shorts', ' 😮 #Shorts'];
-  const suffix = suffixes[stableIndex(post.id || post.file || post.url, suffixes.length)];
-  let result = '';
-  const maxBaseLength = 100 - suffix.length;
-  for (const char of base) {
-    if (result.length + char.length > maxBaseLength) break;
-    result += char;
+  // Respect the specifically configured YouTube title; the R2 catalogue's
+  // generic post.title is auto-derived from filenames and is not a custom title.
+  const custom = post.youtube?.title;
+  if (custom !== undefined) {
+    if (typeof custom !== 'string') throw new Error(`Titre YouTube invalide: ${post.id}`);
+    if (custom.trim()) return [...custom.trim()].reduce((acc, char) => acc.length + char.length <= 100 ? acc + char : acc, '').trim();
   }
-  return (result.trim() || 'Short').trim() + suffix;
+  return YOUTUBE_HOOK_TITLES[stableIndex(post.id || post.file || post.url, YOUTUBE_HOOK_TITLES.length)];
 }
 export function validate(posts) {
   if (!Array.isArray(posts)) throw new Error('posts.json doit être une liste');

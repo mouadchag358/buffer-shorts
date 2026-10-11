@@ -294,3 +294,68 @@ test('YouTube already queued Shorts receive English hook titles without reupload
   assert.ok(saves>=1);
   assert.equal(await refreshScheduledDescriptions(opts),0);
 });
+
+test('Facebook: skip narrow/wide aspect ratio Reels and fill to 8 without re-queueing existing posts', async () => {
+  const posts = Array.from({ length: 18 }, (_, i) => ({ id: 'ratio-' + i, file: i + '.mp4', platforms: ['facebook'] }));
+  const fourExisting = Array.from({ length: 4 }, (_, i) => ({
+    id: 'already-' + i, channelId: 'fb', status: 'scheduled',
+    dueAt: platformQueueTargets(now, 'facebook', 8)[i].dueAt,
+    assets: [{ source: 'https://example.com/' + i + '.mp4' }]
+  }));
+  const state = { version: 1, slots: {}, deliveries: {} };
+  for (let i = 0; i < 4; i++) {
+    state.deliveries[deliveryKey(posts[i].id, 'facebook')] = {
+      status: 'queued', bufferId: fourExisting[i].id, channelId: 'fb'
+    };
+  }
+  // Previously rejected aspect ratios should be skipped permanently.
+  state.deliveries[deliveryKey('ratio-4', 'facebook')] = {
+    status: 'rejected', error: 'Invalid post: Video aspect ratio is too narrow for Facebook Reels.'
+  };
+  const sent = [], remote = [...fourExisting], saved = [];
+  const opts = { posts, state, remote, now, channels: [{ id:'fb', service:'facebook' }],
+    env: { BUFFER_FACEBOOK_CHANNEL_ID:'fb', R2_PUBLIC_BASE_URL:'https://example.com' },
+    persist: async s => saved.push(structuredClone(s)), log: () => {},
+    send: async input => {
+      sent.push(input);
+      const file = input.assets[0].video.url.split('/').pop();
+      const error = file === '5.mp4'
+        ? 'Invalid post: Video aspect ratio is too narrow for Facebook Reels.'
+        : file === '6.mp4'
+        ? 'Invalid post: Video aspect ratio is too wide for Facebook Reels.'
+        : null;
+      return error ? { status:'rejected', error } : { status:'queued', bufferId:'new-'+sent.length };
+    }
+  };
+  const result = await fillQueues(opts);
+  assert.equal(result[0].queued, 8);
+  assert.equal(result[0].added, 4);
+  assert.equal(result[0].rejected, 2);
+  assert.equal(result[0].errors.length, 0);
+  assert.equal(sent.length, 6);
+  assert.deepEqual(sent.map(p => p.assets[0].video.url.split('/').pop()),
+    ['5.mp4','6.mp4','7.mp4','8.mp4','9.mp4','10.mp4']);
+  assert.equal(remote.length, 8);
+  assert.equal(new Set(remote.map(p => p.dueAt)).size, 8);
+  assert.equal(state.deliveries[deliveryKey('ratio-5', 'facebook')].status, 'rejected');
+  assert.equal(state.deliveries[deliveryKey('ratio-6', 'facebook')].status, 'rejected');
+  assert.ok(saved.length >= 12);
+  const second = await fillQueues(opts);
+  assert.equal(second[0].queued, 8);
+  assert.equal(second[0].added, 0);
+  assert.equal(sent.length, 6);
+});
+
+test('Facebook format errors are skippable but unrelated Buffer refusals still stop the queue', async () => {
+  const posts = Array.from({ length: 15 }, (_, i) => ({id:'r'+i, file:i+'.mp4', platforms:['facebook']}));
+  const opts = { posts, state:{version:1,slots:{},deliveries:{}}, remote:[],
+    channels:[{id:'fb',service:'facebook'}], now,
+    env:{BUFFER_FACEBOOK_CHANNEL_ID:'fb',R2_PUBLIC_BASE_URL:'https://example.com'},
+    persist:async()=>{},log:()=>{},
+    send:async()=>({status:'rejected',error:'Permission denied: page not connected'})
+  };
+  const summaries=await fillQueues(opts);
+  assert.equal(summaries[0].attempts,1);
+  assert.equal(summaries[0].rejected,1);
+  assert.match(summaries[0].errors[0],/Permission denied/);
+});

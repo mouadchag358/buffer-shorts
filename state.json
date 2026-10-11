@@ -21365,15 +21365,15 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-11T13:33:51.383Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-11T13:27:35.045Z",
+    "status": "partial",
+    "lastCompletedAt": "2026-10-11T13:33:51.383Z",
     "summaries": [
       {
         "platform": "facebook",
         "queued": 4,
-        "added": 4,
-        "rejected": 4,
-        "attempts": 8,
+        "added": 0,
+        "rejected": 1,
+        "attempts": 1,
         "errors": [
           "Invalid post: Video aspect ratio is too narrow for Facebook Reels."
         ],
@@ -21387,9 +21387,9 @@
       {
         "platform": "instagram",
         "queued": 8,
-        "added": 8,
+        "added": 0,
         "rejected": 0,
-        "attempts": 8,
+        "attempts": 0,
         "errors": [],
         "dueAt": [
           "2026-10-11T14:00:00.000Z",

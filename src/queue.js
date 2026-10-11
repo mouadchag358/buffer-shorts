@@ -105,7 +105,7 @@ export async function refreshScheduledDescriptions({ posts, state, remote, chann
   for (const remotePost of remote) {
     if (remotePost.status !== 'scheduled') continue;
     const channel = channelById.get(remotePost.channelId);
-    if (!channel || !['youtube', 'tiktok'].includes(channel.service)) continue;
+    if (!channel || !['youtube', 'tiktok', 'facebook'].includes(channel.service)) continue;
 
     const record = byBufferId.get(remotePost.id);
     if (!record) continue;

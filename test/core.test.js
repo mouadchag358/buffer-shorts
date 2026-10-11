@@ -42,7 +42,8 @@ test('prévalidation des destinations avant envoi', async () => {
 test('URL encodée et titre/catégorie YouTube', () => {
   const input = inputFor(post, 'youtube', env);
   assert.equal(input.assets[0].video.url, 'https://media.example.com/a%20b.mp4');
-  assert.equal(input.metadata.youtube.title, 'Test 👀 #Shorts'); assert.equal(input.metadata.youtube.categoryId, '22');
+  assert.match(input.metadata.youtube.title, /#Shorts #(Viral|Trending)$/);
+  assert.equal(input.metadata.youtube.categoryId, '22');
 });
 test('validation et créneaux UTC', () => {
   assert.throws(() => validate([post, post]));
@@ -64,12 +65,16 @@ test('titres des fichiers avec priorité au titre personnalisé', () => {
   assert.equal(videoTitle({ title: '  Mon titre  ' }), 'Mon titre');
   assert.equal(videoTitle({ title: 'Autre', youtube: { title: 'Spécifique' } }), 'Spécifique');
 });
-test('YouTube utilise le titre du fichier par défaut et ajoute #Shorts', () => {
+test('YouTube utilise une accroche anglaise au lieu du nom du fichier', () => {
   const p = { ...post, title: '', file: 'Mon_short.mp4' };
   validate([p]); const input = inputFor(p, 'youtube', env);
-  assert.equal(input.metadata.youtube.title, 'Mon short 👀 #Shorts');
-  assert.match(input.text, /#Shorts|#YouTubeShorts/);
+  assert.match(input.metadata.youtube.title, /#Shorts #(Viral|Trending)$/);
+  assert.notEqual(input.metadata.youtube.title, 'Mon short 👀 #Shorts');
+  assert.match(input.text, /#Shorts.*#YouTubeShorts/);
   assert.ok(youtubeTitle({ ...p, title: 'a'.repeat(101) }).length <= 100);
+  assert.equal(youtubeTitle(p), youtubeTitle(p));
+  assert.equal(youtubeTitle({ ...p, youtube: { title: 'My custom YouTube video #Shorts' } }), 'My custom YouTube video #Shorts');
+  assert.equal(youtubeTitle({ ...p, youtube: { title: 'a'.repeat(101) } }).length, 100);
 });
 
 test('titres arabes et limite YouTube sans couper un emoji', () => {
@@ -105,4 +110,19 @@ test('Facebook: English hooks and hashtags, independent from other networks', ()
   assert.equal(facebook.text, inputFor(fb, 'facebook', envFb).text);
   assert.equal(instagram.text, fb.text);
   assert.equal(platformText({ ...fb, descriptions: { facebook: '  Custom FB hook! #Reels  ' } }, 'facebook'), 'Custom FB hook! #Reels');
+});
+
+test('YouTube click-worthy English title and description differ from Facebook and Instagram', () => {
+  const source = { id: 'youtube-click', file: 'example-日本語.mp4', text: 'Original text', platforms: ['youtube','facebook','instagram'] };
+  const allEnv = { ...env, BUFFER_FACEBOOK_CHANNEL_ID: 'fb', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' };
+  const yt = inputFor(source, 'youtube', allEnv);
+  const fb = inputFor(source, 'facebook', allEnv);
+  const ig = inputFor(source, 'instagram', allEnv);
+  assert.ok(yt.metadata.youtube.title.length <= 100);
+  assert.match(yt.metadata.youtube.title, /#Shorts #(Viral|Trending)$/);
+  assert.doesNotMatch(yt.metadata.youtube.title, /日本語/);
+  assert.match(yt.text, /#YouTubeShorts/);
+  assert.notEqual(yt.text, fb.text);
+  assert.equal(ig.text, 'Original text');
+  assert.equal(platformText({ ...source, descriptions: { youtube: ' My custom description #Shorts ' } }, 'youtube'), 'My custom description #Shorts');
 });

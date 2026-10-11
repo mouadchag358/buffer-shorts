@@ -3038,6 +3038,12 @@
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8efbb07d37ac97a9e8b4",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-a850728d81cd03c9d89b3ac5f62b05207d719261e1f6d4be5bf780a6c5f6230f\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-11T20:00:00.000Z",
+      "updatedAt": "2026-10-11T13:27:35.045Z"
     }
   },
   "r2ListingRequests": {

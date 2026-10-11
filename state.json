@@ -21432,23 +21432,25 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-11T13:47:24.499Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-11T13:33:51.383Z",
+    "status": "complete",
+    "lastCompletedAt": "2026-10-11T13:47:24.499Z",
     "summaries": [
       {
         "platform": "facebook",
-        "queued": 4,
-        "added": 0,
-        "rejected": 1,
-        "attempts": 1,
-        "errors": [
-          "Invalid post: Video aspect ratio is too narrow for Facebook Reels."
-        ],
+        "queued": 8,
+        "added": 4,
+        "rejected": 5,
+        "attempts": 9,
+        "errors": [],
         "dueAt": [
           "2026-10-11T14:00:00.000Z",
           "2026-10-11T15:00:00.000Z",
           "2026-10-11T16:00:00.000Z",
-          "2026-10-11T17:00:00.000Z"
+          "2026-10-11T17:00:00.000Z",
+          "2026-10-11T18:00:00.000Z",
+          "2026-10-11T19:00:00.000Z",
+          "2026-10-11T20:00:00.000Z",
+          "2026-10-11T21:00:00.000Z"
         ]
       },
       {
@@ -21488,7 +21490,7 @@
         ]
       }
     ],
-    "completedRequestId": "manual-force-refill-20261009-201855"
+    "completedRequestId": "facebook-ratio-repair-20261011-01"
   },
   "resume": {
     "facebookFromInstagram": {

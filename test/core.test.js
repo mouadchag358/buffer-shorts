@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { processSlot, inputFor, slotKey, validate, deliveryKey, videoTitle, youtubeTitle } from '../src/core.js';
+import { processSlot, inputFor, slotKey, validate, deliveryKey, videoTitle, youtubeTitle, platformText } from '../src/core.js';
 import { createPost } from '../src/buffer.js';
 const post = { id: 'a', file: 'a b.mp4', title: 'Test', platforms: ['tiktok', 'youtube'] };
 const env = { BUFFER_TIKTOK_CHANNEL_ID: 'tt', BUFFER_YOUTUBE_CHANNEL_ID: 'yt', R2_PUBLIC_BASE_URL: 'https://media.example.com' };
@@ -91,4 +91,18 @@ test('les vidéos Facebook sont programmées comme Reels', () => {
   assert.equal(input.channelId, 'page');
   assert.deepEqual(input.metadata, { facebook: { type: 'reel' } });
   assert.equal(input.assets[0].video.metadata, undefined);
+});
+
+test('Facebook: English hooks and hashtags, independent from other networks', () => {
+  const fb = { id: 'facebook-clip', file: 'random-video.mp4', text: 'Original generic title', platforms: ['facebook', 'instagram'] };
+  const envFb = { R2_PUBLIC_BASE_URL: 'https://example.com', BUFFER_FACEBOOK_CHANNEL_ID: 'fb', BUFFER_INSTAGRAM_CHANNEL_ID: 'ig' };
+  const facebook = inputFor(fb, 'facebook', envFb);
+  const instagram = inputFor(fb, 'instagram', envFb);
+  assert.match(facebook.text, /#FacebookReels/);
+  assert.match(facebook.text, /#Viral/);
+  assert.match(facebook.text, /[A-Za-z]/);
+  assert.notEqual(facebook.text, fb.text);
+  assert.equal(facebook.text, inputFor(fb, 'facebook', envFb).text);
+  assert.equal(instagram.text, fb.text);
+  assert.equal(platformText({ ...fb, descriptions: { facebook: '  Custom FB hook! #Reels  ' } }, 'facebook'), 'Custom FB hook! #Reels');
 });

@@ -12,7 +12,7 @@ function setup() {
   const posts = Array.from({ length: 20 }, (_, i) => ({ id: String(i), file: `${i}.mp4`, platforms: channels.map(c => c.service) }));
   return { state, saved, sent, env, posts, options: { posts, state, remote: [], channels, env, now, log: () => {}, persist: async s => saved.push(structuredClone(s)), send: async input => { assert.ok(saved.at(-1)); sent.push(input); return { status: 'queued', bufferId: `buffer-${sent.length}` }; } } };
 }
-test('8 vidéos en avance: Instagram horaire, YouTube/TikTok 4 par jour', async () => {
+test('8 vidéos en avance: Facebook, Instagram, YouTube et TikTok 4 par jour', async () => {
   const s = setup(); const summaries = await fillQueues(s.options);
   assert.equal(s.sent.length, 24); assert.ok(summaries.every(s => s.queued === 8));
   for (const channel of channels) {
@@ -144,7 +144,7 @@ test('créneaux horaires exacts, aussi pendant Ramadan', () => {
       const p = localParts(new Date(t.dueAt));
       return p.hour + ':' + p.minute;
     });
-    assert.ok(times.every(time => time.endsWith(':00')));
+    assert.ok(times.every(time => ['00:00','06:00','12:00','18:00'].includes(time)));
   }
 });
 test('migration de plusieurs anciennes vidéos vers des créneaux distincts', async () => {
@@ -155,7 +155,7 @@ test('migration de plusieurs anciennes vidéos vers des créneaux distincts', as
   assert.deepEqual(remote.map(p=>p.dueAt),platformQueueTargets(now,'tiktok',2).map(t=>t.dueAt));
 });
 
-test('Facebook reprend exactement la cadence horaire Instagram avec huit Reels en avance', async () => {
+test('Facebook reprend exactement les quatre créneaux quotidiens Instagram avec huit Reels en avance', async () => {
   const channel = { id: 'facebook', service: 'facebook' };
   const state = { version: 1, slots: {}, deliveries: {} }, sent = [];
   const env = { BUFFER_FACEBOOK_CHANNEL_ID: 'facebook', R2_PUBLIC_BASE_URL: 'https://example.com' };

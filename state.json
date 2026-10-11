@@ -2363,7 +2363,11 @@
       "bufferId": "6ac9d3b6f91f772d45820d3d",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-11T05:50:36.017Z",
-      "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l5y7y a5 3999081693549688505 🔥 #Shorts"
+      "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l5y7y a5 3999081693549688505 🔥 #Shorts",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-13T06:00:36.017Z"
+      }
     },
     "[\"r2-259d731bf809a2dd17cab98c6e2fcfcf7b2b47374f52fae46ae0b88ecae0b59d\",\"facebook\"]": {
       "status": "rejected",

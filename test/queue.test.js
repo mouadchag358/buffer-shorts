@@ -276,3 +276,21 @@ test('Facebook captions are updated on already scheduled Buffer Reels, without r
   assert.equal(await refreshScheduledDescriptions(opts), 0);
   assert.equal(edits.length, 1);
 });
+
+test('YouTube already queued Shorts receive English hook titles without reuploading', async () => {
+  const post = { id:'short-youtube',file:'short-youtube.mp4',title:'Old source title',text:'Old text',platforms:['youtube'] };
+  const env = { R2_PUBLIC_BASE_URL:'https://example.com',BUFFER_YOUTUBE_CHANNEL_ID:'yt' };
+  const remote=[{id:'queued-yt',channelId:'yt',status:'scheduled',dueAt:now.toISOString(),text:'Old text'}];
+  const state={deliveries:{[deliveryKey(post.id,'youtube')]:{status:'queued',bufferId:'queued-yt'}}};
+  const edited=[];let saves=0;
+  const opts={posts:[post],state,remote,channels:[{id:'yt',service:'youtube'}],env,
+    persist:async()=>{saves++},edit:async(id,dueAt,content)=>{edited.push({id,dueAt,content});return {id,status:'scheduled',dueAt}}};
+  assert.equal(await refreshScheduledDescriptions(opts),1);
+  assert.equal(edited.length,1);
+  assert.match(edited[0].content.metadata.youtube.title,/#Shorts #(Viral|Trending)$/);
+  assert.match(edited[0].content.text,/#YouTubeShorts/);
+  assert.equal(edited[0].content.assets[0].video.url,'https://example.com/short-youtube.mp4');
+  assert.equal(state.deliveries[deliveryKey(post.id,'youtube')].youtubeTitleUpdatedTo, edited[0].content.metadata.youtube.title);
+  assert.ok(saves>=1);
+  assert.equal(await refreshScheduledDescriptions(opts),0);
+});

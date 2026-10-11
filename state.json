@@ -1704,11 +1704,12 @@
       "bufferId": "6ac8aea12fb5bb53de1997e8",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-11T13:33:51.383Z",
-      "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l247zq2z 3999081493833887155 😮 #Shorts",
+      "youtubeTitleUpdatedTo": "Wait... What Do You Think? 😳 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-12T12:00:36.017Z"
-      }
+      },
+      "descriptionUpdatedAt": "2026-10-11T13:33:57.840Z"
     },
     "[\"r2-9c4b10019f040fef4a0514a85fd471c46b820b31ccb281cd88f65d3acfed2f13\",\"youtube\"]": {
       "status": "queued",

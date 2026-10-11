@@ -3318,6 +3318,12 @@
       "updatedAt": "2026-10-11T23:41:26.074Z",
       "bufferId": "6acc1eb0fa026cfb811c2f74",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-0e6049d913d2d04e7bbab5e70c4eaaa4129f6461c8cff73e278e6cb9ac66836f\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-12T00:00:26.074Z",
+      "updatedAt": "2026-10-11T23:41:26.074Z"
     }
   },
   "r2ListingRequests": {

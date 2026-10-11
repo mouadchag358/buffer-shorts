@@ -1404,7 +1404,7 @@
       "updatedAt": "2026-10-07T20:04:47.132Z",
       "bufferId": "6ac6a63ae385dfed92326574",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T13:27:35.045Z",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 79SESoDY 3999178690159870168 😮 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -1522,7 +1522,7 @@
       "updatedAt": "2026-10-08T09:14:21.954Z",
       "bufferId": "6ac75f2c5d76b00cd8331f2f",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T13:27:35.045Z",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd 8BWYyBXZ 3999178969676518873 🔥 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -1687,7 +1687,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8ae9eeba50495e0a751c0",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T13:27:35.045Z",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l1soy5Tz 3999081411910538483 😮 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -1701,7 +1701,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8aea12fb5bb53de1997e8",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T13:27:35.045Z",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l247zq2z 3999081493833887155 😮 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -1715,7 +1715,7 @@
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8aea5a981976dfac67c59",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T13:27:35.045Z",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l4F6TOyu 3999081576486726830 👀 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -2362,7 +2362,7 @@
       "updatedAt": "2026-10-10T05:55:57.861Z",
       "bufferId": "6ac9d3b6f91f772d45820d3d",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T13:27:35.045Z",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l5y7y a5 3999081693549688505 🔥 #Shorts",
       "scheduleUpdate": {
         "status": "done",
@@ -2918,7 +2918,7 @@
       "updatedAt": "2026-10-11T05:50:36.017Z",
       "bufferId": "6acb23fcf91f772d45b98fe6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T13:27:35.045Z",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l7ajTIsa 3999081804807834394 😮 #Shorts"
     },
     "[\"r2-1f857c8704d78c57575be0eca4146d1b852ba9d9369f81f0d3d24279bb6c551d\",\"youtube\"]": {
@@ -2928,7 +2928,7 @@
       "updatedAt": "2026-10-11T05:50:36.017Z",
       "bufferId": "6acb23ffc4de2d2b124edcb7",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T13:27:35.045Z",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z",
       "youtubeTitleUpdatedTo": "% #あらゆる追いかけっこを繰り広げる 2026-10-02 Dd l8qJy-oF 3999081890279320069 🔥 #Shorts"
     },
     "[\"r2-e0384cd6617a1ded976fe8d4df2c9f91eaaeeaa3beb10666658d44e0e6a2a86e\",\"facebook\"]": {
@@ -2944,7 +2944,8 @@
       "dueAt": "2026-10-11T14:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8ed3d9cab260a7fb8cef",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-492a1827a9bdf5ad1c6787384ce50a8a60a6db7d701c9054766994dbee034087\",\"facebook\"]": {
       "status": "queued",
@@ -2952,7 +2953,8 @@
       "dueAt": "2026-10-11T15:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8ed7bba9419ccb38b80e",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-caaddc974a8e211c48f0aee2826c20e0edbdb1c1b747dc2597d7b3aef4dfaba7\",\"facebook\"]": {
       "status": "queued",
@@ -2960,7 +2962,8 @@
       "dueAt": "2026-10-11T16:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8edaed92ed8fa5040c40",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-1d9ecb8d7718a798dc332b9f72027a66b648e8043f50851d7936d06f9742eb62\",\"facebook\"]": {
       "status": "rejected",
@@ -2982,7 +2985,8 @@
       "dueAt": "2026-10-11T17:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8ee4bba9419ccb38bb5e",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-077a71602f9198829e3c63cf9fd442d9d5be557ab5ee2b98787b569f4a942170\",\"facebook\"]": {
       "status": "rejected",
@@ -2997,7 +3001,8 @@
       "dueAt": "2026-10-11T14:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8eebed92ed8fa5040dca",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-259d731bf809a2dd17cab98c6e2fcfcf7b2b47374f52fae46ae0b88ecae0b59d\",\"instagram\"]": {
       "status": "queued",
@@ -3005,7 +3010,8 @@
       "dueAt": "2026-10-11T15:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8eeeed92ed8fa5040dfe",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-e2c598ef0aa5de8111d2149f845e8b5ffcaafb788f593239b2183fcc61088c39\",\"instagram\"]": {
       "status": "queued",
@@ -3013,7 +3019,8 @@
       "dueAt": "2026-10-11T16:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8ef1ed92ed8fa5040e85",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-712b96d63b3aa0b07f5410da987dc8515ca374a1595b461231d497e9da126cbe\",\"instagram\"]": {
       "status": "queued",
@@ -3021,7 +3028,8 @@
       "dueAt": "2026-10-11T17:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8ef4b07d37ac97a9e80c",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-5fc7fb826d3e5b2f4ec1af9e6e57568c60b15fb48ccad50244912ccca0c27ed7\",\"instagram\"]": {
       "status": "queued",
@@ -3029,7 +3037,8 @@
       "dueAt": "2026-10-11T18:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8ef8f91f772d45cb7633",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-1c29837adb1d350f621460e3c01c8a3d1acaaecf5963253d8ab0489788a73de5\",\"instagram\"]": {
       "status": "queued",
@@ -3037,7 +3046,8 @@
       "dueAt": "2026-10-11T19:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8efbb07d37ac97a9e8b4",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-a850728d81cd03c9d89b3ac5f62b05207d719261e1f6d4be5bf780a6c5f6230f\",\"instagram\"]": {
       "status": "queued",
@@ -3045,7 +3055,8 @@
       "dueAt": "2026-10-11T20:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8efeb07d37ac97a9e93a",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     },
     "[\"r2-1f54654f08c14577fceef70aa14bd9187ecb97e8acbe3210a1a23d170189c55c\",\"instagram\"]": {
       "status": "queued",
@@ -3053,7 +3064,8 @@
       "dueAt": "2026-10-11T21:00:00.000Z",
       "updatedAt": "2026-10-11T13:27:35.045Z",
       "bufferId": "6acb8f01c4de2d2b12610b3f",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-11T13:33:51.383Z"
     }
   },
   "r2ListingRequests": {

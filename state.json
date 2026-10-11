@@ -3180,7 +3180,11 @@
       "updatedAt": "2026-10-11T13:47:24.499Z",
       "bufferId": "6acb938abba9419ccb398d87",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-11T16:18:33.493Z"
+      "lastCheckedAt": "2026-10-11T16:18:33.493Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-12T18:00:33.493Z"
+      }
     }
   },
   "r2ListingRequests": {

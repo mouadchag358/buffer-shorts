@@ -3189,6 +3189,12 @@
         "status": "done",
         "dueAt": "2026-10-12T18:00:33.493Z"
       }
+    },
+    "[\"r2-30cc0f246db7e56ca542302ade8bd2a5465a1e3d0b6140834ee20f2ce9f3a343\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-13T00:00:33.493Z",
+      "updatedAt": "2026-10-11T16:18:33.493Z"
     }
   },
   "r2ListingRequests": {

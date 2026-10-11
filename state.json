@@ -3176,13 +3176,13 @@
     "[\"r2-b0d20d9cc3e9cbbf0a453d4aef93ffb07694864c3393fbb95cfcfae5ea6878fc\",\"facebook\"]": {
       "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
-      "dueAt": "2026-10-11T21:00:00.000Z",
+      "dueAt": "2026-10-12T18:00:33.493Z",
       "updatedAt": "2026-10-11T13:47:24.499Z",
       "bufferId": "6acb938abba9419ccb398d87",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-11T16:18:33.493Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-12T18:00:33.493Z"
       }
     }

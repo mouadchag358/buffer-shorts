@@ -6,7 +6,7 @@ const q={id:'quiz-001',image:'pop-culture/cards/quiz-001.png',caption:'QUIZ TIME
 const channel='facebook-channel';
 const dueAt='2026-10-15T06:00:00.000Z';
 const make=(data={})=>({id:'post-a',channelId:channel,status:'scheduled',dueAt,text:q.caption,
-  assets:[{source:'https://buffer-cdn.test/file',mimeType:'image/png'}],...data});
+  assets:[{source:'https://buffer-cdn.test/opaque-image'}],...data});
 test('media edit changes only image and Facebook type, never time, status, text or channel',()=>{
  const input=buildMediaEdit(make(),q,'a'.repeat(40));
  assert.deepEqual(Object.keys(input).sort(),['assets','id','metadata']);
@@ -16,11 +16,11 @@ test('media edit changes only image and Facebook type, never time, status, text 
 test('recognizes only confirmed scheduled Facebook quiz images, excludes Reels',()=>{
  const posts=[
    make(),
-   make({id:'video',assets:[{mimeType:'video/mp4',source:'https://buffer-cdn.test/opaque'}]}),
+   make({id:'video',assets:[{source:'https://buffer-cdn.test/clip.mp4'}]}),
    make({id:'another-channel',channelId:'instagram'}),
    make({id:'another-caption',text:'Unrelated'}),make({id:'sent',status:'sent'})
  ];
- const x=findScheduledQuizImages(posts,[q],['quiz-001'],channel);
+ const x=findScheduledQuizImages(posts,[q],['quiz-001'],channel,{'post-a':q.image});
  assert.equal(x.selected.length,1);
  assert.equal(x.selected[0].post.id,'post-a');
  assert.deepEqual(x.unsafe,[{id:'video',quizId:'quiz-001',reason:'video media'}]);

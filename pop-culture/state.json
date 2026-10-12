@@ -66,29 +66,63 @@
     }
   },
   "newImages": {
-    "quiz-009": {
+    "quiz-001": {
       "status": "queued",
       "dueAt": "2026-10-13T00:00:00.000Z",
       "bufferId": "6acd6b283d6121df40339073",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "previousQuizId": "quiz-009"
     },
-    "quiz-010": {
+    "quiz-002": {
       "status": "queued",
       "dueAt": "2026-10-13T06:00:00.000Z",
       "bufferId": "6acd6b2b5462be2e902a3d28",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "previousQuizId": "quiz-010"
     },
-    "quiz-011": {
+    "quiz-003": {
       "status": "queued",
       "dueAt": "2026-10-13T12:00:00.000Z",
       "bufferId": "6acd6b2e5462be2e902a3dc9",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "previousQuizId": "quiz-011"
     },
-    "quiz-012": {
+    "quiz-004": {
       "status": "queued",
       "dueAt": "2026-10-13T18:00:00.000Z",
       "bufferId": "6acd6b31c210c8c6dd3dc34e",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "previousQuizId": "quiz-012"
+    }
+  },
+  "restart": {
+    "requestedAt": "2026-10-12T23:43:28Z",
+    "reason": "Restart approved quiz sequence from quiz-001 in existing scheduled Buffer posts",
+    "previousNewImages": {
+      "quiz-009": {
+        "status": "queued",
+        "dueAt": "2026-10-13T00:00:00.000Z",
+        "bufferId": "6acd6b283d6121df40339073",
+        "bufferStatus": "scheduled"
+      },
+      "quiz-010": {
+        "status": "queued",
+        "dueAt": "2026-10-13T06:00:00.000Z",
+        "bufferId": "6acd6b2b5462be2e902a3d28",
+        "bufferStatus": "scheduled"
+      },
+      "quiz-011": {
+        "status": "queued",
+        "dueAt": "2026-10-13T12:00:00.000Z",
+        "bufferId": "6acd6b2e5462be2e902a3dc9",
+        "bufferStatus": "scheduled"
+      },
+      "quiz-012": {
+        "status": "queued",
+        "dueAt": "2026-10-13T18:00:00.000Z",
+        "bufferId": "6acd6b31c210c8c6dd3dc34e",
+        "bufferStatus": "scheduled"
+      }
     }
   }
 }

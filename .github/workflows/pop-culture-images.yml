@@ -13,7 +13,7 @@ on:
       dry_run:
         description: Test only, do not schedule posts
         type: boolean
-        default: true
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -58,7 +58,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Queue images independently of Reels
         env:
-          DRY_RUN: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
         run: |
           if [ "$DRY_RUN" = "true" ]; then
             node src/pop-culture-images.js --dry-run

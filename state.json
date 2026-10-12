@@ -3435,6 +3435,12 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T19:49:11.316Z",
       "youtubeTitleUpdatedTo": "How Would You React? 😮 #Shorts #Trending"
+    },
+    "[\"r2-862ecfe6edd41d38a0ecd996b50bc7a397c27e829af7eeb3db466cc2cf64f1a3\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-13T00:00:11.316Z",
+      "updatedAt": "2026-10-12T19:49:11.316Z"
     }
   },
   "r2ListingRequests": {

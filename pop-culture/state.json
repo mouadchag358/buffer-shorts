@@ -22,5 +22,12 @@
       "updatedAt": "2026-10-12T21:03:52.508Z",
       "error": "Invalid post: Facebook posts require a type (post, story, or reel)."
     }
+  },
+  "replacements": {
+    "6acc77e7ea568e911a53e494": {
+      "status": "editing",
+      "image": "pop-culture/cards/quiz-001.png",
+      "dueAt": "2026-10-13T00:00:00.000Z"
+    }
   }
-}
+}\n

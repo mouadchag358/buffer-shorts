@@ -21,7 +21,7 @@ export function buildMediaEdit(post, card, commitSha) {
     // No text field: keep the original caption and hashtags unchanged.
   };
 }
-export function findScheduledQuizImages(remote, cards, approvedIds, channelId) {
+export function findScheduledQuizImages(remote, cards, approvedIds, channelId, knownImages = {}) {
   const approved = new Set(approvedIds);
   const indexed = new Map(cards.filter(c => approved.has(c.id)).map(c => [trim(c.caption), c]));
   if (indexed.size !== approved.size) throw new Error('Some approved quiz cards are missing or captions are duplicated');
@@ -31,9 +31,9 @@ export function findScheduledQuizImages(remote, cards, approvedIds, channelId) {
     const card = indexed.get(trim(post.text));
     if (!card) continue;
     const assets = post.assets || [];
-    const hasVideo = assets.some(a => (a.mimeType || '').startsWith('video/'));
-    const hasImage = assets.length === 1 && assets.some(a =>
-      (a.mimeType || '').startsWith('image/') || imageSource.test(a.source || ''));
+    const knownImage = knownImages[post.id] === card.image;
+    const hasVideo = assets.some(a => /\\.(?:mp4|mov|webm)(?:[?#]|$)/i.test(a.source || ''));
+    const hasImage = assets.length === 1 && (knownImage || assets.some(a => imageSource.test(a.source || '')));
     if (hasVideo || !hasImage) {
       unsafe.push({ id: post.id, quizId: card.id, reason: hasVideo ? 'video media' : 'unknown or non-image media' });
       continue;
@@ -64,7 +64,7 @@ async function checkpoint(state) {
 async function facebookQueue(orgId, channelId, env) {
   const data = await graphql(`query FacebookQuizImageQueue($input: PostsInput!) {
     posts(first:100, input:$input) {
-      edges { node {id channelId status dueAt text assets {source mimeType}} }
+      edges { node {id channelId status dueAt text assets {source}} }
       pageInfo {hasNextPage}
     }
   }`,{input:{organizationId:orgId,filter:{channelIds:[channelId],status:['scheduled']},sort:[{field:'dueAt',direction:'asc'}]}},env);
@@ -87,7 +87,15 @@ export async function refreshScheduledFacebookQuizImages({dryRun=false,log=conso
   const channel=channels[0];
   if(channel.isDisconnected || channel.isLocked || channel.isQueuePaused) throw Error('Facebook channel unavailable');
   const remote = await facebookQueue(env.BUFFER_ORGANIZATION_ID, channel.id, env);
-  const {selected,unsafe} = findScheduledQuizImages(remote,cards,manifest,channel.id);
+  const queueState=JSON.parse(await readFile('pop-culture/state.json','utf8'));
+  const knownImages={};
+  for(const [id,entry] of Object.entries(queueState.replacements || {})) {
+    if(entry.status==='completed' && entry.image) knownImages[id]=entry.image;
+  }
+  for(const [quizId,entry] of Object.entries(queueState.newImages || {})) {
+    if(entry.status==='queued' && entry.bufferId) knownImages[entry.bufferId]='pop-culture/cards/'+quizId+'.png';
+  }
+  const {selected,unsafe} = findScheduledQuizImages(remote,cards,manifest,channel.id,knownImages);
   log(`Facebook: ${remote.length} scheduled posts, ${selected.length} approved image quizzes, ${unsafe.length} skipped unsafe candidates`);
   for(const skipped of unsafe) log('Skipped '+JSON.stringify(skipped));
   if(unsafe.length) throw Error('Some quiz posts are not identifiable as images; stop to avoid editing videos');

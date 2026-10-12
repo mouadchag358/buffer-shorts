@@ -3468,7 +3468,11 @@
       "bufferId": "6acc77fcfa026cfb812ab501",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
-      "youtubeTitleUpdatedTo": "Would You Watch This Again? 🔥 #Shorts #Viral"
+      "youtubeTitleUpdatedTo": "Would You Watch This Again? 🔥 #Shorts #Viral",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-13T00:00:00.000Z"
+      }
     },
     "[\"r2-b42c5ab7d9a8136516c03acfeb994fa97142e315fb2ba8eeeccedbaa757f6dee\",\"youtube\"]": {
       "status": "queued",

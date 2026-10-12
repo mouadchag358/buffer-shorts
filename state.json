@@ -1723,14 +1723,14 @@
     "[\"r2-9c4b10019f040fef4a0514a85fd471c46b820b31ccb281cd88f65d3acfed2f13\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-13T00:00:36.017Z",
+      "dueAt": "2026-10-13T12:00:00.000Z",
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8aea5a981976dfac67c59",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
       "youtubeTitleUpdatedTo": "How Would You React? 😮 #Shorts #Trending",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-13T12:00:00.000Z"
       },
       "descriptionUpdatedAt": "2026-10-11T13:34:00.809Z"

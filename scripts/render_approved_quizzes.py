@@ -29,7 +29,7 @@ def f(size):
  return ImageFont.truetype(FONT,size)
 def wrap(draw,txt,sz,width,maxlines=2):
  words=txt.split()
- for pt in range(sz,30,-1):
+ for pt in range(sz,17,-1):
   font=f(pt);lines=[];line=""
   for w in words:
    proposed=(line+" "+w).strip()

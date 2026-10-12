@@ -12,6 +12,7 @@ on:
       - 'src/pop-culture-images.js'
       - 'test/pop-culture.test.js'
       - 'src/refresh-facebook-quiz-media.js'
+      - 'src/inspect-facebook-buffer.js'
       - 'test/refresh-facebook-quiz-media.test.js'
       - 'pop-culture/redesigned.json'
   schedule:
@@ -64,6 +65,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Inspect known Buffer quiz post statuses (read-only)
+        run: node src/inspect-facebook-buffer.js
       - name: Refresh queued Facebook quiz images (immutable URLs)
         env:
           MEDIA_DRY_RUN: ${{ github.event_name != 'push' }}

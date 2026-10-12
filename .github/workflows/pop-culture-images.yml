@@ -41,14 +41,14 @@ jobs:
         with:
           python-version: '3.12'
       - name: Rasterize and commit 10 redesigned English quiz cards
-        if: ${{ hashFiles('pop-culture/cards/*.png') == '' }}
+        if: ${{ github.event_name == 'push' }}
         run: |
           python -m pip install --disable-pip-version-check CairoSVG==2.8.2
           python scripts/render_pop_culture.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add pop-culture/cards/*.png
-          git diff --cached --quiet || (git commit -m 'Add 100 ready-to-post pop culture PNG cards [skip ci]' && git push origin HEAD)
+          git diff --cached --quiet || (git commit -m 'Regenerate first 10 bright English quiz PNG images [skip ci]' && git push origin HEAD)
       - uses: actions/setup-node@v5
         with:
           node-version: '24'

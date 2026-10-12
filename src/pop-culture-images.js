@@ -44,7 +44,7 @@ export async function syncImages({dryRun=false,log=console.log}={}){
   const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt)
     .sort((a,b)=>Date.parse(a.dueAt)-Date.parse(b.dueAt)||a.id.localeCompare(b.id));
   const targets=scheduled.filter(p=>isVideo(p)||p.assets?.some(a=>(a.source||'').includes('/pop-culture/cards/'))).slice(0,8);
-  if(targets.length!==8)throw Error('Expected 8 scheduled Facebook posts, found '+targets.length);
+  if(targets.length!==8) { log(JSON.stringify({facebookQueue:remote.length,scheduled:scheduled.length,selected:targets.length,media:scheduled.slice(0,12).map(p=>({id:p.id,status:p.status,dueAt:p.dueAt,assets:(p.assets||[]).map(a=>({hasSource:!!a.source,extension:(a.source||'').split('?')[0].match(/\\.[a-z0-9]{2,5}$/i)?.[0]||null}))}))})); throw Error('Expected 8 scheduled Facebook posts, found '+targets.length); }
   let changed=0;
   for(let i=0;i<targets.length;i++){
     const target=targets[i],card=cards[i],url=prefix+card.image;

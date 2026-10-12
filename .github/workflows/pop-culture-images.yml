@@ -8,6 +8,9 @@ on:
       - 'pop-culture/questions.json'
       - 'src/pop-culture-images.js'
       - 'test/pop-culture.test.js'
+      - 'src/refresh-facebook-quiz-media.js'
+      - 'test/refresh-facebook-quiz-media.test.js'
+      - 'pop-culture/redesigned.json'
   schedule:
     - cron: '33 0,5,10,15,20 * * *'
   workflow_dispatch:
@@ -58,6 +61,15 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Refresh queued Facebook quiz images (safe dry run)
+        env:
+          MEDIA_DRY_RUN: 'true'
+        run: |
+          if [ "$MEDIA_DRY_RUN" = "true" ]; then
+            node src/refresh-facebook-quiz-media.js --dry-run
+          else
+            node src/refresh-facebook-quiz-media.js
+          fi
       - name: Replace eight existing Facebook Reels without creating extra posts
         env:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}

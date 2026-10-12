@@ -96,7 +96,7 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
     }
 
     if (!needMove.length) continue;
-    const candidates = platformQueueTargets(now, platform, 120);
+    const candidates = platformQueueTargets(now, platform, 32);
     for (const post of needMove) {
       const target = candidates.find(slot => !reserved.has(videoHourKey(slot.dueAt)));
       if (!target) throw new Error('No unique future video slot available for migration');
@@ -235,7 +235,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
       if (existing) { working.deliveries[key] = { status: 'queued', bufferId: existing.id, channelId: channel.id, dueAt: existing.dueAt, bufferStatus: existing.status }; if (!dryRun) await persist(state); continue; }
       const occupied = new Set(remote.filter(p => p.channelId === channel.id && pending(p) && !imageOnly(p) && p.dueAt)
         .map(p => videoHourKey(p.dueAt)));
-      const target = platformQueueTargets(now, platform, 120).find(t => !occupied.has(videoHourKey(t.dueAt)));
+      const target = platformQueueTargets(now, platform, 32).find(t => !occupied.has(videoHourKey(t.dueAt)));
       if (!target) throw new Error('Aucun créneau libre');
       Object.assign(input, { mode: 'customScheduled', dueAt: target.dueAt });
       attempts++; summary.attempts++;

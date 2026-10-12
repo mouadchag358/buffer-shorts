@@ -10,6 +10,8 @@ Ce projet automatise les vidéos MP4 du bucket Cloudflare R2 `reels` vers **une 
 | Instagram Reels | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
 | YouTube Shorts | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
 
+Les heures sont enregistrées exactement à `:00:00.000` : une seule vidéo peut occuper un créneau par réseau, même si d'anciennes publications utilisaient `:00:07` ou `:00:33`. Les anciennes vidéos du bot sont redistribuées vers des créneaux libres (sans les republier) lors de la prochaine synchronisation. Les images pop culture ont leur propre file distincte.
+
 GitHub Actions vérifie la file toutes les 5 heures environ. Les posts déjà programmés sont comptabilisés avant tout nouvel envoi, et les vidéos sont identifiées de manière stable pour éviter les doublons. Buffer publie aux horaires `dueAt` même lorsque GitHub Actions n'est pas actif.
 
 ## Configuration GitHub

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fillQueues, initFacebookFromInstagram, migrateOldSlots, reconcileDeliveries, refreshScheduledDescriptions } from '../src/queue.js';
-import { queueTargets, platformQueueTargets, localParts, syncDue } from '../src/queue-schedule.js';
+import { queueTargets, platformQueueTargets, localParts, syncDue, videoHourKey } from '../src/queue-schedule.js';
 import { deliveryKey } from '../src/core.js';
 import { queuedPosts, reschedulePost, createPost } from '../src/buffer.js';
 const now = new Date('2026-10-04T12:00:00Z');
@@ -358,4 +358,63 @@ test('Facebook format errors are skippable but unrelated Buffer refusals still s
   assert.equal(summaries[0].attempts,1);
   assert.equal(summaries[0].rejected,1);
   assert.match(summaries[0].errors[0],/Permission denied/);
+});
+
+
+test('exact video slots have zero seconds and milliseconds, even when run at 19:49:32', () => {
+  for (const day of ['2026-10-12T19:49:32.536Z', '2026-02-20T14:05:07.652Z']) {
+    const slots = platformQueueTargets(new Date(day), 'facebook', 8);
+    assert.equal(slots.length, 8);
+    assert.equal(new Set(slots.map(slot => videoHourKey(slot.dueAt))).size, 8);
+    assert.ok(slots.every(slot => new Date(slot.dueAt).getUTCSeconds() === 0 &&
+      new Date(slot.dueAt).getUTCMilliseconds() === 0));
+  }
+});
+
+test('legacy video bursts at 00/06/12/18 with second offsets become four videos per day', async () => {
+  const baseNow = new Date('2026-10-12T19:49:32.536Z');
+  const targets = platformQueueTargets(baseNow, 'facebook', 8);
+  const posts = Array.from({ length: 8 }, (_, i) => ({
+    id: 'old-' + i, file: 'old-' + i + '.mp4', platforms: ['facebook']
+  }));
+  const remote = posts.map((post, i) => ({
+    id: 'buffer-' + i, channelId: 'fb', status: 'scheduled',
+    dueAt: new Date(Date.parse(targets[Math.floor(i / 2)].dueAt) +
+      (i % 2 ? 33493 : 7652)).toISOString(),
+    assets: [{source: 'https://example.com/old-' + i + '.mp4'}]
+  }));
+  const saved = [], edited = [];
+  const state = { version: 1, slots: {}, deliveries: Object.fromEntries(posts.map((p, i) =>
+    [deliveryKey(p.id, 'facebook'), { status: 'queued', bufferId: 'buffer-' + i }])) };
+  const options = {
+    posts, state, remote, now: baseNow, channels: [{id:'fb', service:'facebook'}],
+    env: {BUFFER_FACEBOOK_CHANNEL_ID:'fb', R2_PUBLIC_BASE_URL:'https://example.com'},
+    persist: async s => saved.push(structuredClone(s)),
+    edit: async (id, dueAt) => { edited.push({id,dueAt}); return {id,status:'scheduled',dueAt}; }
+  };
+  await migrateOldSlots(options);
+  assert.equal(edited.length, 8);
+  assert.deepEqual(remote.map(post=>post.dueAt).sort(),targets.map(t=>t.dueAt).sort());
+  assert.equal(new Set(remote.map(post=>videoHourKey(post.dueAt))).size, 8);
+  assert.ok(remote.every(post=>new Date(post.dueAt).getUTCSeconds()===0));
+  await migrateOldSlots(options);
+  assert.equal(edited.length, 8);
+  assert.ok(saved.length >= 16);
+});
+
+test('seconds-shifted external video occupies its whole hour; images do not consume Reel slots', async () => {
+  const s = setup();
+  const first = platformQueueTargets(now, 'tiktok', 8)[0].dueAt;
+  const shifted = new Date(Date.parse(first)+33000).toISOString();
+  s.options.remote.push({id:'old-external',channelId:'tiktok',status:'scheduled',
+    dueAt:shifted,assets:[{source:'https://example.com/other.mp4'}]});
+  s.options.remote.push({id:'photo',channelId:'tiktok',status:'scheduled',
+    dueAt:platformQueueTargets(now,'tiktok',8)[1].dueAt,
+    assets:[{source:'https://example.com/quiz.png'}]});
+  const result = await fillQueues(s.options);
+  assert.equal(result[0].added,7);
+  const videoTimes = s.sent.filter(x=>x.channelId==='tiktok').map(x=>videoHourKey(x.dueAt));
+  assert.ok(!videoTimes.includes(videoHourKey(first)));
+  assert.ok(videoTimes.includes(videoHourKey(platformQueueTargets(now,'tiktok',8)[1].dueAt)));
+  assert.equal(new Set(videoTimes).size,7);
 });

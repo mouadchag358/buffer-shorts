@@ -1,5 +1,5 @@
 import { deliveryKey, inputFor, validate } from './core.js';
-import { queueTargets, platformQueueTargets, localParts } from './queue-schedule.js';
+import { platformQueueTargets, localParts, videoHourKey } from './queue-schedule.js';
 const pending = p => ['scheduled', 'sending'].includes(p.status);
 const accepted = d => ['queued', 'published', 'failed_in_buffer', 'missing_in_buffer'].includes(d?.status);
 // Les rejets explicites de format sont propres au réseau: on saute seulement
@@ -13,6 +13,15 @@ const formatRejection = (delivery, platform) => {
   return false;
 };
 const blocked = c => c.isQueuePaused || c.isDisconnected || c.isLocked;
+// Image posts are handled by a separate scheduler; do not count them as Reels.
+const imageOnly = post => Array.isArray(post.assets) && post.assets.length > 0 &&
+  post.assets.every(asset => /\.(?:png|jpe?g|webp|gif)(?:[?#]|$)/i.test(asset.source || ''));
+const allowedVideoHour = p => p.minute === '00' && ['00', '06', '12', '18'].includes(p.hour);
+const exactlyOnHour = date => {
+  const d = new Date(date);
+  return d.getUTCSeconds() === 0 && d.getUTCMilliseconds() === 0;
+};
+
 export async function reconcileDeliveries({ state, remote, get, persist, now, channels }) {
   const active = new Map(remote.map(p => [p.id, p]));
   let reads = 0;
@@ -48,40 +57,71 @@ export async function reconcileDeliveries({ state, remote, get, persist, now, ch
   await persist(state);
 }
 export async function migrateOldSlots({ state, remote, channels, edit, persist, now, dryRun = false, posts = [], env = {} }) {
-  const byId = new Map(Object.entries(state.deliveries).filter(([, d]) => d.bufferId).map(([key, d]) => [d.bufferId, { key, delivery: d }]));
+  const byId = new Map(Object.entries(state.deliveries)
+    .filter(([, delivery]) => delivery.bufferId)
+    .map(([key, delivery]) => [delivery.bufferId, { key, delivery }]));
+  const nowMs = new Date(now).getTime();
 
-  for (const post of remote) {
-    const record = byId.get(post.id), channel = channels.find(c => c.id === post.channelId);
-    if (!record || !channel || blocked(channel) || post.status !== 'scheduled' || !post.dueAt) continue;
-
+  for (const channel of channels) {
+    if (blocked(channel)) continue;
     const platform = channel.service;
-    const currentParts = localParts(new Date(post.dueAt));
     if (!['facebook', 'instagram', 'youtube', 'tiktok'].includes(platform)) continue;
-    // Ne déplacer que les anciennes publications hors des quatre heures fixes.
-    // Les créneaux valides sont préservés, notamment ceux déjà planifiés aujourd'hui.
-    const needsMove = currentParts.minute !== '00' || !['00', '06', '12', '18'].includes(currentParts.hour);
 
-    if (!needsMove) continue;
+    const scheduled = remote
+      .filter(post => post.channelId === channel.id && pending(post) && post.dueAt && !imageOnly(post) &&
+        Number.isFinite(Date.parse(post.dueAt)) && Date.parse(post.dueAt) > nowMs + 10 * 60000)
+      .sort((a, b) => Date.parse(a.dueAt) - Date.parse(b.dueAt) || a.id.localeCompare(b.id));
+    const reserved = new Set();
+    const needMove = [];
 
-    const occupied = new Set(remote.filter(other => other.id !== post.id && other.channelId === channel.id && pending(other)).map(other => other.dueAt));
-    const target = platformQueueTargets(now, platform, 10).find(t => !occupied.has(t.dueAt));
-    if (!target) throw new Error('Aucun créneau libre pour la migration');
-    if (remote.some(other => other.id !== post.id && other.channelId === channel.id && other.dueAt === target.dueAt)) throw new Error('Collision de créneaux pendant la migration');
-
-    if (!dryRun) {
-      record.delivery.scheduleUpdate = { status: 'pending', dueAt: target.dueAt };
-      await persist(state);
-      const sourceId = JSON.parse(record.key)[0];
-      const source = posts.find(p => p.id === sourceId);
-      if (!source) throw new Error('Source vidéo introuvable pour déplacer le post');
-      const { channelId, needsApproval, mode, ...content } = inputFor(source, platform, env);
-      const result = await edit(post.id, target.dueAt, { ...content, text: post.text ?? content.text });
-      if (result.status !== 'scheduled' || Date.parse(result.dueAt) !== Date.parse(target.dueAt)) throw new Error('Horaire Buffer non confirmé après modification');
-      Object.assign(record.delivery, { dueAt: target.dueAt, bufferStatus: result.status, scheduleUpdate: { status: 'done', dueAt: target.dueAt } });
-      await persist(state);
+    // Posts not owned by this bot must never be edited. Reserve their whole
+    // local hour to avoid adding a Reel alongside an external scheduled video.
+    for (const post of scheduled) {
+      if (byId.has(post.id) && post.status === 'scheduled') continue;
+      const p = localParts(new Date(post.dueAt));
+      if (allowedVideoHour(p)) reserved.add(videoHourKey(post.dueAt));
     }
 
-    post.dueAt = target.dueAt;
+    // Preserve exact, valid slots first. Relocate any duplicate or any old
+    // 00:00:07 / 00:00:33 timestamp without reposting its media.
+    for (const post of scheduled) {
+      if (!byId.has(post.id) || post.status !== 'scheduled') continue;
+      const p = localParts(new Date(post.dueAt));
+      const key = videoHourKey(post.dueAt);
+      if (allowedVideoHour(p) && exactlyOnHour(post.dueAt) && !reserved.has(key)) {
+        reserved.add(key);
+      } else {
+        needMove.push(post);
+      }
+    }
+
+    if (!needMove.length) continue;
+    const candidates = platformQueueTargets(now, platform, 120);
+    for (const post of needMove) {
+      const target = candidates.find(slot => !reserved.has(videoHourKey(slot.dueAt)));
+      if (!target) throw new Error('No unique future video slot available for migration');
+      const record = byId.get(post.id);
+      const sourceId = JSON.parse(record.key)[0];
+      const source = posts.find(p => p.id === sourceId);
+      if (!source) throw new Error(`Original video not found for safe rescheduling: ${post.id}`);
+
+      if (!dryRun) {
+        record.delivery.scheduleUpdate = { status: 'pending', dueAt: target.dueAt };
+        await persist(state);
+        const { channelId, needsApproval, mode, ...content } = inputFor(source, platform, env);
+        const result = await edit(post.id, target.dueAt, { ...content, text: post.text ?? content.text });
+        if (result.status !== 'scheduled' || Date.parse(result.dueAt) !== Date.parse(target.dueAt))
+          throw new Error('Buffer did not confirm rescheduled video; stopping safely');
+        Object.assign(record.delivery, {
+          dueAt: target.dueAt, bufferStatus: result.status,
+          scheduleUpdate: { status: 'done', dueAt: target.dueAt }
+        });
+        await persist(state);
+      }
+
+      post.dueAt = target.dueAt;
+      reserved.add(videoHourKey(target.dueAt));
+    }
   }
 }
 
@@ -180,7 +220,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
   const summaries = [];
   for (const channel of channels) {
     const platform = channel.service;
-    const queued = remote.filter(p => p.channelId === channel.id && pending(p));
+    const queued = remote.filter(p => p.channelId === channel.id && pending(p) && !imageOnly(p));
     const summary = { platform, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
     summaries.push(summary);
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
@@ -193,8 +233,9 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
       const input = inputFor(post, platform, env);
       const existing = remote.find(p => p.channelId === channel.id && p.assets?.some(a => a.source === input.assets[0].video.url));
       if (existing) { working.deliveries[key] = { status: 'queued', bufferId: existing.id, channelId: channel.id, dueAt: existing.dueAt, bufferStatus: existing.status }; if (!dryRun) await persist(state); continue; }
-      const occupied = new Set(remote.filter(p => p.channelId === channel.id && pending(p)).map(p => p.dueAt));
-      const target = platformQueueTargets(now, platform, 10).find(t => !occupied.has(t.dueAt));
+      const occupied = new Set(remote.filter(p => p.channelId === channel.id && pending(p) && !imageOnly(p) && p.dueAt)
+        .map(p => videoHourKey(p.dueAt)));
+      const target = platformQueueTargets(now, platform, 120).find(t => !occupied.has(videoHourKey(t.dueAt)));
       if (!target) throw new Error('Aucun créneau libre');
       Object.assign(input, { mode: 'customScheduled', dueAt: target.dueAt });
       attempts++; summary.attempts++;

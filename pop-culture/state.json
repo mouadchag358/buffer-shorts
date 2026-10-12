@@ -7,6 +7,12 @@
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "updatedAt": "2026-10-12T20:16:16.257Z",
       "error": "Invalid post: Facebook posts require a type (post, story, or reel)."
+    },
+    "quiz-002": {
+      "status": "sending",
+      "dueAt": "2026-10-13T09:00:59.902Z",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "updatedAt": "2026-10-12T21:02:59.902Z"
     }
   }
 }

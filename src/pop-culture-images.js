@@ -43,14 +43,14 @@ export async function syncImages({dryRun=false,log=console.log}={}){
   const remote=await queuedPosts(env.BUFFER_ORGANIZATION_ID,[channel.id],env);
   const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt)
     .sort((a,b)=>Date.parse(a.dueAt)-Date.parse(b.dueAt)||a.id.localeCompare(b.id));
-  const targets=scheduled.filter(p=>isVideo(p)||p.assets?.some(a=>(a.source||'').includes('/pop-culture/cards/'))).slice(0,8);
-  if(targets.length!==8) { log(JSON.stringify({facebookQueue:remote.length,scheduled:scheduled.length,selected:targets.length,media:scheduled.slice(0,12).map(p=>({id:p.id,status:p.status,dueAt:p.dueAt,assets:(p.assets||[]).map(a=>({hasSource:!!a.source,extension:(a.source||'').split('?')[0].match(/\\.[a-z0-9]{2,5}$/i)?.[0]||null}))}))})); throw Error('Expected 8 scheduled Facebook posts, found '+targets.length); }
+  const targets=scheduled.slice(0,8);
+  if(targets.length!==8 || scheduled.length!==8) { log(JSON.stringify({facebookQueue:remote.length,scheduled:scheduled.length,selected:targets.length,media:scheduled.slice(0,12).map(p=>({id:p.id,status:p.status,dueAt:p.dueAt,assets:(p.assets||[]).map(a=>({hasSource:!!a.source,extension:(a.source||'').split('?')[0].match(/\\.[a-z0-9]{2,5}$/i)?.[0]||null}))}))})); throw Error('Expected 8 scheduled Facebook posts, found '+targets.length); }
   let changed=0;
   for(let i=0;i<targets.length;i++){
     const target=targets[i],card=cards[i],url=prefix+card.image;
     const already=target.assets?.some(a=>a.source===url);
     if(already){log('Already replaced '+target.id);continue;}
-    if(!isVideo(target))throw Error('Unexpected media in selected Facebook slot '+target.id);
+    if(!target.assets?.length)throw Error('No existing media in Facebook slot '+target.id);
     if(state.replacements[target.id]?.status==='editing'||state.replacements[target.id]?.status==='completed')
       throw Error('Previous replacement uncertain or mismatched: '+target.id);
     if(dryRun){log('Preview '+target.id+' -> '+card.image+' at '+target.dueAt);continue;}

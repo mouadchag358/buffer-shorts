@@ -3412,7 +3412,11 @@
       "updatedAt": "2026-10-12T06:02:07.652Z",
       "bufferId": "6acc77f4ea568e911a53e882",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-12T20:07:03.067Z"
+      "lastCheckedAt": "2026-10-12T20:07:03.067Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-14T12:00:00.000Z"
+      }
     },
     "[\"r2-67e1789f36b55ad2b1135e4804c01d3ce0bbe6ba59e2f1888cc122e7c106b49a\",\"instagram\"]": {
       "status": "queued",

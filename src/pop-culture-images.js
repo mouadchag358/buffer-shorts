@@ -22,7 +22,7 @@ export function imageSlots(now=new Date(), count=8){
   return out;
 }
 async function persist(state) {
-  await writeFile(statePath+'.tmp',JSON.stringify(state,null,2)+'\\n');
+  await writeFile(statePath+'.tmp',JSON.stringify(state,null,2)+String.fromCharCode(10));
   await rename(statePath+'.tmp',statePath);
   if(process.env.PERSIST_GIT==='true'){
     execFileSync('git',['add',statePath],{stdio:'inherit'});

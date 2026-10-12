@@ -43,6 +43,11 @@
       "status": "completed",
       "image": "pop-culture/cards/quiz-004.png",
       "dueAt": "2026-10-13T18:00:00.000Z"
+    },
+    "6acd39cbebe016d7f5fdc831": {
+      "status": "editing",
+      "image": "pop-culture/cards/quiz-005.png",
+      "dueAt": "2026-10-14T00:00:00.000Z"
     }
   }
 }\n

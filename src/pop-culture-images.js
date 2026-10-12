@@ -1,8 +1,8 @@
 import { readFile, writeFile, rename } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
-import { queuedPosts, graphql } from './buffer.js';
+import { queuedPosts, graphql, createPost } from './buffer.js';
 import { resolveQueueChannels } from './discovery.js';
-import { localParts } from './queue-schedule.js';
+import { localParts, videoHourKey } from './queue-schedule.js';
 
 const statePath='pop-culture/state.json';
 const prefix='https://raw.githubusercontent.com/mouadchag358/buffer-shorts/main/';
@@ -32,6 +32,35 @@ async function persist(state) {
     execFileSync('git',['push','origin','HEAD'],{stdio:'inherit'});
   }
 }
+async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,log}) {
+  state.newImages??={};
+  const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt);
+  const occupied=new Set(scheduled.map(p=>videoHourKey(p.dueAt)));
+  let added=0;
+  for (const slot of imageSlots(new Date(),32)) {
+    if(scheduled.length+added>=8) break;
+    const key=videoHourKey(slot.dueAt);
+    if(occupied.has(key)) continue;
+    const card=cards[8+Object.keys(state.newImages).length];
+    if(!card) {log('All 100 pop culture images have been used');break;}
+    const input=imageInput(card,channel.id,slot.dueAt);
+    if(dryRun){log('Would queue '+card.id+' at '+slot.dueAt);added++;occupied.add(key);continue;}
+    const check=await fetch(input.assets[0].image.url,{method:'HEAD',redirect:'error',signal:AbortSignal.timeout(15000)});
+    if(!check.ok||!(check.headers.get('content-type')||'').startsWith('image/'))throw Error('Image unavailable: '+card.image);
+    state.newImages[card.id]={status:'sending',dueAt:slot.dueAt};
+    await persist(state);
+    let result;
+    try {result=await createPost(input,env);}
+    catch(e){state.newImages[card.id]={...state.newImages[card.id],status:'uncertain',error:e.message};await persist(state);throw Error('Uncertain Buffer image creation; do not retry: '+card.id);}
+    state.newImages[card.id]={...state.newImages[card.id],...result};
+    await persist(state);
+    if(result.status!=='queued')throw Error('Buffer rejected image '+card.id+': '+result.error);
+    occupied.add(key);added++;
+    log('Queued new image '+card.id+' at '+slot.dueAt);
+    if(added>=4)break;
+  }
+  log('New scheduled Facebook images: '+added);
+}
 export async function syncImages({dryRun=false,log=console.log}={}){
   const cards=JSON.parse(await readFile('pop-culture/questions.json','utf8'));
   const state=JSON.parse(await readFile(statePath,'utf8'));
@@ -43,6 +72,9 @@ export async function syncImages({dryRun=false,log=console.log}={}){
   const remote=await queuedPosts(env.BUFFER_ORGANIZATION_ID,[channel.id],env);
   const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt)
     .sort((a,b)=>Date.parse(a.dueAt)-Date.parse(b.dueAt)||a.id.localeCompare(b.id));
+  if(Object.values(state.replacements).filter(v=>v.status==='completed').length===8) {
+    await replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,log});return;
+  }
   const targets=scheduled.slice(0,8);
   if(targets.length!==8 || scheduled.length!==8) { log(JSON.stringify({facebookQueue:remote.length,scheduled:scheduled.length,selected:targets.length,media:scheduled.slice(0,12).map(p=>({id:p.id,status:p.status,dueAt:p.dueAt,assets:(p.assets||[]).map(a=>({hasSource:!!a.source,extension:(a.source||'').split('?')[0].match(/\\.[a-z0-9]{2,5}$/i)?.[0]||null}))}))})); throw Error('Expected 8 scheduled Facebook posts, found '+targets.length); }
   let changed=0;

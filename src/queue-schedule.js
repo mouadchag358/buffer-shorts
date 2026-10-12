@@ -5,7 +5,7 @@ export function localParts(date) { return Object.fromEntries(formatter.formatToP
 // Quatre publications quotidiennes pour Facebook, Instagram et YouTube.
 // Les nouvelles places commencent le lendemain, en heure du Maroc.
 export function queueTargets(now = new Date(), count = 8) {
-  if (!Number.isInteger(count) || count < 1 || count > 120) throw new Error('Nombre de créneaux invalide');
+  if (!Number.isInteger(count) || count < 1 || count > 32) throw new Error('Nombre de créneaux invalide');
   const targets = [];
   const nowParts = localParts(now);
   const today = `${nowParts.year}-${nowParts.month}-${nowParts.day}`;

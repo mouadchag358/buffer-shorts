@@ -1,4 +1,11 @@
 {
   "version": 1,
-  "deliveries": {}
+  "deliveries": {
+    "quiz-001": {
+      "status": "sending",
+      "dueAt": "2026-10-13T09:00:14.126Z",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "updatedAt": "2026-10-12T20:16:14.126Z"
+    }
+  }
 }

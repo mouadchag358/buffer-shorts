@@ -3283,13 +3283,13 @@
     "[\"r2-f06f5b1b2071c2929dce151dfb117b85eb5a59120e474052be21e989553a67b4\",\"facebook\"]": {
       "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
-      "dueAt": "2026-10-13T06:00:33.493Z",
+      "dueAt": "2026-10-14T06:00:00.000Z",
       "updatedAt": "2026-10-11T16:18:33.493Z",
       "bufferId": "6acbb710f91f772d45d36b9c",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-14T06:00:00.000Z"
       }
     },

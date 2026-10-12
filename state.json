@@ -3388,6 +3388,12 @@
       "updatedAt": "2026-10-12T06:02:07.652Z",
       "bufferId": "6acc77f7a9411fbcc5706c2d",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-0007ec07e926643f2bf48f6e94bbe23536c9c76698881eec56e41ca138a5b56e\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-13T06:00:07.652Z",
+      "updatedAt": "2026-10-12T06:02:07.652Z"
     }
   },
   "r2ListingRequests": {

@@ -9,10 +9,11 @@
       "error": "Invalid post: Facebook posts require a type (post, story, or reel)."
     },
     "quiz-002": {
-      "status": "sending",
+      "status": "rejected",
       "dueAt": "2026-10-13T09:00:59.902Z",
       "channelId": "6ac8cdf16a5c39ccb6602776",
-      "updatedAt": "2026-10-12T21:02:59.902Z"
+      "updatedAt": "2026-10-12T21:03:01.768Z",
+      "error": "Invalid post: Facebook posts require a type (post, story, or reel)."
     }
   }
 }

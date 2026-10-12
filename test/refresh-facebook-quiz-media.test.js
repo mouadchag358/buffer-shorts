@@ -7,9 +7,10 @@ const channel='facebook-channel';
 const dueAt='2026-10-15T06:00:00.000Z';
 const make=(data={})=>({id:'post-a',channelId:channel,status:'scheduled',dueAt,text:q.caption,
   assets:[{source:'https://buffer-cdn.test/opaque-image'}],...data});
-test('media edit changes only image and Facebook type, never time, status, text or channel',()=>{
+test('media edit updates the quiz caption and image but never time, status or channel',()=>{
  const input=buildMediaEdit(make(),q,'a'.repeat(40));
- assert.deepEqual(Object.keys(input).sort(),['assets','id','metadata']);
+ assert.deepEqual(Object.keys(input).sort(),['assets','id','metadata','text']);
+ assert.equal(input.text,q.caption);
  assert.deepEqual(input.metadata,{facebook:{type:'post'}});
  assert.equal(input.assets[0].image.url,'https://raw.githubusercontent.com/mouadchag358/buffer-shorts/'+ 'a'.repeat(40)+'/pop-culture/cards/quiz-001.png');
 });
@@ -28,4 +29,12 @@ test('recognizes only confirmed scheduled Facebook quiz images, excludes Reels',
 test('never treats unknown opaque media as an image',()=>{
  const x=findScheduledQuizImages([make({assets:[{source:'https://buffer-cdn.test/opaque',mimeType:null}]})],[q],['quiz-001'],channel);
  assert.equal(x.selected.length,0); assert.equal(x.unsafe.length,1);
+});
+
+test('original Buffer quiz post is selectable even after the approved artwork changes its question',()=>{
+ const corrected={...q,image:'pop-culture/cards/quiz-001.jpg',caption:'QUIZ TIME! New illustrated quiz question'};
+ const result=findScheduledQuizImages([make()],[corrected],['quiz-001'],channel,{'post-a':q.image},{'post-a':'quiz-001'});
+ assert.equal(result.selected.length,1);
+ assert.equal(result.selected[0].card.image,corrected.image);
+ assert.equal(buildMediaEdit(make(),corrected,'c'.repeat(40)).text,corrected.caption);
 });

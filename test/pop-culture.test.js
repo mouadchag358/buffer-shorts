@@ -9,7 +9,7 @@ test('100 original English cards with unique IDs and valid image names', () => {
   assert.equal(posts.filter(p => p.kind === 'quiz').length, 40);
   assert.equal(posts.filter(p => p.kind === 'duel').length, 60);
   for (const p of posts) {
-    assert.match(p.image, /^pop-culture\/cards\/(quiz|duel)-\d{3}\.png$/);
+    assert.match(p.image, /^pop-culture\/cards\/(quiz-\d{3}\.(?:png|jpe?g)|duel-\d{3}\.png)$/);
     assert.ok(p.question.length && p.options.length >= 2);
     assert.ok(p.caption.includes('#PopCulture'));
   }
@@ -23,7 +23,7 @@ test('two picture posts per day, no collision with existing reels', () => {
 });
 test('Buffer image payload is separate from Facebook Reel metadata', () => {
  const input=imageInput(posts[0], 'fb', '2026-10-13T08:00:00Z');
- assert.deepEqual(input.assets, [{image:{url:'https://raw.githubusercontent.com/mouadchag358/buffer-shorts/main/pop-culture/cards/quiz-001.png'}}]);
+ assert.deepEqual(input.assets, [{image:{url:'https://raw.githubusercontent.com/mouadchag358/buffer-shorts/main/pop-culture/cards/quiz-001.jpg'}}]);
  assert.equal(input.mode,'customScheduled');
  assert.deepEqual(input.metadata,{facebook:{type:'post'}});
  assert.ok(input.text.includes('QUIZ TIME!'));

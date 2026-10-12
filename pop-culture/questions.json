@@ -3,151 +3,151 @@
     "id": "quiz-001",
     "kind": "quiz",
     "category": "Anime",
-    "question": "Who is Naruto's father?",
+    "question": "Which village is Naruto from?",
     "options": [
-      "Kakashi Hatake",
-      "Minato Namikaze",
-      "Jiraiya",
-      "Tobirama Senju"
+      "Konoha",
+      "Sunagakure",
+      "Kirigakure",
+      "Iwagakure"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-001.png",
-    "caption": "QUIZ TIME! Who is Naruto's father?\nA) Kakashi Hatake\nB) Minato Namikaze\nC) Jiraiya\nD) Tobirama Senju\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-001.jpg",
+    "caption": "QUIZ TIME! Which village is Naruto from?\nA) Konoha\nB) Sunagakure\nC) Kirigakure\nD) Iwagakure\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-002",
     "kind": "quiz",
     "category": "Anime",
-    "question": "Who gave Luffy his straw hat?",
+    "question": "What is Luffy's biggest dream?",
     "options": [
-      "Gol D. Roger",
-      "Shanks",
-      "Ace",
-      "Garp"
+      "Become Pirate King",
+      "Find a legendary island",
+      "Collect all Devil Fruits",
+      "Save his crew"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-002.png",
-    "caption": "QUIZ TIME! Who gave Luffy his straw hat?\nA) Gol D. Roger\nB) Shanks\nC) Ace\nD) Garp\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-002.jpg",
+    "caption": "QUIZ TIME! What is Luffy's biggest dream?\nA) Become Pirate King\nB) Find a legendary island\nC) Collect all Devil Fruits\nD) Save his crew\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-003",
     "kind": "quiz",
     "category": "Anime",
-    "question": "Who first transforms into a Super Saiyan on screen in DBZ?",
+    "question": "What is Goku's famous energy attack?",
     "options": [
-      "Vegeta",
-      "Gohan",
-      "Goku",
-      "Trunks"
+      "Kamehameha",
+      "Spirit Bomb",
+      "Final Flash",
+      "Dragon Fist"
     ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-003.png",
-    "caption": "QUIZ TIME! Who first transforms into a Super Saiyan on screen in DBZ?\nA) Vegeta\nB) Gohan\nC) Goku\nD) Trunks\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-003.jpg",
+    "caption": "QUIZ TIME! What is Goku's famous energy attack?\nA) Kamehameha\nB) Spirit Bomb\nC) Final Flash\nD) Dragon Fist\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-004",
     "kind": "quiz",
-    "category": "Anime",
-    "question": "What is Eren's surname in Attack on Titan?",
+    "category": "Movies",
+    "question": "Which animal symbolizes Gryffindor?",
     "options": [
-      "Ackerman",
-      "Braun",
-      "Yeager",
-      "Smith"
+      "Lion",
+      "Snake",
+      "Eagle",
+      "Badger"
     ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-004.png",
-    "caption": "QUIZ TIME! What is Eren's surname in Attack on Titan?\nA) Ackerman\nB) Braun\nC) Yeager\nD) Smith\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-004.jpg",
+    "caption": "QUIZ TIME! Which animal symbolizes Gryffindor?\nA) Lion\nB) Snake\nC) Eagle\nD) Badger\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-005",
     "kind": "quiz",
-    "category": "Anime",
-    "question": "Which Shinigami drops the Death Note?",
+    "category": "Heroes",
+    "question": "Who is the original Spider-Man?",
     "options": [
-      "Rem",
-      "Ryuk",
-      "Sidoh",
-      "Gelus"
+      "Peter Parker",
+      "Miles Morales",
+      "Tony Stark",
+      "Bruce Wayne"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-005.png",
-    "caption": "QUIZ TIME! Which Shinigami drops the Death Note?\nA) Rem\nB) Ryuk\nC) Sidoh\nD) Gelus\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-005.jpg",
+    "caption": "QUIZ TIME! Who is the original Spider-Man?\nA) Peter Parker\nB) Miles Morales\nC) Tony Stark\nD) Bruce Wayne\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-006",
     "kind": "quiz",
-    "category": "Anime",
-    "question": "What is Tanjiro's sister called?",
+    "category": "Gaming",
+    "question": "Which material is strongest in Minecraft?",
     "options": [
-      "Kanao",
-      "Shinobu",
-      "Mitsuri",
-      "Nezuko"
+      "Wood",
+      "Diamond",
+      "Iron",
+      "Stone"
     ],
-    "answer": "D",
-    "image": "pop-culture/cards/quiz-006.png",
-    "caption": "QUIZ TIME! What is Tanjiro's sister called?\nA) Kanao\nB) Shinobu\nC) Mitsuri\nD) Nezuko\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-006.jpg",
+    "caption": "QUIZ TIME! Which material is strongest in Minecraft?\nA) Wood\nB) Diamond\nC) Iron\nD) Stone\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-007",
     "kind": "quiz",
-    "category": "Anime",
-    "question": "Who becomes Sukuna's vessel in Jujutsu Kaisen?",
+    "category": "Gaming",
+    "question": "Which power-up makes Mario grow?",
     "options": [
-      "Megumi",
-      "Yuji",
-      "Gojo",
-      "Yuta"
+      "Mushroom",
+      "Star",
+      "Fire Flower",
+      "Super Leaf"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-007.png",
-    "caption": "QUIZ TIME! Who becomes Sukuna's vessel in Jujutsu Kaisen?\nA) Megumi\nB) Yuji\nC) Gojo\nD) Yuta\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-007.jpg",
+    "caption": "QUIZ TIME! Which power-up makes Mario grow?\nA) Mushroom\nB) Star\nC) Fire Flower\nD) Super Leaf\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-008",
     "kind": "quiz",
-    "category": "Anime",
-    "question": "What type is Pikachu?",
+    "category": "Movies",
+    "question": "What color is Darth Vader's lightsaber?",
     "options": [
-      "Water",
-      "Fire",
-      "Electric",
-      "Grass"
+      "Blue",
+      "Green",
+      "Red",
+      "Purple"
     ],
     "answer": "C",
-    "image": "pop-culture/cards/quiz-008.png",
-    "caption": "QUIZ TIME! What type is Pikachu?\nA) Water\nB) Fire\nC) Electric\nD) Grass\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "image": "pop-culture/cards/quiz-008.jpg",
+    "caption": "QUIZ TIME! What color is Darth Vader's lightsaber?\nA) Blue\nB) Green\nC) Red\nD) Purple\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-009",
     "kind": "quiz",
-    "category": "Anime",
-    "question": "What is Deku's real name?",
+    "category": "Heroes",
+    "question": "What powers Iron Man's armor?",
     "options": [
-      "Katsuki Bakugo",
-      "Izuku Midoriya",
-      "Shoto Todoroki",
-      "Tenya Iida"
+      "Vibranium",
+      "Arc Reactor",
+      "Tesseract",
+      "Pym Particles"
     ],
     "answer": "B",
-    "image": "pop-culture/cards/quiz-009.png",
-    "caption": "QUIZ TIME! What is Deku's real name?\nA) Katsuki Bakugo\nB) Izuku Midoriya\nC) Shoto Todoroki\nD) Tenya Iida\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "image": "pop-culture/cards/quiz-009.jpg",
+    "caption": "QUIZ TIME! What powers Iron Man's armor?\nA) Vibranium\nB) Arc Reactor\nC) Tesseract\nD) Pym Particles\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-010",
     "kind": "quiz",
-    "category": "Anime",
-    "question": "Who is Edward Elric's younger brother?",
+    "category": "Gaming",
+    "question": "Which series stars the hero Link?",
     "options": [
-      "Roy",
-      "Ling",
-      "Alphonse",
-      "Scar"
+      "Final Fantasy",
+      "The Legend of Zelda",
+      "Monster Hunter",
+      "Dragon Quest"
     ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-010.png",
-    "caption": "QUIZ TIME! Who is Edward Elric's younger brother?\nA) Roy\nB) Ling\nC) Alphonse\nD) Scar\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-010.jpg",
+    "caption": "QUIZ TIME! Which series stars the hero Link?\nA) Final Fantasy\nB) The Legend of Zelda\nC) Monster Hunter\nD) Dragon Quest\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
   },
   {
     "id": "quiz-011",

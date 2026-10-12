@@ -10,28 +10,31 @@ const imageSource = /\.(?:png|jpe?g|webp)(?:[?#]|$)/i;
 const trim = text => typeof text === 'string' ? text.trim() : '';
 
 export function buildMediaEdit(post, card, commitSha) {
-  if (!/^[a-f0-9]{40}$/.test(commitSha) || !positive.test(card?.id) || !/^pop-culture\/cards\/quiz-\d{3}\.png$/.test(card.image)) {
+  if (!/^[a-f0-9]{40}$/.test(commitSha) || !positive.test(card?.id) || !/^pop-culture\/cards\/quiz-\d{3}\.(?:png|jpe?g)$/.test(card.image)) {
     throw new Error('Invalid immutable image reference');
   }
   return {
     id: post.id,
+    text: card.caption,
     assets: [{ image: { url: `${base}${commitSha}/${card.image}` } }],
     metadata: { facebook: { type: 'post' } }
     // No dueAt, mode or schedulingType: keep Buffer's original publication slot.
-    // No text field: keep the original caption and hashtags unchanged.
+    // Caption follows the newly illustrated quiz question and A-D choices.
   };
 }
-export function findScheduledQuizImages(remote, cards, approvedIds, channelId, knownImages = {}) {
+export function findScheduledQuizImages(remote, cards, approvedIds, channelId, knownImages = {}, knownQuizIds = {}) {
   const approved = new Set(approvedIds);
-  const indexed = new Map(cards.filter(c => approved.has(c.id)).map(c => [trim(c.caption), c]));
+  const selectedCards = cards.filter(c => approved.has(c.id));
+  const indexed = new Map(selectedCards.map(c => [trim(c.caption), c]));
+  const byId = new Map(selectedCards.map(c => [c.id,c]));
   if (indexed.size !== approved.size) throw new Error('Some approved quiz cards are missing or captions are duplicated');
   const selected = [], unsafe = [];
   for (const post of remote) {
     if (post.channelId !== channelId || post.status !== 'scheduled' || !post.dueAt) continue;
-    const card = indexed.get(trim(post.text));
+    const card = byId.get(knownQuizIds[post.id]) || indexed.get(trim(post.text));
     if (!card) continue;
     const assets = post.assets || [];
-    const knownImage = knownImages[post.id] === card.image;
+    const knownImage = knownImages[post.id] === card.image || knownQuizIds[post.id] === card.id;
     const hasVideo = assets.some(a => /\.(?:mp4|mov|webm)(?:[?#]|$)/i.test(a.source || ''));
     const hasImage = assets.length === 1 && (knownImage || assets.some(a => imageSource.test(a.source || '')));
     if (hasVideo || !hasImage) {
@@ -89,13 +92,20 @@ export async function refreshScheduledFacebookQuizImages({dryRun=false,log=conso
   const remote = await facebookQueue(env.BUFFER_ORGANIZATION_ID, channel.id, env);
   const queueState=JSON.parse(await readFile('pop-culture/state.json','utf8'));
   const knownImages={};
+  const knownQuizIds={};
   for(const [id,entry] of Object.entries(queueState.replacements || {})) {
-    if(entry.status==='completed' && entry.image) knownImages[id]=entry.image;
+    if(entry.status==='completed' && entry.image){
+      knownImages[id]=entry.image;
+      knownQuizIds[id]=entry.image.match(/(quiz-\d{3})\./)?.[1];
+    }
   }
   for(const [quizId,entry] of Object.entries(queueState.newImages || {})) {
-    if(entry.status==='queued' && entry.bufferId) knownImages[entry.bufferId]='pop-culture/cards/'+quizId+'.png';
+    if(entry.status==='queued' && entry.bufferId){
+      knownImages[entry.bufferId]='pop-culture/cards/'+quizId+'.png';
+      knownQuizIds[entry.bufferId]=quizId;
+    }
   }
-  const {selected,unsafe} = findScheduledQuizImages(remote,cards,manifest,channel.id,knownImages);
+  const {selected,unsafe} = findScheduledQuizImages(remote,cards,manifest,channel.id,knownImages,knownQuizIds);
   log(`Facebook: ${remote.length} scheduled posts, ${selected.length} approved image quizzes, ${unsafe.length} skipped unsafe candidates`);
   for(const skipped of unsafe) log('Skipped '+JSON.stringify(skipped));
   if(unsafe.length) throw Error('Some quiz posts are not identifiable as images; stop to avoid editing videos');
@@ -107,7 +117,7 @@ export async function refreshScheduledFacebookQuizImages({dryRun=false,log=conso
     const rev=blobRevision(card.image);
     const entry=state[post.id];
     if(entry?.status==='editing'||entry?.status==='uncertain') throw Error('Uncertain prior media change for post '+post.id+'; reconcile in Buffer first');
-    if(entry?.status==='completed'&&entry.imageBlobSha===rev) {log('Already up to date: '+card.id);continue;}
+    if(entry?.status==='completed'&&entry.imageBlobSha===rev && trim(post.text)===trim(card.caption)) {log('Already up to date: '+card.id);continue;}
     if(Date.parse(post.dueAt)<Date.now()+20*60000) {log('Skipping imminent post: '+card.id);continue;}
     const input=buildMediaEdit(post,card,commitRevision());
     if (dryRun) {log(`DRY RUN ${card.id} -> ${post.id} at ${post.dueAt}: ${input.assets[0].image.url}`);continue;}

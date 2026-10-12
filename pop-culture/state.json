@@ -64,5 +64,11 @@
       "image": "pop-culture/cards/quiz-008.png",
       "dueAt": "2026-10-14T18:00:00.000Z"
     }
+  },
+  "newImages": {
+    "quiz-009": {
+      "status": "sending",
+      "dueAt": "2026-10-13T00:00:00.000Z"
+    }
   }
 }

@@ -3322,13 +3322,13 @@
     "[\"r2-6d0dda29db10ec4e685228fa487d1affc405c236d3a514de99f1ff6c085c2293\",\"instagram\"]": {
       "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
-      "dueAt": "2026-10-13T06:00:33.493Z",
+      "dueAt": "2026-10-14T06:00:00.000Z",
       "updatedAt": "2026-10-11T16:18:33.493Z",
       "bufferId": "6acbb71ac4de2d2b1268aad4",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-14T06:00:00.000Z"
       }
     },

@@ -1,4 +1,4 @@
-name: Facebook Pop Culture Image Posts
+name: Replace Facebook Reels With Pop Culture Images
 on:
   push:
     paths:
@@ -6,6 +6,8 @@ on:
       - 'scripts/render_pop_culture.py'
       - 'pop-culture/cards/*.svg'
       - 'pop-culture/questions.json'
+      - 'src/pop-culture-images.js'
+      - 'test/pop-culture.test.js'
   schedule:
     - cron: '33 0,5,10,15,20 * * *'
   workflow_dispatch:
@@ -56,7 +58,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - name: Queue images independently of Reels
+      - name: Replace eight existing Facebook Reels without creating extra posts
         env:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
         run: |

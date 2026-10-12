@@ -3586,7 +3586,8 @@
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-13T06:00:00.000Z"
-      }
+      },
+      "youtubeTitleUpdatedTo": "Would You Watch This Again? 🔥 #Shorts #Viral"
     },
     "[\"r2-4c6905dde0f138eca1f6341c4c7c6c84771fe8ad2d1d553e63a4d306e0cd4db2\",\"youtube\"]": {
       "status": "queued",

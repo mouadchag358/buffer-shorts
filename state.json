@@ -2934,7 +2934,11 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
       "youtubeTitleUpdatedTo": "Did You Notice That? 👀 #Shorts #Viral",
-      "descriptionUpdatedAt": "2026-10-11T13:34:03.705Z"
+      "descriptionUpdatedAt": "2026-10-11T13:34:03.705Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-14T12:00:00.000Z"
+      }
     },
     "[\"r2-1f857c8704d78c57575be0eca4146d1b852ba9d9369f81f0d3d24279bb6c551d\",\"youtube\"]": {
       "status": "queued",

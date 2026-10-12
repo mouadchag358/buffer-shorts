@@ -3335,13 +3335,13 @@
     "[\"r2-b0773aed0577246e7baf8e0b83a3d9aa3564bf91566853c7da9c38a3eecd025b\",\"instagram\"]": {
       "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
-      "dueAt": "2026-10-13T12:00:33.493Z",
+      "dueAt": "2026-10-14T18:00:00.000Z",
       "updatedAt": "2026-10-11T16:18:33.493Z",
       "bufferId": "6acbb71eed92ed8fa50bb206",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-14T18:00:00.000Z"
       }
     },

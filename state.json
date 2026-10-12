@@ -3450,6 +3450,12 @@
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39c3ae14ce433eb512ea",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-366b4d22e4b8c4721d076a2c0d24b49d5baadf831fd0a0092cb4dc032fd7a043\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-13T06:00:11.316Z",
+      "updatedAt": "2026-10-12T19:49:11.316Z"
     }
   },
   "r2ListingRequests": {

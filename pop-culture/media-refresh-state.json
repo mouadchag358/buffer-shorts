@@ -22,5 +22,12 @@
     "originalDueAt": "2026-10-13T12:00:00.000Z",
     "updatedAt": "2026-10-12T22:11:49.729Z",
     "url": "https://raw.githubusercontent.com/mouadchag358/buffer-shorts/63e5dbdb6411c47349ac679db59b8c89b35288fa/pop-culture/cards/quiz-003.png"
+  },
+  "6acc77ea7db619a2915e3bff": {
+    "status": "editing",
+    "quizId": "quiz-004",
+    "imageBlobSha": "2c8299faff0ca411e075d97ef0aaffe1aeb23d85",
+    "originalDueAt": "2026-10-13T18:00:00.000Z",
+    "updatedAt": "2026-10-12T22:11:51.093Z"
   }
 }

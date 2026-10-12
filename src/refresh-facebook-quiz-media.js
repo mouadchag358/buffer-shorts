@@ -32,7 +32,7 @@ export function findScheduledQuizImages(remote, cards, approvedIds, channelId, k
     if (!card) continue;
     const assets = post.assets || [];
     const knownImage = knownImages[post.id] === card.image;
-    const hasVideo = assets.some(a => /\\.(?:mp4|mov|webm)(?:[?#]|$)/i.test(a.source || ''));
+    const hasVideo = assets.some(a => /\.(?:mp4|mov|webm)(?:[?#]|$)/i.test(a.source || ''));
     const hasImage = assets.length === 1 && (knownImage || assets.some(a => imageSource.test(a.source || '')));
     if (hasVideo || !hasImage) {
       unsafe.push({ id: post.id, quizId: card.id, reason: hasVideo ? 'video media' : 'unknown or non-image media' });

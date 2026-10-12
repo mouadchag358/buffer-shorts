@@ -34,6 +34,8 @@ async function persist(state) {
 }
 async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,log}) {
   state.newImages??={};
+  if(Object.values(state.newImages).some(v=>['sending','uncertain'].includes(v.status)))
+    throw Error('Uncertain previous Facebook image delivery: inspect Buffer before scheduling anything else');
   const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt);
   const occupied=new Set(scheduled.map(p=>videoHourKey(p.dueAt)));
   let added=0;

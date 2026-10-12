@@ -3482,7 +3482,11 @@
       "bufferId": "6acc78007db619a2915e3f2f",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
-      "youtubeTitleUpdatedTo": "How Would You React? 😮 #Shorts #Trending"
+      "youtubeTitleUpdatedTo": "How Would You React? 😮 #Shorts #Trending",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-13T18:00:00.000Z"
+      }
     },
     "[\"r2-862ecfe6edd41d38a0ecd996b50bc7a397c27e829af7eeb3db466cc2cf64f1a3\",\"facebook\"]": {
       "status": "rejected",

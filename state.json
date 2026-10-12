@@ -2949,7 +2949,11 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
       "youtubeTitleUpdatedTo": "Watch and Tell Me What You Think! 👀 #Shorts #Viral",
-      "descriptionUpdatedAt": "2026-10-11T13:34:05.212Z"
+      "descriptionUpdatedAt": "2026-10-11T13:34:05.212Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-14T18:00:00.000Z"
+      }
     },
     "[\"r2-e0384cd6617a1ded976fe8d4df2c9f91eaaeeaa3beb10666658d44e0e6a2a86e\",\"facebook\"]": {
       "status": "rejected",

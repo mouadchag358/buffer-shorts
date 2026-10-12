@@ -3342,6 +3342,12 @@
       "lastCheckedAt": "2026-10-12T06:02:07.652Z",
       "externalLink": "https://www.instagram.com/reel/DeX5htLE6RH/",
       "sentAt": "2026-10-12T00:02:30.747Z"
+    },
+    "[\"r2-292529af88a2c2e26e2ccf03b2c569bab47a04b6c6881edefa22cbe796c98010\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-13T00:00:07.652Z",
+      "updatedAt": "2026-10-12T06:02:07.652Z"
     }
   },
   "r2ListingRequests": {

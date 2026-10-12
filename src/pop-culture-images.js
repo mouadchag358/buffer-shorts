@@ -48,6 +48,7 @@ export async function syncImages({dryRun=false,log=console.log}={}){
   let changed=0;
   for(let i=0;i<targets.length;i++){
     const target=targets[i],card=cards[i],url=prefix+card.image;
+    if(state.replacements[target.id]?.status==='completed' && state.replacements[target.id]?.image===card.image && state.replacements[target.id]?.dueAt===target.dueAt) {log('Replacement already verified '+target.id);continue;}
     const already=target.assets?.some(a=>a.source===url);
     if(already){log('Already replaced '+target.id);continue;}
     if(!target.assets?.length)throw Error('No existing media in Facebook slot '+target.id);

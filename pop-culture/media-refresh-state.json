@@ -1,9 +1,10 @@
 {
   "6acc77e7ea568e911a53e494": {
-    "status": "editing",
+    "status": "completed",
     "quizId": "quiz-001",
     "imageBlobSha": "a6ba5e96f5e9f1d2d23c8658aeccf125446f0069",
     "originalDueAt": "2026-10-13T00:00:00.000Z",
-    "updatedAt": "2026-10-12T22:11:41.335Z"
+    "updatedAt": "2026-10-12T22:11:43.883Z",
+    "url": "https://raw.githubusercontent.com/mouadchag358/buffer-shorts/370f64ebacc01436466836d09bc57d51b17f53f6/pop-culture/cards/quiz-001.png"
   }
 }

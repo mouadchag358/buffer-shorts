@@ -118,7 +118,7 @@ export async function refreshScheduledFacebookQuizImages({dryRun=false,log=conso
     const entry=state[post.id];
     if(entry?.status==='editing'||entry?.status==='uncertain') throw Error('Uncertain prior media change for post '+post.id+'; reconcile in Buffer first');
     if(entry?.status==='completed'&&entry.imageBlobSha===rev && trim(post.text)===trim(card.caption)) {log('Already up to date: '+card.id);continue;}
-    if(Date.parse(post.dueAt)<Date.now()+20*60000) {log('Skipping imminent post: '+card.id);continue;}
+    if(Date.parse(post.dueAt)<Date.now()+2*60000) {log('Skipping imminent post: '+card.id);continue;}
     const input=buildMediaEdit(post,card,commitRevision());
     if (dryRun) {log(`DRY RUN ${card.id} -> ${post.id} at ${post.dueAt}: ${input.assets[0].image.url}`);continue;}
     await verifyPublicImage(input.assets[0].image.url);

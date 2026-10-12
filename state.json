@@ -3446,7 +3446,11 @@
       "updatedAt": "2026-10-12T06:02:07.652Z",
       "bufferId": "6acc77fa63ff33d8c9ab9d2b",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-12T20:07:03.067Z"
+      "lastCheckedAt": "2026-10-12T20:07:03.067Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-13T18:00:00.000Z"
+      }
     },
     "[\"r2-38cbae98082f4cf817f91b2baa2b54f0b1b3a837c7b520e195eda5a0b929dee8\",\"youtube\"]": {
       "status": "queued",

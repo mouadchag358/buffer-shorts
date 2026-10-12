@@ -75,7 +75,7 @@ export async function syncImages({dryRun=false,log=console.log}={}){
   const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt)
     .sort((a,b)=>Date.parse(a.dueAt)-Date.parse(b.dueAt)||a.id.localeCompare(b.id));
   if(Object.values(state.replacements).filter(v=>v.status==='completed').length===8) {
-    await replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,log});return;
+    log('Automatic new Facebook images paused pending status reconciliation of existing scheduled quiz posts');return;
   }
   const targets=scheduled.slice(0,8);
   if(targets.length!==8 || scheduled.length!==8) { log(JSON.stringify({facebookQueue:remote.length,scheduled:scheduled.length,selected:targets.length,media:scheduled.slice(0,12).map(p=>({id:p.id,status:p.status,dueAt:p.dueAt,assets:(p.assets||[]).map(a=>({hasSource:!!a.source,extension:(a.source||'').split('?')[0].match(/\\.[a-z0-9]{2,5}$/i)?.[0]||null}))}))})); throw Error('Expected 8 scheduled Facebook posts, found '+targets.length); }

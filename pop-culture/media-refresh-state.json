@@ -72,11 +72,10 @@
     "url": "https://raw.githubusercontent.com/mouadchag358/buffer-shorts/0c4d9ba5e473cfc13e7b9a07eb64edf12a2d5b08/pop-culture/cards/quiz-001.jpg"
   },
   "6acd6b2b5462be2e902a3d28": {
-    "status": "completed",
-    "quizId": "quiz-010",
-    "imageBlobSha": "ad398e2b8cd6d5fd4b75a2299c37289ff24de298",
+    "status": "editing",
+    "quizId": "quiz-002",
+    "imageBlobSha": "f2d2adbc9e077670092d15c05eee37c1f7a5bab7",
     "originalDueAt": "2026-10-13T06:00:00.000Z",
-    "updatedAt": "2026-10-12T23:22:03.686Z",
-    "url": "https://raw.githubusercontent.com/mouadchag358/buffer-shorts/85ee61b6ae64ff9083a3cf0ad2e09667c4df313b/pop-culture/cards/quiz-010.jpg"
+    "updatedAt": "2026-10-12T23:45:39.881Z"
   }
 }

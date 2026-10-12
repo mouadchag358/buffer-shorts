@@ -152,248 +152,696 @@
   {
     "id": "quiz-011",
     "kind": "quiz",
-    "category": "Gaming",
-    "question": "What is Link's legendary sword called?",
+    "category": "Anime",
+    "question": "Who is Naruto's pink-haired teammate?",
     "options": [
-      "Master Sword",
-      "Energy Sword",
-      "Buster Sword",
-      "Soul Edge"
+      "Ino",
+      "Tsunade",
+      "Sakura",
+      "Hinata"
     ],
-    "answer": "A",
-    "image": "pop-culture/cards/quiz-011.png",
-    "caption": "QUIZ TIME! What is Link's legendary sword called?\nA) Master Sword\nB) Energy Sword\nC) Buster Sword\nD) Soul Edge\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-011.jpg",
+    "caption": "QUIZ TIME! Who is Naruto's pink-haired teammate?\nA) Ino\nB) Tsunade\nC) Sakura\nD) Hinata\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
   },
   {
     "id": "quiz-012",
     "kind": "quiz",
-    "category": "Gaming",
-    "question": "Which Minecraft mob explodes?",
+    "category": "Anime",
+    "question": "Who is the Straw Hat crew's swordsman?",
     "options": [
-      "Zombie",
-      "Creeper",
-      "Enderman",
-      "Skeleton"
+      "Franky",
+      "Zoro",
+      "Sanji",
+      "Usopp"
     ],
     "answer": "B",
-    "image": "pop-culture/cards/quiz-012.png",
-    "caption": "QUIZ TIME! Which Minecraft mob explodes?\nA) Zombie\nB) Creeper\nC) Enderman\nD) Skeleton\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "image": "pop-culture/cards/quiz-012.jpg",
+    "caption": "QUIZ TIME! Who is the Straw Hat crew's swordsman?\nA) Franky\nB) Zoro\nC) Sanji\nD) Usopp\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
   },
   {
     "id": "quiz-013",
     "kind": "quiz",
-    "category": "Gaming",
-    "question": "Which game features Trevor Philips?",
+    "category": "Anime",
+    "question": "What is Goku's Saiyan birth name?",
     "options": [
-      "GTA IV",
-      "GTA V",
-      "Watch Dogs",
-      "Saints Row"
+      "Kakarot",
+      "Raditz",
+      "Bardock",
+      "Vegeta"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-013.png",
-    "caption": "QUIZ TIME! Which game features Trevor Philips?\nA) GTA IV\nB) GTA V\nC) Watch Dogs\nD) Saints Row\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-013.jpg",
+    "caption": "QUIZ TIME! What is Goku's Saiyan birth name?\nA) Kakarot\nB) Raditz\nC) Bardock\nD) Vegeta\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
   },
   {
     "id": "quiz-014",
     "kind": "quiz",
-    "category": "Gaming",
-    "question": "Who is the main playable outlaw in RDR2?",
+    "category": "Movies",
+    "question": "What is Harry Potter's owl called?",
     "options": [
-      "John Marston",
-      "Arthur Morgan",
-      "Dutch van der Linde",
-      "Micah Bell"
+      "Errol",
+      "Fawkes",
+      "Scabbers",
+      "Hedwig"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-014.png",
-    "caption": "QUIZ TIME! Who is the main playable outlaw in RDR2?\nA) John Marston\nB) Arthur Morgan\nC) Dutch van der Linde\nD) Micah Bell\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-014.jpg",
+    "caption": "QUIZ TIME! What is Harry Potter's owl called?\nA) Errol\nB) Fawkes\nC) Scabbers\nD) Hedwig\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
   },
   {
     "id": "quiz-015",
     "kind": "quiz",
-    "category": "Gaming",
-    "question": "Who leads God of War (2018)?",
+    "category": "Heroes",
+    "question": "Which newspaper employs J. Jonah Jameson?",
     "options": [
-      "Atreus",
-      "Zeus",
-      "Kratos",
-      "Thor"
+      "Daily Prophet",
+      "The Quibbler",
+      "Daily Bugle",
+      "Daily Planet"
     ],
     "answer": "C",
-    "image": "pop-culture/cards/quiz-015.png",
-    "caption": "QUIZ TIME! Who leads God of War (2018)?\nA) Atreus\nB) Zeus\nC) Kratos\nD) Thor\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "image": "pop-culture/cards/quiz-015.jpg",
+    "caption": "QUIZ TIME! Which newspaper employs J. Jonah Jameson?\nA) Daily Prophet\nB) The Quibbler\nC) Daily Bugle\nD) Daily Planet\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
   },
   {
     "id": "quiz-016",
     "kind": "quiz",
     "category": "Gaming",
-    "question": "Who is Halo's armored hero?",
+    "question": "Which Minecraft mob explodes near players?",
     "options": [
-      "Doom Slayer",
-      "Master Chief",
-      "Marcus Fenix",
-      "Sam Fisher"
+      "Sheep",
+      "Creeper",
+      "Cow",
+      "Villager"
     ],
     "answer": "B",
-    "image": "pop-culture/cards/quiz-016.png",
-    "caption": "QUIZ TIME! Who is Halo's armored hero?\nA) Doom Slayer\nB) Master Chief\nC) Marcus Fenix\nD) Sam Fisher\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "image": "pop-culture/cards/quiz-016.jpg",
+    "caption": "QUIZ TIME! Which Minecraft mob explodes near players?\nA) Sheep\nB) Creeper\nC) Cow\nD) Villager\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
   },
   {
     "id": "quiz-017",
     "kind": "quiz",
     "category": "Gaming",
-    "question": "Who is the witcher in The Witcher 3?",
+    "question": "What is Mario's brother called?",
     "options": [
-      "Vesemir",
-      "Ciri",
-      "Geralt",
-      "Dandelion"
+      "Luigi",
+      "Wario",
+      "Toad",
+      "Yoshi"
     ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-017.png",
-    "caption": "QUIZ TIME! Who is the witcher in The Witcher 3?\nA) Vesemir\nB) Ciri\nC) Geralt\nD) Dandelion\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-017.jpg",
+    "caption": "QUIZ TIME! What is Mario's brother called?\nA) Luigi\nB) Wario\nC) Toad\nD) Yoshi\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
   },
   {
     "id": "quiz-018",
     "kind": "quiz",
-    "category": "Gaming",
-    "question": "Which animal is Sonic?",
+    "category": "Movies",
+    "question": "What is Darth Vader's birth name?",
     "options": [
-      "Fox",
-      "Hedgehog",
-      "Echidna",
-      "Rabbit"
+      "Obi-Wan Kenobi",
+      "Luke Skywalker",
+      "Han Solo",
+      "Anakin Skywalker"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-018.png",
-    "caption": "QUIZ TIME! Which animal is Sonic?\nA) Fox\nB) Hedgehog\nC) Echidna\nD) Rabbit\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-018.jpg",
+    "caption": "QUIZ TIME! What is Darth Vader's birth name?\nA) Obi-Wan Kenobi\nB) Luke Skywalker\nC) Han Solo\nD) Anakin Skywalker\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
   },
   {
     "id": "quiz-019",
     "kind": "quiz",
-    "category": "Gaming",
-    "question": "Who is Mario's brother?",
+    "category": "Heroes",
+    "question": "What is Iron Man's real name?",
     "options": [
-      "Wario",
-      "Luigi",
-      "Toad",
-      "Yoshi"
+      "Bruce Banner",
+      "Clint Barton",
+      "Tony Stark",
+      "Steve Rogers"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-019.png",
-    "caption": "QUIZ TIME! Who is Mario's brother?\nA) Wario\nB) Luigi\nC) Toad\nD) Yoshi\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-019.jpg",
+    "caption": "QUIZ TIME! What is Iron Man's real name?\nA) Bruce Banner\nB) Clint Barton\nC) Tony Stark\nD) Steve Rogers\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
   },
   {
     "id": "quiz-020",
     "kind": "quiz",
     "category": "Gaming",
-    "question": "Who is the AI in Portal?",
+    "question": "What is Link's legendary sword called?",
     "options": [
-      "Cortana",
-      "GLaDOS",
-      "EDI",
-      "SHODAN"
+      "Keyblade",
+      "Master Sword",
+      "Buster Sword",
+      "Energy Sword"
     ],
     "answer": "B",
-    "image": "pop-culture/cards/quiz-020.png",
-    "caption": "QUIZ TIME! Who is the AI in Portal?\nA) Cortana\nB) GLaDOS\nC) EDI\nD) SHODAN\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Gaming #Movies"
+    "image": "pop-culture/cards/quiz-020.jpg",
+    "caption": "QUIZ TIME! What is Link's legendary sword called?\nA) Keyblade\nB) Master Sword\nC) Buster Sword\nD) Energy Sword\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
   },
   {
     "id": "quiz-021",
     "kind": "quiz",
-    "category": "Comics",
-    "question": "Which city does Batman protect?",
+    "category": "Anime",
+    "question": "Who teaches Naruto the Rasengan?",
     "options": [
-      "Metropolis",
-      "Star City",
-      "Gotham City",
-      "Central City"
+      "Jiraiya",
+      "Orochimaru",
+      "Gaara",
+      "Shikamaru"
     ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-021.png",
-    "caption": "QUIZ TIME! Which city does Batman protect?\nA) Metropolis\nB) Star City\nC) Gotham City\nD) Central City\n\nYour guess? No Googling! Comment below!\n#PopCulture #Comics #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-021.jpg",
+    "caption": "QUIZ TIME! Who teaches Naruto the Rasengan?\nA) Jiraiya\nB) Orochimaru\nC) Gaara\nD) Shikamaru\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
   },
   {
     "id": "quiz-022",
     "kind": "quiz",
-    "category": "Comics",
-    "question": "Who recruits Peter Parker in Captain America: Civil War?",
+    "category": "Anime",
+    "question": "Who is the Straw Hat crew's navigator?",
     "options": [
-      "Nick Fury",
-      "Tony Stark",
-      "Thor",
-      "Bruce Banner"
+      "Robin",
+      "Vivi",
+      "Hancock",
+      "Nami"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-022.png",
-    "caption": "QUIZ TIME! Who recruits Peter Parker in Captain America: Civil War?\nA) Nick Fury\nB) Tony Stark\nC) Thor\nD) Bruce Banner\n\nYour guess? No Googling! Comment below!\n#PopCulture #Comics #Trivia #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-022.jpg",
+    "caption": "QUIZ TIME! Who is the Straw Hat crew's navigator?\nA) Robin\nB) Vivi\nC) Hancock\nD) Nami\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
   },
   {
     "id": "quiz-023",
     "kind": "quiz",
-    "category": "Comics",
-    "question": "How many Infinity Stones are there in the MCU?",
+    "category": "Anime",
+    "question": "How many Dragon Balls summon Shenron?",
     "options": [
-      "Four",
-      "Five",
       "Six",
-      "Seven"
+      "Eight",
+      "Seven",
+      "Five"
     ],
     "answer": "C",
-    "image": "pop-culture/cards/quiz-023.png",
-    "caption": "QUIZ TIME! How many Infinity Stones are there in the MCU?\nA) Four\nB) Five\nC) Six\nD) Seven\n\nYour guess? No Googling! Comment below!\n#PopCulture #Comics #Trivia #Gaming #Movies"
+    "image": "pop-culture/cards/quiz-023.jpg",
+    "caption": "QUIZ TIME! How many Dragon Balls summon Shenron?\nA) Six\nB) Eight\nC) Seven\nD) Five\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
   },
   {
     "id": "quiz-024",
     "kind": "quiz",
-    "category": "Comics",
-    "question": "What is Superman's birth planet?",
+    "category": "Movies",
+    "question": "Which spell disarms an opponent?",
     "options": [
-      "Mars",
-      "Asgard",
-      "Krypton",
-      "Titan"
+      "Reparo",
+      "Expelliarmus",
+      "Lumos",
+      "Accio"
     ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-024.png",
-    "caption": "QUIZ TIME! What is Superman's birth planet?\nA) Mars\nB) Asgard\nC) Krypton\nD) Titan\n\nYour guess? No Googling! Comment below!\n#PopCulture #Comics #Trivia #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-024.jpg",
+    "caption": "QUIZ TIME! Which spell disarms an opponent?\nA) Reparo\nB) Expelliarmus\nC) Lumos\nD) Accio\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
   },
   {
     "id": "quiz-025",
     "kind": "quiz",
-    "category": "Comics",
-    "question": "What is Wonder Woman's home island?",
+    "category": "Heroes",
+    "question": "Who is Peter Parker's aunt?",
     "options": [
-      "Genosha",
-      "Themyscira",
-      "Atlantis",
-      "Sokovia"
+      "May",
+      "Peggy",
+      "Pepper",
+      "Betty"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-025.png",
-    "caption": "QUIZ TIME! What is Wonder Woman's home island?\nA) Genosha\nB) Themyscira\nC) Atlantis\nD) Sokovia\n\nYour guess? No Googling! Comment below!\n#PopCulture #Comics #Trivia #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-025.jpg",
+    "caption": "QUIZ TIME! Who is Peter Parker's aunt?\nA) May\nB) Peggy\nC) Pepper\nD) Betty\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
   },
   {
     "id": "quiz-026",
     "kind": "quiz",
-    "category": "Comics",
-    "question": "Who is Spider-Man in Into the Spider-Verse?",
+    "category": "Gaming",
+    "question": "Which tool mines stone fastest?",
     "options": [
-      "Peter Quill",
-      "Miles Morales",
-      "Ben Reilly",
-      "Eddie Brock"
+      "Shovel",
+      "Hoe",
+      "Shears",
+      "Pickaxe"
     ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-026.png",
-    "caption": "QUIZ TIME! Who is Spider-Man in Into the Spider-Verse?\nA) Peter Quill\nB) Miles Morales\nC) Ben Reilly\nD) Eddie Brock\n\nYour guess? No Googling! Comment below!\n#PopCulture #Comics #Trivia #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-026.jpg",
+    "caption": "QUIZ TIME! Which tool mines stone fastest?\nA) Shovel\nB) Hoe\nC) Shears\nD) Pickaxe\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
   },
   {
     "id": "quiz-027",
     "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which princess often needs Mario's help?",
+    "options": [
+      "Daisy",
+      "Rosalina",
+      "Peach",
+      "Zelda"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-027.jpg",
+    "caption": "QUIZ TIME! Which princess often needs Mario's help?\nA) Daisy\nB) Rosalina\nC) Peach\nD) Zelda\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
+  },
+  {
+    "id": "quiz-028",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Which Hogwarts house has a snake symbol?",
+    "question": "Who is Luke Skywalker's twin sister?",
+    "options": [
+      "Ahsoka",
+      "Leia",
+      "Rey",
+      "Padme"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-028.jpg",
+    "caption": "QUIZ TIME! Who is Luke Skywalker's twin sister?\nA) Ahsoka\nB) Leia\nC) Rey\nD) Padme\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
+  },
+  {
+    "id": "quiz-029",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Who is Tony Stark's close friend known as Rhodey?",
+    "options": [
+      "James Rhodes",
+      "Sam Wilson",
+      "Bucky Barnes",
+      "Nick Fury"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-029.jpg",
+    "caption": "QUIZ TIME! Who is Tony Stark's close friend known as Rhodey?\nA) James Rhodes\nB) Sam Wilson\nC) Bucky Barnes\nD) Nick Fury\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
+  },
+  {
+    "id": "quiz-030",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which kingdom is central to The Legend of Zelda?",
+    "options": [
+      "Mushroom Kingdom",
+      "Midgar",
+      "Azeroth",
+      "Hyrule"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-030.jpg",
+    "caption": "QUIZ TIME! Which kingdom is central to The Legend of Zelda?\nA) Mushroom Kingdom\nB) Midgar\nC) Azeroth\nD) Hyrule\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
+  },
+  {
+    "id": "quiz-031",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which clan does Sasuke belong to?",
+    "options": [
+      "Nara",
+      "Akimichi",
+      "Uchiha",
+      "Hyuga"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-031.jpg",
+    "caption": "QUIZ TIME! Which clan does Sasuke belong to?\nA) Nara\nB) Akimichi\nC) Uchiha\nD) Hyuga\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
+  },
+  {
+    "id": "quiz-032",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who cooks for the Straw Hat crew?",
+    "options": [
+      "Jinbe",
+      "Sanji",
+      "Zoro",
+      "Brook"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-032.jpg",
+    "caption": "QUIZ TIME! Who cooks for the Straw Hat crew?\nA) Jinbe\nB) Sanji\nC) Zoro\nD) Brook\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
+  },
+  {
+    "id": "quiz-033",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Goku's eldest son?",
+    "options": [
+      "Gohan",
+      "Goten",
+      "Trunks",
+      "Krillin"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-033.jpg",
+    "caption": "QUIZ TIME! Who is Goku's eldest son?\nA) Gohan\nB) Goten\nC) Trunks\nD) Krillin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
+  },
+  {
+    "id": "quiz-034",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which platform leads to the Hogwarts Express?",
+    "options": [
+      "Platform 7 1/2",
+      "Platform 8 3/4",
+      "Platform 10 1/2",
+      "Platform 9 3/4"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-034.jpg",
+    "caption": "QUIZ TIME! Which platform leads to the Hogwarts Express?\nA) Platform 7 1/2\nB) Platform 8 3/4\nC) Platform 10 1/2\nD) Platform 9 3/4\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
+  },
+  {
+    "id": "quiz-035",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "What warns Spider-Man of danger?",
+    "options": [
+      "Telepathy",
+      "Time travel",
+      "Spider-Sense",
+      "X-ray vision"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-035.jpg",
+    "caption": "QUIZ TIME! What warns Spider-Man of danger?\nA) Telepathy\nB) Time travel\nC) Spider-Sense\nD) X-ray vision\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
+  },
+  {
+    "id": "quiz-036",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft block is used for a Nether portal frame?",
+    "options": [
+      "Sand",
+      "Obsidian",
+      "Dirt",
+      "Glass"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-036.jpg",
+    "caption": "QUIZ TIME! Which Minecraft block is used for a Nether portal frame?\nA) Sand\nB) Obsidian\nC) Dirt\nD) Glass\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
+  },
+  {
+    "id": "quiz-037",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Who is Mario's turtle-like rival?",
+    "options": [
+      "Bowser",
+      "Donkey Kong",
+      "Waluigi",
+      "King Boo"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-037.jpg",
+    "caption": "QUIZ TIME! Who is Mario's turtle-like rival?\nA) Bowser\nB) Donkey Kong\nC) Waluigi\nD) King Boo\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
+  },
+  {
+    "id": "quiz-038",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which small Jedi master trains Luke on Dagobah?",
+    "options": [
+      "Mace Windu",
+      "Qui-Gon Jinn",
+      "Count Dooku",
+      "Yoda"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-038.jpg",
+    "caption": "QUIZ TIME! Which small Jedi master trains Luke on Dagobah?\nA) Mace Windu\nB) Qui-Gon Jinn\nC) Count Dooku\nD) Yoda\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
+  },
+  {
+    "id": "quiz-039",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "What armored identity does James Rhodes use?",
+    "options": [
+      "Ant-Man",
+      "Vision",
+      "War Machine",
+      "Falcon"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-039.jpg",
+    "caption": "QUIZ TIME! What armored identity does James Rhodes use?\nA) Ant-Man\nB) Vision\nC) War Machine\nD) Falcon\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
+  },
+  {
+    "id": "quiz-040",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What currency is used in many Zelda games?",
+    "options": [
+      "Gil",
+      "Rupees",
+      "Rings",
+      "Bells"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-040.jpg",
+    "caption": "QUIZ TIME! What currency is used in many Zelda games?\nA) Gil\nB) Rupees\nC) Rings\nD) Bells\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
+  },
+  {
+    "id": "quiz-041",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What is the name of Naruto's nine-tailed beast?",
+    "options": [
+      "Kurama",
+      "Shukaku",
+      "Gyuki",
+      "Matatabi"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-041.jpg",
+    "caption": "QUIZ TIME! What is the name of Naruto's nine-tailed beast?\nA) Kurama\nB) Shukaku\nC) Gyuki\nD) Matatabi\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
+  },
+  {
+    "id": "quiz-042",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which Straw Hat pirate is a doctor?",
+    "options": [
+      "Franky",
+      "Usopp",
+      "Brook",
+      "Chopper"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-042.jpg",
+    "caption": "QUIZ TIME! Which Straw Hat pirate is a doctor?\nA) Franky\nB) Usopp\nC) Brook\nD) Chopper\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
+  },
+  {
+    "id": "quiz-043",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Vegeta's son?",
+    "options": [
+      "Gohan",
+      "Yamcha",
+      "Trunks",
+      "Goten"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-043.jpg",
+    "caption": "QUIZ TIME! Who is Vegeta's son?\nA) Gohan\nB) Yamcha\nC) Trunks\nD) Goten\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
+  },
+  {
+    "id": "quiz-044",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What position does Harry play in Quidditch?",
+    "options": [
+      "Chaser",
+      "Seeker",
+      "Keeper",
+      "Beater"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-044.jpg",
+    "caption": "QUIZ TIME! What position does Harry play in Quidditch?\nA) Chaser\nB) Seeker\nC) Keeper\nD) Beater\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
+  },
+  {
+    "id": "quiz-045",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which villain is also called Otto Octavius?",
+    "options": [
+      "Doctor Octopus",
+      "Green Goblin",
+      "Mysterio",
+      "Sandman"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-045.jpg",
+    "caption": "QUIZ TIME! Which villain is also called Otto Octavius?\nA) Doctor Octopus\nB) Green Goblin\nC) Mysterio\nD) Sandman\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
+  },
+  {
+    "id": "quiz-046",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft mob drops ender pearls?",
+    "options": [
+      "Skeleton",
+      "Zombie",
+      "Spider",
+      "Enderman"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-046.jpg",
+    "caption": "QUIZ TIME! Which Minecraft mob drops ender pearls?\nA) Skeleton\nB) Zombie\nC) Spider\nD) Enderman\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
+  },
+  {
+    "id": "quiz-047",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Mario power-up grants temporary invincibility?",
+    "options": [
+      "Super Mushroom",
+      "Super Leaf",
+      "Super Star",
+      "Fire Flower"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-047.jpg",
+    "caption": "QUIZ TIME! Which Mario power-up grants temporary invincibility?\nA) Super Mushroom\nB) Super Leaf\nC) Super Star\nD) Fire Flower\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
+  },
+  {
+    "id": "quiz-048",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What is Han Solo's ship called?",
+    "options": [
+      "Ghost",
+      "Millennium Falcon",
+      "Star Destroyer",
+      "Razor Crest"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-048.jpg",
+    "caption": "QUIZ TIME! What is Han Solo's ship called?\nA) Ghost\nB) Millennium Falcon\nC) Star Destroyer\nD) Razor Crest\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
+  },
+  {
+    "id": "quiz-049",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Who is Tony Stark's longtime assistant and partner?",
+    "options": [
+      "Pepper Potts",
+      "Jane Foster",
+      "Peggy Carter",
+      "Maria Hill"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-049.jpg",
+    "caption": "QUIZ TIME! Who is Tony Stark's longtime assistant and partner?\nA) Pepper Potts\nB) Jane Foster\nC) Peggy Carter\nD) Maria Hill\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
+  },
+  {
+    "id": "quiz-050",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Who is the princess in The Legend of Zelda?",
+    "options": [
+      "Peach",
+      "Samus",
+      "Daisy",
+      "Zelda"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-050.jpg",
+    "caption": "QUIZ TIME! Who is the princess in The Legend of Zelda?\nA) Peach\nB) Samus\nC) Daisy\nD) Zelda\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
+  },
+  {
+    "id": "quiz-051",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What title does Naruto dream of earning?",
+    "options": [
+      "Soul King",
+      "Wizard King",
+      "Hokage",
+      "Pirate King"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-051.jpg",
+    "caption": "QUIZ TIME! What title does Naruto dream of earning?\nA) Soul King\nB) Wizard King\nC) Hokage\nD) Pirate King\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
+  },
+  {
+    "id": "quiz-052",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who gave Luffy his straw hat?",
+    "options": [
+      "Buggy",
+      "Shanks",
+      "Garp",
+      "Mihawk"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-052.jpg",
+    "caption": "QUIZ TIME! Who gave Luffy his straw hat?\nA) Buggy\nB) Shanks\nC) Garp\nD) Mihawk\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
+  },
+  {
+    "id": "quiz-053",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which planet is Piccolo's species from?",
+    "options": [
+      "Namek",
+      "Vegeta",
+      "Earth",
+      "Vampa"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-053.jpg",
+    "caption": "QUIZ TIME! Which planet is Piccolo's species from?\nA) Namek\nB) Vegeta\nC) Earth\nD) Vampa\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
+  },
+  {
+    "id": "quiz-054",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which Hogwarts house values ambition?",
     "options": [
       "Gryffindor",
       "Hufflepuff",
@@ -401,922 +849,744 @@
       "Slytherin"
     ],
     "answer": "D",
-    "image": "pop-culture/cards/quiz-027.png",
-    "caption": "QUIZ TIME! Which Hogwarts house has a snake symbol?\nA) Gryffindor\nB) Hufflepuff\nC) Ravenclaw\nD) Slytherin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Gaming #Movies"
+    "image": "pop-culture/cards/quiz-054.jpg",
+    "caption": "QUIZ TIME! Which Hogwarts house values ambition?\nA) Gryffindor\nB) Hufflepuff\nC) Ravenclaw\nD) Slytherin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
   },
   {
-    "id": "quiz-028",
+    "id": "quiz-055",
     "kind": "quiz",
-    "category": "Movies",
-    "question": "Where is the One Ring destroyed?",
+    "category": "Heroes",
+    "question": "Which villain uses a pumpkin-bomb glider?",
     "options": [
-      "Rivendell",
-      "Mount Doom",
-      "Moria",
-      "Helm's Deep"
-    ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-028.png",
-    "caption": "QUIZ TIME! Where is the One Ring destroyed?\nA) Rivendell\nB) Mount Doom\nC) Moria\nD) Helm's Deep\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-029",
-    "kind": "quiz",
-    "category": "Movies",
-    "question": "Who is Darth Vader's son?",
-    "options": [
-      "Han Solo",
-      "Obi-Wan",
-      "Luke Skywalker",
-      "Lando"
-    ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-029.png",
-    "caption": "QUIZ TIME! Who is Darth Vader's son?\nA) Han Solo\nB) Obi-Wan\nC) Luke Skywalker\nD) Lando\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-030",
-    "kind": "quiz",
-    "category": "Movies",
-    "question": "Who is the Asgardian Avenger?",
-    "options": [
-      "Ant-Man",
-      "Thor",
-      "Hawkeye",
-      "Falcon"
-    ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-030.png",
-    "caption": "QUIZ TIME! Who is the Asgardian Avenger?\nA) Ant-Man\nB) Thor\nC) Hawkeye\nD) Falcon\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-031",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "What number identifies Eleven in Stranger Things?",
-    "options": [
-      "001",
-      "007",
-      "011",
-      "013"
-    ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-031.png",
-    "caption": "QUIZ TIME! What number identifies Eleven in Stranger Things?\nA) 001\nB) 007\nC) 011\nD) 013\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-032",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "What alias does Walter White use?",
-    "options": [
-      "Saul Goodman",
-      "Heisenberg",
-      "Gus Fring",
-      "Hank Schrader"
-    ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-032.png",
-    "caption": "QUIZ TIME! What alias does Walter White use?\nA) Saul Goodman\nB) Heisenberg\nC) Gus Fring\nD) Hank Schrader\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-033",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "Who plays Wednesday in the 2022 Netflix series?",
-    "options": [
-      "Emma Myers",
-      "Jenna Ortega",
-      "Millie Bobby Brown",
-      "Maya Hawke"
-    ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-033.png",
-    "caption": "QUIZ TIME! Who plays Wednesday in the 2022 Netflix series?\nA) Emma Myers\nB) Jenna Ortega\nC) Millie Bobby Brown\nD) Maya Hawke\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-034",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "Who accompanies Ellie in The Last of Us?",
-    "options": [
-      "Tommy",
-      "Joel",
-      "Bill",
-      "Henry"
-    ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-034.png",
-    "caption": "QUIZ TIME! Who accompanies Ellie in The Last of Us?\nA) Tommy\nB) Joel\nC) Bill\nD) Henry\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-035",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "What is Squid Game's opening game?",
-    "options": [
-      "Tug of War",
-      "Marbles",
-      "Red Light Green Light",
-      "Glass Bridge"
-    ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-035.png",
-    "caption": "QUIZ TIME! What is Squid Game's opening game?\nA) Tug of War\nB) Marbles\nC) Red Light Green Light\nD) Glass Bridge\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-036",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "What is Baby Yoda's real name?",
-    "options": [
-      "Grogu",
-      "Din Djarin",
-      "Yoda",
-      "Boba Fett"
-    ],
-    "answer": "A",
-    "image": "pop-culture/cards/quiz-036.png",
-    "caption": "QUIZ TIME! What is Baby Yoda's real name?\nA) Grogu\nB) Din Djarin\nC) Yoda\nD) Boba Fett\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-037",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "Who is called the Mother of Dragons?",
-    "options": [
-      "Sansa Stark",
-      "Arya Stark",
-      "Daenerys Targaryen",
-      "Cersei Lannister"
-    ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-037.png",
-    "caption": "QUIZ TIME! Who is called the Mother of Dragons?\nA) Sansa Stark\nB) Arya Stark\nC) Daenerys Targaryen\nD) Cersei Lannister\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-038",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "Which two sisters are central to Arcane?",
-    "options": [
-      "Vi and Jinx",
-      "Caitlyn and Mel",
-      "Vi and Caitlyn",
-      "Jinx and Mel"
-    ],
-    "answer": "A",
-    "image": "pop-culture/cards/quiz-038.png",
-    "caption": "QUIZ TIME! Which two sisters are central to Arcane?\nA) Vi and Jinx\nB) Caitlyn and Mel\nC) Vi and Caitlyn\nD) Jinx and Mel\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-039",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "Who is the last airbender at the start of Avatar?",
-    "options": [
-      "Zuko",
-      "Aang",
-      "Katara",
-      "Toph"
-    ],
-    "answer": "B",
-    "image": "pop-culture/cards/quiz-039.png",
-    "caption": "QUIZ TIME! Who is the last airbender at the start of Avatar?\nA) Zuko\nB) Aang\nC) Katara\nD) Toph\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "quiz-040",
-    "kind": "quiz",
-    "category": "Series",
-    "question": "Where does SpongeBob live?",
-    "options": [
-      "Shell City",
-      "Rock Bottom",
-      "Bikini Bottom",
-      "Atlantis"
-    ],
-    "answer": "C",
-    "image": "pop-culture/cards/quiz-040.png",
-    "caption": "QUIZ TIME! Where does SpongeBob live?\nA) Shell City\nB) Rock Bottom\nC) Bikini Bottom\nD) Atlantis\n\nYour guess? No Googling! Comment below!\n#PopCulture #Series #Trivia #Gaming #Movies"
-  },
-  {
-    "id": "duel-001",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which anime would you watch forever?",
-    "options": [
-      "Naruto",
-      "One Piece"
-    ],
-    "image": "pop-culture/cards/duel-001.png",
-    "caption": "PICK ONE! Which anime would you watch forever?\nA) Naruto\nB) One Piece\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-002",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Who would win this legendary fight?",
-    "options": [
-      "Goku",
-      "Saitama"
-    ],
-    "image": "pop-culture/cards/duel-002.png",
-    "caption": "PICK ONE! Who would win this legendary fight?\nA) Goku\nB) Saitama\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-003",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which anime has the best battles?",
-    "options": [
-      "Demon Slayer",
-      "Jujutsu Kaisen"
-    ],
-    "image": "pop-culture/cards/duel-003.png",
-    "caption": "PICK ONE! Which anime has the best battles?\nA) Demon Slayer\nB) Jujutsu Kaisen\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-004",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Who is the better strategist?",
-    "options": [
-      "Light Yagami",
-      "Lelouch"
-    ],
-    "image": "pop-culture/cards/duel-004.png",
-    "caption": "PICK ONE! Who is the better strategist?\nA) Light Yagami\nB) Lelouch\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-005",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which world would you rather explore?",
-    "options": [
-      "Attack on Titan",
-      "Fullmetal Alchemist"
-    ],
-    "image": "pop-culture/cards/duel-005.png",
-    "caption": "PICK ONE! Which world would you rather explore?\nA) Attack on Titan\nB) Fullmetal Alchemist\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-006",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Who is your favorite mentor?",
-    "options": [
-      "Kakashi",
-      "Gojo"
-    ],
-    "image": "pop-culture/cards/duel-006.png",
-    "caption": "PICK ONE! Who is your favorite mentor?\nA) Kakashi\nB) Gojo\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-007",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which villain is more iconic?",
-    "options": [
-      "Madara",
-      "Aizen"
-    ],
-    "image": "pop-culture/cards/duel-007.png",
-    "caption": "PICK ONE! Which villain is more iconic?\nA) Madara\nB) Aizen\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-008",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Choose your adventure partner!",
-    "options": [
-      "Luffy",
-      "Gon"
-    ],
-    "image": "pop-culture/cards/duel-008.png",
-    "caption": "PICK ONE! Choose your adventure partner!\nA) Luffy\nB) Gon\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-009",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Who has the cooler transformation?",
-    "options": [
-      "Goku",
-      "Ichigo"
-    ],
-    "image": "pop-culture/cards/duel-009.png",
-    "caption": "PICK ONE! Who has the cooler transformation?\nA) Goku\nB) Ichigo\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-010",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which anime soundtrack is better?",
-    "options": [
-      "Naruto",
-      "Attack on Titan"
-    ],
-    "image": "pop-culture/cards/duel-010.png",
-    "caption": "PICK ONE! Which anime soundtrack is better?\nA) Naruto\nB) Attack on Titan\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-011",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which hero inspires you more?",
-    "options": [
-      "Tanjiro",
-      "Deku"
-    ],
-    "image": "pop-culture/cards/duel-011.png",
-    "caption": "PICK ONE! Which hero inspires you more?\nA) Tanjiro\nB) Deku\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-012",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which crew would you join?",
-    "options": [
-      "Straw Hat Pirates",
-      "Black Bulls"
-    ],
-    "image": "pop-culture/cards/duel-012.png",
-    "caption": "PICK ONE! Which crew would you join?\nA) Straw Hat Pirates\nB) Black Bulls\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-013",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Pick the best anime rival!",
-    "options": [
-      "Vegeta",
-      "Sasuke"
-    ],
-    "image": "pop-culture/cards/duel-013.png",
-    "caption": "PICK ONE! Pick the best anime rival!\nA) Vegeta\nB) Sasuke\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-014",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which power would you rather have?",
-    "options": [
-      "Sharingan",
-      "Domain Expansion"
-    ],
-    "image": "pop-culture/cards/duel-014.png",
-    "caption": "PICK ONE! Which power would you rather have?\nA) Sharingan\nB) Domain Expansion\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-015",
-    "kind": "duel",
-    "category": "Anime",
-    "question": "Which anime deserves a rewatch?",
-    "options": [
-      "Death Note",
-      "Code Geass"
-    ],
-    "image": "pop-culture/cards/duel-015.png",
-    "caption": "PICK ONE! Which anime deserves a rewatch?\nA) Death Note\nB) Code Geass\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Anime #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-016",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "You can only keep one game!",
-    "options": [
-      "Minecraft",
-      "GTA V"
-    ],
-    "image": "pop-culture/cards/duel-016.png",
-    "caption": "PICK ONE! You can only keep one game!\nA) Minecraft\nB) GTA V\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-017",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which open world is more immersive?",
-    "options": [
-      "Red Dead Redemption 2",
-      "Cyberpunk 2077"
-    ],
-    "image": "pop-culture/cards/duel-017.png",
-    "caption": "PICK ONE! Which open world is more immersive?\nA) Red Dead Redemption 2\nB) Cyberpunk 2077\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-018",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which gaming icon wins?",
-    "options": [
-      "Mario",
-      "Sonic"
-    ],
-    "image": "pop-culture/cards/duel-018.png",
-    "caption": "PICK ONE! Which gaming icon wins?\nA) Mario\nB) Sonic\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-019",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Pick your free console!",
-    "options": [
-      "PlayStation",
-      "Xbox"
-    ],
-    "image": "pop-culture/cards/duel-019.png",
-    "caption": "PICK ONE! Pick your free console!\nA) PlayStation\nB) Xbox\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-020",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which horror game scares you more?",
-    "options": [
-      "Resident Evil",
-      "Silent Hill"
-    ],
-    "image": "pop-culture/cards/duel-020.png",
-    "caption": "PICK ONE! Which horror game scares you more?\nA) Resident Evil\nB) Silent Hill\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-021",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which battle royale is your pick?",
-    "options": [
-      "Fortnite",
-      "Apex Legends"
-    ],
-    "image": "pop-culture/cards/duel-021.png",
-    "caption": "PICK ONE! Which battle royale is your pick?\nA) Fortnite\nB) Apex Legends\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-022",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which game world would you survive in?",
-    "options": [
-      "Minecraft",
-      "Terraria"
-    ],
-    "image": "pop-culture/cards/duel-022.png",
-    "caption": "PICK ONE! Which game world would you survive in?\nA) Minecraft\nB) Terraria\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-023",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Who's the tougher boss?",
-    "options": [
-      "Malenia",
-      "Isshin"
-    ],
-    "image": "pop-culture/cards/duel-023.png",
-    "caption": "PICK ONE! Who's the tougher boss?\nA) Malenia\nB) Isshin\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-024",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which classic FPS is king?",
-    "options": [
-      "Halo",
-      "Call of Duty"
-    ],
-    "image": "pop-culture/cards/duel-024.png",
-    "caption": "PICK ONE! Which classic FPS is king?\nA) Halo\nB) Call of Duty\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-025",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which fighting game is better?",
-    "options": [
-      "Tekken",
-      "Mortal Kombat"
-    ],
-    "image": "pop-culture/cards/duel-025.png",
-    "caption": "PICK ONE! Which fighting game is better?\nA) Tekken\nB) Mortal Kombat\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-026",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which hero gets your vote?",
-    "options": [
-      "Kratos",
-      "Doom Slayer"
-    ],
-    "image": "pop-culture/cards/duel-026.png",
-    "caption": "PICK ONE! Which hero gets your vote?\nA) Kratos\nB) Doom Slayer\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-027",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which franchise should return first?",
-    "options": [
-      "Portal",
-      "Half-Life"
-    ],
-    "image": "pop-culture/cards/duel-027.png",
-    "caption": "PICK ONE! Which franchise should return first?\nA) Portal\nB) Half-Life\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-028",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which racing game do you prefer?",
-    "options": [
-      "Forza Horizon",
-      "Need for Speed"
-    ],
-    "image": "pop-culture/cards/duel-028.png",
-    "caption": "PICK ONE! Which racing game do you prefer?\nA) Forza Horizon\nB) Need for Speed\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-029",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which RPG deserves the crown?",
-    "options": [
-      "The Witcher 3",
-      "Skyrim"
-    ],
-    "image": "pop-culture/cards/duel-029.png",
-    "caption": "PICK ONE! Which RPG deserves the crown?\nA) The Witcher 3\nB) Skyrim\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-030",
-    "kind": "duel",
-    "category": "Gaming",
-    "question": "Which game has the best story?",
-    "options": [
-      "The Last of Us",
-      "Red Dead Redemption 2"
-    ],
-    "image": "pop-culture/cards/duel-030.png",
-    "caption": "PICK ONE! Which game has the best story?\nA) The Last of Us\nB) Red Dead Redemption 2\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Gaming #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-031",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Who would you trust to save you?",
-    "options": [
-      "Batman",
-      "Spider-Man"
-    ],
-    "image": "pop-culture/cards/duel-031.png",
-    "caption": "PICK ONE! Who would you trust to save you?\nA) Batman\nB) Spider-Man\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-032",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which superhero universe wins?",
-    "options": [
-      "Marvel",
-      "DC"
-    ],
-    "image": "pop-culture/cards/duel-032.png",
-    "caption": "PICK ONE! Which superhero universe wins?\nA) Marvel\nB) DC\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-033",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Who is the better movie villain?",
-    "options": [
-      "Joker",
-      "Thanos"
-    ],
-    "image": "pop-culture/cards/duel-033.png",
-    "caption": "PICK ONE! Who is the better movie villain?\nA) Joker\nB) Thanos\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-034",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Who wins in a straight fight?",
-    "options": [
-      "Superman",
-      "Thor"
-    ],
-    "image": "pop-culture/cards/duel-034.png",
-    "caption": "PICK ONE! Who wins in a straight fight?\nA) Superman\nB) Thor\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-035",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which team would you join?",
-    "options": [
-      "Avengers",
-      "Justice League"
-    ],
-    "image": "pop-culture/cards/duel-035.png",
-    "caption": "PICK ONE! Which team would you join?\nA) Avengers\nB) Justice League\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-036",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which genius builds your armor?",
-    "options": [
-      "Iron Man",
-      "Batman"
-    ],
-    "image": "pop-culture/cards/duel-036.png",
-    "caption": "PICK ONE! Which genius builds your armor?\nA) Iron Man\nB) Batman\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-037",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which superhero power would you choose?",
-    "options": [
-      "Teleportation",
-      "Super Speed"
-    ],
-    "image": "pop-culture/cards/duel-037.png",
-    "caption": "PICK ONE! Which superhero power would you choose?\nA) Teleportation\nB) Super Speed\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-038",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Who is your favorite antihero?",
-    "options": [
-      "Deadpool",
+      "Rhino",
+      "Lizard",
+      "Green Goblin",
       "Venom"
     ],
-    "image": "pop-culture/cards/duel-038.png",
-    "caption": "PICK ONE! Who is your favorite antihero?\nA) Deadpool\nB) Venom\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-055.jpg",
+    "caption": "QUIZ TIME! Which villain uses a pumpkin-bomb glider?\nA) Rhino\nB) Lizard\nC) Green Goblin\nD) Venom\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
   },
   {
-    "id": "duel-039",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Who has the better shield?",
+    "id": "quiz-056",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which item lets you glide in Minecraft?",
     "options": [
-      "Captain America",
-      "Wonder Woman"
+      "Compass",
+      "Elytra",
+      "Shield",
+      "Trident"
     ],
-    "image": "pop-culture/cards/duel-039.png",
-    "caption": "PICK ONE! Who has the better shield?\nA) Captain America\nB) Wonder Woman\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-056.jpg",
+    "caption": "QUIZ TIME! Which item lets you glide in Minecraft?\nA) Compass\nB) Elytra\nC) Shield\nD) Trident\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
   },
   {
-    "id": "duel-040",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which cosmic hero is cooler?",
+    "id": "quiz-057",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Mario power-up lets him throw fireballs?",
     "options": [
-      "Silver Surfer",
-      "Green Lantern"
+      "Fire Flower",
+      "Super Star",
+      "Ice Flower",
+      "Mega Mushroom"
     ],
-    "image": "pop-culture/cards/duel-040.png",
-    "caption": "PICK ONE! Which cosmic hero is cooler?\nA) Silver Surfer\nB) Green Lantern\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-057.jpg",
+    "caption": "QUIZ TIME! Which Mario power-up lets him throw fireballs?\nA) Fire Flower\nB) Super Star\nC) Ice Flower\nD) Mega Mushroom\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
   },
   {
-    "id": "duel-041",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which villain is more terrifying?",
-    "options": [
-      "Darkseid",
-      "Thanos"
-    ],
-    "image": "pop-culture/cards/duel-041.png",
-    "caption": "PICK ONE! Which villain is more terrifying?\nA) Darkseid\nB) Thanos\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-042",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Who would you want as a mentor?",
-    "options": [
-      "Doctor Strange",
-      "Professor X"
-    ],
-    "image": "pop-culture/cards/duel-042.png",
-    "caption": "PICK ONE! Who would you want as a mentor?\nA) Doctor Strange\nB) Professor X\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-043",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which Spider-Man is your favorite?",
-    "options": [
-      "Peter Parker",
-      "Miles Morales"
-    ],
-    "image": "pop-culture/cards/duel-043.png",
-    "caption": "PICK ONE! Which Spider-Man is your favorite?\nA) Peter Parker\nB) Miles Morales\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-044",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which battle would you watch?",
-    "options": [
-      "Hulk vs Thor",
-      "Superman vs Shazam"
-    ],
-    "image": "pop-culture/cards/duel-044.png",
-    "caption": "PICK ONE! Which battle would you watch?\nA) Hulk vs Thor\nB) Superman vs Shazam\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-045",
-    "kind": "duel",
-    "category": "Comics",
-    "question": "Which city would you visit?",
-    "options": [
-      "Gotham City",
-      "Metropolis"
-    ],
-    "image": "pop-culture/cards/duel-045.png",
-    "caption": "PICK ONE! Which city would you visit?\nA) Gotham City\nB) Metropolis\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Comics #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-046",
-    "kind": "duel",
+    "id": "quiz-058",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Which fantasy world would you live in?",
+    "question": "What species is Chewbacca?",
     "options": [
-      "Harry Potter",
-      "The Lord of the Rings"
+      "Ewok",
+      "Jawa",
+      "Rodian",
+      "Wookiee"
     ],
-    "image": "pop-culture/cards/duel-046.png",
-    "caption": "PICK ONE! Which fantasy world would you live in?\nA) Harry Potter\nB) The Lord of the Rings\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Movies #ThisOrThat #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-058.jpg",
+    "caption": "QUIZ TIME! What species is Chewbacca?\nA) Ewok\nB) Jawa\nC) Rodian\nD) Wookiee\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
   },
   {
-    "id": "duel-047",
-    "kind": "duel",
+    "id": "quiz-059",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which company does Tony Stark lead?",
+    "options": [
+      "Oscorp",
+      "LexCorp",
+      "Stark Industries",
+      "Wayne Enterprises"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-059.jpg",
+    "caption": "QUIZ TIME! Which company does Tony Stark lead?\nA) Oscorp\nB) LexCorp\nC) Stark Industries\nD) Wayne Enterprises\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
+  },
+  {
+    "id": "quiz-060",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What is Link's horse called in Ocarina of Time?",
+    "options": [
+      "Torrent",
+      "Epona",
+      "Agro",
+      "Roach"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-060.jpg",
+    "caption": "QUIZ TIME! What is Link's horse called in Ocarina of Time?\nA) Torrent\nB) Epona\nC) Agro\nD) Roach\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
+  },
+  {
+    "id": "quiz-061",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who leads Team 7 at the start of Naruto?",
+    "options": [
+      "Kakashi",
+      "Itachi",
+      "Minato",
+      "Iruka"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-061.jpg",
+    "caption": "QUIZ TIME! Who leads Team 7 at the start of Naruto?\nA) Kakashi\nB) Itachi\nC) Minato\nD) Iruka\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
+  },
+  {
+    "id": "quiz-062",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is the Straw Hat crew's musician?",
+    "options": [
+      "Jinbe",
+      "Franky",
+      "Zoro",
+      "Brook"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-062.jpg",
+    "caption": "QUIZ TIME! Who is the Straw Hat crew's musician?\nA) Jinbe\nB) Franky\nC) Zoro\nD) Brook\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
+  },
+  {
+    "id": "quiz-063",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Goku's older brother?",
+    "options": [
+      "Bardock",
+      "Broly",
+      "Raditz",
+      "Nappa"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-063.jpg",
+    "caption": "QUIZ TIME! Who is Goku's older brother?\nA) Bardock\nB) Broly\nC) Raditz\nD) Nappa\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
+  },
+  {
+    "id": "quiz-064",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Choose your movie night!",
+    "question": "What is Hermione's surname?",
     "options": [
-      "Star Wars",
-      "Star Trek"
+      "Malfoy",
+      "Granger",
+      "Weasley",
+      "Lovegood"
     ],
-    "image": "pop-culture/cards/duel-047.png",
-    "caption": "PICK ONE! Choose your movie night!\nA) Star Wars\nB) Star Trek\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Movies #ThisOrThat #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-064.jpg",
+    "caption": "QUIZ TIME! What is Hermione's surname?\nA) Malfoy\nB) Granger\nC) Weasley\nD) Lovegood\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
   },
   {
-    "id": "duel-048",
-    "kind": "duel",
+    "id": "quiz-065",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which Spider-Man villain controls electricity?",
+    "options": [
+      "Electro",
+      "Vulture",
+      "Kraven",
+      "Kingpin"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-065.jpg",
+    "caption": "QUIZ TIME! Which Spider-Man villain controls electricity?\nA) Electro\nB) Vulture\nC) Kraven\nD) Kingpin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
+  },
+  {
+    "id": "quiz-066",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What do you use to tame a Minecraft wolf?",
+    "options": [
+      "Wheat",
+      "Carrots",
+      "Seeds",
+      "Bones"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-066.jpg",
+    "caption": "QUIZ TIME! What do you use to tame a Minecraft wolf?\nA) Wheat\nB) Carrots\nC) Seeds\nD) Bones\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
+  },
+  {
+    "id": "quiz-067",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What is Mario's dinosaur friend called?",
+    "options": [
+      "Toad",
+      "Diddy Kong",
+      "Yoshi",
+      "Birdo"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-067.jpg",
+    "caption": "QUIZ TIME! What is Mario's dinosaur friend called?\nA) Toad\nB) Diddy Kong\nC) Yoshi\nD) Birdo\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
+  },
+  {
+    "id": "quiz-068",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Which action hero is cooler?",
+    "question": "Which droid speaks in beeps and whistles?",
     "options": [
-      "John Wick",
-      "Jason Bourne"
+      "IG-11",
+      "R2-D2",
+      "C-3PO",
+      "K-2SO"
     ],
-    "image": "pop-culture/cards/duel-048.png",
-    "caption": "PICK ONE! Which action hero is cooler?\nA) John Wick\nB) Jason Bourne\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Movies #ThisOrThat #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-068.jpg",
+    "caption": "QUIZ TIME! Which droid speaks in beeps and whistles?\nA) IG-11\nB) R2-D2\nC) C-3PO\nD) K-2SO\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
   },
   {
-    "id": "duel-049",
-    "kind": "duel",
+    "id": "quiz-069",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which actor plays Iron Man in the MCU?",
+    "options": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo",
+      "Chris Hemsworth"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-069.jpg",
+    "caption": "QUIZ TIME! Which actor plays Iron Man in the MCU?\nA) Robert Downey Jr.\nB) Chris Evans\nC) Mark Ruffalo\nD) Chris Hemsworth\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
+  },
+  {
+    "id": "quiz-070",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which villain often opposes Link and Zelda?",
+    "options": [
+      "Sephiroth",
+      "Bowser",
+      "Dr. Eggman",
+      "Ganondorf"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-070.jpg",
+    "caption": "QUIZ TIME! Which villain often opposes Link and Zelda?\nA) Sephiroth\nB) Bowser\nC) Dr. Eggman\nD) Ganondorf\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
+  },
+  {
+    "id": "quiz-071",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which Naruto character specializes in taijutsu?",
+    "options": [
+      "Kankuro",
+      "Deidara",
+      "Rock Lee",
+      "Shino"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-071.jpg",
+    "caption": "QUIZ TIME! Which Naruto character specializes in taijutsu?\nA) Kankuro\nB) Deidara\nC) Rock Lee\nD) Shino\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
+  },
+  {
+    "id": "quiz-072",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which pirate uses three swords?",
+    "options": [
+      "Sanji",
+      "Zoro",
+      "Shanks",
+      "Law"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-072.jpg",
+    "caption": "QUIZ TIME! Which pirate uses three swords?\nA) Sanji\nB) Zoro\nC) Shanks\nD) Law\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
+  },
+  {
+    "id": "quiz-073",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who teaches Goku the Kaio-ken?",
+    "options": [
+      "King Kai",
+      "Master Roshi",
+      "Whis",
+      "Korin"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-073.jpg",
+    "caption": "QUIZ TIME! Who teaches Goku the Kaio-ken?\nA) King Kai\nB) Master Roshi\nC) Whis\nD) Korin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
+  },
+  {
+    "id": "quiz-074",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Which movie is your comfort rewatch?",
+    "question": "Which spell produces light from a wand?",
     "options": [
-      "Shrek",
-      "Toy Story"
+      "Nox",
+      "Accio",
+      "Alohomora",
+      "Lumos"
     ],
-    "image": "pop-culture/cards/duel-049.png",
-    "caption": "PICK ONE! Which movie is your comfort rewatch?\nA) Shrek\nB) Toy Story\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Movies #ThisOrThat #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-074.jpg",
+    "caption": "QUIZ TIME! Which spell produces light from a wand?\nA) Nox\nB) Accio\nC) Alohomora\nD) Lumos\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
   },
   {
-    "id": "duel-050",
-    "kind": "duel",
+    "id": "quiz-075",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Who is Spider-Man in Into the Spider-Verse?",
+    "options": [
+      "Bruce Banner",
+      "Scott Lang",
+      "Miles Morales",
+      "Peter Quill"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-075.jpg",
+    "caption": "QUIZ TIME! Who is Spider-Man in Into the Spider-Verse?\nA) Bruce Banner\nB) Scott Lang\nC) Miles Morales\nD) Peter Quill\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
+  },
+  {
+    "id": "quiz-076",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft dimension contains the Ender Dragon?",
+    "options": [
+      "The Deep Dark",
+      "The End",
+      "The Nether",
+      "The Overworld"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-076.jpg",
+    "caption": "QUIZ TIME! Which Minecraft dimension contains the Ender Dragon?\nA) The Deep Dark\nB) The End\nC) The Nether\nD) The Overworld\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
+  },
+  {
+    "id": "quiz-077",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which color is Luigi's signature cap?",
+    "options": [
+      "Green",
+      "Red",
+      "Yellow",
+      "Purple"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-077.jpg",
+    "caption": "QUIZ TIME! Which color is Luigi's signature cap?\nA) Green\nB) Red\nC) Yellow\nD) Purple\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
+  },
+  {
+    "id": "quiz-078",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Pick a sci-fi masterpiece!",
+    "question": "Which weapon is used by Jedi and Sith?",
     "options": [
-      "Interstellar",
-      "Inception"
+      "Phaser",
+      "Trident",
+      "Crossbow",
+      "Lightsaber"
     ],
-    "image": "pop-culture/cards/duel-050.png",
-    "caption": "PICK ONE! Pick a sci-fi masterpiece!\nA) Interstellar\nB) Inception\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Movies #ThisOrThat #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-078.jpg",
+    "caption": "QUIZ TIME! Which weapon is used by Jedi and Sith?\nA) Phaser\nB) Trident\nC) Crossbow\nD) Lightsaber\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
   },
   {
-    "id": "duel-051",
-    "kind": "duel",
+    "id": "quiz-079",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which team includes Iron Man and Thor?",
+    "options": [
+      "Fantastic Four",
+      "Teen Titans",
+      "The Avengers",
+      "Justice League"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-079.jpg",
+    "caption": "QUIZ TIME! Which team includes Iron Man and Thor?\nA) Fantastic Four\nB) Teen Titans\nC) The Avengers\nD) Justice League\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
+  },
+  {
+    "id": "quiz-080",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which instrument gives Ocarina of Time its title?",
+    "options": [
+      "Violin",
+      "Ocarina",
+      "Flute",
+      "Harp"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-080.jpg",
+    "caption": "QUIZ TIME! Which instrument gives Ocarina of Time its title?\nA) Violin\nB) Ocarina\nC) Flute\nD) Harp\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
+  },
+  {
+    "id": "quiz-081",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Sasuke's older brother?",
+    "options": [
+      "Itachi",
+      "Obito",
+      "Madara",
+      "Shisui"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-081.jpg",
+    "caption": "QUIZ TIME! Who is Sasuke's older brother?\nA) Itachi\nB) Obito\nC) Madara\nD) Shisui\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
+  },
+  {
+    "id": "quiz-082",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What is the Straw Hats' first ship called?",
+    "options": [
+      "Thousand Sunny",
+      "Red Force",
+      "Moby Dick",
+      "Going Merry"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-082.jpg",
+    "caption": "QUIZ TIME! What is the Straw Hats' first ship called?\nA) Thousand Sunny\nB) Red Force\nC) Moby Dick\nD) Going Merry\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
+  },
+  {
+    "id": "quiz-083",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What color is a classic Super Saiyan's hair?",
+    "options": [
+      "Red",
+      "Silver",
+      "Gold",
+      "Blue"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-083.jpg",
+    "caption": "QUIZ TIME! What color is a classic Super Saiyan's hair?\nA) Red\nB) Silver\nC) Gold\nD) Blue\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
+  },
+  {
+    "id": "quiz-084",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Which dinosaur movie do you pick?",
+    "question": "What is Hagrid's three-headed dog called?",
     "options": [
-      "Jurassic Park",
-      "Jurassic World"
+      "Buckbeak",
+      "Fluffy",
+      "Fang",
+      "Aragog"
     ],
-    "image": "pop-culture/cards/duel-051.png",
-    "caption": "PICK ONE! Which dinosaur movie do you pick?\nA) Jurassic Park\nB) Jurassic World\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Movies #ThisOrThat #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-084.jpg",
+    "caption": "QUIZ TIME! What is Hagrid's three-headed dog called?\nA) Buckbeak\nB) Fluffy\nC) Fang\nD) Aragog\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
   },
   {
-    "id": "duel-052",
-    "kind": "duel",
+    "id": "quiz-085",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "What does Spider-Man use to swing between buildings?",
+    "options": [
+      "Webs",
+      "Wings",
+      "A jetpack",
+      "A magic cape"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-085.jpg",
+    "caption": "QUIZ TIME! What does Spider-Man use to swing between buildings?\nA) Webs\nB) Wings\nC) A jetpack\nD) A magic cape\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
+  },
+  {
+    "id": "quiz-086",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft item lets you sleep through the night?",
+    "options": [
+      "Chest",
+      "Furnace",
+      "Crafting Table",
+      "Bed"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-086.jpg",
+    "caption": "QUIZ TIME! Which Minecraft item lets you sleep through the night?\nA) Chest\nB) Furnace\nC) Crafting Table\nD) Bed\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
+  },
+  {
+    "id": "quiz-087",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which item is a common currency in Mario games?",
+    "options": [
+      "Rings",
+      "Bottle caps",
+      "Coins",
+      "Rupees"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-087.jpg",
+    "caption": "QUIZ TIME! Which item is a common currency in Mario games?\nA) Rings\nB) Bottle caps\nC) Coins\nD) Rupees\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
+  },
+  {
+    "id": "quiz-088",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Which movie monster is scarier?",
+    "question": "What is the Empire's planet-destroying station called?",
     "options": [
-      "Alien",
-      "Predator"
+      "Borg Cube",
+      "Death Star",
+      "Stark Tower",
+      "Citadel"
     ],
-    "image": "pop-culture/cards/duel-052.png",
-    "caption": "PICK ONE! Which movie monster is scarier?\nA) Alien\nB) Predator\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Movies #ThisOrThat #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-088.jpg",
+    "caption": "QUIZ TIME! What is the Empire's planet-destroying station called?\nA) Borg Cube\nB) Death Star\nC) Stark Tower\nD) Citadel\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
   },
   {
-    "id": "duel-053",
-    "kind": "duel",
+    "id": "quiz-089",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which AI assists Tony Stark in the first Iron Man film?",
+    "options": [
+      "JARVIS",
+      "FRIDAY",
+      "EDITH",
+      "Ultron"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-089.jpg",
+    "caption": "QUIZ TIME! Which AI assists Tony Stark in the first Iron Man film?\nA) JARVIS\nB) FRIDAY\nC) EDITH\nD) Ultron\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
+  },
+  {
+    "id": "quiz-090",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "How many pieces form the Triforce?",
+    "options": [
+      "Two",
+      "Four",
+      "Five",
+      "Three"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-090.jpg",
+    "caption": "QUIZ TIME! How many pieces form the Triforce?\nA) Two\nB) Four\nC) Five\nD) Three\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
+  },
+  {
+    "id": "quiz-091",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which village is Gaara from?",
+    "options": [
+      "Kirigakure",
+      "Kumogakure",
+      "Sunagakure",
+      "Konoha"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-091.jpg",
+    "caption": "QUIZ TIME! Which village is Gaara from?\nA) Kirigakure\nB) Kumogakure\nC) Sunagakure\nD) Konoha\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 0
+  },
+  {
+    "id": "quiz-092",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which Straw Hat pirate is an archaeologist?",
+    "options": [
+      "Usopp",
+      "Nico Robin",
+      "Nami",
+      "Chopper"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-092.jpg",
+    "caption": "QUIZ TIME! Which Straw Hat pirate is an archaeologist?\nA) Usopp\nB) Nico Robin\nC) Nami\nD) Chopper\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 1
+  },
+  {
+    "id": "quiz-093",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Goku's wife?",
+    "options": [
+      "Chi-Chi",
+      "Bulma",
+      "Videl",
+      "Android 18"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-093.jpg",
+    "caption": "QUIZ TIME! Who is Goku's wife?\nA) Chi-Chi\nB) Bulma\nC) Videl\nD) Android 18\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
+    "artworkIndex": 2
+  },
+  {
+    "id": "quiz-094",
+    "kind": "quiz",
     "category": "Movies",
-    "question": "Which wizard wins your vote?",
+    "question": "Which object sorts new Hogwarts students?",
     "options": [
-      "Gandalf",
-      "Dumbledore"
+      "Goblet of Fire",
+      "Magic Mirror",
+      "Elder Wand",
+      "Sorting Hat"
     ],
-    "image": "pop-culture/cards/duel-053.png",
-    "caption": "PICK ONE! Which wizard wins your vote?\nA) Gandalf\nB) Dumbledore\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Movies #ThisOrThat #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-094.jpg",
+    "caption": "QUIZ TIME! Which object sorts new Hogwarts students?\nA) Goblet of Fire\nB) Magic Mirror\nC) Elder Wand\nD) Sorting Hat\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 3
   },
   {
-    "id": "duel-054",
-    "kind": "duel",
-    "category": "Series",
-    "question": "Which series deserves another season?",
+    "id": "quiz-095",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which Spider-Man villain is a symbiote?",
     "options": [
-      "Wednesday",
-      "Stranger Things"
+      "Mysterio",
+      "Shocker",
+      "Venom",
+      "Vulture"
     ],
-    "image": "pop-culture/cards/duel-054.png",
-    "caption": "PICK ONE! Which series deserves another season?\nA) Wednesday\nB) Stranger Things\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Series #ThisOrThat #Gaming #Movies"
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-095.jpg",
+    "caption": "QUIZ TIME! Which Spider-Man villain is a symbiote?\nA) Mysterio\nB) Shocker\nC) Venom\nD) Vulture\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 4
   },
   {
-    "id": "duel-055",
-    "kind": "duel",
-    "category": "Series",
-    "question": "Which crime drama do you prefer?",
+    "id": "quiz-096",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What do you use to breed Minecraft cows?",
     "options": [
-      "Breaking Bad",
-      "Better Call Saul"
+      "Apples",
+      "Wheat",
+      "Bones",
+      "Fish"
     ],
-    "image": "pop-culture/cards/duel-055.png",
-    "caption": "PICK ONE! Which crime drama do you prefer?\nA) Breaking Bad\nB) Better Call Saul\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Series #ThisOrThat #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-096.jpg",
+    "caption": "QUIZ TIME! What do you use to breed Minecraft cows?\nA) Apples\nB) Wheat\nC) Bones\nD) Fish\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 5
   },
   {
-    "id": "duel-056",
-    "kind": "duel",
-    "category": "Series",
-    "question": "Which post-apocalyptic world is tougher?",
+    "id": "quiz-097",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Mario series features kart racing?",
     "options": [
-      "The Last of Us",
-      "The Walking Dead"
+      "Mario Kart",
+      "Mario Party",
+      "Paper Mario",
+      "Mario Golf"
     ],
-    "image": "pop-culture/cards/duel-056.png",
-    "caption": "PICK ONE! Which post-apocalyptic world is tougher?\nA) The Last of Us\nB) The Walking Dead\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Series #ThisOrThat #Gaming #Movies"
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-097.jpg",
+    "caption": "QUIZ TIME! Which Mario series features kart racing?\nA) Mario Kart\nB) Mario Party\nC) Paper Mario\nD) Mario Golf\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 6
   },
   {
-    "id": "duel-057",
-    "kind": "duel",
-    "category": "Series",
-    "question": "Which animated show is funnier?",
+    "id": "quiz-098",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Who is the Emperor in the original Star Wars trilogy?",
     "options": [
-      "The Simpsons",
-      "Family Guy"
+      "Snoke",
+      "Thrawn",
+      "Tarkin",
+      "Palpatine"
     ],
-    "image": "pop-culture/cards/duel-057.png",
-    "caption": "PICK ONE! Which animated show is funnier?\nA) The Simpsons\nB) Family Guy\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Series #ThisOrThat #Gaming #Movies"
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-098.jpg",
+    "caption": "QUIZ TIME! Who is the Emperor in the original Star Wars trilogy?\nA) Snoke\nB) Thrawn\nC) Tarkin\nD) Palpatine\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
+    "artworkIndex": 7
   },
   {
-    "id": "duel-058",
-    "kind": "duel",
-    "category": "Series",
-    "question": "Which character would you defend?",
+    "id": "quiz-099",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which hero does Tony recruit in Captain America: Civil War?",
     "options": [
-      "Eleven",
-      "Wednesday Addams"
+      "Wolverine",
+      "Deadpool",
+      "Spider-Man",
+      "Daredevil"
     ],
-    "image": "pop-culture/cards/duel-058.png",
-    "caption": "PICK ONE! Which character would you defend?\nA) Eleven\nB) Wednesday Addams\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Series #ThisOrThat #Gaming #Movies"
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-099.jpg",
+    "caption": "QUIZ TIME! Which hero does Tony recruit in Captain America: Civil War?\nA) Wolverine\nB) Deadpool\nC) Spider-Man\nD) Daredevil\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
+    "artworkIndex": 8
   },
   {
-    "id": "duel-059",
-    "kind": "duel",
-    "category": "Series",
-    "question": "Which fantasy TV world is your pick?",
+    "id": "quiz-100",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Zelda game features the Great Sea?",
     "options": [
-      "Game of Thrones",
-      "The Witcher"
+      "Majora's Mask",
+      "The Wind Waker",
+      "Twilight Princess",
+      "Skyward Sword"
     ],
-    "image": "pop-culture/cards/duel-059.png",
-    "caption": "PICK ONE! Which fantasy TV world is your pick?\nA) Game of Thrones\nB) The Witcher\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Series #ThisOrThat #Gaming #Movies"
-  },
-  {
-    "id": "duel-060",
-    "kind": "duel",
-    "category": "Series",
-    "question": "Which animated duo wins?",
-    "options": [
-      "Rick and Morty",
-      "Finn and Jake"
-    ],
-    "image": "pop-culture/cards/duel-060.png",
-    "caption": "PICK ONE! Which animated duo wins?\nA) Rick and Morty\nB) Finn and Jake\n\nWhich one are you choosing? Tell us why! Comment below!\n#PopCulture #Series #ThisOrThat #Gaming #Movies"
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-100.jpg",
+    "caption": "QUIZ TIME! Which Zelda game features the Great Sea?\nA) Majora's Mask\nB) The Wind Waker\nC) Twilight Princess\nD) Skyward Sword\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
+    "artworkIndex": 9
   }
 ]

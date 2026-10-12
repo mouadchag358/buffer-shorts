@@ -1,24 +1,14 @@
 #!/usr/bin/env python3
-"""Render 10 bright English quizzes from the approved pop culture illustration collage."""
+"""Render 100 bright English quizzes from the approved pop culture illustration collage."""
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 from pathlib import Path
-import math
+import math, json
 
 SOURCE=Path("pop-culture/reference-artwork.jpg")
 DEST=Path("pop-culture/cards")
 FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-QUESTIONS=[
- ("ANIME","Which village is Naruto from?",["Konoha","Sunagakure","Kirigakure","Iwagakure"]),
- ("ANIME","What is Luffy's biggest dream?",["Become Pirate King","Find a legendary island","Collect all Devil Fruits","Save his crew"]),
- ("ANIME","What is Goku's famous energy attack?",["Kamehameha","Spirit Bomb","Final Flash","Dragon Fist"]),
- ("MOVIES","Which animal symbolizes Gryffindor?",["Lion","Snake","Eagle","Badger"]),
- ("HEROES","Who is the original Spider-Man?",["Peter Parker","Miles Morales","Tony Stark","Bruce Wayne"]),
- ("GAMING","Which material is strongest in Minecraft?",["Wood","Diamond","Iron","Stone"]),
- ("GAMING","Which power-up makes Mario grow?",["Mushroom","Star","Fire Flower","Super Leaf"]),
- ("MOVIES","What color is Darth Vader's lightsaber?",["Blue","Green","Red","Purple"]),
- ("HEROES","What powers Iron Man's armor?",["Vibranium","Arc Reactor","Tesseract","Pym Particles"]),
- ("GAMING","Which series stars the hero Link?",["Final Fantasy","The Legend of Zelda","Monster Hunter","Dragon Quest"])
-]
+CARDS=json.loads(Path("pop-culture/questions.json").read_text())
+QUESTIONS=[(c["category"].upper(),c["question"],c["options"]) for c in CARDS]
 PALETTES=[
  ("#41A6F2","#FFB43A"),("#42C9EF","#FFDB74"),("#5468F1","#57DFFB"),
  ("#E5883D","#7E9FEC"),("#8844E1","#F9A65A"),("#3EC8EE","#7BE281"),
@@ -42,14 +32,15 @@ def wrap(draw,txt,sz,width,maxlines=2):
  raise RuntimeError("Text too long: "+txt)
 def drawcard(source,i):
  category,question,options=QUESTIONS[i]
- row,col=divmod(i,5)
+ art_index=CARDS[i].get("artworkIndex",i)
+ row,col=divmod(art_index,5)
  x0=round(col*source.width/5);x1=round((col+1)*source.width/5)
  y0=round(row*source.height/2);y1=round((row+1)*source.height/2)
  panel=source.crop((x0,y0,x1,y1))
  # This is the real approved character art, not a geometrical replacement.
  artwork=panel.crop((0,round(panel.height*.08),panel.width,round(panel.height*.605)))
  artwork=ImageEnhance.Color(artwork).enhance(1.08)
- sky,burst=PALETTES[i]
+ sky,burst=PALETTES[art_index]
  img=Image.new("RGB",(1080,1080),sky);d=ImageDraw.Draw(img)
  for y in range(0,1080,6):
   frac=y/1080
@@ -77,7 +68,7 @@ def drawcard(source,i):
  d.rounded_rectangle((54,420,270,469),radius=20,fill="#111B3C",outline="white",width=4)
  d.text((162,446),category,font=f(24),anchor="mm",fill="#FFF6BD")
  d.rounded_rectangle((891,24,1043,95),radius=30,fill="#15203D",outline="white",width=5)
- d.text((967,59),str(i+1)+"/10",font=f(38),fill="white",anchor="mm")
+ d.text((967,59),(str(i+1)+"/10" if i<10 else "#"+str(i+1)),font=f(38),fill="white",anchor="mm")
  d.rounded_rectangle((34,607,1047,776),radius=28,fill="#101A35",outline="#FFD23D",width=9)
  question_font,question_lines=wrap(d,question,56,930)
  lineheight=question_font.size+12
@@ -103,5 +94,5 @@ def main():
  DEST.mkdir(exist_ok=True,parents=True)
  image=Image.open(SOURCE).convert("RGB")
  if image.width<900 or image.height<900:raise ValueError("Approved illustration too small")
- for i in range(10):drawcard(image,i)
+ for i in range(len(CARDS)):drawcard(image,i)
 if __name__=="__main__":main()

@@ -6,11 +6,11 @@ const posts = JSON.parse(await readFile(new URL('../pop-culture/questions.json',
 test('100 original English cards with unique IDs and valid image names', () => {
   assert.equal(posts.length, 100);
   assert.equal(new Set(posts.map(p => p.id)).size, 100);
-  assert.equal(posts.filter(p => p.kind === 'quiz').length, 40);
-  assert.equal(posts.filter(p => p.kind === 'duel').length, 60);
+  assert.equal(posts.filter(p => p.kind === 'quiz').length, 100);
+  assert.equal(posts.filter(p => p.kind === 'duel').length, 0);
   for (const p of posts) {
     assert.match(p.image, /^pop-culture\/cards\/(quiz-\d{3}\.(?:png|jpe?g)|duel-\d{3}\.png)$/);
-    assert.ok(p.question.length && p.options.length >= 2);
+    assert.ok(p.question.length && p.options.length === 4);
     assert.ok(p.caption.includes('#PopCulture'));
   }
 });

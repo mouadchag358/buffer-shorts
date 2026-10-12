@@ -3463,14 +3463,14 @@
     "[\"r2-38cbae98082f4cf817f91b2baa2b54f0b1b3a837c7b520e195eda5a0b929dee8\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-13T00:00:07.652Z",
+      "dueAt": "2026-10-13T00:00:00.000Z",
       "updatedAt": "2026-10-12T06:02:07.652Z",
       "bufferId": "6acc77fcfa026cfb812ab501",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-12T20:07:03.067Z",
       "youtubeTitleUpdatedTo": "Would You Watch This Again? 🔥 #Shorts #Viral",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-13T00:00:00.000Z"
       }
     },

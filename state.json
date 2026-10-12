@@ -3380,6 +3380,12 @@
       "updatedAt": "2026-10-12T06:02:07.652Z",
       "bufferId": "6acc77f4ea568e911a53e882",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-67e1789f36b55ad2b1135e4804c01d3ce0bbe6ba59e2f1888cc122e7c106b49a\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-13T00:00:07.652Z",
+      "updatedAt": "2026-10-12T06:02:07.652Z"
     }
   },
   "r2ListingRequests": {

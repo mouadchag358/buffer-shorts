@@ -3570,7 +3570,11 @@
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39d8ae14ce433eb51603",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-12T20:07:03.067Z"
+      "lastCheckedAt": "2026-10-12T20:07:03.067Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-13T06:00:00.000Z"
+      }
     },
     "[\"r2-4c6905dde0f138eca1f6341c4c7c6c84771fe8ad2d1d553e63a4d306e0cd4db2\",\"youtube\"]": {
       "status": "queued",

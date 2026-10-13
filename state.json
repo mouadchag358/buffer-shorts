@@ -3677,10 +3677,12 @@
       "youtubeTitleUpdatedTo": "Watch and Tell Me What You Think! 👀 #Shorts #Viral"
     },
     "[\"r2-6d44077f4df4a9c4d6739a7167aec51faf20ae8d74e3aeaaa27a759e10213d15\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-15T18:00:00.000Z",
-      "updatedAt": "2026-10-13T20:42:28.517Z"
+      "updatedAt": "2026-10-13T20:42:28.517Z",
+      "bufferId": "6ace97beffa44ef4f99b06a3",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

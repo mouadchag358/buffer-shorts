@@ -101,8 +101,10 @@
       "bufferStatus": "scheduled"
     },
     "quiz-006": {
-      "status": "sending",
-      "dueAt": "2026-10-14T06:00:00.000Z"
+      "status": "queued",
+      "dueAt": "2026-10-14T06:00:00.000Z",
+      "bufferId": "6ace7288bc13a192515c0663",
+      "bufferStatus": "scheduled"
     }
   },
   "restart": {

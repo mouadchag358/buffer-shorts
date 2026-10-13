@@ -95,8 +95,10 @@
       "previousQuizId": "quiz-012"
     },
     "quiz-005": {
-      "status": "sending",
-      "dueAt": "2026-10-14T00:00:00.000Z"
+      "status": "queued",
+      "dueAt": "2026-10-14T00:00:00.000Z",
+      "bufferId": "6ace72859d8488527041cee3",
+      "bufferStatus": "scheduled"
     }
   },
   "restart": {

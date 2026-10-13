@@ -1,4 +1,4 @@
-name: Replace Facebook Reels With Pop Culture Images
+name: Add eight Facebook quizzes every twelve hours
 on:
   push:
     paths:
@@ -16,7 +16,7 @@ on:
       - 'test/refresh-facebook-quiz-media.test.js'
       - 'pop-culture/redesigned.json'
   schedule:
-    - cron: '33 0,5,10,15,20 * * *'
+    - cron: '33 0,12 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -76,7 +76,7 @@ jobs:
           else
             node src/refresh-facebook-quiz-media.js
           fi
-      - name: Replace eight existing Facebook Reels without creating extra posts
+      - name: Schedule the next batch of eight Facebook quizzes
         env:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
         run: |

@@ -1,6 +1,6 @@
 import { readFile, writeFile, rename } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
-import { queuedPosts, graphql, createPost } from './buffer.js';
+import { queuedPosts, graphql, createPost, getPost } from './buffer.js';
 import { resolveQueueChannels } from './discovery.js';
 import { localParts, videoHourKey } from './queue-schedule.js';
 
@@ -14,7 +14,7 @@ export function imageInput(post,channelId,dueAt){
 export function imageSlots(now=new Date(), count=8){
   const p=localParts(now),today=p.year+'-'+p.month+'-'+p.day;
   const out=[]; const start=Math.ceil((now.getTime()+600000)/60000)*60000;
-  for(let i=0;i<9*1440&&out.length<count;i++){
+  for(let i=0;i<Math.max(9,Math.ceil(count/4)+2)*1440&&out.length<count;i++){
     const d=new Date(start+i*60000),x=localParts(d);
     if((x.year+'-'+x.month+'-'+x.day)===today||x.minute!=='00'||!['00','06','12','18'].includes(x.hour)) continue;
     out.push({key:x.year+'-'+x.month+'-'+x.day+'-'+x.hour,dueAt:d.toISOString(),localHour:x.hour});
@@ -32,21 +32,40 @@ async function persist(state) {
     execFileSync('git',['push','origin','HEAD'],{stdio:'inherit'});
   }
 }
+export function planImageBatch(state, cards, now=new Date()) {
+  const window = String(Math.floor(now.getTime()/(12*60*60*1000)));
+  if (state.imageBatch?.window===window) return state.imageBatch;
+  // Finish a partially accepted batch before starting another one.
+  if (state.imageBatch && !state.imageBatch.completed) return state.imageBatch;
+  const used = new Set(Object.entries(state.newImages||{})
+    .filter(([,v])=>v.status!=='rejected').map(([id])=>id));
+  return {window, cardIds:cards.filter(c=>!used.has(c.id)).slice(0,8).map(c=>c.id),completed:false};
+}
 async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,log}) {
   state.newImages??={};
   if(Object.values(state.newImages).some(v=>['sending','uncertain'].includes(v.status)))
     throw Error('Uncertain previous Facebook image delivery: inspect Buffer before scheduling anything else');
-  const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt);
+  // Read known posts individually: an incomplete queue listing must not create collisions.
+  for(const value of Object.values(state.newImages)) {
+    if(!value.bufferId) continue;
+    const post=await getPost(value.bufferId,env);
+    if(post.channelId!==channel.id) throw Error('Facebook checkpoint channel mismatch');
+    if(['scheduled','sending'].includes(post.status)&&!remote.some(p=>p.id===post.id)) remote.push(post);
+  }
+  const batch=planImageBatch(state,cards);
+  if(batch.completed) {log('This 12-hour batch is already complete');return;}
+  if(!dryRun) {state.imageBatch=batch;await persist(state);}
+  const scheduled=remote.filter(p=>p.channelId===channel.id&&['scheduled','sending'].includes(p.status)&&p.dueAt);
   const occupied=new Set(scheduled.map(p=>videoHourKey(p.dueAt)));
+  const lastDue=Math.max(0,...scheduled.map(p=>Date.parse(p.dueAt)));
+  const slots=imageSlots(new Date(),128).filter(s=>Date.parse(s.dueAt)>lastDue&&!occupied.has(videoHourKey(s.dueAt)));
   let added=0;
-  for (const slot of imageSlots(new Date(),32)) {
-    if(scheduled.length+added>=8) break;
-    const key=videoHourKey(slot.dueAt);
-    if(occupied.has(key)) continue;
-    const card=cards[8+Object.keys(state.newImages).length];
-    if(!card) {log('All 100 pop culture images have been used');break;}
+  for(const id of batch.cardIds) {
+    if(state.newImages[id]?.status==='queued') continue;
+    const card=cards.find(c=>c.id===id),slot=slots.shift();
+    if(!card||!slot) throw Error('Missing quiz card or future schedule slot');
     const input=imageInput(card,channel.id,slot.dueAt);
-    if(dryRun){log('Would queue '+card.id+' at '+slot.dueAt);added++;occupied.add(key);continue;}
+    if(dryRun){log('Would queue '+card.id+' at '+slot.dueAt);added++;continue;}
     const check=await fetch(input.assets[0].image.url,{method:'HEAD',redirect:'error',signal:AbortSignal.timeout(15000)});
     if(!check.ok||!(check.headers.get('content-type')||'').startsWith('image/'))throw Error('Image unavailable: '+card.image);
     state.newImages[card.id]={status:'sending',dueAt:slot.dueAt};
@@ -54,14 +73,17 @@ async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,lo
     let result;
     try {result=await createPost(input,env);}
     catch(e){state.newImages[card.id]={...state.newImages[card.id],status:'uncertain',error:e.message};await persist(state);throw Error('Uncertain Buffer image creation; do not retry: '+card.id);}
+    if(result.status==='queued'&&(result.bufferStatus!=='scheduled'||Date.parse(result.dueAt)!==Date.parse(slot.dueAt)))
+      result={...result,status:'uncertain',error:'Buffer did not confirm the requested schedule'};
     state.newImages[card.id]={...state.newImages[card.id],...result};
     await persist(state);
     if(result.status!=='queued')throw Error('Buffer rejected image '+card.id+': '+result.error);
-    occupied.add(key);added++;
+    added++;
     log('Queued new image '+card.id+' at '+slot.dueAt);
-    if(added>=4)break;
   }
+  if(!dryRun) {batch.completed=true;await persist(state);}
   log('New scheduled Facebook images: '+added);
+  if(!batch.cardIds.length) log('All 100 approved quizzes have been used');
 }
 export async function syncImages({dryRun=false,log=console.log}={}){
   const cards=JSON.parse(await readFile('pop-culture/questions.json','utf8'));
@@ -75,7 +97,7 @@ export async function syncImages({dryRun=false,log=console.log}={}){
   const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt)
     .sort((a,b)=>Date.parse(a.dueAt)-Date.parse(b.dueAt)||a.id.localeCompare(b.id));
   if(Object.values(state.replacements).filter(v=>v.status==='completed').length===8) {
-    log('Automatic new Facebook images paused pending status reconciliation of existing scheduled quiz posts');return;
+    await replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,log});return;
   }
   const targets=scheduled.slice(0,8);
   if(targets.length!==8 || scheduled.length!==8) { log(JSON.stringify({facebookQueue:remote.length,scheduled:scheduled.length,selected:targets.length,media:scheduled.slice(0,12).map(p=>({id:p.id,status:p.status,dueAt:p.dueAt,assets:(p.assets||[]).map(a=>({hasSource:!!a.source,extension:(a.source||'').split('?')[0].match(/\\.[a-z0-9]{2,5}$/i)?.[0]||null}))}))})); throw Error('Expected 8 scheduled Facebook posts, found '+targets.length); }

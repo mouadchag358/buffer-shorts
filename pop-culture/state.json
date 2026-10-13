@@ -124,5 +124,19 @@
         "bufferStatus": "scheduled"
       }
     }
+  },
+  "imageBatch": {
+    "window": "41479",
+    "cardIds": [
+      "quiz-005",
+      "quiz-006",
+      "quiz-007",
+      "quiz-008",
+      "quiz-009",
+      "quiz-010",
+      "quiz-011",
+      "quiz-012"
+    ],
+    "completed": false
   }
 }

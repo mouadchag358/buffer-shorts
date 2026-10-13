@@ -1721,19 +1721,21 @@
       "sentAt": "2026-10-12T12:03:41.360Z"
     },
     "[\"r2-9c4b10019f040fef4a0514a85fd471c46b820b31ccb281cd88f65d3acfed2f13\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-13T12:00:00.000Z",
       "updatedAt": "2026-10-09T09:05:41.042Z",
       "bufferId": "6ac8aea5a981976dfac67c59",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "youtubeTitleUpdatedTo": "How Would You React? 😮 #Shorts #Trending",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-13T12:00:00.000Z"
       },
-      "descriptionUpdatedAt": "2026-10-11T13:34:00.809Z"
+      "descriptionUpdatedAt": "2026-10-11T13:34:00.809Z",
+      "externalLink": "https://www.youtube.com/watch?v=r5dtZhGcTcw",
+      "sentAt": "2026-10-13T12:02:51.022Z"
     },
     "[\"r2-24ee8a3f00675cf152dc93a84efa1487d65803669cbdd075cd6519578ac3a9b5\",\"instagram\"]": {
       "status": "published",
@@ -2375,7 +2377,7 @@
       "updatedAt": "2026-10-10T05:55:57.861Z",
       "bufferId": "6ac9d3b6f91f772d45820d3d",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "youtubeTitleUpdatedTo": "What's Your Reaction? 😮 #Shorts #Trending",
       "scheduleUpdate": {
         "status": "done",
@@ -2932,7 +2934,7 @@
       "updatedAt": "2026-10-11T05:50:36.017Z",
       "bufferId": "6acb23fcf91f772d45b98fe6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "youtubeTitleUpdatedTo": "Did You Notice That? 👀 #Shorts #Viral",
       "descriptionUpdatedAt": "2026-10-11T13:34:03.705Z",
       "scheduleUpdate": {
@@ -2947,7 +2949,7 @@
       "updatedAt": "2026-10-11T05:50:36.017Z",
       "bufferId": "6acb23ffc4de2d2b124edcb7",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "youtubeTitleUpdatedTo": "Watch and Tell Me What You Think! 👀 #Shorts #Viral",
       "descriptionUpdatedAt": "2026-10-11T13:34:05.212Z",
       "scheduleUpdate": {
@@ -3315,17 +3317,19 @@
       }
     },
     "[\"r2-df11f3a883f488ff13d4d93ebc63c85d1fe95f18d2b9af4766851f2aec2b7154\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-13T12:00:00.000Z",
       "updatedAt": "2026-10-11T16:18:33.493Z",
       "bufferId": "6acbb717b07d37ac97b19d28",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-13T12:00:00.000Z"
-      }
+      },
+      "externalLink": "https://www.instagram.com/reel/Debw7LyAk3U/",
+      "sentAt": "2026-10-13T12:04:18.102Z"
     },
     "[\"r2-6d0dda29db10ec4e685228fa487d1affc405c236d3a514de99f1ff6c085c2293\",\"instagram\"]": {
       "status": "queued",
@@ -3334,7 +3338,7 @@
       "updatedAt": "2026-10-11T16:18:33.493Z",
       "bufferId": "6acbb71ac4de2d2b1268aad4",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T06:00:00.000Z"
@@ -3347,7 +3351,7 @@
       "updatedAt": "2026-10-11T16:18:33.493Z",
       "bufferId": "6acbb71eed92ed8fa50bb206",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T18:00:00.000Z"
@@ -3464,7 +3468,7 @@
       "updatedAt": "2026-10-12T06:02:07.652Z",
       "bufferId": "6acc77fa63ff33d8c9ab9d2b",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-13T18:00:00.000Z"
@@ -3493,7 +3497,7 @@
       "updatedAt": "2026-10-12T06:02:07.652Z",
       "bufferId": "6acc78007db619a2915e3f2f",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "youtubeTitleUpdatedTo": "How Would You React? 😮 #Shorts #Trending",
       "scheduleUpdate": {
         "status": "done",
@@ -3541,17 +3545,19 @@
       }
     },
     "[\"r2-cd426a0f4558228d4c682935e20836063dc45d2bde0777c8c154a85c5db63315\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-13T06:00:00.000Z",
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39cef5c35b68cbfc07ef",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-13T06:00:00.000Z"
-      }
+      },
+      "externalLink": "https://www.instagram.com/reel/DebHZdaFVjY/",
+      "sentAt": "2026-10-13T06:01:11.372Z"
     },
     "[\"r2-8c031fa0f1758fb4a18338be8cf1084974f033f377f8c0c71304151676d3cc8c\",\"instagram\"]": {
       "status": "queued",
@@ -3560,7 +3566,7 @@
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39d1f5c35b68cbfc087f",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T00:00:00.000Z"
@@ -3573,25 +3579,27 @@
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39d5ae14ce433eb5157c",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T12:00:00.000Z"
       }
     },
     "[\"r2-422d4fe2a89ee12f062e92c786efefb3c9864c51d3eb73c7e2c419b0f46dfebf\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-13T06:00:00.000Z",
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39d8ae14ce433eb51603",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-13T06:00:00.000Z"
       },
-      "youtubeTitleUpdatedTo": "Would You Watch This Again? 🔥 #Shorts #Viral"
+      "youtubeTitleUpdatedTo": "Would You Watch This Again? 🔥 #Shorts #Viral",
+      "externalLink": "https://www.youtube.com/shorts/E2tl6ZKaVfY",
+      "sentAt": "2026-10-13T06:00:38.740Z"
     },
     "[\"r2-4c6905dde0f138eca1f6341c4c7c6c84771fe8ad2d1d553e63a4d306e0cd4db2\",\"youtube\"]": {
       "status": "queued",
@@ -3600,7 +3608,7 @@
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39dcf5c35b68cbfc09b5",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T02:02:27.484Z",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T00:00:00.000Z"
@@ -3613,7 +3621,8 @@
       "dueAt": "2026-10-15T00:00:00.000Z",
       "updatedAt": "2026-10-13T02:02:27.484Z",
       "bufferId": "6acd913e9f22b96ae7eea453",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z"
     },
     "[\"r2-47bfaf0f0cfd389bbcd183ad54182f566a52abf934495fb970e0ad341a975698\",\"youtube\"]": {
       "status": "queued",
@@ -3621,7 +3630,8 @@
       "dueAt": "2026-10-15T00:00:00.000Z",
       "updatedAt": "2026-10-13T02:02:27.484Z",
       "bufferId": "6acd91425229b40e868d42a6",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-13T12:44:42.791Z"
     }
   },
   "r2ListingRequests": {

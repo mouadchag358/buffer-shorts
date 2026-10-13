@@ -137,8 +137,10 @@
       "bufferStatus": "scheduled"
     },
     "quiz-012": {
-      "status": "sending",
-      "dueAt": "2026-10-15T18:00:00.000Z"
+      "status": "queued",
+      "dueAt": "2026-10-15T18:00:00.000Z",
+      "bufferId": "6ace729bbc13a192515c0b41",
+      "bufferStatus": "scheduled"
     }
   },
   "restart": {

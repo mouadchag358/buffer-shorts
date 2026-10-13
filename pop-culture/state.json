@@ -123,6 +123,10 @@
       "dueAt": "2026-10-15T00:00:00.000Z",
       "bufferId": "6ace72919d8488527041d0d1",
       "bufferStatus": "scheduled"
+    },
+    "quiz-010": {
+      "status": "sending",
+      "dueAt": "2026-10-15T06:00:00.000Z"
     }
   },
   "restart": {

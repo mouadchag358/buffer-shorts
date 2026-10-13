@@ -3608,10 +3608,12 @@
       "youtubeTitleUpdatedTo": "One Clip, So Many Reactions! 🤯 #Shorts #Viral"
     },
     "[\"r2-6aef79cd44ada403ee585955da57cad33de1a19e039aea5790fc13f05b7a3acc\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-15T00:00:00.000Z",
-      "updatedAt": "2026-10-13T02:02:27.484Z"
+      "updatedAt": "2026-10-13T02:02:27.484Z",
+      "bufferId": "6acd913e9f22b96ae7eea453",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

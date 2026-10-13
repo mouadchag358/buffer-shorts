@@ -93,6 +93,10 @@
       "bufferId": "6acd6b31c210c8c6dd3dc34e",
       "bufferStatus": "scheduled",
       "previousQuizId": "quiz-012"
+    },
+    "quiz-005": {
+      "status": "sending",
+      "dueAt": "2026-10-14T00:00:00.000Z"
     }
   },
   "restart": {

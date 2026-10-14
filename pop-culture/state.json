@@ -174,17 +174,17 @@
     }
   },
   "imageBatch": {
-    "window": "41479",
+    "window": "41480",
     "cardIds": [
-      "quiz-005",
-      "quiz-006",
-      "quiz-007",
-      "quiz-008",
-      "quiz-009",
-      "quiz-010",
-      "quiz-011",
-      "quiz-012"
+      "quiz-013",
+      "quiz-014",
+      "quiz-015",
+      "quiz-016",
+      "quiz-017",
+      "quiz-018",
+      "quiz-019",
+      "quiz-020"
     ],
-    "completed": true
+    "completed": false
   }
 }

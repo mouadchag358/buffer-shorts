@@ -3715,10 +3715,11 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-2be28dc8b07c0d5f862fc274304232f21f467eb5945da81dce82fa667f28364d\",\"youtube\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-16T00:00:00.000Z",
-      "updatedAt": "2026-10-14T04:57:22.744Z"
+      "updatedAt": "2026-10-14T04:57:22.744Z",
+      "error": "Invalid post: Video must be vertical (portrait orientation) for YouTube Shorts."
     }
   },
   "r2ListingRequests": {

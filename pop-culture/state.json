@@ -161,9 +161,8 @@
       "bufferStatus": "scheduled"
     },
     "quiz-016": {
-      "status": "rejected",
-      "dueAt": "2026-10-16T18:00:00.000Z",
-      "error": "Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed."
+      "status": "sending",
+      "dueAt": "2026-10-16T18:00:00.000Z"
     }
   },
   "restart": {

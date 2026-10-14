@@ -2377,7 +2377,7 @@
       "updatedAt": "2026-10-10T05:55:57.861Z",
       "bufferId": "6ac9d3b6f91f772d45820d3d",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "youtubeTitleUpdatedTo": "What's Your Reaction? 😮 #Shorts #Trending",
       "scheduleUpdate": {
         "status": "done",
@@ -2934,7 +2934,7 @@
       "updatedAt": "2026-10-11T05:50:36.017Z",
       "bufferId": "6acb23fcf91f772d45b98fe6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "youtubeTitleUpdatedTo": "Did You Notice That? 👀 #Shorts #Viral",
       "descriptionUpdatedAt": "2026-10-11T13:34:03.705Z",
       "scheduleUpdate": {
@@ -2949,7 +2949,7 @@
       "updatedAt": "2026-10-11T05:50:36.017Z",
       "bufferId": "6acb23ffc4de2d2b124edcb7",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "youtubeTitleUpdatedTo": "Watch and Tell Me What You Think! 👀 #Shorts #Viral",
       "descriptionUpdatedAt": "2026-10-11T13:34:05.212Z",
       "scheduleUpdate": {
@@ -3338,7 +3338,7 @@
       "updatedAt": "2026-10-11T16:18:33.493Z",
       "bufferId": "6acbb71ac4de2d2b1268aad4",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T06:00:00.000Z"
@@ -3351,7 +3351,7 @@
       "updatedAt": "2026-10-11T16:18:33.493Z",
       "bufferId": "6acbb71eed92ed8fa50bb206",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T18:00:00.000Z"
@@ -3564,17 +3564,19 @@
       "sentAt": "2026-10-13T06:01:11.372Z"
     },
     "[\"r2-8c031fa0f1758fb4a18338be8cf1084974f033f377f8c0c71304151676d3cc8c\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-14T00:00:00.000Z",
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39d1f5c35b68cbfc087f",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T00:00:00.000Z"
-      }
+      },
+      "externalLink": "https://www.instagram.com/reel/DedDExFinL7/",
+      "sentAt": "2026-10-14T00:02:17.564Z"
     },
     "[\"r2-baebf187bfc270114b1ca586f1a4e06f4b5848936b134ee3e5c3f346d537c0d1\",\"instagram\"]": {
       "status": "queued",
@@ -3583,7 +3585,7 @@
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39d5ae14ce433eb5157c",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T12:00:00.000Z"
@@ -3606,18 +3608,20 @@
       "sentAt": "2026-10-13T06:00:38.740Z"
     },
     "[\"r2-4c6905dde0f138eca1f6341c4c7c6c84771fe8ad2d1d553e63a4d306e0cd4db2\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-14T00:00:00.000Z",
       "updatedAt": "2026-10-12T19:49:11.316Z",
       "bufferId": "6acd39dcf5c35b68cbfc09b5",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-14T00:00:00.000Z"
       },
-      "youtubeTitleUpdatedTo": "One Clip, So Many Reactions! 🤯 #Shorts #Viral"
+      "youtubeTitleUpdatedTo": "One Clip, So Many Reactions! 🤯 #Shorts #Viral",
+      "externalLink": "https://www.youtube.com/shorts/Z9m4bHbMx8c",
+      "sentAt": "2026-10-14T00:01:05.599Z"
     },
     "[\"r2-6aef79cd44ada403ee585955da57cad33de1a19e039aea5790fc13f05b7a3acc\",\"instagram\"]": {
       "status": "queued",
@@ -3626,7 +3630,7 @@
       "updatedAt": "2026-10-13T02:02:27.484Z",
       "bufferId": "6acd913e9f22b96ae7eea453",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z"
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z"
     },
     "[\"r2-47bfaf0f0cfd389bbcd183ad54182f566a52abf934495fb970e0ad341a975698\",\"youtube\"]": {
       "status": "queued",
@@ -3635,7 +3639,7 @@
       "updatedAt": "2026-10-13T02:02:27.484Z",
       "bufferId": "6acd91425229b40e868d42a6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "youtubeTitleUpdatedTo": "Rate This Clip from 1 to 10! ⭐ #Shorts #Viral"
     },
     "[\"r2-33750303249eb228ca5166ee3c4d81624625032e8fc1b552657f935789baad7b\",\"instagram\"]": {
@@ -3645,7 +3649,7 @@
       "updatedAt": "2026-10-13T12:44:42.791Z",
       "bufferId": "6ace27c25a7a45d7e2b742be",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z"
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z"
     },
     "[\"r2-32d28380e12833fa53c6da5471e0690225ce3d5f59275ccc316dcd07e4d0ceaf\",\"instagram\"]": {
       "status": "queued",
@@ -3654,7 +3658,7 @@
       "updatedAt": "2026-10-13T12:44:42.791Z",
       "bufferId": "6ace27c7d8537df3c555d6db",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z"
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z"
     },
     "[\"r2-8f36d4a772eb1eb6ee5915e5275e97b62993dfdb8332c9f6312a502bd739adbe\",\"youtube\"]": {
       "status": "queued",
@@ -3663,7 +3667,7 @@
       "updatedAt": "2026-10-13T12:44:42.791Z",
       "bufferId": "6ace27cb0fc7de51e350a528",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "youtubeTitleUpdatedTo": "One Clip, So Many Reactions! 🤯 #Shorts #Viral"
     },
     "[\"r2-5cb01a38b439136ede3c82fdace67b557e728b031e7e5b809628fb4030d65195\",\"youtube\"]": {
@@ -3673,7 +3677,7 @@
       "updatedAt": "2026-10-13T12:44:42.791Z",
       "bufferId": "6ace27cff0fca1abf1cdbca8",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-13T20:42:28.517Z",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z",
       "youtubeTitleUpdatedTo": "Watch and Tell Me What You Think! 👀 #Shorts #Viral"
     },
     "[\"r2-6d44077f4df4a9c4d6739a7167aec51faf20ae8d74e3aeaaa27a759e10213d15\",\"instagram\"]": {
@@ -3682,7 +3686,8 @@
       "dueAt": "2026-10-15T18:00:00.000Z",
       "updatedAt": "2026-10-13T20:42:28.517Z",
       "bufferId": "6ace97beffa44ef4f99b06a3",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z"
     },
     "[\"r2-0ffea8e2081bc0af1a941ed4800dab2fe3ee95440336a5802fc65f4f8365d298\",\"youtube\"]": {
       "status": "rejected",
@@ -3697,7 +3702,8 @@
       "dueAt": "2026-10-15T18:00:00.000Z",
       "updatedAt": "2026-10-13T20:42:28.517Z",
       "bufferId": "6ace97c548ff980feab2d650",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-14T04:57:22.744Z"
     }
   },
   "r2ListingRequests": {

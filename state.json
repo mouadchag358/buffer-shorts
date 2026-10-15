@@ -3856,6 +3856,12 @@
       "dueAt": "2026-10-17T06:00:00.000Z",
       "updatedAt": "2026-10-15T09:58:00.029Z",
       "error": "Invalid post: Video must be vertical (portrait orientation) for YouTube Shorts."
+    },
+    "[\"r2-350e0d80eea5c0c1f9a6a9668a40a3c6fb51d2cd56631c7c2125eeec7c580ab8\",\"youtube\"]": {
+      "status": "sending",
+      "channelId": "6ac17ba1ea19ca0bde6a0976",
+      "dueAt": "2026-10-17T06:00:00.000Z",
+      "updatedAt": "2026-10-15T09:58:00.029Z"
     }
   },
   "r2ListingRequests": {

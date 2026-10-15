@@ -172,6 +172,12 @@
       "bufferId": "6acfbbe8c3d6c8430112bbbe",
       "bufferStatus": "scheduled",
       "dueAt": "2026-10-16T18:00:00.000Z"
+    },
+    "quiz-014": {
+      "status": "queued",
+      "bufferId": "6acfbbeccb8f9e84a35908b2",
+      "bufferStatus": "scheduled",
+      "dueAt": "2026-10-17T00:00:00.000Z"
     }
   },
   "restart": {
@@ -287,7 +293,7 @@
         "postId": "6acfbbeccb8f9e84a35908b2",
         "dueAt": "2026-10-17T00:00:00.000Z",
         "cardId": "quiz-014",
-        "status": "editing"
+        "status": "completed"
       }
     ]
   }

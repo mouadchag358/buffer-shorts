@@ -48,7 +48,7 @@ async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,lo
     throw Error('Uncertain previous Facebook image delivery: inspect Buffer before scheduling anything else');
   // Read known posts individually: an incomplete queue listing must not create collisions.
   for(const value of Object.values(state.newImages)) {
-    if(!value.bufferId) continue;
+    if(!value.bufferId || value.status!=='queued' || Date.parse(value.dueAt)<=Date.now() || remote.some(p=>p.id===value.bufferId)) continue;
     const post=await getPost(value.bufferId,env);
     if(post.channelId!==channel.id) throw Error('Facebook checkpoint channel mismatch');
     if(['scheduled','sending'].includes(post.status)&&!remote.some(p=>p.id===post.id)) remote.push(post);
@@ -95,10 +95,17 @@ export async function syncImages({dryRun=false,log=console.log}={}){
   const state=JSON.parse(await readFile(statePath,'utf8'));
   state.replacements??={};
   if(cards.length!==200)throw Error('Expected 100 original and 100 reaction cards');
-  const {env,channels}=await resolveQueueChannels(['facebook']);
+  let env,channels,remote;
+  try {
+    ({env,channels}=await resolveQueueChannels(['facebook']));
+    remote=await queuedPosts(env.BUFFER_ORGANIZATION_ID,[channels[0].id],env);
+  } catch(e) {
+    // These are read-only calls: a rate limit can safely defer until the next run.
+    if(/Buffer HTTP 429/.test(e.message)){log('Buffer read rate limit reached; deferring without changing any posts');return;}
+    throw e;
+  }
   const channel=channels[0];
   if(channel.isQueuePaused||channel.isLocked||channel.isDisconnected)throw Error('Facebook channel unavailable');
-  const remote=await queuedPosts(env.BUFFER_ORGANIZATION_ID,[channel.id],env);
   const scheduled=remote.filter(p=>p.channelId===channel.id&&p.status==='scheduled'&&p.dueAt)
     .sort((a,b)=>Date.parse(a.dueAt)-Date.parse(b.dueAt)||a.id.localeCompare(b.id));
   if(Object.values(state.replacements).filter(v=>v.status==='completed').length===8) {

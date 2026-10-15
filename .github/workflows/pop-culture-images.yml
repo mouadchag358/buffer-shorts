@@ -74,17 +74,6 @@ jobs:
           else
             node src/migrate-quiz-alternation.js
           fi
-      - name: Inspect known Buffer quiz post statuses (read-only)
-        run: node src/inspect-facebook-buffer.js
-      - name: Refresh queued Facebook quiz images (immutable URLs)
-        env:
-          MEDIA_DRY_RUN: ${{ github.event_name != 'push' }}
-        run: |
-          if [ "$MEDIA_DRY_RUN" = "true" ]; then
-            node src/refresh-facebook-quiz-media.js --dry-run
-          else
-            node src/refresh-facebook-quiz-media.js
-          fi
       - name: Schedule the next batch of eight Facebook quizzes
         env:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}

@@ -3881,10 +3881,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-48b71548b29344c31b59437ce4d601a102e0a4b83e327b980e7654c93d22c424\",\"youtube\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-17T12:00:00.000Z",
-      "updatedAt": "2026-10-15T15:03:48.425Z"
+      "updatedAt": "2026-10-15T15:03:48.425Z",
+      "bufferId": "6ad0eb60c65cf8876b6b4dad",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

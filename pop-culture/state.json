@@ -296,5 +296,19 @@
         "status": "completed"
       }
     ]
+  },
+  "imageBatch": {
+    "window": "41483",
+    "cardIds": [
+      "quiz-104",
+      "quiz-015",
+      "quiz-105",
+      "quiz-016",
+      "quiz-106",
+      "quiz-017",
+      "quiz-107",
+      "quiz-019"
+    ],
+    "completed": false
   }
 }

@@ -180,8 +180,10 @@
       "dueAt": "2026-10-17T00:00:00.000Z"
     },
     "quiz-104": {
-      "status": "sending",
-      "dueAt": "2026-10-17T06:00:00.000Z"
+      "status": "queued",
+      "dueAt": "2026-10-17T06:00:00.000Z",
+      "bufferId": "6ad0fc2c43886cbb075331fc",
+      "bufferStatus": "scheduled"
     }
   },
   "restart": {

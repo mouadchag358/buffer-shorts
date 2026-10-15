@@ -3841,6 +3841,12 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-15T09:58:00.029Z",
       "youtubeTitleUpdatedTo": "Watch Closely! 👀 #Shorts #Trending"
+    },
+    "[\"r2-af32b936bda1e6d8413f89bb1ce0f7f45528f5d79e8307863b7022e534646df9\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-17T06:00:00.000Z",
+      "updatedAt": "2026-10-15T09:58:00.029Z"
     }
   },
   "r2ListingRequests": {

@@ -160,6 +160,12 @@
       "bufferId": "6acf0f8d0ab87a16c8e3624f",
       "bufferStatus": "scheduled",
       "dueAt": "2026-10-16T06:00:00.000Z"
+    },
+    "quiz-013": {
+      "status": "queued",
+      "bufferId": "6acf0f90b610c3011fa086d7",
+      "bufferStatus": "scheduled",
+      "dueAt": "2026-10-16T12:00:00.000Z"
     }
   },
   "restart": {
@@ -263,7 +269,7 @@
         "postId": "6acf0f90b610c3011fa086d7",
         "dueAt": "2026-10-16T12:00:00.000Z",
         "cardId": "quiz-013",
-        "status": "editing"
+        "status": "completed"
       },
       {
         "postId": "6acfbbe8c3d6c8430112bbbe",

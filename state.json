@@ -3813,10 +3813,12 @@
       "youtubeTitleUpdatedTo": "Rate This Clip from 1 to 10! ⭐ #Shorts #Viral"
     },
     "[\"r2-1a8dc0225387f24d113f0486b4864958448c47dbbb90feffe596734eddf5398c\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-17T00:00:00.000Z",
-      "updatedAt": "2026-10-15T04:43:36.008Z"
+      "updatedAt": "2026-10-15T04:43:36.008Z",
+      "bufferId": "6ad05a06e09e6bdb27e32010",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -142,6 +142,12 @@
       "priorStatus": "sending",
       "holdReason": "Legacy delivery unconfirmed; excluded from automatic retry",
       "heldAt": "2026-10-15T16:14:57.624Z"
+    },
+    "quiz-101": {
+      "status": "queued",
+      "bufferId": "6ace729bbc13a192515c0b41",
+      "bufferStatus": "scheduled",
+      "dueAt": "2026-10-15T18:00:00.000Z"
     }
   },
   "restart": {
@@ -227,7 +233,7 @@
         "postId": "6ace729bbc13a192515c0b41",
         "dueAt": "2026-10-15T18:00:00.000Z",
         "cardId": "quiz-101",
-        "status": "editing"
+        "status": "completed"
       },
       {
         "postId": "6acf0f8b848c31c8095e913a",

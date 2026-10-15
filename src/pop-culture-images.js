@@ -60,9 +60,12 @@ async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,lo
   const occupied=new Set(scheduled.map(p=>videoHourKey(p.dueAt)));
   const lastDue=Math.max(0,...scheduled.map(p=>Date.parse(p.dueAt)));
   const slots=imageSlots(new Date(),128).filter(s=>Date.parse(s.dueAt)>lastDue&&!occupied.has(videoHourKey(s.dueAt)));
+  const capacity=Math.max(0,10-scheduled.length);
+  if(!capacity){log('Facebook queue full (10/10); remaining quizzes will resume when slots become available');return;}
   let added=0;
   for(const id of batch.cardIds) {
     if(state.newImages[id]?.status==='queued') continue;
+    if(added>=capacity){log('Facebook queue capacity reached; keeping remaining batch for the next run');break;}
     const card=cards.find(c=>c.id===id),slot=slots.shift();
     if(!card||!slot) throw Error('Missing quiz card or future schedule slot');
     const input=imageInput(card,channel.id,slot.dueAt);
@@ -78,11 +81,12 @@ async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,lo
       result={...result,status:'uncertain',error:'Buffer did not confirm the requested schedule'};
     state.newImages[card.id]={...state.newImages[card.id],...result};
     await persist(state);
+    if(result.status==='rejected'&&/Scheduled posts limit reached/i.test(result.error||'')){log('Buffer queue full; remaining quizzes will resume on the next run');return;}
     if(result.status!=='queued')throw Error('Buffer rejected image '+card.id+': '+result.error);
     added++;
     log('Queued new image '+card.id+' at '+slot.dueAt);
   }
-  if(!dryRun) {batch.completed=true;await persist(state);}
+  if(!dryRun) {batch.completed=batch.cardIds.every(id=>state.newImages[id]?.status==='queued');await persist(state);}
   log('New scheduled Facebook images: '+added);
   if(!batch.cardIds.length) log('All 200 quiz cards have been used');
 }

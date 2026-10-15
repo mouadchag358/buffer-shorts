@@ -12,7 +12,26 @@
     ],
     "answer": "A",
     "image": "pop-culture/cards/quiz-001.jpg",
-    "caption": "QUIZ TIME! Which village is Naruto from?\nA) Konoha\nB) Sunagakure\nC) Kirigakure\nD) Iwagakure\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! Which village is Naruto from?\nA) Konoha\nB) Sunagakure\nC) Kirigakure\nD) Iwagakure\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-101",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which village is Naruto from?",
+    "options": [
+      "Konoha",
+      "Sunagakure",
+      "Kirigakure",
+      "Iwagakure"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-101.jpg",
+    "caption": "QUIZ TIME! Which village is Naruto from?\n👍 Konoha\n❤️ Sunagakure\n😂 Kirigakure\n😮 Iwagakure\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-001",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-002",
@@ -27,7 +46,26 @@
     ],
     "answer": "A",
     "image": "pop-culture/cards/quiz-002.jpg",
-    "caption": "QUIZ TIME! What is Luffy's biggest dream?\nA) Become Pirate King\nB) Find a legendary island\nC) Collect all Devil Fruits\nD) Save his crew\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! What is Luffy's biggest dream?\nA) Become Pirate King\nB) Find a legendary island\nC) Collect all Devil Fruits\nD) Save his crew\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-102",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What is Luffy's biggest dream?",
+    "options": [
+      "Become Pirate King",
+      "Find a legendary island",
+      "Collect all Devil Fruits",
+      "Save his crew"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-102.jpg",
+    "caption": "QUIZ TIME! What is Luffy's biggest dream?\n👍 Become Pirate King\n❤️ Find a legendary island\n😂 Collect all Devil Fruits\n😮 Save his crew\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-002",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-003",
@@ -42,7 +80,26 @@
     ],
     "answer": "A",
     "image": "pop-culture/cards/quiz-003.jpg",
-    "caption": "QUIZ TIME! What is Goku's famous energy attack?\nA) Kamehameha\nB) Spirit Bomb\nC) Final Flash\nD) Dragon Fist\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! What is Goku's famous energy attack?\nA) Kamehameha\nB) Spirit Bomb\nC) Final Flash\nD) Dragon Fist\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-103",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What is Goku's famous energy attack?",
+    "options": [
+      "Kamehameha",
+      "Spirit Bomb",
+      "Final Flash",
+      "Dragon Fist"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-103.jpg",
+    "caption": "QUIZ TIME! What is Goku's famous energy attack?\n👍 Kamehameha\n❤️ Spirit Bomb\n😂 Final Flash\n😮 Dragon Fist\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-003",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-004",
@@ -57,7 +114,26 @@
     ],
     "answer": "A",
     "image": "pop-culture/cards/quiz-004.jpg",
-    "caption": "QUIZ TIME! Which animal symbolizes Gryffindor?\nA) Lion\nB) Snake\nC) Eagle\nD) Badger\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! Which animal symbolizes Gryffindor?\nA) Lion\nB) Snake\nC) Eagle\nD) Badger\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-104",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which animal symbolizes Gryffindor?",
+    "options": [
+      "Lion",
+      "Snake",
+      "Eagle",
+      "Badger"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-104.jpg",
+    "caption": "QUIZ TIME! Which animal symbolizes Gryffindor?\n👍 Lion\n❤️ Snake\n😂 Eagle\n😮 Badger\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-004",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-005",
@@ -72,7 +148,26 @@
     ],
     "answer": "A",
     "image": "pop-culture/cards/quiz-005.jpg",
-    "caption": "QUIZ TIME! Who is the original Spider-Man?\nA) Peter Parker\nB) Miles Morales\nC) Tony Stark\nD) Bruce Wayne\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! Who is the original Spider-Man?\nA) Peter Parker\nB) Miles Morales\nC) Tony Stark\nD) Bruce Wayne\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-105",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Who is the original Spider-Man?",
+    "options": [
+      "Peter Parker",
+      "Miles Morales",
+      "Tony Stark",
+      "Bruce Wayne"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-105.jpg",
+    "caption": "QUIZ TIME! Who is the original Spider-Man?\n👍 Peter Parker\n❤️ Miles Morales\n😂 Tony Stark\n😮 Bruce Wayne\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-005",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-006",
@@ -87,7 +182,26 @@
     ],
     "answer": "B",
     "image": "pop-culture/cards/quiz-006.jpg",
-    "caption": "QUIZ TIME! Which material is strongest in Minecraft?\nA) Wood\nB) Diamond\nC) Iron\nD) Stone\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! Which material is strongest in Minecraft?\nA) Wood\nB) Diamond\nC) Iron\nD) Stone\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-106",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which material is strongest in Minecraft?",
+    "options": [
+      "Wood",
+      "Diamond",
+      "Iron",
+      "Stone"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-106.jpg",
+    "caption": "QUIZ TIME! Which material is strongest in Minecraft?\n👍 Wood\n❤️ Diamond\n😂 Iron\n😮 Stone\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-006",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-007",
@@ -102,7 +216,26 @@
     ],
     "answer": "A",
     "image": "pop-culture/cards/quiz-007.jpg",
-    "caption": "QUIZ TIME! Which power-up makes Mario grow?\nA) Mushroom\nB) Star\nC) Fire Flower\nD) Super Leaf\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! Which power-up makes Mario grow?\nA) Mushroom\nB) Star\nC) Fire Flower\nD) Super Leaf\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-107",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which power-up makes Mario grow?",
+    "options": [
+      "Mushroom",
+      "Star",
+      "Fire Flower",
+      "Super Leaf"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-107.jpg",
+    "caption": "QUIZ TIME! Which power-up makes Mario grow?\n👍 Mushroom\n❤️ Star\n😂 Fire Flower\n😮 Super Leaf\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-007",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-008",
@@ -117,7 +250,26 @@
     ],
     "answer": "C",
     "image": "pop-culture/cards/quiz-008.jpg",
-    "caption": "QUIZ TIME! What color is Darth Vader's lightsaber?\nA) Blue\nB) Green\nC) Red\nD) Purple\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! What color is Darth Vader's lightsaber?\nA) Blue\nB) Green\nC) Red\nD) Purple\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-108",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What color is Darth Vader's lightsaber?",
+    "options": [
+      "Blue",
+      "Green",
+      "Red",
+      "Purple"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-108.jpg",
+    "caption": "QUIZ TIME! What color is Darth Vader's lightsaber?\n👍 Blue\n❤️ Green\n😂 Red\n😮 Purple\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-008",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-009",
@@ -132,7 +284,26 @@
     ],
     "answer": "B",
     "image": "pop-culture/cards/quiz-009.jpg",
-    "caption": "QUIZ TIME! What powers Iron Man's armor?\nA) Vibranium\nB) Arc Reactor\nC) Tesseract\nD) Pym Particles\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! What powers Iron Man's armor?\nA) Vibranium\nB) Arc Reactor\nC) Tesseract\nD) Pym Particles\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-109",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "What powers Iron Man's armor?",
+    "options": [
+      "Vibranium",
+      "Arc Reactor",
+      "Tesseract",
+      "Pym Particles"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-109.jpg",
+    "caption": "QUIZ TIME! What powers Iron Man's armor?\n👍 Vibranium\n❤️ Arc Reactor\n😂 Tesseract\n😮 Pym Particles\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-009",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-010",
@@ -147,7 +318,26 @@
     ],
     "answer": "B",
     "image": "pop-culture/cards/quiz-010.jpg",
-    "caption": "QUIZ TIME! Which series stars the hero Link?\nA) Final Fantasy\nB) The Legend of Zelda\nC) Monster Hunter\nD) Dragon Quest\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies"
+    "caption": "QUIZ TIME! Which series stars the hero Link?\nA) Final Fantasy\nB) The Legend of Zelda\nC) Monster Hunter\nD) Dragon Quest\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-110",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which series stars the hero Link?",
+    "options": [
+      "Final Fantasy",
+      "The Legend of Zelda",
+      "Monster Hunter",
+      "Dragon Quest"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-110.jpg",
+    "caption": "QUIZ TIME! Which series stars the hero Link?\n👍 Final Fantasy\n❤️ The Legend of Zelda\n😂 Monster Hunter\n😮 Dragon Quest\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-010",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-011",
@@ -163,7 +353,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-011.jpg",
     "caption": "QUIZ TIME! Who is Naruto's pink-haired teammate?\nA) Ino\nB) Tsunade\nC) Sakura\nD) Hinata\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-111",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Naruto's pink-haired teammate?",
+    "options": [
+      "Ino",
+      "Tsunade",
+      "Sakura",
+      "Hinata"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-111.jpg",
+    "caption": "QUIZ TIME! Who is Naruto's pink-haired teammate?\n👍 Ino\n❤️ Tsunade\n😂 Sakura\n😮 Hinata\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-011",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-012",
@@ -179,7 +389,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-012.jpg",
     "caption": "QUIZ TIME! Who is the Straw Hat crew's swordsman?\nA) Franky\nB) Zoro\nC) Sanji\nD) Usopp\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-112",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is the Straw Hat crew's swordsman?",
+    "options": [
+      "Franky",
+      "Zoro",
+      "Sanji",
+      "Usopp"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-112.jpg",
+    "caption": "QUIZ TIME! Who is the Straw Hat crew's swordsman?\n👍 Franky\n❤️ Zoro\n😂 Sanji\n😮 Usopp\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-012",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-013",
@@ -195,7 +425,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-013.jpg",
     "caption": "QUIZ TIME! What is Goku's Saiyan birth name?\nA) Kakarot\nB) Raditz\nC) Bardock\nD) Vegeta\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-113",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What is Goku's Saiyan birth name?",
+    "options": [
+      "Kakarot",
+      "Raditz",
+      "Bardock",
+      "Vegeta"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-113.jpg",
+    "caption": "QUIZ TIME! What is Goku's Saiyan birth name?\n👍 Kakarot\n❤️ Raditz\n😂 Bardock\n😮 Vegeta\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-013",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-014",
@@ -211,7 +461,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-014.jpg",
     "caption": "QUIZ TIME! What is Harry Potter's owl called?\nA) Errol\nB) Fawkes\nC) Scabbers\nD) Hedwig\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-114",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What is Harry Potter's owl called?",
+    "options": [
+      "Errol",
+      "Fawkes",
+      "Scabbers",
+      "Hedwig"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-114.jpg",
+    "caption": "QUIZ TIME! What is Harry Potter's owl called?\n👍 Errol\n❤️ Fawkes\n😂 Scabbers\n😮 Hedwig\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-014",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-015",
@@ -227,7 +497,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-015.jpg",
     "caption": "QUIZ TIME! Which newspaper employs J. Jonah Jameson?\nA) Daily Prophet\nB) The Quibbler\nC) Daily Bugle\nD) Daily Planet\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-115",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which newspaper employs J. Jonah Jameson?",
+    "options": [
+      "Daily Prophet",
+      "The Quibbler",
+      "Daily Bugle",
+      "Daily Planet"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-115.jpg",
+    "caption": "QUIZ TIME! Which newspaper employs J. Jonah Jameson?\n👍 Daily Prophet\n❤️ The Quibbler\n😂 Daily Bugle\n😮 Daily Planet\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-015",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-016",
@@ -243,7 +533,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-016.jpg",
     "caption": "QUIZ TIME! Which Minecraft mob explodes near players?\nA) Sheep\nB) Creeper\nC) Cow\nD) Villager\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-116",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft mob explodes near players?",
+    "options": [
+      "Sheep",
+      "Creeper",
+      "Cow",
+      "Villager"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-116.jpg",
+    "caption": "QUIZ TIME! Which Minecraft mob explodes near players?\n👍 Sheep\n❤️ Creeper\n😂 Cow\n😮 Villager\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-016",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-017",
@@ -259,7 +569,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-017.jpg",
     "caption": "QUIZ TIME! What is Mario's brother called?\nA) Luigi\nB) Wario\nC) Toad\nD) Yoshi\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-117",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What is Mario's brother called?",
+    "options": [
+      "Luigi",
+      "Wario",
+      "Toad",
+      "Yoshi"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-117.jpg",
+    "caption": "QUIZ TIME! What is Mario's brother called?\n👍 Luigi\n❤️ Wario\n😂 Toad\n😮 Yoshi\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-017",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-018",
@@ -275,7 +605,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-018.jpg",
     "caption": "QUIZ TIME! What is Darth Vader's birth name?\nA) Obi-Wan Kenobi\nB) Luke Skywalker\nC) Han Solo\nD) Anakin Skywalker\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-118",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What is Darth Vader's birth name?",
+    "options": [
+      "Obi-Wan Kenobi",
+      "Luke Skywalker",
+      "Han Solo",
+      "Anakin Skywalker"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-118.jpg",
+    "caption": "QUIZ TIME! What is Darth Vader's birth name?\n👍 Obi-Wan Kenobi\n❤️ Luke Skywalker\n😂 Han Solo\n😮 Anakin Skywalker\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-018",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-019",
@@ -291,7 +641,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-019.jpg",
     "caption": "QUIZ TIME! What is Iron Man's real name?\nA) Bruce Banner\nB) Clint Barton\nC) Tony Stark\nD) Steve Rogers\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-119",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "What is Iron Man's real name?",
+    "options": [
+      "Bruce Banner",
+      "Clint Barton",
+      "Tony Stark",
+      "Steve Rogers"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-119.jpg",
+    "caption": "QUIZ TIME! What is Iron Man's real name?\n👍 Bruce Banner\n❤️ Clint Barton\n😂 Tony Stark\n😮 Steve Rogers\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-019",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-020",
@@ -307,7 +677,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-020.jpg",
     "caption": "QUIZ TIME! What is Link's legendary sword called?\nA) Keyblade\nB) Master Sword\nC) Buster Sword\nD) Energy Sword\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-120",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What is Link's legendary sword called?",
+    "options": [
+      "Keyblade",
+      "Master Sword",
+      "Buster Sword",
+      "Energy Sword"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-120.jpg",
+    "caption": "QUIZ TIME! What is Link's legendary sword called?\n👍 Keyblade\n❤️ Master Sword\n😂 Buster Sword\n😮 Energy Sword\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-020",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-021",
@@ -323,7 +713,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-021.jpg",
     "caption": "QUIZ TIME! Who teaches Naruto the Rasengan?\nA) Jiraiya\nB) Orochimaru\nC) Gaara\nD) Shikamaru\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-121",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who teaches Naruto the Rasengan?",
+    "options": [
+      "Jiraiya",
+      "Orochimaru",
+      "Gaara",
+      "Shikamaru"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-121.jpg",
+    "caption": "QUIZ TIME! Who teaches Naruto the Rasengan?\n👍 Jiraiya\n❤️ Orochimaru\n😂 Gaara\n😮 Shikamaru\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-021",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-022",
@@ -339,7 +749,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-022.jpg",
     "caption": "QUIZ TIME! Who is the Straw Hat crew's navigator?\nA) Robin\nB) Vivi\nC) Hancock\nD) Nami\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-122",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is the Straw Hat crew's navigator?",
+    "options": [
+      "Robin",
+      "Vivi",
+      "Hancock",
+      "Nami"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-122.jpg",
+    "caption": "QUIZ TIME! Who is the Straw Hat crew's navigator?\n👍 Robin\n❤️ Vivi\n😂 Hancock\n😮 Nami\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-022",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-023",
@@ -355,7 +785,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-023.jpg",
     "caption": "QUIZ TIME! How many Dragon Balls summon Shenron?\nA) Six\nB) Eight\nC) Seven\nD) Five\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-123",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "How many Dragon Balls summon Shenron?",
+    "options": [
+      "Six",
+      "Eight",
+      "Seven",
+      "Five"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-123.jpg",
+    "caption": "QUIZ TIME! How many Dragon Balls summon Shenron?\n👍 Six\n❤️ Eight\n😂 Seven\n😮 Five\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-023",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-024",
@@ -371,7 +821,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-024.jpg",
     "caption": "QUIZ TIME! Which spell disarms an opponent?\nA) Reparo\nB) Expelliarmus\nC) Lumos\nD) Accio\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-124",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which spell disarms an opponent?",
+    "options": [
+      "Reparo",
+      "Expelliarmus",
+      "Lumos",
+      "Accio"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-124.jpg",
+    "caption": "QUIZ TIME! Which spell disarms an opponent?\n👍 Reparo\n❤️ Expelliarmus\n😂 Lumos\n😮 Accio\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-024",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-025",
@@ -387,7 +857,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-025.jpg",
     "caption": "QUIZ TIME! Who is Peter Parker's aunt?\nA) May\nB) Peggy\nC) Pepper\nD) Betty\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-125",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Who is Peter Parker's aunt?",
+    "options": [
+      "May",
+      "Peggy",
+      "Pepper",
+      "Betty"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-125.jpg",
+    "caption": "QUIZ TIME! Who is Peter Parker's aunt?\n👍 May\n❤️ Peggy\n😂 Pepper\n😮 Betty\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-025",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-026",
@@ -403,7 +893,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-026.jpg",
     "caption": "QUIZ TIME! Which tool mines stone fastest?\nA) Shovel\nB) Hoe\nC) Shears\nD) Pickaxe\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-126",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which tool mines stone fastest?",
+    "options": [
+      "Shovel",
+      "Hoe",
+      "Shears",
+      "Pickaxe"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-126.jpg",
+    "caption": "QUIZ TIME! Which tool mines stone fastest?\n👍 Shovel\n❤️ Hoe\n😂 Shears\n😮 Pickaxe\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-026",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-027",
@@ -419,7 +929,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-027.jpg",
     "caption": "QUIZ TIME! Which princess often needs Mario's help?\nA) Daisy\nB) Rosalina\nC) Peach\nD) Zelda\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-127",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which princess often needs Mario's help?",
+    "options": [
+      "Daisy",
+      "Rosalina",
+      "Peach",
+      "Zelda"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-127.jpg",
+    "caption": "QUIZ TIME! Which princess often needs Mario's help?\n👍 Daisy\n❤️ Rosalina\n😂 Peach\n😮 Zelda\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-027",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-028",
@@ -435,7 +965,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-028.jpg",
     "caption": "QUIZ TIME! Who is Luke Skywalker's twin sister?\nA) Ahsoka\nB) Leia\nC) Rey\nD) Padme\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-128",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Who is Luke Skywalker's twin sister?",
+    "options": [
+      "Ahsoka",
+      "Leia",
+      "Rey",
+      "Padme"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-128.jpg",
+    "caption": "QUIZ TIME! Who is Luke Skywalker's twin sister?\n👍 Ahsoka\n❤️ Leia\n😂 Rey\n😮 Padme\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-028",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-029",
@@ -451,7 +1001,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-029.jpg",
     "caption": "QUIZ TIME! Who is Tony Stark's close friend known as Rhodey?\nA) James Rhodes\nB) Sam Wilson\nC) Bucky Barnes\nD) Nick Fury\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-129",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Who is Tony Stark's close friend known as Rhodey?",
+    "options": [
+      "James Rhodes",
+      "Sam Wilson",
+      "Bucky Barnes",
+      "Nick Fury"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-129.jpg",
+    "caption": "QUIZ TIME! Who is Tony Stark's close friend known as Rhodey?\n👍 James Rhodes\n❤️ Sam Wilson\n😂 Bucky Barnes\n😮 Nick Fury\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-029",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-030",
@@ -467,7 +1037,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-030.jpg",
     "caption": "QUIZ TIME! Which kingdom is central to The Legend of Zelda?\nA) Mushroom Kingdom\nB) Midgar\nC) Azeroth\nD) Hyrule\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-130",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which kingdom is central to The Legend of Zelda?",
+    "options": [
+      "Mushroom Kingdom",
+      "Midgar",
+      "Azeroth",
+      "Hyrule"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-130.jpg",
+    "caption": "QUIZ TIME! Which kingdom is central to The Legend of Zelda?\n👍 Mushroom Kingdom\n❤️ Midgar\n😂 Azeroth\n😮 Hyrule\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-030",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-031",
@@ -483,7 +1073,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-031.jpg",
     "caption": "QUIZ TIME! Which clan does Sasuke belong to?\nA) Nara\nB) Akimichi\nC) Uchiha\nD) Hyuga\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-131",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which clan does Sasuke belong to?",
+    "options": [
+      "Nara",
+      "Akimichi",
+      "Uchiha",
+      "Hyuga"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-131.jpg",
+    "caption": "QUIZ TIME! Which clan does Sasuke belong to?\n👍 Nara\n❤️ Akimichi\n😂 Uchiha\n😮 Hyuga\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-031",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-032",
@@ -499,7 +1109,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-032.jpg",
     "caption": "QUIZ TIME! Who cooks for the Straw Hat crew?\nA) Jinbe\nB) Sanji\nC) Zoro\nD) Brook\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-132",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who cooks for the Straw Hat crew?",
+    "options": [
+      "Jinbe",
+      "Sanji",
+      "Zoro",
+      "Brook"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-132.jpg",
+    "caption": "QUIZ TIME! Who cooks for the Straw Hat crew?\n👍 Jinbe\n❤️ Sanji\n😂 Zoro\n😮 Brook\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-032",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-033",
@@ -515,7 +1145,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-033.jpg",
     "caption": "QUIZ TIME! Who is Goku's eldest son?\nA) Gohan\nB) Goten\nC) Trunks\nD) Krillin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-133",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Goku's eldest son?",
+    "options": [
+      "Gohan",
+      "Goten",
+      "Trunks",
+      "Krillin"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-133.jpg",
+    "caption": "QUIZ TIME! Who is Goku's eldest son?\n👍 Gohan\n❤️ Goten\n😂 Trunks\n😮 Krillin\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-033",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-034",
@@ -531,7 +1181,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-034.jpg",
     "caption": "QUIZ TIME! Which platform leads to the Hogwarts Express?\nA) Platform 7 1/2\nB) Platform 8 3/4\nC) Platform 10 1/2\nD) Platform 9 3/4\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-134",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which platform leads to the Hogwarts Express?",
+    "options": [
+      "Platform 7 1/2",
+      "Platform 8 3/4",
+      "Platform 10 1/2",
+      "Platform 9 3/4"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-134.jpg",
+    "caption": "QUIZ TIME! Which platform leads to the Hogwarts Express?\n👍 Platform 7 1/2\n❤️ Platform 8 3/4\n😂 Platform 10 1/2\n😮 Platform 9 3/4\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-034",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-035",
@@ -547,7 +1217,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-035.jpg",
     "caption": "QUIZ TIME! What warns Spider-Man of danger?\nA) Telepathy\nB) Time travel\nC) Spider-Sense\nD) X-ray vision\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-135",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "What warns Spider-Man of danger?",
+    "options": [
+      "Telepathy",
+      "Time travel",
+      "Spider-Sense",
+      "X-ray vision"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-135.jpg",
+    "caption": "QUIZ TIME! What warns Spider-Man of danger?\n👍 Telepathy\n❤️ Time travel\n😂 Spider-Sense\n😮 X-ray vision\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-035",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-036",
@@ -563,7 +1253,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-036.jpg",
     "caption": "QUIZ TIME! Which Minecraft block is used for a Nether portal frame?\nA) Sand\nB) Obsidian\nC) Dirt\nD) Glass\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-136",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft block is used for a Nether portal frame?",
+    "options": [
+      "Sand",
+      "Obsidian",
+      "Dirt",
+      "Glass"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-136.jpg",
+    "caption": "QUIZ TIME! Which Minecraft block is used for a Nether portal frame?\n👍 Sand\n❤️ Obsidian\n😂 Dirt\n😮 Glass\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-036",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-037",
@@ -579,7 +1289,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-037.jpg",
     "caption": "QUIZ TIME! Who is Mario's turtle-like rival?\nA) Bowser\nB) Donkey Kong\nC) Waluigi\nD) King Boo\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-137",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Who is Mario's turtle-like rival?",
+    "options": [
+      "Bowser",
+      "Donkey Kong",
+      "Waluigi",
+      "King Boo"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-137.jpg",
+    "caption": "QUIZ TIME! Who is Mario's turtle-like rival?\n👍 Bowser\n❤️ Donkey Kong\n😂 Waluigi\n😮 King Boo\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-037",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-038",
@@ -595,7 +1325,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-038.jpg",
     "caption": "QUIZ TIME! Which small Jedi master trains Luke on Dagobah?\nA) Mace Windu\nB) Qui-Gon Jinn\nC) Count Dooku\nD) Yoda\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-138",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which small Jedi master trains Luke on Dagobah?",
+    "options": [
+      "Mace Windu",
+      "Qui-Gon Jinn",
+      "Count Dooku",
+      "Yoda"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-138.jpg",
+    "caption": "QUIZ TIME! Which small Jedi master trains Luke on Dagobah?\n👍 Mace Windu\n❤️ Qui-Gon Jinn\n😂 Count Dooku\n😮 Yoda\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-038",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-039",
@@ -611,7 +1361,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-039.jpg",
     "caption": "QUIZ TIME! What armored identity does James Rhodes use?\nA) Ant-Man\nB) Vision\nC) War Machine\nD) Falcon\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-139",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "What armored identity does James Rhodes use?",
+    "options": [
+      "Ant-Man",
+      "Vision",
+      "War Machine",
+      "Falcon"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-139.jpg",
+    "caption": "QUIZ TIME! What armored identity does James Rhodes use?\n👍 Ant-Man\n❤️ Vision\n😂 War Machine\n😮 Falcon\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-039",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-040",
@@ -627,7 +1397,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-040.jpg",
     "caption": "QUIZ TIME! What currency is used in many Zelda games?\nA) Gil\nB) Rupees\nC) Rings\nD) Bells\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-140",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What currency is used in many Zelda games?",
+    "options": [
+      "Gil",
+      "Rupees",
+      "Rings",
+      "Bells"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-140.jpg",
+    "caption": "QUIZ TIME! What currency is used in many Zelda games?\n👍 Gil\n❤️ Rupees\n😂 Rings\n😮 Bells\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-040",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-041",
@@ -643,7 +1433,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-041.jpg",
     "caption": "QUIZ TIME! What is the name of Naruto's nine-tailed beast?\nA) Kurama\nB) Shukaku\nC) Gyuki\nD) Matatabi\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-141",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What is the name of Naruto's nine-tailed beast?",
+    "options": [
+      "Kurama",
+      "Shukaku",
+      "Gyuki",
+      "Matatabi"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-141.jpg",
+    "caption": "QUIZ TIME! What is the name of Naruto's nine-tailed beast?\n👍 Kurama\n❤️ Shukaku\n😂 Gyuki\n😮 Matatabi\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-041",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-042",
@@ -659,7 +1469,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-042.jpg",
     "caption": "QUIZ TIME! Which Straw Hat pirate is a doctor?\nA) Franky\nB) Usopp\nC) Brook\nD) Chopper\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-142",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which Straw Hat pirate is a doctor?",
+    "options": [
+      "Franky",
+      "Usopp",
+      "Brook",
+      "Chopper"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-142.jpg",
+    "caption": "QUIZ TIME! Which Straw Hat pirate is a doctor?\n👍 Franky\n❤️ Usopp\n😂 Brook\n😮 Chopper\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-042",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-043",
@@ -675,7 +1505,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-043.jpg",
     "caption": "QUIZ TIME! Who is Vegeta's son?\nA) Gohan\nB) Yamcha\nC) Trunks\nD) Goten\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-143",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Vegeta's son?",
+    "options": [
+      "Gohan",
+      "Yamcha",
+      "Trunks",
+      "Goten"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-143.jpg",
+    "caption": "QUIZ TIME! Who is Vegeta's son?\n👍 Gohan\n❤️ Yamcha\n😂 Trunks\n😮 Goten\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-043",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-044",
@@ -691,7 +1541,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-044.jpg",
     "caption": "QUIZ TIME! What position does Harry play in Quidditch?\nA) Chaser\nB) Seeker\nC) Keeper\nD) Beater\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-144",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What position does Harry play in Quidditch?",
+    "options": [
+      "Chaser",
+      "Seeker",
+      "Keeper",
+      "Beater"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-144.jpg",
+    "caption": "QUIZ TIME! What position does Harry play in Quidditch?\n👍 Chaser\n❤️ Seeker\n😂 Keeper\n😮 Beater\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-044",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-045",
@@ -707,7 +1577,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-045.jpg",
     "caption": "QUIZ TIME! Which villain is also called Otto Octavius?\nA) Doctor Octopus\nB) Green Goblin\nC) Mysterio\nD) Sandman\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-145",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which villain is also called Otto Octavius?",
+    "options": [
+      "Doctor Octopus",
+      "Green Goblin",
+      "Mysterio",
+      "Sandman"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-145.jpg",
+    "caption": "QUIZ TIME! Which villain is also called Otto Octavius?\n👍 Doctor Octopus\n❤️ Green Goblin\n😂 Mysterio\n😮 Sandman\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-045",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-046",
@@ -723,7 +1613,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-046.jpg",
     "caption": "QUIZ TIME! Which Minecraft mob drops ender pearls?\nA) Skeleton\nB) Zombie\nC) Spider\nD) Enderman\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-146",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft mob drops ender pearls?",
+    "options": [
+      "Skeleton",
+      "Zombie",
+      "Spider",
+      "Enderman"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-146.jpg",
+    "caption": "QUIZ TIME! Which Minecraft mob drops ender pearls?\n👍 Skeleton\n❤️ Zombie\n😂 Spider\n😮 Enderman\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-046",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-047",
@@ -739,7 +1649,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-047.jpg",
     "caption": "QUIZ TIME! Which Mario power-up grants temporary invincibility?\nA) Super Mushroom\nB) Super Leaf\nC) Super Star\nD) Fire Flower\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-147",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Mario power-up grants temporary invincibility?",
+    "options": [
+      "Super Mushroom",
+      "Super Leaf",
+      "Super Star",
+      "Fire Flower"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-147.jpg",
+    "caption": "QUIZ TIME! Which Mario power-up grants temporary invincibility?\n👍 Super Mushroom\n❤️ Super Leaf\n😂 Super Star\n😮 Fire Flower\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-047",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-048",
@@ -755,7 +1685,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-048.jpg",
     "caption": "QUIZ TIME! What is Han Solo's ship called?\nA) Ghost\nB) Millennium Falcon\nC) Star Destroyer\nD) Razor Crest\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-148",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What is Han Solo's ship called?",
+    "options": [
+      "Ghost",
+      "Millennium Falcon",
+      "Star Destroyer",
+      "Razor Crest"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-148.jpg",
+    "caption": "QUIZ TIME! What is Han Solo's ship called?\n👍 Ghost\n❤️ Millennium Falcon\n😂 Star Destroyer\n😮 Razor Crest\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-048",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-049",
@@ -771,7 +1721,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-049.jpg",
     "caption": "QUIZ TIME! Who is Tony Stark's longtime assistant and partner?\nA) Pepper Potts\nB) Jane Foster\nC) Peggy Carter\nD) Maria Hill\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-149",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Who is Tony Stark's longtime assistant and partner?",
+    "options": [
+      "Pepper Potts",
+      "Jane Foster",
+      "Peggy Carter",
+      "Maria Hill"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-149.jpg",
+    "caption": "QUIZ TIME! Who is Tony Stark's longtime assistant and partner?\n👍 Pepper Potts\n❤️ Jane Foster\n😂 Peggy Carter\n😮 Maria Hill\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-049",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-050",
@@ -787,7 +1757,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-050.jpg",
     "caption": "QUIZ TIME! Who is the princess in The Legend of Zelda?\nA) Peach\nB) Samus\nC) Daisy\nD) Zelda\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-150",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Who is the princess in The Legend of Zelda?",
+    "options": [
+      "Peach",
+      "Samus",
+      "Daisy",
+      "Zelda"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-150.jpg",
+    "caption": "QUIZ TIME! Who is the princess in The Legend of Zelda?\n👍 Peach\n❤️ Samus\n😂 Daisy\n😮 Zelda\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-050",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-051",
@@ -803,7 +1793,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-051.jpg",
     "caption": "QUIZ TIME! What title does Naruto dream of earning?\nA) Soul King\nB) Wizard King\nC) Hokage\nD) Pirate King\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-151",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What title does Naruto dream of earning?",
+    "options": [
+      "Soul King",
+      "Wizard King",
+      "Hokage",
+      "Pirate King"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-151.jpg",
+    "caption": "QUIZ TIME! What title does Naruto dream of earning?\n👍 Soul King\n❤️ Wizard King\n😂 Hokage\n😮 Pirate King\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-051",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-052",
@@ -819,7 +1829,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-052.jpg",
     "caption": "QUIZ TIME! Who gave Luffy his straw hat?\nA) Buggy\nB) Shanks\nC) Garp\nD) Mihawk\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-152",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who gave Luffy his straw hat?",
+    "options": [
+      "Buggy",
+      "Shanks",
+      "Garp",
+      "Mihawk"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-152.jpg",
+    "caption": "QUIZ TIME! Who gave Luffy his straw hat?\n👍 Buggy\n❤️ Shanks\n😂 Garp\n😮 Mihawk\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-052",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-053",
@@ -835,7 +1865,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-053.jpg",
     "caption": "QUIZ TIME! Which planet is Piccolo's species from?\nA) Namek\nB) Vegeta\nC) Earth\nD) Vampa\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-153",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which planet is Piccolo's species from?",
+    "options": [
+      "Namek",
+      "Vegeta",
+      "Earth",
+      "Vampa"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-153.jpg",
+    "caption": "QUIZ TIME! Which planet is Piccolo's species from?\n👍 Namek\n❤️ Vegeta\n😂 Earth\n😮 Vampa\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-053",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-054",
@@ -851,7 +1901,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-054.jpg",
     "caption": "QUIZ TIME! Which Hogwarts house values ambition?\nA) Gryffindor\nB) Hufflepuff\nC) Ravenclaw\nD) Slytherin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-154",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which Hogwarts house values ambition?",
+    "options": [
+      "Gryffindor",
+      "Hufflepuff",
+      "Ravenclaw",
+      "Slytherin"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-154.jpg",
+    "caption": "QUIZ TIME! Which Hogwarts house values ambition?\n👍 Gryffindor\n❤️ Hufflepuff\n😂 Ravenclaw\n😮 Slytherin\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-054",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-055",
@@ -867,7 +1937,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-055.jpg",
     "caption": "QUIZ TIME! Which villain uses a pumpkin-bomb glider?\nA) Rhino\nB) Lizard\nC) Green Goblin\nD) Venom\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-155",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which villain uses a pumpkin-bomb glider?",
+    "options": [
+      "Rhino",
+      "Lizard",
+      "Green Goblin",
+      "Venom"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-155.jpg",
+    "caption": "QUIZ TIME! Which villain uses a pumpkin-bomb glider?\n👍 Rhino\n❤️ Lizard\n😂 Green Goblin\n😮 Venom\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-055",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-056",
@@ -883,7 +1973,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-056.jpg",
     "caption": "QUIZ TIME! Which item lets you glide in Minecraft?\nA) Compass\nB) Elytra\nC) Shield\nD) Trident\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-156",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which item lets you glide in Minecraft?",
+    "options": [
+      "Compass",
+      "Elytra",
+      "Shield",
+      "Trident"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-156.jpg",
+    "caption": "QUIZ TIME! Which item lets you glide in Minecraft?\n👍 Compass\n❤️ Elytra\n😂 Shield\n😮 Trident\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-056",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-057",
@@ -899,7 +2009,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-057.jpg",
     "caption": "QUIZ TIME! Which Mario power-up lets him throw fireballs?\nA) Fire Flower\nB) Super Star\nC) Ice Flower\nD) Mega Mushroom\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-157",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Mario power-up lets him throw fireballs?",
+    "options": [
+      "Fire Flower",
+      "Super Star",
+      "Ice Flower",
+      "Mega Mushroom"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-157.jpg",
+    "caption": "QUIZ TIME! Which Mario power-up lets him throw fireballs?\n👍 Fire Flower\n❤️ Super Star\n😂 Ice Flower\n😮 Mega Mushroom\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-057",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-058",
@@ -915,7 +2045,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-058.jpg",
     "caption": "QUIZ TIME! What species is Chewbacca?\nA) Ewok\nB) Jawa\nC) Rodian\nD) Wookiee\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-158",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What species is Chewbacca?",
+    "options": [
+      "Ewok",
+      "Jawa",
+      "Rodian",
+      "Wookiee"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-158.jpg",
+    "caption": "QUIZ TIME! What species is Chewbacca?\n👍 Ewok\n❤️ Jawa\n😂 Rodian\n😮 Wookiee\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-058",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-059",
@@ -931,7 +2081,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-059.jpg",
     "caption": "QUIZ TIME! Which company does Tony Stark lead?\nA) Oscorp\nB) LexCorp\nC) Stark Industries\nD) Wayne Enterprises\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-159",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which company does Tony Stark lead?",
+    "options": [
+      "Oscorp",
+      "LexCorp",
+      "Stark Industries",
+      "Wayne Enterprises"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-159.jpg",
+    "caption": "QUIZ TIME! Which company does Tony Stark lead?\n👍 Oscorp\n❤️ LexCorp\n😂 Stark Industries\n😮 Wayne Enterprises\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-059",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-060",
@@ -947,7 +2117,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-060.jpg",
     "caption": "QUIZ TIME! What is Link's horse called in Ocarina of Time?\nA) Torrent\nB) Epona\nC) Agro\nD) Roach\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-160",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What is Link's horse called in Ocarina of Time?",
+    "options": [
+      "Torrent",
+      "Epona",
+      "Agro",
+      "Roach"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-160.jpg",
+    "caption": "QUIZ TIME! What is Link's horse called in Ocarina of Time?\n👍 Torrent\n❤️ Epona\n😂 Agro\n😮 Roach\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-060",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-061",
@@ -963,7 +2153,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-061.jpg",
     "caption": "QUIZ TIME! Who leads Team 7 at the start of Naruto?\nA) Kakashi\nB) Itachi\nC) Minato\nD) Iruka\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-161",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who leads Team 7 at the start of Naruto?",
+    "options": [
+      "Kakashi",
+      "Itachi",
+      "Minato",
+      "Iruka"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-161.jpg",
+    "caption": "QUIZ TIME! Who leads Team 7 at the start of Naruto?\n👍 Kakashi\n❤️ Itachi\n😂 Minato\n😮 Iruka\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-061",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-062",
@@ -979,7 +2189,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-062.jpg",
     "caption": "QUIZ TIME! Who is the Straw Hat crew's musician?\nA) Jinbe\nB) Franky\nC) Zoro\nD) Brook\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-162",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is the Straw Hat crew's musician?",
+    "options": [
+      "Jinbe",
+      "Franky",
+      "Zoro",
+      "Brook"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-162.jpg",
+    "caption": "QUIZ TIME! Who is the Straw Hat crew's musician?\n👍 Jinbe\n❤️ Franky\n😂 Zoro\n😮 Brook\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-062",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-063",
@@ -995,7 +2225,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-063.jpg",
     "caption": "QUIZ TIME! Who is Goku's older brother?\nA) Bardock\nB) Broly\nC) Raditz\nD) Nappa\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-163",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Goku's older brother?",
+    "options": [
+      "Bardock",
+      "Broly",
+      "Raditz",
+      "Nappa"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-163.jpg",
+    "caption": "QUIZ TIME! Who is Goku's older brother?\n👍 Bardock\n❤️ Broly\n😂 Raditz\n😮 Nappa\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-063",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-064",
@@ -1011,7 +2261,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-064.jpg",
     "caption": "QUIZ TIME! What is Hermione's surname?\nA) Malfoy\nB) Granger\nC) Weasley\nD) Lovegood\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-164",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What is Hermione's surname?",
+    "options": [
+      "Malfoy",
+      "Granger",
+      "Weasley",
+      "Lovegood"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-164.jpg",
+    "caption": "QUIZ TIME! What is Hermione's surname?\n👍 Malfoy\n❤️ Granger\n😂 Weasley\n😮 Lovegood\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-064",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-065",
@@ -1027,7 +2297,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-065.jpg",
     "caption": "QUIZ TIME! Which Spider-Man villain controls electricity?\nA) Electro\nB) Vulture\nC) Kraven\nD) Kingpin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-165",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which Spider-Man villain controls electricity?",
+    "options": [
+      "Electro",
+      "Vulture",
+      "Kraven",
+      "Kingpin"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-165.jpg",
+    "caption": "QUIZ TIME! Which Spider-Man villain controls electricity?\n👍 Electro\n❤️ Vulture\n😂 Kraven\n😮 Kingpin\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-065",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-066",
@@ -1043,7 +2333,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-066.jpg",
     "caption": "QUIZ TIME! What do you use to tame a Minecraft wolf?\nA) Wheat\nB) Carrots\nC) Seeds\nD) Bones\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-166",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What do you use to tame a Minecraft wolf?",
+    "options": [
+      "Wheat",
+      "Carrots",
+      "Seeds",
+      "Bones"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-166.jpg",
+    "caption": "QUIZ TIME! What do you use to tame a Minecraft wolf?\n👍 Wheat\n❤️ Carrots\n😂 Seeds\n😮 Bones\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-066",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-067",
@@ -1059,7 +2369,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-067.jpg",
     "caption": "QUIZ TIME! What is Mario's dinosaur friend called?\nA) Toad\nB) Diddy Kong\nC) Yoshi\nD) Birdo\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-167",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What is Mario's dinosaur friend called?",
+    "options": [
+      "Toad",
+      "Diddy Kong",
+      "Yoshi",
+      "Birdo"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-167.jpg",
+    "caption": "QUIZ TIME! What is Mario's dinosaur friend called?\n👍 Toad\n❤️ Diddy Kong\n😂 Yoshi\n😮 Birdo\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-067",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-068",
@@ -1075,7 +2405,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-068.jpg",
     "caption": "QUIZ TIME! Which droid speaks in beeps and whistles?\nA) IG-11\nB) R2-D2\nC) C-3PO\nD) K-2SO\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-168",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which droid speaks in beeps and whistles?",
+    "options": [
+      "IG-11",
+      "R2-D2",
+      "C-3PO",
+      "K-2SO"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-168.jpg",
+    "caption": "QUIZ TIME! Which droid speaks in beeps and whistles?\n👍 IG-11\n❤️ R2-D2\n😂 C-3PO\n😮 K-2SO\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-068",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-069",
@@ -1091,7 +2441,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-069.jpg",
     "caption": "QUIZ TIME! Which actor plays Iron Man in the MCU?\nA) Robert Downey Jr.\nB) Chris Evans\nC) Mark Ruffalo\nD) Chris Hemsworth\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-169",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which actor plays Iron Man in the MCU?",
+    "options": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo",
+      "Chris Hemsworth"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-169.jpg",
+    "caption": "QUIZ TIME! Which actor plays Iron Man in the MCU?\n👍 Robert Downey Jr.\n❤️ Chris Evans\n😂 Mark Ruffalo\n😮 Chris Hemsworth\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-069",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-070",
@@ -1107,7 +2477,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-070.jpg",
     "caption": "QUIZ TIME! Which villain often opposes Link and Zelda?\nA) Sephiroth\nB) Bowser\nC) Dr. Eggman\nD) Ganondorf\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-170",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which villain often opposes Link and Zelda?",
+    "options": [
+      "Sephiroth",
+      "Bowser",
+      "Dr. Eggman",
+      "Ganondorf"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-170.jpg",
+    "caption": "QUIZ TIME! Which villain often opposes Link and Zelda?\n👍 Sephiroth\n❤️ Bowser\n😂 Dr. Eggman\n😮 Ganondorf\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-070",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-071",
@@ -1123,7 +2513,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-071.jpg",
     "caption": "QUIZ TIME! Which Naruto character specializes in taijutsu?\nA) Kankuro\nB) Deidara\nC) Rock Lee\nD) Shino\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-171",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which Naruto character specializes in taijutsu?",
+    "options": [
+      "Kankuro",
+      "Deidara",
+      "Rock Lee",
+      "Shino"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-171.jpg",
+    "caption": "QUIZ TIME! Which Naruto character specializes in taijutsu?\n👍 Kankuro\n❤️ Deidara\n😂 Rock Lee\n😮 Shino\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-071",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-072",
@@ -1139,7 +2549,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-072.jpg",
     "caption": "QUIZ TIME! Which pirate uses three swords?\nA) Sanji\nB) Zoro\nC) Shanks\nD) Law\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-172",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which pirate uses three swords?",
+    "options": [
+      "Sanji",
+      "Zoro",
+      "Shanks",
+      "Law"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-172.jpg",
+    "caption": "QUIZ TIME! Which pirate uses three swords?\n👍 Sanji\n❤️ Zoro\n😂 Shanks\n😮 Law\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-072",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-073",
@@ -1155,7 +2585,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-073.jpg",
     "caption": "QUIZ TIME! Who teaches Goku the Kaio-ken?\nA) King Kai\nB) Master Roshi\nC) Whis\nD) Korin\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-173",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who teaches Goku the Kaio-ken?",
+    "options": [
+      "King Kai",
+      "Master Roshi",
+      "Whis",
+      "Korin"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-173.jpg",
+    "caption": "QUIZ TIME! Who teaches Goku the Kaio-ken?\n👍 King Kai\n❤️ Master Roshi\n😂 Whis\n😮 Korin\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-073",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-074",
@@ -1171,7 +2621,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-074.jpg",
     "caption": "QUIZ TIME! Which spell produces light from a wand?\nA) Nox\nB) Accio\nC) Alohomora\nD) Lumos\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-174",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which spell produces light from a wand?",
+    "options": [
+      "Nox",
+      "Accio",
+      "Alohomora",
+      "Lumos"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-174.jpg",
+    "caption": "QUIZ TIME! Which spell produces light from a wand?\n👍 Nox\n❤️ Accio\n😂 Alohomora\n😮 Lumos\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-074",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-075",
@@ -1187,7 +2657,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-075.jpg",
     "caption": "QUIZ TIME! Who is Spider-Man in Into the Spider-Verse?\nA) Bruce Banner\nB) Scott Lang\nC) Miles Morales\nD) Peter Quill\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-175",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Who is Spider-Man in Into the Spider-Verse?",
+    "options": [
+      "Bruce Banner",
+      "Scott Lang",
+      "Miles Morales",
+      "Peter Quill"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-175.jpg",
+    "caption": "QUIZ TIME! Who is Spider-Man in Into the Spider-Verse?\n👍 Bruce Banner\n❤️ Scott Lang\n😂 Miles Morales\n😮 Peter Quill\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-075",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-076",
@@ -1203,7 +2693,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-076.jpg",
     "caption": "QUIZ TIME! Which Minecraft dimension contains the Ender Dragon?\nA) The Deep Dark\nB) The End\nC) The Nether\nD) The Overworld\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-176",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft dimension contains the Ender Dragon?",
+    "options": [
+      "The Deep Dark",
+      "The End",
+      "The Nether",
+      "The Overworld"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-176.jpg",
+    "caption": "QUIZ TIME! Which Minecraft dimension contains the Ender Dragon?\n👍 The Deep Dark\n❤️ The End\n😂 The Nether\n😮 The Overworld\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-076",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-077",
@@ -1219,7 +2729,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-077.jpg",
     "caption": "QUIZ TIME! Which color is Luigi's signature cap?\nA) Green\nB) Red\nC) Yellow\nD) Purple\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-177",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which color is Luigi's signature cap?",
+    "options": [
+      "Green",
+      "Red",
+      "Yellow",
+      "Purple"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-177.jpg",
+    "caption": "QUIZ TIME! Which color is Luigi's signature cap?\n👍 Green\n❤️ Red\n😂 Yellow\n😮 Purple\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-077",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-078",
@@ -1235,7 +2765,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-078.jpg",
     "caption": "QUIZ TIME! Which weapon is used by Jedi and Sith?\nA) Phaser\nB) Trident\nC) Crossbow\nD) Lightsaber\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-178",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which weapon is used by Jedi and Sith?",
+    "options": [
+      "Phaser",
+      "Trident",
+      "Crossbow",
+      "Lightsaber"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-178.jpg",
+    "caption": "QUIZ TIME! Which weapon is used by Jedi and Sith?\n👍 Phaser\n❤️ Trident\n😂 Crossbow\n😮 Lightsaber\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-078",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-079",
@@ -1251,7 +2801,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-079.jpg",
     "caption": "QUIZ TIME! Which team includes Iron Man and Thor?\nA) Fantastic Four\nB) Teen Titans\nC) The Avengers\nD) Justice League\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-179",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which team includes Iron Man and Thor?",
+    "options": [
+      "Fantastic Four",
+      "Teen Titans",
+      "The Avengers",
+      "Justice League"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-179.jpg",
+    "caption": "QUIZ TIME! Which team includes Iron Man and Thor?\n👍 Fantastic Four\n❤️ Teen Titans\n😂 The Avengers\n😮 Justice League\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-079",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-080",
@@ -1267,7 +2837,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-080.jpg",
     "caption": "QUIZ TIME! Which instrument gives Ocarina of Time its title?\nA) Violin\nB) Ocarina\nC) Flute\nD) Harp\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-180",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which instrument gives Ocarina of Time its title?",
+    "options": [
+      "Violin",
+      "Ocarina",
+      "Flute",
+      "Harp"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-180.jpg",
+    "caption": "QUIZ TIME! Which instrument gives Ocarina of Time its title?\n👍 Violin\n❤️ Ocarina\n😂 Flute\n😮 Harp\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-080",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-081",
@@ -1283,7 +2873,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-081.jpg",
     "caption": "QUIZ TIME! Who is Sasuke's older brother?\nA) Itachi\nB) Obito\nC) Madara\nD) Shisui\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-181",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Sasuke's older brother?",
+    "options": [
+      "Itachi",
+      "Obito",
+      "Madara",
+      "Shisui"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-181.jpg",
+    "caption": "QUIZ TIME! Who is Sasuke's older brother?\n👍 Itachi\n❤️ Obito\n😂 Madara\n😮 Shisui\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-081",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-082",
@@ -1299,7 +2909,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-082.jpg",
     "caption": "QUIZ TIME! What is the Straw Hats' first ship called?\nA) Thousand Sunny\nB) Red Force\nC) Moby Dick\nD) Going Merry\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-182",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What is the Straw Hats' first ship called?",
+    "options": [
+      "Thousand Sunny",
+      "Red Force",
+      "Moby Dick",
+      "Going Merry"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-182.jpg",
+    "caption": "QUIZ TIME! What is the Straw Hats' first ship called?\n👍 Thousand Sunny\n❤️ Red Force\n😂 Moby Dick\n😮 Going Merry\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-082",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-083",
@@ -1315,7 +2945,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-083.jpg",
     "caption": "QUIZ TIME! What color is a classic Super Saiyan's hair?\nA) Red\nB) Silver\nC) Gold\nD) Blue\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-183",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "What color is a classic Super Saiyan's hair?",
+    "options": [
+      "Red",
+      "Silver",
+      "Gold",
+      "Blue"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-183.jpg",
+    "caption": "QUIZ TIME! What color is a classic Super Saiyan's hair?\n👍 Red\n❤️ Silver\n😂 Gold\n😮 Blue\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-083",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-084",
@@ -1331,7 +2981,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-084.jpg",
     "caption": "QUIZ TIME! What is Hagrid's three-headed dog called?\nA) Buckbeak\nB) Fluffy\nC) Fang\nD) Aragog\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-184",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What is Hagrid's three-headed dog called?",
+    "options": [
+      "Buckbeak",
+      "Fluffy",
+      "Fang",
+      "Aragog"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-184.jpg",
+    "caption": "QUIZ TIME! What is Hagrid's three-headed dog called?\n👍 Buckbeak\n❤️ Fluffy\n😂 Fang\n😮 Aragog\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-084",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-085",
@@ -1347,7 +3017,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-085.jpg",
     "caption": "QUIZ TIME! What does Spider-Man use to swing between buildings?\nA) Webs\nB) Wings\nC) A jetpack\nD) A magic cape\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-185",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "What does Spider-Man use to swing between buildings?",
+    "options": [
+      "Webs",
+      "Wings",
+      "A jetpack",
+      "A magic cape"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-185.jpg",
+    "caption": "QUIZ TIME! What does Spider-Man use to swing between buildings?\n👍 Webs\n❤️ Wings\n😂 A jetpack\n😮 A magic cape\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-085",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-086",
@@ -1363,7 +3053,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-086.jpg",
     "caption": "QUIZ TIME! Which Minecraft item lets you sleep through the night?\nA) Chest\nB) Furnace\nC) Crafting Table\nD) Bed\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-186",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Minecraft item lets you sleep through the night?",
+    "options": [
+      "Chest",
+      "Furnace",
+      "Crafting Table",
+      "Bed"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-186.jpg",
+    "caption": "QUIZ TIME! Which Minecraft item lets you sleep through the night?\n👍 Chest\n❤️ Furnace\n😂 Crafting Table\n😮 Bed\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-086",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-087",
@@ -1379,7 +3089,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-087.jpg",
     "caption": "QUIZ TIME! Which item is a common currency in Mario games?\nA) Rings\nB) Bottle caps\nC) Coins\nD) Rupees\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-187",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which item is a common currency in Mario games?",
+    "options": [
+      "Rings",
+      "Bottle caps",
+      "Coins",
+      "Rupees"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-187.jpg",
+    "caption": "QUIZ TIME! Which item is a common currency in Mario games?\n👍 Rings\n❤️ Bottle caps\n😂 Coins\n😮 Rupees\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-087",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-088",
@@ -1395,7 +3125,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-088.jpg",
     "caption": "QUIZ TIME! What is the Empire's planet-destroying station called?\nA) Borg Cube\nB) Death Star\nC) Stark Tower\nD) Citadel\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-188",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "What is the Empire's planet-destroying station called?",
+    "options": [
+      "Borg Cube",
+      "Death Star",
+      "Stark Tower",
+      "Citadel"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-188.jpg",
+    "caption": "QUIZ TIME! What is the Empire's planet-destroying station called?\n👍 Borg Cube\n❤️ Death Star\n😂 Stark Tower\n😮 Citadel\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-088",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-089",
@@ -1411,7 +3161,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-089.jpg",
     "caption": "QUIZ TIME! Which AI assists Tony Stark in the first Iron Man film?\nA) JARVIS\nB) FRIDAY\nC) EDITH\nD) Ultron\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-189",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which AI assists Tony Stark in the first Iron Man film?",
+    "options": [
+      "JARVIS",
+      "FRIDAY",
+      "EDITH",
+      "Ultron"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-189.jpg",
+    "caption": "QUIZ TIME! Which AI assists Tony Stark in the first Iron Man film?\n👍 JARVIS\n❤️ FRIDAY\n😂 EDITH\n😮 Ultron\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-089",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-090",
@@ -1427,7 +3197,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-090.jpg",
     "caption": "QUIZ TIME! How many pieces form the Triforce?\nA) Two\nB) Four\nC) Five\nD) Three\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-190",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "How many pieces form the Triforce?",
+    "options": [
+      "Two",
+      "Four",
+      "Five",
+      "Three"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-190.jpg",
+    "caption": "QUIZ TIME! How many pieces form the Triforce?\n👍 Two\n❤️ Four\n😂 Five\n😮 Three\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-090",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-091",
@@ -1443,7 +3233,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-091.jpg",
     "caption": "QUIZ TIME! Which village is Gaara from?\nA) Kirigakure\nB) Kumogakure\nC) Sunagakure\nD) Konoha\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 0
+    "artworkIndex": 0,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-191",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which village is Gaara from?",
+    "options": [
+      "Kirigakure",
+      "Kumogakure",
+      "Sunagakure",
+      "Konoha"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-191.jpg",
+    "caption": "QUIZ TIME! Which village is Gaara from?\n👍 Kirigakure\n❤️ Kumogakure\n😂 Sunagakure\n😮 Konoha\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 0,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-091",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-092",
@@ -1459,7 +3269,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-092.jpg",
     "caption": "QUIZ TIME! Which Straw Hat pirate is an archaeologist?\nA) Usopp\nB) Nico Robin\nC) Nami\nD) Chopper\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 1
+    "artworkIndex": 1,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-192",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Which Straw Hat pirate is an archaeologist?",
+    "options": [
+      "Usopp",
+      "Nico Robin",
+      "Nami",
+      "Chopper"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-192.jpg",
+    "caption": "QUIZ TIME! Which Straw Hat pirate is an archaeologist?\n👍 Usopp\n❤️ Nico Robin\n😂 Nami\n😮 Chopper\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 1,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-092",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-093",
@@ -1475,7 +3305,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-093.jpg",
     "caption": "QUIZ TIME! Who is Goku's wife?\nA) Chi-Chi\nB) Bulma\nC) Videl\nD) Android 18\n\nYour guess? No Googling! Comment below!\n#PopCulture #Anime #Trivia #Quiz",
-    "artworkIndex": 2
+    "artworkIndex": 2,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-193",
+    "kind": "quiz",
+    "category": "Anime",
+    "question": "Who is Goku's wife?",
+    "options": [
+      "Chi-Chi",
+      "Bulma",
+      "Videl",
+      "Android 18"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-193.jpg",
+    "caption": "QUIZ TIME! Who is Goku's wife?\n👍 Chi-Chi\n❤️ Bulma\n😂 Videl\n😮 Android 18\n\nReact with your answer!\n#PopCulture #Anime #Trivia #Gaming #Movies",
+    "artworkIndex": 2,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-093",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-094",
@@ -1491,7 +3341,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-094.jpg",
     "caption": "QUIZ TIME! Which object sorts new Hogwarts students?\nA) Goblet of Fire\nB) Magic Mirror\nC) Elder Wand\nD) Sorting Hat\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 3
+    "artworkIndex": 3,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-194",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Which object sorts new Hogwarts students?",
+    "options": [
+      "Goblet of Fire",
+      "Magic Mirror",
+      "Elder Wand",
+      "Sorting Hat"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-194.jpg",
+    "caption": "QUIZ TIME! Which object sorts new Hogwarts students?\n👍 Goblet of Fire\n❤️ Magic Mirror\n😂 Elder Wand\n😮 Sorting Hat\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 3,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-094",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-095",
@@ -1507,7 +3377,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-095.jpg",
     "caption": "QUIZ TIME! Which Spider-Man villain is a symbiote?\nA) Mysterio\nB) Shocker\nC) Venom\nD) Vulture\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 4
+    "artworkIndex": 4,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-195",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which Spider-Man villain is a symbiote?",
+    "options": [
+      "Mysterio",
+      "Shocker",
+      "Venom",
+      "Vulture"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-195.jpg",
+    "caption": "QUIZ TIME! Which Spider-Man villain is a symbiote?\n👍 Mysterio\n❤️ Shocker\n😂 Venom\n😮 Vulture\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 4,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-095",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-096",
@@ -1523,7 +3413,27 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-096.jpg",
     "caption": "QUIZ TIME! What do you use to breed Minecraft cows?\nA) Apples\nB) Wheat\nC) Bones\nD) Fish\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 5
+    "artworkIndex": 5,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-196",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "What do you use to breed Minecraft cows?",
+    "options": [
+      "Apples",
+      "Wheat",
+      "Bones",
+      "Fish"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-196.jpg",
+    "caption": "QUIZ TIME! What do you use to breed Minecraft cows?\n👍 Apples\n❤️ Wheat\n😂 Bones\n😮 Fish\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 5,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-096",
+    "answerReaction": "❤️"
   },
   {
     "id": "quiz-097",
@@ -1539,7 +3449,27 @@
     "answer": "A",
     "image": "pop-culture/cards/quiz-097.jpg",
     "caption": "QUIZ TIME! Which Mario series features kart racing?\nA) Mario Kart\nB) Mario Party\nC) Paper Mario\nD) Mario Golf\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 6
+    "artworkIndex": 6,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-197",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Mario series features kart racing?",
+    "options": [
+      "Mario Kart",
+      "Mario Party",
+      "Paper Mario",
+      "Mario Golf"
+    ],
+    "answer": "A",
+    "image": "pop-culture/cards/quiz-197.jpg",
+    "caption": "QUIZ TIME! Which Mario series features kart racing?\n👍 Mario Kart\n❤️ Mario Party\n😂 Paper Mario\n😮 Mario Golf\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 6,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-097",
+    "answerReaction": "👍"
   },
   {
     "id": "quiz-098",
@@ -1555,7 +3485,27 @@
     "answer": "D",
     "image": "pop-culture/cards/quiz-098.jpg",
     "caption": "QUIZ TIME! Who is the Emperor in the original Star Wars trilogy?\nA) Snoke\nB) Thrawn\nC) Tarkin\nD) Palpatine\n\nYour guess? No Googling! Comment below!\n#PopCulture #Movies #Trivia #Quiz",
-    "artworkIndex": 7
+    "artworkIndex": 7,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-198",
+    "kind": "quiz",
+    "category": "Movies",
+    "question": "Who is the Emperor in the original Star Wars trilogy?",
+    "options": [
+      "Snoke",
+      "Thrawn",
+      "Tarkin",
+      "Palpatine"
+    ],
+    "answer": "D",
+    "image": "pop-culture/cards/quiz-198.jpg",
+    "caption": "QUIZ TIME! Who is the Emperor in the original Star Wars trilogy?\n👍 Snoke\n❤️ Thrawn\n😂 Tarkin\n😮 Palpatine\n\nReact with your answer!\n#PopCulture #Movies #Trivia #Gaming #Movies",
+    "artworkIndex": 7,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-098",
+    "answerReaction": "😮"
   },
   {
     "id": "quiz-099",
@@ -1571,7 +3521,27 @@
     "answer": "C",
     "image": "pop-culture/cards/quiz-099.jpg",
     "caption": "QUIZ TIME! Which hero does Tony recruit in Captain America: Civil War?\nA) Wolverine\nB) Deadpool\nC) Spider-Man\nD) Daredevil\n\nYour guess? No Googling! Comment below!\n#PopCulture #Heroes #Trivia #Quiz",
-    "artworkIndex": 8
+    "artworkIndex": 8,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-199",
+    "kind": "quiz",
+    "category": "Heroes",
+    "question": "Which hero does Tony recruit in Captain America: Civil War?",
+    "options": [
+      "Wolverine",
+      "Deadpool",
+      "Spider-Man",
+      "Daredevil"
+    ],
+    "answer": "C",
+    "image": "pop-culture/cards/quiz-199.jpg",
+    "caption": "QUIZ TIME! Which hero does Tony recruit in Captain America: Civil War?\n👍 Wolverine\n❤️ Deadpool\n😂 Spider-Man\n😮 Daredevil\n\nReact with your answer!\n#PopCulture #Heroes #Trivia #Gaming #Movies",
+    "artworkIndex": 8,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-099",
+    "answerReaction": "😂"
   },
   {
     "id": "quiz-100",
@@ -1587,6 +3557,26 @@
     "answer": "B",
     "image": "pop-culture/cards/quiz-100.jpg",
     "caption": "QUIZ TIME! Which Zelda game features the Great Sea?\nA) Majora's Mask\nB) The Wind Waker\nC) Twilight Princess\nD) Skyward Sword\n\nYour guess? No Googling! Comment below!\n#PopCulture #Gaming #Trivia #Quiz",
-    "artworkIndex": 9
+    "artworkIndex": 9,
+    "answerFormat": "letters"
+  },
+  {
+    "id": "quiz-200",
+    "kind": "quiz",
+    "category": "Gaming",
+    "question": "Which Zelda game features the Great Sea?",
+    "options": [
+      "Majora's Mask",
+      "The Wind Waker",
+      "Twilight Princess",
+      "Skyward Sword"
+    ],
+    "answer": "B",
+    "image": "pop-culture/cards/quiz-200.jpg",
+    "caption": "QUIZ TIME! Which Zelda game features the Great Sea?\n👍 Majora's Mask\n❤️ The Wind Waker\n😂 Twilight Princess\n😮 Skyward Sword\n\nReact with your answer!\n#PopCulture #Gaming #Trivia #Gaming #Movies",
+    "artworkIndex": 9,
+    "answerFormat": "reactions",
+    "sourceQuizId": "quiz-100",
+    "answerReaction": "❤️"
   }
 ]

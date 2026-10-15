@@ -1,3 +1,4 @@
+import { alternatingCards } from './quiz-alternation.js';
 import { readFile, writeFile, rename } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { queuedPosts, graphql, createPost, getPost } from './buffer.js';
@@ -39,7 +40,7 @@ export function planImageBatch(state, cards, now=new Date()) {
   if (state.imageBatch && !state.imageBatch.completed) return state.imageBatch;
   const used = new Set(Object.entries(state.newImages||{})
     .filter(([,v])=>v.status!=='rejected').map(([id])=>id));
-  return {window, cardIds:cards.filter(c=>!used.has(c.id)).slice(0,8).map(c=>c.id),completed:false};
+  return {window, cardIds:(cards.some(c=>c.answerFormat==='reactions') ? alternatingCards(state,cards) : cards.filter(c=>!used.has(c.id)).slice(0,8)).map(c=>c.id),completed:false};
 }
 async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,log}) {
   state.newImages??={};
@@ -83,13 +84,13 @@ async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,lo
   }
   if(!dryRun) {batch.completed=true;await persist(state);}
   log('New scheduled Facebook images: '+added);
-  if(!batch.cardIds.length) log('All 100 approved quizzes have been used');
+  if(!batch.cardIds.length) log('All 200 quiz cards have been used');
 }
 export async function syncImages({dryRun=false,log=console.log}={}){
   const cards=JSON.parse(await readFile('pop-culture/questions.json','utf8'));
   const state=JSON.parse(await readFile(statePath,'utf8'));
   state.replacements??={};
-  if(cards.length!==100)throw Error('Expected 100 cards');
+  if(cards.length!==200)throw Error('Expected 100 original and 100 reaction cards');
   const {env,channels}=await resolveQueueChannels(['facebook']);
   const channel=channels[0];
   if(channel.isQueuePaused||channel.isLocked||channel.isDisconnected)throw Error('Facebook channel unavailable');

@@ -2,13 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { imageSlots, imageInput, planImageBatch } from '../src/pop-culture-images.js';
-const posts = JSON.parse(await readFile(new URL('../pop-culture/questions.json', import.meta.url)));
-test('100 original English cards with unique IDs and valid image names', () => {
-  assert.equal(posts.length, 100);
-  assert.equal(new Set(posts.map(p => p.id)).size, 100);
-  assert.equal(posts.filter(p => p.kind === 'quiz').length, 100);
-  assert.equal(posts.filter(p => p.kind === 'duel').length, 0);
-  for (const p of posts) {
+const catalog = JSON.parse(await readFile(new URL('../pop-culture/questions.json', import.meta.url)));
+const posts = catalog.filter(p=>p.answerFormat !== 'reactions');
+test('200 English cards with unique IDs and valid image names', () => {
+  assert.equal(catalog.length, 200);
+  assert.equal(new Set(catalog.map(p => p.id)).size, 200);
+  assert.equal(catalog.filter(p => p.kind === 'quiz').length, 200);
+  assert.equal(catalog.filter(p => p.kind === 'duel').length, 0);
+  for (const p of catalog) {
     assert.match(p.image, /^pop-culture\/cards\/(quiz-\d{3}\.(?:png|jpe?g)|duel-\d{3}\.png)$/);
     assert.ok(p.question.length && p.options.length === 4);
     assert.ok(p.caption.includes('#PopCulture'));

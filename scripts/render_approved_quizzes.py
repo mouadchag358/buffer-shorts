@@ -2,12 +2,12 @@
 """Render 100 bright English quizzes from the approved pop culture illustration collage."""
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 from pathlib import Path
-import math, json
+import math, json, sys
 
 SOURCE=Path("pop-culture/reference-artwork.jpg")
 DEST=Path("pop-culture/cards")
 FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-CARDS=json.loads(Path("pop-culture/questions.json").read_text())
+CARDS=[c for c in json.loads(Path("pop-culture/questions.json").read_text()) if c.get("answerFormat") != "reactions"]
 QUESTIONS=[(c["category"].upper(),c["question"],c["options"]) for c in CARDS]
 PALETTES=[
  ("#41A6F2","#FFB43A"),("#42C9EF","#FFDB74"),("#5468F1","#57DFFB"),
@@ -30,7 +30,32 @@ def wrap(draw,txt,sz,width,maxlines=2):
   if len(lines)<=maxlines and all(draw.textbbox((0,0),ln,font=font)[2]<=width for ln in lines):
    return font,lines
  raise RuntimeError("Text too long: "+txt)
-def drawcard(source,i):
+def reaction(d, cx, cy, k):
+ r=31
+ if k==0:
+  d.ellipse((cx-r,cy-r,cx+r,cy+r),fill="#1877F2",outline="white",width=2)
+  # A white hand with raised thumb, matching the Facebook Like reaction.
+  d.rounded_rectangle((cx-15,cy-2,cx-6,cy+18),radius=2,fill="white")
+  d.polygon([(cx-3,cy-1),(cx+3,cy-10),(cx+4,cy-21),(cx+9,cy-23),(cx+13,cy-18),(cx+11,cy-6),(cx+22,cy-6),(cx+24,cy-1),(cx+20,cy+18),(cx-3,cy+18)],fill="white")
+ elif k==1:
+  d.ellipse((cx-r,cy-r,cx+r,cy+r),fill="#F83358",outline="white",width=2)
+  d.ellipse((cx-20,cy-15,cx+1,cy+6),fill="white")
+  d.ellipse((cx-1,cy-15,cx+20,cy+6),fill="white")
+  d.polygon([(cx-19,cy),(cx+19,cy),(cx,cy+22)],fill="white")
+ else:
+  d.ellipse((cx-r,cy-r,cx+r,cy+r),fill="#FFD43B",outline="white",width=2)
+  if k==2:
+   for dx in [-13,13]:
+    d.line([(cx+dx-6,cy-7),(cx+dx,cy-12),(cx+dx+6,cy-7)],fill="#37230A",width=4)
+   d.pieslice((cx-19,cy-9,cx+19,cy+22),0,180,fill="#37230A")
+   d.ellipse((cx-10,cy+11,cx+10,cy+22),fill="#F16A71")
+  else:
+   for dx in [-11,11]:
+    d.ellipse((cx+dx-3,cy-13,cx+dx+3,cy-3),fill="#37230A")
+    d.arc((cx+dx-6,cy-23,cx+dx+6,cy-12),190,345,fill="#37230A",width=3)
+   d.ellipse((cx-7,cy+2,cx+7,cy+23),fill="#37230A")
+
+def drawcard(source,i,reactions=False):
  category,question,options=QUESTIONS[i]
  art_index=CARDS[i].get("artworkIndex",i)
  row,col=divmod(art_index,5)
@@ -81,11 +106,12 @@ def drawcard(source,i):
   d.rounded_rectangle((x,y,x+482,y+96),radius=23,fill=fill,outline="#1A2343",width=8)
   d.rounded_rectangle((x+11,y+9,x+470,y+25),radius=10,fill="white")
   d.ellipse((x+15,y+15,x+80,y+81),fill="#182442",outline="white",width=4)
-  d.text((x+47,y+49),"ABCD"[k],anchor="mm",font=f(38),fill="white")
+  if reactions: reaction(d,x+47,y+49,k)
+  else: d.text((x+47,y+49),"ABCD"[k],anchor="mm",font=f(38),fill="white")
   optfont,_=wrap(d,opt,32,370,1)
   d.text((x+93,y+46),opt,font=optfont,fill="#102040",anchor="lm")
- d.text((540,1042),"COMMENT A, B, C OR D!",font=f(31),fill="white",anchor="mm",stroke_width=4,stroke_fill="#18223C")
- target=DEST/("quiz-%03d.jpg"%(i+1))
+ d.text((540,1042),("REACT WITH YOUR ANSWER!" if reactions else "COMMENT A, B, C OR D!"),font=f(31),fill="white",anchor="mm",stroke_width=4,stroke_fill="#18223C")
+ target=DEST/("quiz-%03d.jpg"%(i+101 if reactions else i+1))
  img.save(target,format="JPEG",quality=92,optimize=True,progressive=True,subsampling=0)
  if target.stat().st_size<70000:raise RuntimeError("Suspicious output size: "+str(target))
  print("Rendered",target,target.stat().st_size)
@@ -94,5 +120,7 @@ def main():
  DEST.mkdir(exist_ok=True,parents=True)
  image=Image.open(SOURCE).convert("RGB")
  if image.width<900 or image.height<900:raise ValueError("Approved illustration too small")
- for i in range(len(CARDS)):drawcard(image,i)
+ for i in range(len(CARDS)):
+  if "--reactions-only" not in sys.argv: drawcard(image,i)
+  drawcard(image,i,True)
 if __name__=="__main__":main()

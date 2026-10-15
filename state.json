@@ -3896,10 +3896,12 @@
       "youtubeTitleUpdatedTo": "Did You Catch That? 👀 #Shorts #Viral"
     },
     "[\"r2-5da8469fb0866a8a50dedcf9c0a405e5dcb3e7ad87a176ac54a4b9aeb423ba59\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-17T18:00:00.000Z",
-      "updatedAt": "2026-10-15T23:05:39.784Z"
+      "updatedAt": "2026-10-15T23:05:39.784Z",
+      "bufferId": "6ad15c4ae991a49db3b99020",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

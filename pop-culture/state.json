@@ -136,45 +136,12 @@
       "bufferId": "6ace72980e262818467058d9",
       "bufferStatus": "scheduled"
     },
-    "quiz-012": {
-      "status": "queued",
-      "dueAt": "2026-10-15T18:00:00.000Z",
-      "bufferId": "6ace729bbc13a192515c0b41",
-      "bufferStatus": "scheduled"
-    },
-    "quiz-013": {
-      "status": "queued",
-      "dueAt": "2026-10-16T00:00:00.000Z",
-      "bufferId": "6acf0f8b848c31c8095e913a",
-      "bufferStatus": "scheduled"
-    },
-    "quiz-014": {
-      "status": "queued",
-      "dueAt": "2026-10-16T06:00:00.000Z",
-      "bufferId": "6acf0f8d0ab87a16c8e3624f",
-      "bufferStatus": "scheduled"
-    },
-    "quiz-015": {
-      "status": "queued",
-      "dueAt": "2026-10-16T12:00:00.000Z",
-      "bufferId": "6acf0f90b610c3011fa086d7",
-      "bufferStatus": "scheduled"
-    },
-    "quiz-016": {
-      "status": "queued",
-      "dueAt": "2026-10-16T18:00:00.000Z",
-      "bufferId": "6acfbbe8c3d6c8430112bbbe",
-      "bufferStatus": "scheduled"
-    },
-    "quiz-017": {
-      "status": "queued",
-      "dueAt": "2026-10-17T00:00:00.000Z",
-      "bufferId": "6acfbbeccb8f9e84a35908b2",
-      "bufferStatus": "scheduled"
-    },
     "quiz-018": {
-      "status": "sending",
-      "dueAt": "2026-10-17T06:00:00.000Z"
+      "status": "held",
+      "dueAt": "2026-10-17T06:00:00.000Z",
+      "priorStatus": "sending",
+      "holdReason": "Legacy delivery unconfirmed; excluded from automatic retry",
+      "heldAt": "2026-10-15T16:14:57.624Z"
     }
   },
   "restart": {
@@ -207,18 +174,91 @@
       }
     }
   },
-  "imageBatch": {
-    "window": "41480",
-    "cardIds": [
-      "quiz-013",
-      "quiz-014",
-      "quiz-015",
-      "quiz-016",
-      "quiz-017",
-      "quiz-018",
-      "quiz-019",
-      "quiz-020"
+  "alternation": {
+    "version": 1,
+    "completed": false,
+    "startedAt": "2026-10-15T16:14:57.625Z",
+    "originalEntries": [
+      {
+        "oldId": "quiz-012",
+        "status": "queued",
+        "dueAt": "2026-10-15T18:00:00.000Z",
+        "bufferId": "6ace729bbc13a192515c0b41",
+        "bufferStatus": "scheduled"
+      },
+      {
+        "oldId": "quiz-013",
+        "status": "queued",
+        "dueAt": "2026-10-16T00:00:00.000Z",
+        "bufferId": "6acf0f8b848c31c8095e913a",
+        "bufferStatus": "scheduled"
+      },
+      {
+        "oldId": "quiz-014",
+        "status": "queued",
+        "dueAt": "2026-10-16T06:00:00.000Z",
+        "bufferId": "6acf0f8d0ab87a16c8e3624f",
+        "bufferStatus": "scheduled"
+      },
+      {
+        "oldId": "quiz-015",
+        "status": "queued",
+        "dueAt": "2026-10-16T12:00:00.000Z",
+        "bufferId": "6acf0f90b610c3011fa086d7",
+        "bufferStatus": "scheduled"
+      },
+      {
+        "oldId": "quiz-016",
+        "status": "queued",
+        "dueAt": "2026-10-16T18:00:00.000Z",
+        "bufferId": "6acfbbe8c3d6c8430112bbbe",
+        "bufferStatus": "scheduled"
+      },
+      {
+        "oldId": "quiz-017",
+        "status": "queued",
+        "dueAt": "2026-10-17T00:00:00.000Z",
+        "bufferId": "6acfbbeccb8f9e84a35908b2",
+        "bufferStatus": "scheduled"
+      }
     ],
-    "completed": false
+    "edits": [
+      {
+        "postId": "6ace729bbc13a192515c0b41",
+        "dueAt": "2026-10-15T18:00:00.000Z",
+        "cardId": "quiz-101",
+        "status": "pending"
+      },
+      {
+        "postId": "6acf0f8b848c31c8095e913a",
+        "dueAt": "2026-10-16T00:00:00.000Z",
+        "cardId": "quiz-012",
+        "status": "pending"
+      },
+      {
+        "postId": "6acf0f8d0ab87a16c8e3624f",
+        "dueAt": "2026-10-16T06:00:00.000Z",
+        "cardId": "quiz-102",
+        "status": "pending"
+      },
+      {
+        "postId": "6acf0f90b610c3011fa086d7",
+        "dueAt": "2026-10-16T12:00:00.000Z",
+        "cardId": "quiz-013",
+        "status": "pending"
+      },
+      {
+        "postId": "6acfbbe8c3d6c8430112bbbe",
+        "dueAt": "2026-10-16T18:00:00.000Z",
+        "cardId": "quiz-103",
+        "status": "pending"
+      },
+      {
+        "postId": "6acfbbeccb8f9e84a35908b2",
+        "dueAt": "2026-10-17T00:00:00.000Z",
+        "cardId": "quiz-014",
+        "status": "pending"
+      }
+    ]
   }
 }

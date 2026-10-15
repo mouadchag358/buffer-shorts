@@ -27,7 +27,13 @@ async function main(){
   if(!['sending','uncertain'].includes(v.status))continue;
   const card=cards.find(c=>c.id===id);
   const found=remote.filter(p=>p.channelId===channel.id&&p.text?.trim()===card?.caption.trim()&&Date.parse(p.dueAt)===Date.parse(v.dueAt));
-  if(found.length!==1)throw Error('Cannot reconcile interrupted quiz delivery '+id);
+  if(found.length>1)throw Error('Multiple matches for interrupted quiz delivery '+id);
+  if(found.length===0){
+   // Preserve the unresolved delivery and exclude it permanently from automatic retries.
+   // It is absent from the complete scheduled/sending queue; never create it again.
+   Object.assign(v,{priorStatus:v.status,status:'held',holdReason:'Legacy delivery unconfirmed; excluded from automatic retry',heldAt:new Date().toISOString()});
+   console.log('Held legacy uncertain delivery without retry',id);continue;
+  }
   Object.assign(v,{status:'queued',bufferId:found[0].id,bufferStatus:found[0].status});
  }
  if(!state.alternation){

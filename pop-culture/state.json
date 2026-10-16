@@ -220,6 +220,10 @@
       "dueAt": "2026-10-18T18:00:00.000Z",
       "bufferId": "6ad25639dcd88593548bece1",
       "bufferStatus": "scheduled"
+    },
+    "quiz-019": {
+      "status": "sending",
+      "dueAt": "2026-10-19T00:00:00.000Z"
     }
   },
   "restart": {

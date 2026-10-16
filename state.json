@@ -3979,10 +3979,12 @@
       "youtubeTitleUpdatedTo": "Wait... What Do You Think? 😳 #Shorts #Viral"
     },
     "[\"r2-c27dfb2884e0ff9cf0448c803e8706fb443ab451f97b335155130205130173d4\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-18T12:00:00.000Z",
-      "updatedAt": "2026-10-16T14:53:12.771Z"
+      "updatedAt": "2026-10-16T14:53:12.771Z",
+      "bufferId": "6ad23a60193eb243e2c0277c",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

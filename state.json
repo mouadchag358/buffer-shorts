@@ -3735,13 +3735,15 @@
       "sentAt": "2026-10-15T18:02:06.509Z"
     },
     "[\"r2-ca51832db5e4d96903eb593dc35e24cd097215fe72afeeb3bfccc07dca90fa6d\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-16T00:00:00.000Z",
       "updatedAt": "2026-10-14T04:57:22.744Z",
       "bufferId": "6acf0bbe848c31c8095d9ae4",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z",
+      "externalLink": "https://www.instagram.com/reel/DeiMshjDXUn/",
+      "sentAt": "2026-10-16T00:02:54.183Z"
     },
     "[\"r2-2be28dc8b07c0d5f862fc274304232f21f467eb5945da81dce82fa667f28364d\",\"youtube\"]": {
       "status": "rejected",
@@ -3751,14 +3753,16 @@
       "error": "Invalid post: Video must be vertical (portrait orientation) for YouTube Shorts."
     },
     "[\"r2-7023b0b1f78148fa2c95720910960ca6abe23c0f1f4be002b862d6b3931c11f6\",\"youtube\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-16T00:00:00.000Z",
       "updatedAt": "2026-10-14T04:57:22.744Z",
       "bufferId": "6acf0bc41f3f10bcb7b15734",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z",
-      "youtubeTitleUpdatedTo": "Watch Closely! 👀 #Shorts #Trending"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z",
+      "youtubeTitleUpdatedTo": "Watch Closely! 👀 #Shorts #Trending",
+      "externalLink": "https://www.youtube.com/shorts/UP1zGBFpGmQ",
+      "sentAt": "2026-10-16T00:01:21.664Z"
     },
     "[\"r2-626996ae04363090218ac98106a5426d41a8f3c3cb20d035dbe2d8ce0b60da22\",\"instagram\"]": {
       "status": "queued",
@@ -3767,7 +3771,7 @@
       "updatedAt": "2026-10-14T10:15:52.024Z",
       "bufferId": "6acf5660dd6faa9f508b04a8",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z"
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z"
     },
     "[\"r2-24ee8a3f00675cf152dc93a84efa1487d65803669cbdd075cd6519578ac3a9b5\",\"youtube\"]": {
       "status": "rejected",
@@ -3783,7 +3787,7 @@
       "updatedAt": "2026-10-14T10:15:52.024Z",
       "bufferId": "6acf5669e528a6486acb7699",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z",
       "youtubeTitleUpdatedTo": "One Clip, So Many Reactions! 🤯 #Shorts #Viral"
     },
     "[\"r2-cdb219ebb7979a26442dc6defbff4daaa10936fd0e3eb60e4be894a4dd6dc292\",\"instagram\"]": {
@@ -3793,7 +3797,7 @@
       "updatedAt": "2026-10-14T19:26:51.445Z",
       "bufferId": "6acfd78341e19a94599d6dfb",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z"
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z"
     },
     "[\"r2-fbd07104ebd8fd98b78ef0157bdf3bb059241fad575a034b9a5f9446e671493c\",\"instagram\"]": {
       "status": "queued",
@@ -3802,7 +3806,7 @@
       "updatedAt": "2026-10-14T19:26:51.445Z",
       "bufferId": "6acfd78841e19a94599d6e69",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z"
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z"
     },
     "[\"r2-f8a9cee9324ab80e2394ef903b5b3f093a9b2d7e3f21605d5e7c4a364c7c29ab\",\"youtube\"]": {
       "status": "queued",
@@ -3811,7 +3815,7 @@
       "updatedAt": "2026-10-14T19:26:51.445Z",
       "bufferId": "6acfd78cedcab17b8129d7a9",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z",
       "youtubeTitleUpdatedTo": "Watch and Tell Me What You Think! 👀 #Shorts #Viral"
     },
     "[\"r2-e6fa123177849fe540fbd6774fc605eee2e4081a4a56ec7341bd44aa189f91bc\",\"youtube\"]": {
@@ -3821,7 +3825,7 @@
       "updatedAt": "2026-10-14T19:26:51.445Z",
       "bufferId": "6acfd790edcab17b8129d852",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z",
       "youtubeTitleUpdatedTo": "Rate This Clip from 1 to 10! ⭐ #Shorts #Viral"
     },
     "[\"r2-1a8dc0225387f24d113f0486b4864958448c47dbbb90feffe596734eddf5398c\",\"instagram\"]": {
@@ -3831,7 +3835,7 @@
       "updatedAt": "2026-10-15T04:43:36.008Z",
       "bufferId": "6ad05a06e09e6bdb27e32010",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z"
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z"
     },
     "[\"r2-bbd77fb98eccff8327b79e8484019663b2689e9f93b30e17212cfcc0902a7417\",\"youtube\"]": {
       "status": "rejected",
@@ -3847,7 +3851,7 @@
       "updatedAt": "2026-10-15T04:43:36.008Z",
       "bufferId": "6ad05a0c6ff8a3fe7b387a90",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z",
       "youtubeTitleUpdatedTo": "Watch Closely! 👀 #Shorts #Trending"
     },
     "[\"r2-af32b936bda1e6d8413f89bb1ce0f7f45528f5d79e8307863b7022e534646df9\",\"instagram\"]": {
@@ -3857,7 +3861,7 @@
       "updatedAt": "2026-10-15T09:58:00.029Z",
       "bufferId": "6ad0a3af6742034cc4e71f53",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z"
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z"
     },
     "[\"r2-cf884c6513ab914677b51fc39559407b1a6d8e5be5c1ee04e9fbe5dd7fc09c7c\",\"youtube\"]": {
       "status": "rejected",
@@ -3873,7 +3877,7 @@
       "updatedAt": "2026-10-15T09:58:00.029Z",
       "bufferId": "6ad0a3b768263b283a141134",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z",
       "youtubeTitleUpdatedTo": "How Would You React? 😮 #Shorts #Trending"
     },
     "[\"r2-ed5bd815da4e10efb203bb05de3ce1e2fb392532504b368ee9fcc7f6c2eabb3c\",\"instagram\"]": {
@@ -3883,7 +3887,7 @@
       "updatedAt": "2026-10-15T15:03:48.425Z",
       "bufferId": "6ad0eb5c0d345057f7d07bcb",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z"
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z"
     },
     "[\"r2-48b71548b29344c31b59437ce4d601a102e0a4b83e327b980e7654c93d22c424\",\"youtube\"]": {
       "status": "queued",
@@ -3892,7 +3896,7 @@
       "updatedAt": "2026-10-15T15:03:48.425Z",
       "bufferId": "6ad0eb60c65cf8876b6b4dad",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-15T23:05:39.784Z",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z",
       "youtubeTitleUpdatedTo": "Did You Catch That? 👀 #Shorts #Viral"
     },
     "[\"r2-5da8469fb0866a8a50dedcf9c0a405e5dcb3e7ad87a176ac54a4b9aeb423ba59\",\"instagram\"]": {
@@ -3901,7 +3905,8 @@
       "dueAt": "2026-10-17T18:00:00.000Z",
       "updatedAt": "2026-10-15T23:05:39.784Z",
       "bufferId": "6ad15c4ae991a49db3b99020",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z"
     },
     "[\"r2-04da31aa896eecd766caa67ef0162087dd3fb07e5f7191271cbd7f366d780c17\",\"youtube\"]": {
       "status": "rejected",
@@ -3916,7 +3921,8 @@
       "dueAt": "2026-10-17T18:00:00.000Z",
       "updatedAt": "2026-10-15T23:05:39.784Z",
       "bufferId": "6ad15c51e991a49db3b991c6",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-16T04:35:22.763Z"
     }
   },
   "r2ListingRequests": {

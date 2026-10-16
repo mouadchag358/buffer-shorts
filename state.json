@@ -3985,6 +3985,12 @@
       "updatedAt": "2026-10-16T14:53:12.771Z",
       "bufferId": "6ad23a60193eb243e2c0277c",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-c18700402ae83ea9e8e94941e17672f91814046f415ce5ddf63969f016a5c820\",\"youtube\"]": {
+      "status": "sending",
+      "channelId": "6ac17ba1ea19ca0bde6a0976",
+      "dueAt": "2026-10-18T12:00:00.000Z",
+      "updatedAt": "2026-10-16T14:53:12.771Z"
     }
   },
   "r2ListingRequests": {

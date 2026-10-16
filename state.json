@@ -3949,10 +3949,12 @@
       "youtubeTitleUpdatedTo": "Watch Closely! 👀 #Shorts #Trending"
     },
     "[\"r2-a45cc704c82795ef0fd449e9a70a4eda731eaa61f40398b37982c33d8a415ca6\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-18T06:00:00.000Z",
-      "updatedAt": "2026-10-16T09:53:00.991Z"
+      "updatedAt": "2026-10-16T09:53:00.991Z",
+      "bufferId": "6ad1f40513b2adf7249f664e",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

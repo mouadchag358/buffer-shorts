@@ -3926,10 +3926,12 @@
       "youtubeTitleUpdatedTo": "Did You Notice That? 👀 #Shorts #Viral"
     },
     "[\"r2-7ba4aef459ef6681381fbe7e09e475f499925b3ab79503fca65e632d411121fc\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-18T00:00:00.000Z",
-      "updatedAt": "2026-10-16T04:35:22.763Z"
+      "updatedAt": "2026-10-16T04:35:22.763Z",
+      "bufferId": "6ad1a996e991a49db3c9dde0",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

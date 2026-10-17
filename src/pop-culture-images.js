@@ -37,10 +37,10 @@ export function planImageBatch(state, cards, now=new Date()) {
   const window = String(Math.floor(now.getTime()/(12*60*60*1000)));
   if (state.imageBatch?.window===window) return state.imageBatch;
   // Finish a partially accepted batch before starting another one.
-  if (state.imageBatch && !state.imageBatch.completed) return state.imageBatch;
+  if (state.imageBatch && !state.imageBatch.completed && state.imageBatch.cardIds.every(id=>cards.find(c=>c.id===id)?.answerFormat==='reactions')) return state.imageBatch;
   const used = new Set(Object.entries(state.newImages||{})
     .filter(([,v])=>v.status!=='rejected').map(([id])=>id));
-  return {window, cardIds:(cards.some(c=>c.answerFormat==='reactions') ? alternatingCards(state,cards) : cards.filter(c=>!used.has(c.id)).slice(0,8)).map(c=>c.id),completed:false};
+  return {window, cardIds:alternatingCards(state,cards).map(c=>c.id),completed:false};
 }
 async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,log}) {
   state.newImages??={};
@@ -88,7 +88,7 @@ async function replenishFacebookPhotos({channel,env,remote,state,cards,dryRun,lo
   }
   if(!dryRun) {batch.completed=batch.cardIds.every(id=>state.newImages[id]?.status==='queued');await persist(state);}
   log('New scheduled Facebook images: '+added);
-  if(!batch.cardIds.length) log('All 200 quiz cards have been used');
+  if(!batch.cardIds.length) log('All 100 reaction quiz cards have been used');
 }
 export async function syncImages({dryRun=false,log=console.log}={}){
   const cards=JSON.parse(await readFile('pop-culture/questions.json','utf8'));
@@ -115,7 +115,7 @@ export async function syncImages({dryRun=false,log=console.log}={}){
   if(targets.length!==8 || scheduled.length!==8) { log(JSON.stringify({facebookQueue:remote.length,scheduled:scheduled.length,selected:targets.length,media:scheduled.slice(0,12).map(p=>({id:p.id,status:p.status,dueAt:p.dueAt,assets:(p.assets||[]).map(a=>({hasSource:!!a.source,extension:(a.source||'').split('?')[0].match(/\\.[a-z0-9]{2,5}$/i)?.[0]||null}))}))})); throw Error('Expected 8 scheduled Facebook posts, found '+targets.length); }
   let changed=0;
   for(let i=0;i<targets.length;i++){
-    const target=targets[i],card=cards[i],url=prefix+card.image;
+    const target=targets[i],card=cards.filter(c=>c.answerFormat==='reactions')[i],url=prefix+card.image;
     if(state.replacements[target.id]?.status==='completed' && state.replacements[target.id]?.image===card.image && state.replacements[target.id]?.dueAt===target.dueAt) {log('Replacement already verified '+target.id);continue;}
     const already=target.assets?.some(a=>a.source===url);
     if(already){log('Already replaced '+target.id);continue;}

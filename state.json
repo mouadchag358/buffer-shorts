@@ -4327,7 +4327,11 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec07ae173d6e00d4bd94",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z"
+      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-18T01:10:00.000Z"
+      }
     },
     "[\"r2-d6f87223424b1216d029cb69d6123b6b9fdd5d85ca58658061d6304a59f40211\",\"facebook\"]": {
       "status": "rejected",

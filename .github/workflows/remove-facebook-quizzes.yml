@@ -1,0 +1,26 @@
+name: Remove scheduled Facebook quizzes
+on:
+  push:
+    paths: ['src/remove-facebook-quizzes.js', '.github/workflows/remove-facebook-quizzes.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: buffer-shorts
+  cancel-in-progress: false
+jobs:
+  remove-quizzes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      BUFFER_ORGANIZATION_ID: ${{ vars.BUFFER_ORGANIZATION_ID }}
+      BUFFER_FACEBOOK_CHANNEL_ID: ${{ vars.BUFFER_FACEBOOK_CHANNEL_ID }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts
+      - name: Remove existing Facebook quiz posts (preserve videos)
+        run: node src/remove-facebook-quizzes.js

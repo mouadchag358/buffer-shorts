@@ -16,17 +16,17 @@ const PLATFORM_HASHTAGS = {
 };
 
 const YOUTUBE_HOOK_TITLES = [
-  "Did You Catch That Detail? 👀 #Shorts",
-  "Watch Twice — Something Changes! 🔥 #Shorts",
-  "What Would You Do Here? 😳 #Shorts",
-  "The Ending Is Worth Watching 🎬 #Shorts",
-  "Can You Guess What Happens Next? 🤯 #Shorts",
-  "One Moment, So Many Questions 👀 #Shorts",
-  "Don't Blink During This Part ⚡ #Shorts",
-  "Would You Replay This? 👇 #Shorts",
-  "Did You Expect That? 😲 #Shorts",
-  "Look Closely at This Moment 🔥 #Shorts",
-  "What's the Most Surprising Part? 👀 #Shorts",
+  "Did You Catch That Detail? 👀 #Shorts #Viral",
+  "Watch Twice — Something Changes! 🔥 #Shorts #Viral",
+  "What Would You Do Here? 😳 #Shorts #Viral",
+  "The Ending Is Worth Watching 🎬 #Shorts #Viral",
+  "Can You Guess What Happens Next? 🤯 #Shorts #Viral",
+  "One Moment, So Many Questions 👀 #Shorts #Viral",
+  "Don't Blink During This Part ⚡ #Shorts #Viral",
+  "Would You Replay This? 👇 #Shorts #Viral",
+  "Did You Expect That? 😲 #Shorts #Viral",
+  "Look Closely at This Moment 🔥 #Shorts #Viral",
+  "What's the Most Surprising Part? 👀 #Shorts #Viral",
   "This Clip Gets Better on Replay 🎬 #Shorts"
 ];
 const YOUTUBE_HOOK_DESCRIPTIONS = [
@@ -45,15 +45,15 @@ const YOUTUBE_HOOK_DESCRIPTIONS = [
 ];
 
 const FACEBOOK_CAPTIONS = [
-  "👀 Look closely. What detail stood out to you?\n#FacebookReels #Reels #WatchAgain",
-  "🔥 The part everyone should watch twice. What do you think?\n#FacebookReels #Reels #WatchThis",
-  "😮 Did you see that coming? Tell us your reaction.\n#FacebookReels #Unexpected #Reels",
-  "🎬 Watch until the end, then tell us your favorite moment.\n#FacebookReels #ShortVideos #Reels",
-  "⚡ One small detail makes this clip worth a replay.\n#FacebookReels #Reels #WatchClosely",
-  "🤯 First impression or second watch — did your opinion change?\n#FacebookReels #Reels #WatchAgain",
-  "👀 Which second made you stop scrolling?\n#FacebookReels #ShortClips #Reels",
-  "🔥 This moment deserves another look. Your thoughts?\n#FacebookReels #Reels #Trending",
-  "😲 Be honest: what was your first reaction?\n#FacebookReels #Reels #Unexpected",
+  "👀 Look closely. What detail stood out to you?\n#FacebookReels #Reels #WatchAgain #Viral",
+  "🔥 The part everyone should watch twice. What do you think?\n#FacebookReels #Reels #WatchThis #Viral",
+  "😮 Did you see that coming? Tell us your reaction.\n#FacebookReels #Unexpected #Reels #Viral",
+  "🎬 Watch until the end, then tell us your favorite moment.\n#FacebookReels #ShortVideos #Reels #Viral",
+  "⚡ One small detail makes this clip worth a replay.\n#FacebookReels #Reels #WatchClosely #Viral",
+  "🤯 First impression or second watch — did your opinion change?\n#FacebookReels #Reels #WatchAgain #Viral",
+  "👀 Which second made you stop scrolling?\n#FacebookReels #ShortClips #Reels #Viral",
+  "🔥 This moment deserves another look. Your thoughts?\n#FacebookReels #Reels #Trending #Viral",
+  "😲 Be honest: what was your first reaction?\n#FacebookReels #Reels #Unexpected #Viral",
   "🎥 Which part is your favorite? Drop a timestamp.\n#FacebookReels #Reels #ShortVideos"
 ];
 

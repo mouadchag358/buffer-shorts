@@ -1,44 +1,83 @@
 const zone = 'Africa/Casablanca';
-const formatter = new Intl.DateTimeFormat('en-CA', { timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
-export function localParts(date) { return Object.fromEntries(formatter.formatToParts(date).map(p => [p.type, p.value])); }
+const formatter = new Intl.DateTimeFormat('en-CA', {
+  timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit',
+  hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+});
+export function localParts(date) {
+  return Object.fromEntries(formatter.formatToParts(date).map(p => [p.type, p.value]));
+}
 
-// Quatre publications quotidiennes pour Facebook, Instagram et YouTube.
-// Les nouvelles places commencent le lendemain, en heure du Maroc.
-export function queueTargets(now = new Date(), count = 8) {
+const dayKey = p => `${p.year}-${p.month}-${p.day}`;
+const timeKey = p => `${p.hour}:${p.minute}`;
+
+// Quatre fenêtres distinctes (heure du Maroc), espacées d'au moins 2 heures.
+// Les minutes sont choisies par pas de 5 pour éviter les heures trop mécaniques.
+const windowStarts = [1, 7, 13, 19];
+
+function stableHash(value) {
+  let hash = 2166136261;
+  for (const char of value) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
+  hash ^= hash >>> 16;
+  hash = Math.imul(hash, 0x7feb352d);
+  hash ^= hash >>> 15;
+  hash = Math.imul(hash, 0x846ca68b);
+  return (hash ^ (hash >>> 16)) >>> 0;
+}
+
+// Le même jour et le même réseau donnent les mêmes horaires à chaque sync.
+// Sans ce déterminisme, toutes les vidéos déjà planifiées changeraient sans cesse.
+function dailyTimes(day, platform) {
+  return windowStarts.map((hourStart, index) => {
+    const offset = stableHash(`buffer-shorts:${platform}:${day}:${index}`) % 48;
+    const hour = hourStart + Math.floor(offset / 12);
+    const minute = (offset % 12) * 5;
+    return `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+  });
+}
+
+export function isPlannedVideoSlot(date, platform = 'instagram') {
+  const value = new Date(date);
+  if (!Number.isFinite(value.getTime()) || value.getUTCSeconds() !== 0 || value.getUTCMilliseconds() !== 0) return false;
+  const p = localParts(value);
+  return dailyTimes(dayKey(p), platform).includes(timeKey(p));
+}
+
+// Quatre publications par jour et par réseau, à des heures variables chaque jour.
+// On commence le lendemain et l'on suit automatiquement les changements d'heure.
+export function platformQueueTargets(now = new Date(), platform = 'instagram', count = 8) {
   if (!Number.isInteger(count) || count < 1 || count > 32) throw new Error('Nombre de créneaux invalide');
+  if (!Number.isFinite(new Date(now).getTime())) throw new Error('Date de référence invalide');
+  const today = dayKey(localParts(now));
+  const start = Math.ceil((now.getTime() + 10 * 60000) / 300000) * 300000;
   const targets = [];
-  const nowParts = localParts(now);
-  const today = `${nowParts.year}-${nowParts.month}-${nowParts.day}`;
-  // Round to an exact minute: otherwise Buffer receives 00:00:07, 00:00:33, etc.
-  const startProbe = new Date(Math.ceil((now.getTime() + 10 * 60000) / 60000) * 60000);
-  const allowedHours = new Set(['00', '06', '12', '18']);
-  for (let i = 0; i < (Math.ceil(count / 4) + 10) * 24 * 60; i++) {
-    const date = new Date(startProbe.getTime() + i * 60000);
+  const dailyCache = new Map();
+
+  for (let i = 0; i < (Math.ceil(count / 4) + 5) * 24 * 12; i++) {
+    const date = new Date(start + i * 300000);
     const p = localParts(date);
-    const day = `${p.year}-${p.month}-${p.day}`;
-    if (day === today || p.minute !== '00' || !allowedHours.has(p.hour)) continue;
-    targets.push({ key: `${day}-${p.hour}h00`, dueAt: date.toISOString() });
+    const day = dayKey(p);
+    if (day === today) continue;
+    if (!dailyCache.has(day)) dailyCache.set(day, new Set(dailyTimes(day, platform)));
+    if (!dailyCache.get(day).has(timeKey(p))) continue;
+    targets.push({ key: `${day}-${p.hour}h${p.minute}`, dueAt: date.toISOString() });
     if (targets.length === count) return targets;
   }
   throw new Error('Aucun créneau quotidien trouvé');
 }
+export function queueTargets(now = new Date(), count = 8) {
+  return platformQueueTargets(now, 'instagram', count);
+}
 
-// A video slot is identified by local DAY + HOUR, never its seconds/milliseconds.
+// Occupation réservée par heure locale (inclut les vidéos externes à Buffer).
 export function videoHourKey(date) {
   const value = new Date(date);
   if (!Number.isFinite(value.getTime())) throw new Error('Video schedule date invalid');
   const p = localParts(value);
   return `${p.year}-${p.month}-${p.day}-${p.hour}`;
 }
-
 export function syncDue(state, now = Date.now()) {
   if (!state.queueSync?.lastAttemptAt) return true;
   const previous = Date.parse(state.queueSync.lastAttemptAt);
   if (!Number.isFinite(previous)) throw new Error('Date de synchronisation invalide');
   return now - previous >= 5 * 3600000;
-}
-
-
-export function platformQueueTargets(now = new Date(), platform = 'instagram', count = 8) {
-  return queueTargets(now, count);
 }

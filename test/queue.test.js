@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fillQueues, initFacebookFromInstagram, migrateOldSlots, reconcileDeliveries, refreshScheduledDescriptions } from '../src/queue.js';
-import { queueTargets, platformQueueTargets, localParts, syncDue, videoHourKey } from '../src/queue-schedule.js';
+import { queueTargets, platformQueueTargets, localParts, isPlannedVideoSlot, syncDue, videoHourKey } from '../src/queue-schedule.js';
 import { deliveryKey } from '../src/core.js';
 import { queuedPosts, reschedulePost, createPost } from '../src/buffer.js';
 const now = new Date('2026-10-04T12:00:00Z');
@@ -18,7 +18,7 @@ test('8 vidéos en avance: Facebook, Instagram, YouTube et TikTok 4 par jour', a
   for (const channel of channels) {
     const items = s.sent.filter(i => i.channelId === channel.id);
     assert.deepEqual(items.map(i => i.dueAt), platformQueueTargets(now, channel.service, 8).map(t => t.dueAt));
-    assert.ok(items.every(i => localParts(new Date(i.dueAt)).minute === '00'));
+    assert.ok(items.every(i => isPlannedVideoSlot(i.dueAt, channel.service)));
   }
   await fillQueues(s.options); assert.equal(s.sent.length, 24);
 });
@@ -121,7 +121,7 @@ test('migration des anciens créneaux sans recréation, uniquement posts connus'
   s.state.deliveries[deliveryKey('0','tiktok')] = { status: 'queued', bufferId: 'owned' }; let edits = 0;
   const options = { state: s.state, remote, channels, now, posts: s.posts, env: s.env, persist: s.options.persist, edit: async (id, date, content) => { edits++; assert.equal(id,'owned'); assert.equal(s.saved.at(-1).deliveries[deliveryKey('0','tiktok')].scheduleUpdate.status,'pending'); assert.equal(content.assets[0].video.url,'https://example.com/0.mp4'); assert.ok(content.text); assert.equal(content.channelId,undefined); assert.equal(content.needsApproval,undefined); return { id, status: 'scheduled', dueAt: date }; } };
   await migrateOldSlots(options); await migrateOldSlots(options);
-  assert.equal(edits,1); assert.equal(localParts(new Date(remote[0].dueAt)).minute,'00'); assert.equal(remote[1].dueAt,dueAt);
+  assert.equal(edits,1); assert.ok(isPlannedVideoSlot(remote[0].dueAt, 'tiktok')); assert.equal(remote[1].dueAt,dueAt);
 });
 test('API: édition ne remplace pas le média, pagination bloquée, création en draft signalée', async () => {
   await reschedulePost('id', now.toISOString(), {}, async (_, variables) => { assert.deepEqual(variables.input, { id:'id', dueAt:now.toISOString(), mode:'customScheduled', schedulingType:'automatic' }); return { editPost: { post: { id:'id',status:'scheduled',dueAt:now.toISOString() } } }; });
@@ -138,13 +138,32 @@ test('post actif absent de la liste ajouté au comptage après lecture individue
   assert.equal(result[0].queued,8); assert.equal(result[0].added,7);
 });
 
-test('créneaux horaires exacts, aussi pendant Ramadan', () => {
+test('quatre horaires différents chaque jour, stables, y compris pendant Ramadan', () => {
   for (const date of ['2026-10-05T12:00:00Z', '2026-02-20T12:00:00Z']) {
-    const times = queueTargets(new Date(date)).map(t => {
-      const p = localParts(new Date(t.dueAt));
-      return p.hour + ':' + p.minute;
-    });
-    assert.ok(times.every(time => ['00:00','06:00','12:00','18:00'].includes(time)));
+    const start = new Date(date);
+    for (const platform of ['facebook','instagram','youtube']) {
+      const slots = platformQueueTargets(start, platform, 12);
+      assert.deepEqual(slots, platformQueueTargets(start, platform, 12));
+      const byDay = new Map();
+      for (const slot of slots) {
+        const p = localParts(new Date(slot.dueAt));
+        const key = `${p.year}-${p.month}-${p.day}`;
+        byDay.set(key, [...(byDay.get(key) || []), `${p.hour}:${p.minute}`]);
+        assert.equal(isPlannedVideoSlot(slot.dueAt, platform), true);
+      }
+      assert.deepEqual([...byDay.values()].map(times => times.length), [4,4,4]);
+      const [a,b,c] = [...byDay.values()];
+      assert.notDeepEqual(a,b);
+      assert.notDeepEqual(b,c);
+      for (const times of byDay.values()) {
+        assert.equal(new Set(times).size,4);
+        assert.ok(times[0] >= '01:00' && times[0] <= '04:55');
+        assert.ok(times[1] >= '07:00' && times[1] <= '10:55');
+        assert.ok(times[2] >= '13:00' && times[2] <= '16:55');
+        assert.ok(times[3] >= '19:00' && times[3] <= '22:55');
+      }
+    }
+    assert.deepEqual(queueTargets(start), platformQueueTargets(start, 'instagram'));
   }
 });
 test('migration de plusieurs anciennes vidéos vers des créneaux distincts', async () => {
@@ -165,7 +184,7 @@ test('Facebook reprend exactement les quatre créneaux quotidiens Instagram avec
   const summaries = await fillQueues(options);
   assert.equal(summaries[0].queued, 8);
   assert.equal(sent.length, 8);
-  assert.deepEqual(sent.map(p => p.dueAt), platformQueueTargets(now, 'instagram', 8).map(t => t.dueAt));
+  assert.deepEqual(sent.map(p => p.dueAt), platformQueueTargets(now, 'facebook', 8).map(t => t.dueAt));
   assert.ok(sent.every(p => p.metadata?.facebook?.type === 'reel'));
   await fillQueues(options);
   assert.equal(sent.length, 8);
@@ -417,4 +436,16 @@ test('seconds-shifted external video occupies its whole hour; images do not cons
   assert.ok(!videoTimes.includes(videoHourKey(first)));
   assert.ok(videoTimes.includes(videoHourKey(platformQueueTargets(now,'tiktok',8)[1].dueAt)));
   assert.equal(new Set(videoTimes).size,7);
+});
+
+test('les plateformes ont des horaires variés mais ne reprogramment pas leurs créneaux existants', async () => {
+  const s = setup();
+  const targets = platformQueueTargets(now, 'instagram', 8);
+  assert.notDeepEqual(targets.map(x => x.dueAt), platformQueueTargets(now, 'youtube', 8).map(x => x.dueAt));
+  const remote = targets.map((t,i) => ({ id:'keep-'+i, channelId:'instagram', status:'scheduled', dueAt:t.dueAt }));
+  remote.forEach((p,i) => s.state.deliveries[deliveryKey(String(i),'instagram')] = {status:'queued',bufferId:p.id});
+  let edits=0;
+  await migrateOldSlots({state:s.state,remote,channels,now,posts:s.posts,env:s.env,persist:s.options.persist,edit:async()=>{edits++;throw Error('already valid');}});
+  assert.equal(edits,0);
+  assert.deepEqual(remote.map(x=>x.dueAt),targets.map(x=>x.dueAt));
 });

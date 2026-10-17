@@ -1,5 +1,5 @@
 import { deliveryKey, inputFor, validate } from './core.js';
-import { platformQueueTargets, localParts, videoHourKey } from './queue-schedule.js';
+import { platformQueueTargets, isPlannedVideoSlot, videoHourKey } from './queue-schedule.js';
 const pending = p => ['scheduled', 'sending'].includes(p.status);
 const accepted = d => ['queued', 'published', 'failed_in_buffer', 'missing_in_buffer'].includes(d?.status);
 // Les rejets explicites de format sont propres au réseau: on saute seulement
@@ -16,11 +16,6 @@ const blocked = c => c.isQueuePaused || c.isDisconnected || c.isLocked;
 // Image posts are handled by a separate scheduler; do not count them as Reels.
 const imageOnly = post => Array.isArray(post.assets) && post.assets.length > 0 &&
   post.assets.every(asset => /\.(?:png|jpe?g|webp|gif)(?:[?#]|$)/i.test(asset.source || ''));
-const allowedVideoHour = p => p.minute === '00' && ['00', '06', '12', '18'].includes(p.hour);
-const exactlyOnHour = date => {
-  const d = new Date(date);
-  return d.getUTCSeconds() === 0 && d.getUTCMilliseconds() === 0;
-};
 
 export async function reconcileDeliveries({ state, remote, get, persist, now, channels }) {
   const active = new Map(remote.map(p => [p.id, p]));
@@ -74,21 +69,19 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
     const reserved = new Set();
     const needMove = [];
 
-    // Posts not owned by this bot must never be edited. Reserve their whole
-    // local hour to avoid adding a Reel alongside an external scheduled video.
+    // Never change external posts; also reserve their entire local hour to
+    // avoid a collision with a freshly generated randomized video slot.
     for (const post of scheduled) {
       if (byId.has(post.id) && post.status === 'scheduled') continue;
-      const p = localParts(new Date(post.dueAt));
-      if (allowedVideoHour(p)) reserved.add(videoHourKey(post.dueAt));
+      reserved.add(videoHourKey(post.dueAt));
     }
 
-    // Preserve exact, valid slots first. Relocate any duplicate or any old
-    // 00:00:07 / 00:00:33 timestamp without reposting its media.
+    // Preserve bot posts already at today's deterministic random targets.
+    // Other bot posts are rescheduled via Buffer edit (never recreated).
     for (const post of scheduled) {
       if (!byId.has(post.id) || post.status !== 'scheduled') continue;
-      const p = localParts(new Date(post.dueAt));
       const key = videoHourKey(post.dueAt);
-      if (allowedVideoHour(p) && exactlyOnHour(post.dueAt) && !reserved.has(key)) {
+      if (isPlannedVideoSlot(post.dueAt, platform) && !reserved.has(key)) {
         reserved.add(key);
       } else {
         needMove.push(post);

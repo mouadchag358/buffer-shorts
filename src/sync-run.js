@@ -61,6 +61,6 @@ try {
       ...(request && complete ? { completedRequestId: request.id } : {}) };
     await persist(state);
   }
-  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 8 vidéos par réseau, Instagram et YouTube quatre vidéos par jour (00h, 06h, 12h, 18h), synchronisation 5h`);
+  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 8 vidéos par réseau, Instagram et YouTube quatre vidéos par jour à des heures variables (Africa/Casablanca), synchronisation 5h`);
   if (!complete) throw new Error('Files incomplètes: consulter les résultats par réseau');
 } catch (error) { console.error(error.message); process.exitCode = 1; }

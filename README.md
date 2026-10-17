@@ -6,11 +6,13 @@ Ce projet automatise les vidéos MP4 du bucket Cloudflare R2 `reels` vers **une 
 
 | Réseau | Cadence | Nombre de posts programmés d'avance |
 | --- | --- | --- |
-| Facebook Reels | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
-| Instagram Reels | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
-| YouTube Shorts | 4 par jour : 00h, 06h, 12h, 18h (à partir du lendemain) | 8 |
+| Facebook Reels (lorsque le canal est activé) | 4 par jour, heures variables | 8 |
+| Instagram Reels | 4 par jour, heures variables | 8 |
+| YouTube Shorts | 4 par jour, heures variables | 8 |
 
-Les heures sont enregistrées exactement à `:00:00.000` : une seule vidéo peut occuper un créneau par réseau, même si d'anciennes publications utilisaient `:00:07` ou `:00:33`. Les anciennes vidéos du bot sont redistribuées vers des créneaux libres (sans les republier) lors de la prochaine synchronisation. Les images pop culture ont leur propre file distincte.
+Quatre plages locales sont utilisées : **01h–04h55**, **07h–10h55**, **13h–16h55**, **19h–22h55**. Pour chaque réseau, un horaire pseudo-aléatoire (par pas de 5 minutes) est choisi dans chaque plage, **différent d'un jour à l'autre**. Les horaires sont calculés de façon déterministe : une nouvelle synchronisation ne les re-mélange pas. Le programme commence le lendemain, suit le fuseau `Africa/Casablanca` (y compris Ramadan), et ne place pas deux vidéos du bot dans la même heure par réseau.
+
+Les anciennes vidéos déjà programmées par ce bot sont **déplacées dans Buffer par édition**, sans nouveau téléversement ni doublon, lors de la prochaine synchronisation. Les publications externes ne sont pas modifiées. Les images pop culture ont leur propre file distincte. Le workflow automatique actuel synchronise Instagram et YouTube ; les Reels Facebook ne sont remplis que si leur canal est explicitement activé dans une exécution.
 
 GitHub Actions vérifie la file toutes les 5 heures environ. Les posts déjà programmés sont comptabilisés avant tout nouvel envoi, et les vidéos sont identifiées de manière stable pour éviter les doublons. Buffer publie aux horaires `dueAt` même lorsque GitHub Actions n'est pas actif.
 
@@ -38,8 +40,8 @@ Les chaînes Buffer sont détectées automatiquement lorsqu'une seule chaîne de
 
 - `src/catalog.js` liste les MP4 et construit les destinations Facebook, Instagram et YouTube. Il remplace les anciennes destinations TikTok dans le catalogue mis en cache.
 - `src/core.js` précise `metadata.facebook.type = 'reel'` pour les publications Facebook.
-- `src/queue-schedule.js` génère pour les trois réseaux les quatre créneaux 00h, 06h, 12h et 18h.
-- `src/sync-run.js` remplit la file de ces trois réseaux et conserve les protections existantes contre les appels excessifs.
+- `src/queue-schedule.js` génère quatre horaires variables et stables par jour et par réseau (heure du Maroc).
+- `src/sync-run.js` remplit actuellement Instagram et YouTube et conserve les protections contre les appels excessifs.
 - `state.json` conserve les checkpoints, les identifiants Buffer et les compteurs R2. Ne pas le remettre à zéro pour reprogrammer une vidéo : risque de doublons.
 
 Les **anciennes vidéos TikTok déjà prévues dans Buffer restent programmées** : cette modification arrête seulement la création de nouveaux posts TikTok.

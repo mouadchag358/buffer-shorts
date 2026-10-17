@@ -4219,6 +4219,12 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:38:05.569Z",
       "youtubeTitleUpdatedTo": "What's the Most Surprising Part? 👀 #Shorts #Viral"
+    },
+    "[\"r2-4417400c6e6bfd1ccd325ee417cdc9e84ac317f34dd2ffe4c61ba96148685425\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-18T10:25:00.000Z",
+      "updatedAt": "2026-10-17T21:38:05.569Z"
     }
   },
   "r2ListingRequests": {

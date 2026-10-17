@@ -4514,6 +4514,12 @@
       "updatedAt": "2026-10-17T22:00:43.785Z",
       "bufferId": "6ad3f021769b457934970e9f",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-1d9ecb8d7718a798dc332b9f72027a66b648e8043f50851d7936d06f9742eb62\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-18T16:55:00.000Z",
+      "updatedAt": "2026-10-17T22:00:43.785Z"
     }
   },
   "r2ListingRequests": {

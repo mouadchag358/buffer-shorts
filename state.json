@@ -4128,13 +4128,13 @@
     "[\"r2-f2255f3a2305481bd4c874a1110148adfaaa8d281329a11a594300dbe7532096\",\"instagram\"]": {
       "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
-      "dueAt": "2026-10-19T09:15:00.000Z",
+      "dueAt": "2026-10-18T09:20:00.000Z",
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37be5769b4579347c8adf",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:54:44.908Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-18T09:20:00.000Z"
       }
     },

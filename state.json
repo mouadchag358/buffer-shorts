@@ -4464,6 +4464,12 @@
         "status": "done",
         "dueAt": "2026-10-18T11:10:00.000Z"
       }
+    },
+    "[\"r2-04eea0a30e26e2a163d90184d5403bf7488e164be8696733296ec8eaaf721d6a\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-18T12:05:00.000Z",
+      "updatedAt": "2026-10-17T21:54:44.908Z"
     }
   },
   "r2ListingRequests": {

@@ -4019,14 +4019,14 @@
     "[\"r2-6f2c420af4cca4a96fdb68f2cfc7071261305d3ecfb339b2769285c22aa15ec6\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-18T06:00:00.000Z",
+      "dueAt": "2026-10-18T09:30:00.000Z",
       "updatedAt": "2026-10-16T09:53:00.991Z",
       "bufferId": "6ad1f40dbbb9ce09f669b432",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:15:32.879Z",
       "youtubeTitleUpdatedTo": "Wait... What Do You Think? 😳 #Shorts #Viral",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-18T09:30:00.000Z"
       }
     },

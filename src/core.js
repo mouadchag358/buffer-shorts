@@ -16,18 +16,18 @@ const PLATFORM_HASHTAGS = {
 };
 
 const YOUTUBE_HOOK_TITLES = [
-  "Did You Catch That? 👀 #Shorts #Viral",
-  "This Clip Deserves a Replay! 🔥 #Shorts #Trending",
-  "Wait... What Do You Think? 😳 #Shorts #Viral",
-  "Watch Closely! 👀 #Shorts #Trending",
-  "Would You Watch This Again? 🔥 #Shorts #Viral",
-  "Rate This Clip from 1 to 10! ⭐ #Shorts #Viral",
-  "What's Your Reaction? 😮 #Shorts #Trending",
-  "One Clip, So Many Reactions! 🤯 #Shorts #Viral",
-  "Which Part Stood Out to You? 👇 #Shorts #Trending",
-  "Watch and Tell Me What You Think! 👀 #Shorts #Viral",
-  "How Would You React? 😮 #Shorts #Trending",
-  "Did You Notice That? 👀 #Shorts #Viral"
+  "Did You Catch That Detail? 👀 #Shorts",
+  "Watch Twice — Something Changes! 🔥 #Shorts",
+  "What Would You Do Here? 😳 #Shorts",
+  "The Ending Is Worth Watching 🎬 #Shorts",
+  "Can You Guess What Happens Next? 🤯 #Shorts",
+  "One Moment, So Many Questions 👀 #Shorts",
+  "Don't Blink During This Part ⚡ #Shorts",
+  "Would You Replay This? 👇 #Shorts",
+  "Did You Expect That? 😲 #Shorts",
+  "Look Closely at This Moment 🔥 #Shorts",
+  "What's the Most Surprising Part? 👀 #Shorts",
+  "This Clip Gets Better on Replay 🎬 #Shorts"
 ];
 const YOUTUBE_HOOK_DESCRIPTIONS = [
   "👀 Did you catch that? Watch and tell us what you think!\n#Shorts #YouTubeShorts #Viral #Trending",
@@ -45,16 +45,16 @@ const YOUTUBE_HOOK_DESCRIPTIONS = [
 ];
 
 const FACEBOOK_CAPTIONS = [
-  "👀 You have to see this! What do you think? 🔥\n#FacebookReels #Viral #Trending #MustWatch #Reels",
-  "🔥 This clip is worth a second look! Would you watch it again? 👇\n#FacebookReels #ViralVideo #TrendingNow #Reels",
-  "😲 What's your reaction to this moment? Tell us below! 💬\n#FacebookReels #WatchThis #Viral #Trending",
-  "😂 Which part caught your attention? Drop a comment! 👇\n#FacebookReels #FunnyMoments #Reels #Viral",
-  "👀 Keep watching and tell us what you noticed! 🔥\n#FacebookReels #MustWatch #Trending #ViralClips",
-  "🤯 One clip, so many reactions! What's yours? 💬\n#FacebookReels #ViralVideo #Reels #Trending",
-  "⚡ Would you share this with a friend? Tag them! 👇\n#FacebookReels #ShareThis #TrendingNow #Reels",
-  "🔥 A moment you might want to replay! What stood out to you? 👀\n#FacebookReels #WatchAgain #Viral #Reels",
-  "😮 Watch closely! What would you say about this? 💭\n#FacebookReels #Trending #MustWatch #ViralVideo",
-  "👀 This one's for your feed! Rate this clip from 1 to 10! 🔥\n#FacebookReels #Reels #Viral #TrendingNow"
+  "👀 Look closely. What detail stood out to you?\n#FacebookReels #Reels #WatchAgain",
+  "🔥 The part everyone should watch twice. What do you think?\n#FacebookReels #Reels #WatchThis",
+  "😮 Did you see that coming? Tell us your reaction.\n#FacebookReels #Unexpected #Reels",
+  "🎬 Watch until the end, then tell us your favorite moment.\n#FacebookReels #ShortVideos #Reels",
+  "⚡ One small detail makes this clip worth a replay.\n#FacebookReels #Reels #WatchClosely",
+  "🤯 First impression or second watch — did your opinion change?\n#FacebookReels #Reels #WatchAgain",
+  "👀 Which second made you stop scrolling?\n#FacebookReels #ShortClips #Reels",
+  "🔥 This moment deserves another look. Your thoughts?\n#FacebookReels #Reels #Trending",
+  "😲 Be honest: what was your first reaction?\n#FacebookReels #Reels #Unexpected",
+  "🎥 Which part is your favorite? Drop a timestamp.\n#FacebookReels #Reels #ShortVideos"
 ];
 
 function stableIndex(value, length) {

@@ -30417,26 +30417,28 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-17T21:38:05.569Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-17T21:15:32.879Z",
+    "status": "partial",
+    "lastCompletedAt": "2026-10-17T21:38:05.569Z",
     "summaries": [
       {
         "platform": "facebook",
-        "queued": 0,
-        "added": 0,
-        "rejected": 2,
-        "attempts": 2,
+        "queued": 1,
+        "added": 1,
+        "rejected": 11,
+        "attempts": 12,
         "errors": [
-          "Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed."
+          "Budget de tentatives atteint"
         ],
-        "dueAt": []
+        "dueAt": [
+          "2026-10-18T04:10:00.000Z"
+        ]
       },
       {
         "platform": "instagram",
         "queued": 8,
-        "added": 1,
+        "added": 0,
         "rejected": 0,
-        "attempts": 1,
+        "attempts": 0,
         "errors": [],
         "dueAt": [
           "2026-10-18T04:45:00.000Z",
@@ -30452,9 +30454,9 @@
       {
         "platform": "youtube",
         "queued": 8,
-        "added": 1,
+        "added": 0,
         "rejected": 0,
-        "attempts": 1,
+        "attempts": 0,
         "errors": [],
         "dueAt": [
           "2026-10-18T04:55:00.000Z",

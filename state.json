@@ -4187,10 +4187,11 @@
       "youtubeTitleUpdatedTo": "Did You Catch That? 👀 #Shorts #Viral"
     },
     "[\"r2-1c7afe1d46d2071fc461efabef43bc2e7ec3df5bf1789671e036726ef3f75dbe\",\"facebook\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-18T04:10:00.000Z",
-      "updatedAt": "2026-10-17T21:15:32.879Z"
+      "updatedAt": "2026-10-17T21:15:32.879Z",
+      "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     }
   },
   "r2ListingRequests": {

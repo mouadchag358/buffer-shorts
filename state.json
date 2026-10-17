@@ -4134,8 +4134,8 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:54:44.908Z",
       "scheduleUpdate": {
-        "status": "done",
-        "dueAt": "2026-10-19T09:15:00.000Z"
+        "status": "pending",
+        "dueAt": "2026-10-18T09:20:00.000Z"
       }
     },
     "[\"r2-e0384cd6617a1ded976fe8d4df2c9f91eaaeeaa3beb10666658d44e0e6a2a86e\",\"instagram\"]": {

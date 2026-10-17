@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Render 100 bright English quizzes from the approved pop culture illustration collage."""
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter, ImageOps
 from pathlib import Path
 import math, json, sys
 
@@ -64,7 +64,9 @@ def drawcard(source,i,reactions=False):
  panel=source.crop((x0,y0,x1,y1))
  # This is the real approved character art, not a geometrical replacement.
  artwork=panel.crop((0,round(panel.height*.08),panel.width,round(panel.height*.605)))
- artwork=ImageEnhance.Color(artwork).enhance(1.08)
+ artwork=ImageEnhance.Color(artwork).enhance(1.12)
+ artwork=ImageEnhance.Contrast(artwork).enhance(1.08)
+ artwork=artwork.filter(ImageFilter.UnsharpMask(radius=1.6,percent=135,threshold=3))
  sky,burst=PALETTES[art_index]
  img=Image.new("RGB",(1080,1080),sky);d=ImageDraw.Draw(img)
  for y in range(0,1080,6):
@@ -81,6 +83,7 @@ def drawcard(source,i,reactions=False):
   d.line((790+315*math.cos(angle),292+315*math.sin(angle),790+670*math.cos(angle+.05),292+670*math.sin(angle+.05)),fill="white",width=13)
  width=630
  art=artwork.resize((width,round(width*artwork.height/artwork.width)),Image.Resampling.LANCZOS)
+ art=art.filter(ImageFilter.UnsharpMask(radius=1.3,percent=110,threshold=3))
  mask=Image.new("L",art.size,255);md=ImageDraw.Draw(mask)
  for x in range(85):
   md.line((x,0,x,art.height),fill=int(255*(x/85)**1.5))
@@ -90,12 +93,14 @@ def drawcard(source,i,reactions=False):
  d=ImageDraw.Draw(img)
  for word,sz,y in [("POP",86,107),("CULTURE",81,207),("QUIZ",98,319)]:
   d.text((49,y),word,font=f(sz),fill="#FFDC36" if word!="QUIZ" else "#FFFFFF",stroke_width=6,stroke_fill="#17213F")
- d.rounded_rectangle((54,420,270,469),radius=20,fill="#111B3C",outline="white",width=4)
- d.text((162,446),category,font=f(24),anchor="mm",fill="#FFF6BD")
+ category_font,_=wrap(d,category,24,330,1)
+ pill_width=max(216,round(d.textbbox((0,0),category,font=category_font)[2]+54))
+ d.rounded_rectangle((54,420,54+pill_width,469),radius=20,fill="#111B3C",outline="white",width=4)
+ d.text((54+pill_width//2,446),category,font=category_font,anchor="mm",fill="#FFF6BD")
  d.rounded_rectangle((891,24,1043,95),radius=30,fill="#15203D",outline="white",width=5)
  d.text((967,59),(str(i+1)+"/10" if i<10 else "#"+str(i+1)),font=f(38),fill="white",anchor="mm")
- d.rounded_rectangle((34,607,1047,776),radius=28,fill="#101A35",outline="#FFD23D",width=9)
- question_font,question_lines=wrap(d,question,56,930)
+ d.rounded_rectangle((34,601,1047,779),radius=28,fill="#101A35",outline="#FFD23D",width=9)
+ question_font,question_lines=wrap(d,question,56,925)
  lineheight=question_font.size+12
  top=690-len(question_lines)*lineheight/2+question_font.size*.06
  for k,line in enumerate(question_lines):
@@ -108,11 +113,15 @@ def drawcard(source,i,reactions=False):
   d.ellipse((x+15,y+15,x+80,y+81),fill="#182442",outline="white",width=4)
   if reactions: reaction(d,x+47,y+49,k)
   else: d.text((x+47,y+49),"ABCD"[k],anchor="mm",font=f(38),fill="white")
-  optfont,_=wrap(d,opt,32,370,1)
-  d.text((x+93,y+46),opt,font=optfont,fill="#102040",anchor="lm")
+  optfont,optlines=wrap(d,opt,34,354,2)
+  lineheight=optfont.size+3
+  start_y=y+48-(len(optlines)-1)*lineheight/2
+  for li,line in enumerate(optlines):
+   d.text((x+96,start_y+li*lineheight),line,font=optfont,fill="#102040",anchor="lm",stroke_width=0)
  d.text((540,1042),("REACT WITH YOUR ANSWER!" if reactions else "COMMENT A, B, C OR D!"),font=f(31),fill="white",anchor="mm",stroke_width=4,stroke_fill="#18223C")
  target=DEST/("quiz-%03d.jpg"%(i+101 if reactions else i+1))
- img.save(target,format="JPEG",quality=92,optimize=True,progressive=True,subsampling=0)
+ img=ImageOps.exif_transpose(img)
+ img.save(target,format="JPEG",quality=95,optimize=True,progressive=True,subsampling=0)
  if target.stat().st_size<70000:raise RuntimeError("Suspicious output size: "+str(target))
  print("Rendered",target,target.stat().st_size)
 def main():

@@ -4024,7 +4024,11 @@
       "bufferId": "6ad1f40dbbb9ce09f669b432",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:15:32.879Z",
-      "youtubeTitleUpdatedTo": "Wait... What Do You Think? 😳 #Shorts #Viral"
+      "youtubeTitleUpdatedTo": "Wait... What Do You Think? 😳 #Shorts #Viral",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-18T09:30:00.000Z"
+      }
     },
     "[\"r2-c27dfb2884e0ff9cf0448c803e8706fb443ab451f97b335155130205130173d4\",\"instagram\"]": {
       "status": "queued",

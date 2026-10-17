@@ -4209,10 +4209,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-f05daca030ee9990a3f85be91a81d1ea87cd7f193166fc0e02b56bca652089a5\",\"youtube\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
       "dueAt": "2026-10-19T20:20:00.000Z",
-      "updatedAt": "2026-10-17T21:15:32.879Z"
+      "updatedAt": "2026-10-17T21:15:32.879Z",
+      "bufferId": "6ad3e5b1769b457934953d44",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

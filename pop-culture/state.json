@@ -238,6 +238,10 @@
       "dueAt": "2026-10-19T12:00:00.000Z",
       "bufferId": "6ad2fec48ac6cfe5442e6297",
       "bufferStatus": "scheduled"
+    },
+    "quiz-109": {
+      "status": "sending",
+      "dueAt": "2026-10-19T18:00:00.000Z"
     }
   },
   "restart": {

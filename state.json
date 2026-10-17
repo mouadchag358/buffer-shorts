@@ -4201,10 +4201,12 @@
       "error": "Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed."
     },
     "[\"r2-c550a186585f8e0a4ff3fcb51f570bc592d531f22f28c0e6ecb0ad7d11460dd2\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-19T21:35:00.000Z",
-      "updatedAt": "2026-10-17T21:15:32.879Z"
+      "updatedAt": "2026-10-17T21:15:32.879Z",
+      "bufferId": "6ad3e5adae173d6e00d39b93",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

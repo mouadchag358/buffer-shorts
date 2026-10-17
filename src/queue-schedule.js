@@ -84,5 +84,5 @@ export function syncDue(state, now = Date.now()) {
   if (!state.queueSync?.lastAttemptAt) return true;
   const previous = Date.parse(state.queueSync.lastAttemptAt);
   if (!Number.isFinite(previous)) throw new Error('Date de synchronisation invalide');
-  return now - previous >= 5 * 3600000;
+  return now - previous >= 2 * 3600000;
 }

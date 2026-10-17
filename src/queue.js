@@ -211,6 +211,9 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
   const facebookSkipped = new Set(resume?.skippedPostIds || []);
   let attempts = 0;
   const summaries = [];
+  // Facebook rejects many low-resolution source videos. Limit trials but
+  // continue past explicit per-file format errors to find 8 valid Reels.
+  const maxTotalAttempts = 128;
   for (const channel of channels) {
     const platform = channel.service;
     const queued = remote.filter(p => p.channelId === channel.id && pending(p) && !imageOnly(p));
@@ -218,7 +221,8 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     summaries.push(summary);
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
     const queueGoal = platform === 'instagram' ? 8 : 8;
-    while (summary.queued < queueGoal && summary.attempts < 12 && attempts < 30) {
+    const maxPlatformAttempts = platform === 'facebook' ? 96 : 12;
+    while (summary.queued < queueGoal && summary.attempts < maxPlatformAttempts && attempts < maxTotalAttempts) {
       // Un refus explicite de format ne bloque pas le réseau: passer à la prochaine vidéo.
       const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && (platform !== 'facebook' || !facebookSkipped.has(p.id)) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !formatRejection(working.deliveries[deliveryKey(p.id, platform)], platform));
       if (!post) { summary.errors.push('Plus de vidéos disponibles'); break; }

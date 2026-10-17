@@ -4297,6 +4297,12 @@
       "dueAt": "2026-10-18T10:25:00.000Z",
       "updatedAt": "2026-10-17T21:38:05.569Z",
       "error": "Invalid post: Video aspect ratio is too narrow for Facebook Reels."
+    },
+    "[\"r2-31c44a9b6b33ebf343bd1973544511b4a6579b2811ef109e7737c52e240868c2\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-18T10:25:00.000Z",
+      "updatedAt": "2026-10-17T21:43:24.709Z"
     }
   },
   "r2ListingRequests": {

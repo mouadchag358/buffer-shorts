@@ -3978,8 +3978,8 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:54:44.908Z",
       "scheduleUpdate": {
-        "status": "done",
-        "dueAt": "2026-10-18T04:45:00.000Z"
+        "status": "pending",
+        "dueAt": "2026-10-17T23:05:00.000Z"
       }
     },
     "[\"r2-ce6f952aecfb66b83d68b67b66711e89e027c9d0ac720333aaf2684f1275ab7e\",\"youtube\"]": {

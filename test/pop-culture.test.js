@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { imageSlots, imageInput, planImageBatch } from '../src/pop-culture-images.js';
 const catalog = JSON.parse(await readFile(new URL('../pop-culture/questions.json', import.meta.url)));
-const posts = catalog.filter(p=>p.answerFormat !== 'reactions');
+const posts = catalog.filter(p=>p.answerFormat === 'reactions');
 test('200 English cards with unique IDs and valid image names', () => {
   assert.equal(catalog.length, 200);
   assert.equal(new Set(catalog.map(p => p.id)).size, 200);
@@ -24,7 +24,7 @@ test('two picture posts per day, no collision with existing reels', () => {
 });
 test('Buffer image payload is separate from Facebook Reel metadata', () => {
  const input=imageInput(posts[0], 'fb', '2026-10-13T08:00:00Z');
- assert.deepEqual(input.assets, [{image:{url:'https://raw.githubusercontent.com/mouadchag358/buffer-shorts/main/pop-culture/cards/quiz-001.jpg'}}]);
+ assert.deepEqual(input.assets, [{image:{url:'https://raw.githubusercontent.com/mouadchag358/buffer-shorts/main/pop-culture/cards/quiz-101.jpg'}}]);
  assert.equal(input.mode,'customScheduled');
  assert.deepEqual(input.metadata,{facebook:{type:'post'}});
  assert.ok(input.text.includes('QUIZ TIME!'));
@@ -36,7 +36,7 @@ test('12-hour batches continue after quiz 004, are idempotent and resume partial
  const batch=planImageBatch(state,posts,now);
  assert.deepEqual(batch.cardIds,posts.slice(4,12).map(p=>p.id));
  state.imageBatch=batch;
- state.newImages['quiz-005']={status:'queued'};
+ state.newImages['quiz-105']={status:'queued'};
  assert.deepEqual(planImageBatch(state,posts,new Date('2026-10-14T01:00:00Z')),batch);
  for(const id of batch.cardIds)state.newImages[id]={status:'queued'};
  batch.completed=true;

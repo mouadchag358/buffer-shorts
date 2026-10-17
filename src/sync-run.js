@@ -35,7 +35,7 @@ try {
   const request = process.argv.includes('--force') ? await read('.github/requests/sync.json') : null;
   if (request && !/^[a-zA-Z0-9_-]{1,100}$/.test(request.id || '')) throw new Error('Demande de synchronisation invalide');
   if (!dryRun && request && state.queueSync?.completedRequestId === request.id) { console.log('Demande déjà effectuée; aucun appel réseau'); process.exit(0); }
-  if (!dryRun && !forced && !syncDue(state, now.getTime())) { console.log('Moins de 2 heures depuis le dernier passage: aucun appel Buffer ou R2'); process.exit(0); }
+  if (!dryRun && !forced && !syncDue(state, now.getTime())) { console.log('Moins de 6 heures depuis le dernier passage: aucun appel Buffer ou R2'); process.exit(0); }
   if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer avant de continuer');
   if (!dryRun) {
     state.queueSync = { ...state.queueSync, lastAttemptAt: now.toISOString(), status: 'running' };
@@ -54,13 +54,13 @@ try {
   }
   const descriptionsUpdated = await refreshScheduledDescriptions({ posts, state, remote, channels, env, edit: (id, dueAt, content) => reschedulePost(id, dueAt, env, undefined, content), persist, dryRun });
   console.log(`Descriptions programmées mises à jour: ${descriptionsUpdated}`);
-  const summaries = await fillQueues({ posts, state, remote, channels, env, persist, send: input => createPost(input, env), now, dryRun });
-  const complete = summaries.every(s => s.queued >= 8 && !s.errors.length);
+  const summaries = await fillQueues({ posts, state, remote, channels, env, persist, send: input => createPost(input, env), now, dryRun, targetQueueSize: 10 });
+  const complete = summaries.every(s => s.queued >= 10 && !s.errors.length);
   if (!dryRun) {
     state.queueSync = { ...state.queueSync, status: complete ? 'complete' : 'partial', lastCompletedAt: now.toISOString(), summaries,
       ...(request && complete ? { completedRequestId: request.id } : {}) };
     await persist(state);
   }
-  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 8 vidéos par réseau, Facebook et Instagram 12 vidéos/jour, YouTube 4 vidéos/jour, heures variables (Africa/Casablanca), synchronisation 2h`);
+  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 10 vidéos d'avance par réseau, Facebook et Instagram 12 vidéos/jour, YouTube 4 vidéos/jour, heures variables (Africa/Casablanca), synchronisation 6h`);
   if (!complete) throw new Error('Files incomplètes: consulter les résultats par réseau');
 } catch (error) { console.error(error.message); process.exitCode = 1; }

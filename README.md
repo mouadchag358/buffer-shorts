@@ -4,17 +4,21 @@ Ce projet automatise les vidéos MP4 du bucket Cloudflare R2 `reels` vers **une 
 
 ## Fréquence des publications (fuseau Africa/Casablanca)
 
-| Réseau | Cadence | Nombre de posts programmés d'avance |
+| Réseau | Cadence | Réserve programmée |
 | --- | --- | --- |
-| Facebook Reels (lorsque le canal est activé) | 4 par jour, heures variables | 8 |
-| Instagram Reels | 4 par jour, heures variables | 8 |
-| YouTube Shorts | 4 par jour, heures variables | 8 |
+| Facebook Reels | **12 vidéos par jour**, horaires variables | 8 |
+| Instagram Reels | **12 vidéos par jour**, horaires variables | 8 |
+| YouTube Shorts | 4 vidéos par jour, horaires variables | 8 |
 
-Quatre plages locales sont utilisées : **01h–04h55**, **07h–10h55**, **13h–16h55**, **19h–22h55**. Pour chaque réseau, un horaire pseudo-aléatoire (par pas de 5 minutes) est choisi dans chaque plage, **différent d'un jour à l'autre**. Les horaires sont calculés de façon déterministe : une nouvelle synchronisation ne les re-mélange pas. Le programme commence le lendemain, suit le fuseau `Africa/Casablanca` (y compris Ramadan), et ne place pas deux vidéos du bot dans la même heure par réseau.
+Pour **Facebook et Instagram**, chaque jour comporte **12 plages de deux heures** (00h–01h55, 02h–03h55, ... 22h–23h55), avec **un horaire pseudo-aléatoire par plage**, choisi par pas de 5 minutes. Chaque réseau a des horaires distincts. Les horaires varient d'un jour à l'autre, mais restent stables pour une date et un réseau donnés : une nouvelle synchronisation ne mélange pas les créneaux déjà prévus.
 
-Les anciennes vidéos déjà programmées par ce bot sont **déplacées dans Buffer par édition**, sans nouveau téléversement ni doublon, lors de la prochaine synchronisation. Les publications externes ne sont pas modifiées. Les images pop culture ont leur propre file distincte. Le workflow automatique actuel synchronise Instagram et YouTube ; les Reels Facebook ne sont remplis que si leur canal est explicitement activé dans une exécution.
+Pour YouTube, les **quatre plages précédentes** restent : 01h–04h55, 07h–10h55, 13h–16h55 et 19h–22h55.
 
-GitHub Actions vérifie la file toutes les 5 heures environ. Les posts déjà programmés sont comptabilisés avant tout nouvel envoi, et les vidéos sont identifiées de manière stable pour éviter les doublons. Buffer publie aux horaires `dueAt` même lorsque GitHub Actions n'est pas actif.
+Le fuseau `Africa/Casablanca` est appliqué, y compris lors des changements d'heure. Les créneaux encore futurs du **jour en cours** restent disponibles pour le réapprovisionnement, plutôt que de patienter systématiquement jusqu'au lendemain.
+
+Les anciennes vidéos programmées par le bot peuvent être déplacées **par édition**, sans nouvel envoi ni doublon, vers les créneaux désormais valides. Les publications externes restent inchangées. Aucun nouveau quiz Facebook n'est généré.
+
+GitHub Actions vérifie les files **toutes les deux heures** environ. Le bot maintient une réserve de **8 vidéos programmées par réseau**, volontairement inférieure à la limite de **10 posts programmés** rencontrée précédemment dans Buffer. Le nombre de vidéos en réserve n'est **pas** la cadence quotidienne : le réapprovisionnement régulier permet de publier jusqu'à 12 vidéos par jour sur Facebook et Instagram. Buffer peut toujours refuser des vidéos non conformes ou imposer ses propres limites.
 
 ## Configuration GitHub
 
@@ -40,8 +44,8 @@ Les chaînes Buffer sont détectées automatiquement lorsqu'une seule chaîne de
 
 - `src/catalog.js` liste les MP4 et construit les destinations Facebook, Instagram et YouTube. Il remplace les anciennes destinations TikTok dans le catalogue mis en cache.
 - `src/core.js` précise `metadata.facebook.type = 'reel'` pour les publications Facebook.
-- `src/queue-schedule.js` génère quatre horaires variables et stables par jour et par réseau (heure du Maroc).
-- `src/sync-run.js` remplit actuellement Instagram et YouTube et conserve les protections contre les appels excessifs.
+- `src/queue-schedule.js` génère 12 horaires quotidiens pour Facebook et Instagram, 4 pour YouTube (heure du Maroc).
+- `src/sync-run.js` remplit Facebook, Instagram et YouTube et conserve les protections contre les appels excessifs.
 - `state.json` conserve les checkpoints, les identifiants Buffer et les compteurs R2. Ne pas le remettre à zéro pour reprogrammer une vidéo : risque de doublons.
 
 Les **anciennes vidéos TikTok déjà prévues dans Buffer restent programmées** : cette modification arrête seulement la création de nouveaux posts TikTok.

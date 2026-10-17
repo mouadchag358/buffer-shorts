@@ -17,7 +17,7 @@ async function save(s) {
 }
 async function main(){
  const state=JSON.parse(await readFile(file,'utf8'));
- if(state.alternation?.completed){console.log('Alternating quiz formats already active');return;}
+ if(state.alternation?.completed){console.log('Existing queue migration already completed');return;}
  const cards=JSON.parse(await readFile('pop-culture/questions.json','utf8'));
  const {env,channels}=await resolveQueueChannels(['facebook']);const channel=channels[0];
  if(channel.isDisconnected||channel.isLocked||channel.isQueuePaused)throw Error('Facebook channel unavailable');
@@ -67,8 +67,8 @@ async function main(){
    if(p?.id!==e.postId||p.status!=='scheduled'||Date.parse(p.dueAt)!==Date.parse(e.dueAt))throw Error('Quiz edit not confirmed '+e.postId+': '+(data.editPost?.message||'unknown'));
   }
   state.newImages[card.id]={status:'queued',bufferId:e.postId,bufferStatus:'scheduled',dueAt:e.dueAt};e.status='completed';await save(state);
-  console.log('Alternating slot verified',card.id,card.answerFormat,e.dueAt);
+  console.log('Reaction slot verified',card.id,card.answerFormat,e.dueAt);
  }
- state.alternation.completed=true;await save(state);console.log('Alternation active; 100 reaction cards added');
+ state.alternation.completed=true;await save(state);console.log('Reaction-only migration completed');
 }
 main().catch(e=>{console.error(e.message);process.exitCode=1});

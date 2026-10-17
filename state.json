@@ -4080,6 +4080,12 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37be8769b4579347c8bc0",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-a8f07b7578e9d1cab2432b862f28b1fa0257c46b7f1bd2e39aaf969cf636b0c2\",\"youtube\"]": {
+      "status": "sending",
+      "channelId": "6ac17ba1ea19ca0bde6a0976",
+      "dueAt": "2026-10-19T06:00:00.000Z",
+      "updatedAt": "2026-10-17T13:45:02.063Z"
     }
   },
   "r2ListingRequests": {

@@ -4451,13 +4451,13 @@
     "[\"r2-e98ccb3984ddccea3c21e6c5107258405ad8e60280bc023e2a85e9ad996a0b47\",\"facebook\"]": {
       "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
-      "dueAt": "2026-10-19T21:35:00.000Z",
+      "dueAt": "2026-10-18T11:10:00.000Z",
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec340b0d72757af5fdc6",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:54:44.908Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-18T11:10:00.000Z"
       }
     }

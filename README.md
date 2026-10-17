@@ -6,9 +6,9 @@ Ce projet automatise les vidéos MP4 du bucket Cloudflare R2 `reels` vers **une 
 
 | Réseau | Cadence | Réserve programmée |
 | --- | --- | --- |
-| Facebook Reels | **12 vidéos par jour**, horaires variables | 8 |
-| Instagram Reels | **12 vidéos par jour**, horaires variables | 8 |
-| YouTube Shorts | 4 vidéos par jour, horaires variables | 8 |
+| Facebook Reels | **12 vidéos par jour**, horaires variables | 10 |
+| Instagram Reels | **12 vidéos par jour**, horaires variables | 10 |
+| YouTube Shorts | 4 vidéos par jour, horaires variables | 10 |
 
 Pour **Facebook et Instagram**, chaque jour comporte **12 plages de deux heures** (00h–01h55, 02h–03h55, ... 22h–23h55), avec **un horaire pseudo-aléatoire par plage**, choisi par pas de 5 minutes. Chaque réseau a des horaires distincts. Les horaires varient d'un jour à l'autre, mais restent stables pour une date et un réseau donnés : une nouvelle synchronisation ne mélange pas les créneaux déjà prévus.
 
@@ -18,7 +18,7 @@ Le fuseau `Africa/Casablanca` est appliqué, y compris lors des changements d'he
 
 Les anciennes vidéos programmées par le bot peuvent être déplacées **par édition**, sans nouvel envoi ni doublon, vers les créneaux désormais valides. Les publications externes restent inchangées. Aucun nouveau quiz Facebook n'est généré.
 
-GitHub Actions vérifie les files **toutes les deux heures** environ. Le bot maintient une réserve de **8 vidéos programmées par réseau**, volontairement inférieure à la limite de **10 posts programmés** rencontrée précédemment dans Buffer. Le nombre de vidéos en réserve n'est **pas** la cadence quotidienne : le réapprovisionnement régulier permet de publier jusqu'à 12 vidéos par jour sur Facebook et Instagram. Buffer peut toujours refuser des vidéos non conformes ou imposer ses propres limites.
+GitHub Actions vérifie les files **toutes les six heures** environ. Le bot maintient une réserve de **10 vidéos programmées par réseau**, égale à la limite de **10 posts programmés** rencontrée précédemment dans Buffer. Le nombre de vidéos en réserve n'est **pas** la cadence quotidienne : le réapprovisionnement régulier permet de publier jusqu'à 12 vidéos par jour sur Facebook et Instagram. Buffer peut toujours refuser des vidéos non conformes ou imposer ses propres limites.
 
 ## Configuration GitHub
 

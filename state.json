@@ -4207,13 +4207,13 @@
     "[\"r2-c550a186585f8e0a4ff3fcb51f570bc592d531f22f28c0e6ecb0ad7d11460dd2\",\"instagram\"]": {
       "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
-      "dueAt": "2026-10-19T21:35:00.000Z",
+      "dueAt": "2026-10-18T13:45:00.000Z",
       "updatedAt": "2026-10-17T21:15:32.879Z",
       "bufferId": "6ad3e5adae173d6e00d39b93",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:54:44.908Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-18T13:45:00.000Z"
       }
     },

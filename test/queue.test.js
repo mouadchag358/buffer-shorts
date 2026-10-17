@@ -101,11 +101,11 @@ test('réconciliation des statuts réel sent et error, sans remettre ces vidéos
   await reconcileDeliveries({ state: s.state, now, persist: s.options.persist, remote: [{ id: 'active', status: 'scheduled', dueAt: now.toISOString() }], get: async id => { reads++; return { id, status: id, externalLink: 'https://example.com/post', error: { message: 'failed' } }; } });
   assert.equal(reads, 2); assert.equal(s.state.deliveries.a.status, 'published'); assert.equal(s.state.deliveries.b.status, 'failed_in_buffer');
 });
-test('2 heures réelles entre passages, indépendamment du jour local', () => {
+test('6 heures réelles entre passages, indépendamment du jour local', () => {
   assert.equal(syncDue({}, now.getTime()), true);
   const state = { queueSync: { lastAttemptAt: now.toISOString() } };
-  assert.equal(syncDue(state, now.getTime() + 2*3600000-1), false);
-  assert.equal(syncDue(state, now.getTime() + 2*3600000), true);
+  assert.equal(syncDue(state, now.getTime() + 6*3600000-1), false);
+  assert.equal(syncDue(state, now.getTime() + 6*3600000), true);
 });
 function localTime(day, hour) {
   const nominal = Date.parse(`${day}T${hour}:00:00Z`);

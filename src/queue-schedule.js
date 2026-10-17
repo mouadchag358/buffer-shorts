@@ -10,9 +10,12 @@ export function localParts(date) {
 const dayKey = p => `${p.year}-${p.month}-${p.day}`;
 const timeKey = p => `${p.hour}:${p.minute}`;
 
-// Quatre fenêtres distinctes (heure du Maroc), espacées d'au moins 2 heures.
-// Les minutes sont choisies par pas de 5 pour éviter les heures trop mécaniques.
-const windowStarts = [1, 7, 13, 19];
+// Facebook/Instagram: 12 créneaux par jour, un par fenêtre de deux heures.
+// YouTube/TikTok restent à quatre créneaux/jour.
+// Chaque minute est pseudo-aléatoire, par pas de cinq minutes, et stable par date/réseau.
+export const dailyVideoCount = platform => ['facebook', 'instagram'].includes(platform) ? 12 : 4;
+const fourWindowStarts = [1, 7, 13, 19];
+const twelveWindowStarts = Array.from({ length: 12 }, (_, i) => i * 2);
 
 function stableHash(value) {
   let hash = 2166136261;
@@ -27,8 +30,11 @@ function stableHash(value) {
 // Le même jour et le même réseau donnent les mêmes horaires à chaque sync.
 // Sans ce déterminisme, toutes les vidéos déjà planifiées changeraient sans cesse.
 function dailyTimes(day, platform) {
-  return windowStarts.map((hourStart, index) => {
-    const offset = stableHash(`buffer-shorts:${platform}:${day}:${index}`) % 48;
+  const twelve = dailyVideoCount(platform) === 12;
+  const starts = twelve ? twelveWindowStarts : fourWindowStarts;
+  const slotsPerWindow = twelve ? 24 : 48;
+  return starts.map((hourStart, index) => {
+    const offset = stableHash(`buffer-shorts:${platform}:${day}:${index}`) % slotsPerWindow;
     const hour = hourStart + Math.floor(offset / 12);
     const minute = (offset % 12) * 5;
     return `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
@@ -42,21 +48,20 @@ export function isPlannedVideoSlot(date, platform = 'instagram') {
   return dailyTimes(dayKey(p), platform).includes(timeKey(p));
 }
 
-// Quatre publications par jour et par réseau, à des heures variables chaque jour.
-// On commence le lendemain et l'on suit automatiquement les changements d'heure.
+// Douze vidéos/jour Facebook et Instagram, quatre/jour YouTube.
+// Inclure les créneaux encore libres aujourd'hui pour assurer les 12 publications.
+// Toujours éviter les créneaux proches de moins de dix minutes.
 export function platformQueueTargets(now = new Date(), platform = 'instagram', count = 8) {
   if (!Number.isInteger(count) || count < 1 || count > 32) throw new Error('Nombre de créneaux invalide');
   if (!Number.isFinite(new Date(now).getTime())) throw new Error('Date de référence invalide');
-  const today = dayKey(localParts(now));
   const start = Math.ceil((now.getTime() + 10 * 60000) / 300000) * 300000;
   const targets = [];
   const dailyCache = new Map();
 
-  for (let i = 0; i < (Math.ceil(count / 4) + 5) * 24 * 12; i++) {
+  for (let i = 0; i < (Math.ceil(count / dailyVideoCount(platform)) + 5) * 24 * 12; i++) {
     const date = new Date(start + i * 300000);
     const p = localParts(date);
     const day = dayKey(p);
-    if (day === today) continue;
     if (!dailyCache.has(day)) dailyCache.set(day, new Set(dailyTimes(day, platform)));
     if (!dailyCache.get(day).has(timeKey(p))) continue;
     targets.push({ key: `${day}-${p.hour}h${p.minute}`, dueAt: date.toISOString() });

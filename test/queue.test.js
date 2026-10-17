@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fillQueues, initFacebookFromInstagram, migrateOldSlots, reconcileDeliveries, refreshScheduledDescriptions } from '../src/queue.js';
-import { queueTargets, platformQueueTargets, localParts, isPlannedVideoSlot, syncDue, videoHourKey } from '../src/queue-schedule.js';
+import { queueTargets, platformQueueTargets, localParts, isPlannedVideoSlot, syncDue, videoHourKey, dailyVideoCount } from '../src/queue-schedule.js';
 import { deliveryKey } from '../src/core.js';
 import { queuedPosts, reschedulePost, createPost } from '../src/buffer.js';
 const now = new Date('2026-10-04T12:00:00Z');
@@ -101,11 +101,11 @@ test('réconciliation des statuts réel sent et error, sans remettre ces vidéos
   await reconcileDeliveries({ state: s.state, now, persist: s.options.persist, remote: [{ id: 'active', status: 'scheduled', dueAt: now.toISOString() }], get: async id => { reads++; return { id, status: id, externalLink: 'https://example.com/post', error: { message: 'failed' } }; } });
   assert.equal(reads, 2); assert.equal(s.state.deliveries.a.status, 'published'); assert.equal(s.state.deliveries.b.status, 'failed_in_buffer');
 });
-test('5 heures réelles entre passages, indépendamment du jour local', () => {
+test('2 heures réelles entre passages, indépendamment du jour local', () => {
   assert.equal(syncDue({}, now.getTime()), true);
   const state = { queueSync: { lastAttemptAt: now.toISOString() } };
-  assert.equal(syncDue(state, now.getTime() + 5*3600000-1), false);
-  assert.equal(syncDue(state, now.getTime() + 5*3600000), true);
+  assert.equal(syncDue(state, now.getTime() + 2*3600000-1), false);
+  assert.equal(syncDue(state, now.getTime() + 2*3600000), true);
 });
 function localTime(day, hour) {
   const nominal = Date.parse(`${day}T${hour}:00:00Z`);
@@ -138,33 +138,46 @@ test('post actif absent de la liste ajouté au comptage après lecture individue
   assert.equal(result[0].queued,8); assert.equal(result[0].added,7);
 });
 
-test('quatre horaires différents chaque jour, stables, y compris pendant Ramadan', () => {
-  for (const date of ['2026-10-05T12:00:00Z', '2026-02-20T12:00:00Z']) {
-    const start = new Date(date);
-    for (const platform of ['facebook','instagram','youtube']) {
-      const slots = platformQueueTargets(start, platform, 12);
-      assert.deepEqual(slots, platformQueueTargets(start, platform, 12));
-      const byDay = new Map();
-      for (const slot of slots) {
+test('12 horaires aléatoires/stables Facebook et Instagram, 4 pour YouTube, y compris pendant Ramadan', () => {
+  const dates = [
+    ['2026-10-04T12:00:00Z','2026-10-05'],
+    ['2026-02-19T12:00:00Z','2026-02-20']
+  ];
+  assert.equal(dailyVideoCount('facebook'), 12);
+  assert.equal(dailyVideoCount('instagram'), 12);
+  assert.equal(dailyVideoCount('youtube'), 4);
+  for (const [startIso, targetDay] of dates) {
+    const start = new Date(startIso);
+    for (const platform of ['facebook', 'instagram', 'youtube']) {
+      const slots = platformQueueTargets(start, platform, 32);
+      assert.deepEqual(slots, platformQueueTargets(start, platform, 32));
+      assert.ok(slots.every(slot => isPlannedVideoSlot(slot.dueAt, platform)));
+      const fullDay = slots.filter(slot => {
         const p = localParts(new Date(slot.dueAt));
-        const key = `${p.year}-${p.month}-${p.day}`;
-        byDay.set(key, [...(byDay.get(key) || []), `${p.hour}:${p.minute}`]);
-        assert.equal(isPlannedVideoSlot(slot.dueAt, platform), true);
-      }
-      assert.deepEqual([...byDay.values()].map(times => times.length), [4,4,4]);
-      const [a,b,c] = [...byDay.values()];
-      assert.notDeepEqual(a,b);
-      assert.notDeepEqual(b,c);
-      for (const times of byDay.values()) {
-        assert.equal(new Set(times).size,4);
-        assert.ok(times[0] >= '01:00' && times[0] <= '04:55');
-        assert.ok(times[1] >= '07:00' && times[1] <= '10:55');
-        assert.ok(times[2] >= '13:00' && times[2] <= '16:55');
-        assert.ok(times[3] >= '19:00' && times[3] <= '22:55');
+        return `${p.year}-${p.month}-${p.day}` === targetDay;
+      });
+      const count = dailyVideoCount(platform);
+      assert.equal(fullDay.length, count);
+      assert.equal(new Set(fullDay.map(s => videoHourKey(s.dueAt))).size, count);
+      for (let index = 0; index < fullDay.length; index++) {
+        const p = localParts(new Date(fullDay[index].dueAt));
+        assert.equal(Number(p.minute) % 5, 0);
+        if (count === 12) {
+          assert.ok(Number(p.hour) >= index * 2 && Number(p.hour) < (index + 1) * 2);
+        }
       }
     }
     assert.deepEqual(queueTargets(start), platformQueueTargets(start, 'instagram'));
   }
+});
+test('le prochain créneau du jour reste accessible après une synchro, sans attendre demain', () => {
+  const now = new Date('2026-10-17T12:00:00Z');
+  const slots = platformQueueTargets(now, 'facebook', 8);
+  assert.ok(slots.some(s => {
+    const p = localParts(new Date(s.dueAt));
+    return `${p.year}-${p.month}-${p.day}` === '2026-10-17';
+  }));
+  assert.ok(slots.every(s => Date.parse(s.dueAt) > now.getTime() + 10 * 60000));
 });
 test('migration de plusieurs anciennes vidéos vers des créneaux distincts', async () => {
   const s = setup();

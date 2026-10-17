@@ -4092,7 +4092,11 @@
       "bufferId": "6ad2aacd52adf2bfae65eb5b",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:15:32.879Z",
-      "youtubeTitleUpdatedTo": "Did You Catch That? 👀 #Shorts #Viral"
+      "youtubeTitleUpdatedTo": "Did You Catch That? 👀 #Shorts #Viral",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-18T19:15:00.000Z"
+      }
     },
     "[\"r2-4badc93b0783eaa60e424fe4cb4ca7970f033047b90555517d69672eb6ee3c33\",\"instagram\"]": {
       "status": "queued",

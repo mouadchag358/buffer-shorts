@@ -27,7 +27,7 @@ const YOUTUBE_HOOK_TITLES = [
   "Did You Expect That? 😲 #Shorts #Viral",
   "Look Closely at This Moment 🔥 #Shorts #Viral",
   "What's the Most Surprising Part? 👀 #Shorts #Viral",
-  "This Clip Gets Better on Replay 🎬 #Shorts"
+  "This Clip Gets Better on Replay 🎬 #Shorts #Viral"
 ];
 const YOUTUBE_HOOK_DESCRIPTIONS = [
   "👀 Did you catch that? Watch and tell us what you think!\n#Shorts #YouTubeShorts #Viral #Trending",
@@ -54,7 +54,7 @@ const FACEBOOK_CAPTIONS = [
   "👀 Which second made you stop scrolling?\n#FacebookReels #ShortClips #Reels #Viral",
   "🔥 This moment deserves another look. Your thoughts?\n#FacebookReels #Reels #Trending #Viral",
   "😲 Be honest: what was your first reaction?\n#FacebookReels #Reels #Unexpected #Viral",
-  "🎥 Which part is your favorite? Drop a timestamp.\n#FacebookReels #Reels #ShortVideos"
+  "🎥 Which part is your favorite? Drop a timestamp.\n#FacebookReels #Reels #ShortVideos #Viral"
 ];
 
 function stableIndex(value, length) {

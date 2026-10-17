@@ -200,8 +200,9 @@ export async function initFacebookFromInstagram({ posts, state, persist, dryRun 
   return checkpoint;
 }
 
-export async function fillQueues({ posts, state, remote, channels, env, persist, send, now = new Date(), dryRun = false, log = console.log }) {
+export async function fillQueues({ posts, state, remote, channels, env, persist, send, now = new Date(), dryRun = false, log = console.log, targetQueueSize = 8 }) {
   validate(posts);
+  if (!Number.isInteger(targetQueueSize) || targetQueueSize < 1 || targetQueueSize > 10) throw new Error('Réserve vidéo invalide (maximum 10)');
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');
   if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer avant toute nouvelle création');
   const working = dryRun ? structuredClone(state) : state;
@@ -220,7 +221,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     const summary = { platform, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
     summaries.push(summary);
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
-    const queueGoal = platform === 'instagram' ? 8 : 8;
+    const queueGoal = targetQueueSize;
     const maxPlatformAttempts = platform === 'facebook' ? 96 : 12;
     while (summary.queued < queueGoal && summary.attempts < maxPlatformAttempts && attempts < maxTotalAttempts) {
       // Un refus explicite de format ne bloque pas le réseau: passer à la prochaine vidéo.

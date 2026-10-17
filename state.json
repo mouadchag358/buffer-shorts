@@ -4165,7 +4165,11 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37befae173d6e00bb1016",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:15:32.879Z"
+      "lastCheckedAt": "2026-10-17T21:15:32.879Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-19T08:00:00.000Z"
+      }
     },
     "[\"r2-8a315e22dc4ee83d62df754e35c66d558cf4cec59f81305434dd77ff98e95747\",\"youtube\"]": {
       "status": "queued",

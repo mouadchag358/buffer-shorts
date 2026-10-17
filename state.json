@@ -3999,7 +3999,11 @@
       "updatedAt": "2026-10-16T09:53:00.991Z",
       "bufferId": "6ad1f40513b2adf7249f664e",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:15:32.879Z"
+      "lastCheckedAt": "2026-10-17T21:15:32.879Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-18T08:05:00.000Z"
+      }
     },
     "[\"r2-e82a17eac5c4ddbaef3484a4bd3e80f4f027074cb351e0c0a38dbbc206423897\",\"youtube\"]": {
       "status": "rejected",

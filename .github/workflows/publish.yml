@@ -1,9 +1,9 @@
-name: Maintenir les files de Reels et Shorts
+name: Maintenir dix vidéos en avance par réseau
 on:
   push:
     paths: ['.github/workflows/publish.yml']
   schedule:
-    - cron: '17 */2 * * *'
+    - cron: '17 0,6,12,18 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

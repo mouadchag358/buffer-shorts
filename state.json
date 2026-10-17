@@ -3990,7 +3990,11 @@
       "bufferId": "6ad1a99aee2c696029bc81d8",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:15:32.879Z",
-      "youtubeTitleUpdatedTo": "Watch Closely! 👀 #Shorts #Trending"
+      "youtubeTitleUpdatedTo": "Watch Closely! 👀 #Shorts #Trending",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-18T04:55:00.000Z"
+      }
     },
     "[\"r2-a45cc704c82795ef0fd449e9a70a4eda731eaa61f40398b37982c33d8a415ca6\",\"instagram\"]": {
       "status": "queued",

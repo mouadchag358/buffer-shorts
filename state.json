@@ -3970,17 +3970,19 @@
       "sentAt": "2026-10-17T18:01:15.622Z"
     },
     "[\"r2-7ba4aef459ef6681381fbe7e09e475f499925b3ab79503fca65e632d411121fc\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
-      "dueAt": "2026-10-17T23:05:00.000Z",
+      "dueAt": "2026-10-17T21:57:49.561Z",
       "updatedAt": "2026-10-16T04:35:22.763Z",
       "bufferId": "6ad1a996e991a49db3c9dde0",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-17T23:05:00.000Z"
-      }
+      },
+      "externalLink": "https://www.instagram.com/reel/DenIHzkjCyc/",
+      "sentAt": "2026-10-17T21:58:16.300Z"
     },
     "[\"r2-ce6f952aecfb66b83d68b67b66711e89e027c9d0ac720333aaf2684f1275ab7e\",\"youtube\"]": {
       "status": "queued",
@@ -3989,7 +3991,7 @@
       "updatedAt": "2026-10-16T04:35:22.763Z",
       "bufferId": "6ad1a99aee2c696029bc81d8",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "youtubeTitleUpdatedTo": "The Ending Is Worth Watching 🎬 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4003,7 +4005,7 @@
       "updatedAt": "2026-10-16T09:53:00.991Z",
       "bufferId": "6ad1f40513b2adf7249f664e",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T01:45:00.000Z"
@@ -4023,7 +4025,7 @@
       "updatedAt": "2026-10-16T09:53:00.991Z",
       "bufferId": "6ad1f40dbbb9ce09f669b432",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "youtubeTitleUpdatedTo": "What Would You Do Here? 😳 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4037,7 +4039,7 @@
       "updatedAt": "2026-10-16T14:53:12.771Z",
       "bufferId": "6ad23a60193eb243e2c0277c",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T03:05:00.000Z"
@@ -4064,7 +4066,7 @@
       "updatedAt": "2026-10-16T14:53:12.771Z",
       "bufferId": "6ad23a6a7521b87606148cee",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "youtubeTitleUpdatedTo": "What Would You Do Here? 😳 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4078,7 +4080,7 @@
       "updatedAt": "2026-10-16T22:52:50.639Z",
       "bufferId": "6ad2aac952adf2bfae65ead7",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T04:05:00.000Z"
@@ -4091,7 +4093,7 @@
       "updatedAt": "2026-10-16T22:52:50.639Z",
       "bufferId": "6ad2aacd52adf2bfae65eb5b",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "youtubeTitleUpdatedTo": "Did You Catch That Detail? 👀 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4105,7 +4107,7 @@
       "updatedAt": "2026-10-17T04:31:02.445Z",
       "bufferId": "6ad2fa128ac6cfe5442db0e6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T07:50:00.000Z"
@@ -4118,7 +4120,7 @@
       "updatedAt": "2026-10-17T04:31:02.445Z",
       "bufferId": "6ad2fa1ac34368e4b0a83a63",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "youtubeTitleUpdatedTo": "Did You Catch That Detail? 👀 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4132,7 +4134,7 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37be5769b4579347c8adf",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T09:20:00.000Z"
@@ -4145,7 +4147,7 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37be8769b4579347c8bc0",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T11:55:00.000Z"
@@ -4165,7 +4167,7 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37befae173d6e00bb1016",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-19T08:00:00.000Z"
@@ -4179,7 +4181,7 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37bf2dd83363c4dd4320b",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-19T13:40:00.000Z"
@@ -4211,7 +4213,7 @@
       "updatedAt": "2026-10-17T21:15:32.879Z",
       "bufferId": "6ad3e5adae173d6e00d39b93",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T13:45:00.000Z"
@@ -4224,7 +4226,7 @@
       "updatedAt": "2026-10-17T21:15:32.879Z",
       "bufferId": "6ad3e5b1769b457934953d44",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "youtubeTitleUpdatedTo": "What's the Most Surprising Part? 👀 #Shorts #Viral"
     },
     "[\"r2-4417400c6e6bfd1ccd325ee417cdc9e84ac317f34dd2ffe4c61ba96148685425\",\"facebook\"]": {
@@ -4318,7 +4320,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec040a208cb3233add69",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-17T22:25:00.000Z"
@@ -4331,7 +4333,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec07ae173d6e00d4bd94",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T01:10:00.000Z"
@@ -4372,7 +4374,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec170b0d72757af5fa48",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T03:25:00.000Z"
@@ -4385,7 +4387,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec1bae173d6e00d4bffa",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T05:40:00.000Z"
@@ -4398,7 +4400,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec1e769b457934963da0",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T06:30:00.000Z"
@@ -4432,7 +4434,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec2b0b0d72757af5fd0c",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T09:15:00.000Z"
@@ -4459,7 +4461,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec340b0d72757af5fdc6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T11:10:00.000Z"
@@ -4471,7 +4473,8 @@
       "dueAt": "2026-10-18T12:05:00.000Z",
       "updatedAt": "2026-10-17T21:54:44.908Z",
       "bufferId": "6ad3eed4769b45793496ab09",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-17T22:00:43.785Z"
     }
   },
   "r2ListingRequests": {

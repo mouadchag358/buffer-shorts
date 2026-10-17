@@ -4455,7 +4455,11 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec340b0d72757af5fdc6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T21:54:44.908Z"
+      "lastCheckedAt": "2026-10-17T21:54:44.908Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-18T11:10:00.000Z"
+      }
     }
   },
   "r2ListingRequests": {

@@ -346,17 +346,17 @@
     ]
   },
   "imageBatch": {
-    "window": "41483",
+    "window": "41486",
     "cardIds": [
-      "quiz-104",
-      "quiz-015",
-      "quiz-105",
-      "quiz-016",
-      "quiz-106",
-      "quiz-017",
-      "quiz-107",
-      "quiz-019"
+      "quiz-108",
+      "quiz-020",
+      "quiz-109",
+      "quiz-021",
+      "quiz-110",
+      "quiz-022",
+      "quiz-111",
+      "quiz-023"
     ],
-    "completed": true
+    "completed": false
   }
 }

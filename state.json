@@ -4087,14 +4087,14 @@
     "[\"r2-8a776a25fd527a9cabfcff65dfaa7754531c175a36a6f5822aa1231180bbe6cf\",\"youtube\"]": {
       "status": "queued",
       "channelId": "6ac17ba1ea19ca0bde6a0976",
-      "dueAt": "2026-10-18T18:00:00.000Z",
+      "dueAt": "2026-10-18T19:15:00.000Z",
       "updatedAt": "2026-10-16T22:52:50.639Z",
       "bufferId": "6ad2aacd52adf2bfae65eb5b",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-17T21:15:32.879Z",
       "youtubeTitleUpdatedTo": "Did You Catch That? 👀 #Shorts #Viral",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-18T19:15:00.000Z"
       }
     },

@@ -4477,10 +4477,12 @@
       "lastCheckedAt": "2026-10-17T22:00:43.785Z"
     },
     "[\"r2-b63cf35e7af6fcc8497f6fbef4530b3af65d989b97f5edac0a3ef6059ddc1761\",\"facebook\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-18T14:15:00.000Z",
-      "updatedAt": "2026-10-17T22:00:43.785Z"
+      "updatedAt": "2026-10-17T22:00:43.785Z",
+      "bufferId": "6ad3f0110b0d72757af6cb03",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

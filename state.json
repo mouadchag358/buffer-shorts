@@ -4314,10 +4314,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-e9a0b221698d5551f536b53c05e000eeed698c1d425321346d7f9fd5a6daebd0\",\"facebook\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-18T14:40:00.000Z",
-      "updatedAt": "2026-10-17T21:43:24.709Z"
+      "updatedAt": "2026-10-17T21:43:24.709Z",
+      "bufferId": "6ad3ec07ae173d6e00d4bd94",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -3991,7 +3991,7 @@
       "updatedAt": "2026-10-16T04:35:22.763Z",
       "bufferId": "6ad1a99aee2c696029bc81d8",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "youtubeTitleUpdatedTo": "The Ending Is Worth Watching 🎬 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -3999,17 +3999,19 @@
       }
     },
     "[\"r2-a45cc704c82795ef0fd449e9a70a4eda731eaa61f40398b37982c33d8a415ca6\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-18T01:45:00.000Z",
       "updatedAt": "2026-10-16T09:53:00.991Z",
       "bufferId": "6ad1f40513b2adf7249f664e",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T01:45:00.000Z"
-      }
+      },
+      "externalLink": "https://www.instagram.com/reel/DeniIDWDnnu/",
+      "sentAt": "2026-10-18T01:46:00.993Z"
     },
     "[\"r2-e82a17eac5c4ddbaef3484a4bd3e80f4f027074cb351e0c0a38dbbc206423897\",\"youtube\"]": {
       "status": "rejected",
@@ -4025,7 +4027,7 @@
       "updatedAt": "2026-10-16T09:53:00.991Z",
       "bufferId": "6ad1f40dbbb9ce09f669b432",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "youtubeTitleUpdatedTo": "What Would You Do Here? 😳 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4033,17 +4035,19 @@
       }
     },
     "[\"r2-c27dfb2884e0ff9cf0448c803e8706fb443ab451f97b335155130205130173d4\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-18T03:05:00.000Z",
       "updatedAt": "2026-10-16T14:53:12.771Z",
       "bufferId": "6ad23a60193eb243e2c0277c",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T03:05:00.000Z"
-      }
+      },
+      "externalLink": "https://www.instagram.com/reel/DenrS7Gin-p/",
+      "sentAt": "2026-10-18T03:05:58.708Z"
     },
     "[\"r2-c18700402ae83ea9e8e94941e17672f91814046f415ce5ddf63969f016a5c820\",\"youtube\"]": {
       "status": "rejected",
@@ -4066,7 +4070,7 @@
       "updatedAt": "2026-10-16T14:53:12.771Z",
       "bufferId": "6ad23a6a7521b87606148cee",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "youtubeTitleUpdatedTo": "What Would You Do Here? 😳 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4074,17 +4078,19 @@
       }
     },
     "[\"r2-b33019de9118c82ae0d97a887d70db2e4bb7958aa471b72143eb4e6497c79da2\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-18T04:05:00.000Z",
       "updatedAt": "2026-10-16T22:52:50.639Z",
       "bufferId": "6ad2aac952adf2bfae65ead7",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T04:05:00.000Z"
-      }
+      },
+      "externalLink": "https://www.instagram.com/reel/DenyJHxDnjx/",
+      "sentAt": "2026-10-18T04:05:56.696Z"
     },
     "[\"r2-8a776a25fd527a9cabfcff65dfaa7754531c175a36a6f5822aa1231180bbe6cf\",\"youtube\"]": {
       "status": "queued",
@@ -4093,7 +4099,7 @@
       "updatedAt": "2026-10-16T22:52:50.639Z",
       "bufferId": "6ad2aacd52adf2bfae65eb5b",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "youtubeTitleUpdatedTo": "Did You Catch That Detail? 👀 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4107,7 +4113,7 @@
       "updatedAt": "2026-10-17T04:31:02.445Z",
       "bufferId": "6ad2fa128ac6cfe5442db0e6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T07:50:00.000Z"
@@ -4120,7 +4126,7 @@
       "updatedAt": "2026-10-17T04:31:02.445Z",
       "bufferId": "6ad2fa1ac34368e4b0a83a63",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "youtubeTitleUpdatedTo": "Did You Catch That Detail? 👀 #Shorts #Viral",
       "scheduleUpdate": {
         "status": "done",
@@ -4134,7 +4140,7 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37be5769b4579347c8adf",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T09:20:00.000Z"
@@ -4147,7 +4153,7 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37be8769b4579347c8bc0",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T11:55:00.000Z"
@@ -4167,7 +4173,7 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37befae173d6e00bb1016",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-19T08:00:00.000Z"
@@ -4181,7 +4187,7 @@
       "updatedAt": "2026-10-17T13:45:02.063Z",
       "bufferId": "6ad37bf2dd83363c4dd4320b",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-19T13:40:00.000Z"
@@ -4213,7 +4219,7 @@
       "updatedAt": "2026-10-17T21:15:32.879Z",
       "bufferId": "6ad3e5adae173d6e00d39b93",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T13:45:00.000Z"
@@ -4226,7 +4232,7 @@
       "updatedAt": "2026-10-17T21:15:32.879Z",
       "bufferId": "6ad3e5b1769b457934953d44",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "youtubeTitleUpdatedTo": "What's the Most Surprising Part? 👀 #Shorts #Viral"
     },
     "[\"r2-4417400c6e6bfd1ccd325ee417cdc9e84ac317f34dd2ffe4c61ba96148685425\",\"facebook\"]": {
@@ -4314,30 +4320,34 @@
       "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     },
     "[\"r2-fdbda37a8095ea374108cf0fda7f5261c3364e990cc5f905a2e89fc1cb258102\",\"facebook\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-17T22:25:00.000Z",
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec040a208cb3233add69",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-17T22:25:00.000Z"
-      }
+      },
+      "externalLink": "https://www.facebook.com/reel/2116151082328920/",
+      "sentAt": "2026-10-17T22:25:07.567Z"
     },
     "[\"r2-e9a0b221698d5551f536b53c05e000eeed698c1d425321346d7f9fd5a6daebd0\",\"facebook\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-18T01:10:00.000Z",
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec07ae173d6e00d4bd94",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T01:10:00.000Z"
-      }
+      },
+      "externalLink": "https://www.facebook.com/reel/2294121481353817/",
+      "sentAt": "2026-10-18T01:10:08.188Z"
     },
     "[\"r2-d6f87223424b1216d029cb69d6123b6b9fdd5d85ca58658061d6304a59f40211\",\"facebook\"]": {
       "status": "rejected",
@@ -4368,17 +4378,19 @@
       "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     },
     "[\"r2-cb36b5ee77796ff4560c4e71bd79bde7cca810074cf86fbfc101688e754f2fe7\",\"facebook\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-18T03:25:00.000Z",
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec170b0d72757af5fa48",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T03:25:00.000Z"
-      }
+      },
+      "externalLink": "https://www.facebook.com/reel/1178110048123442/",
+      "sentAt": "2026-10-18T03:25:07.468Z"
     },
     "[\"r2-ede26a1bfe68b38b298caa19e10cba2ee438b0f812be91d0e6c9168c219e94f0\",\"facebook\"]": {
       "status": "queued",
@@ -4387,7 +4399,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec1bae173d6e00d4bffa",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T05:40:00.000Z"
@@ -4400,7 +4412,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec1e769b457934963da0",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T06:30:00.000Z"
@@ -4434,7 +4446,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec2b0b0d72757af5fd0c",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T09:15:00.000Z"
@@ -4461,7 +4473,7 @@
       "updatedAt": "2026-10-17T21:43:24.709Z",
       "bufferId": "6ad3ec340b0d72757af5fdc6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
       "scheduleUpdate": {
         "status": "done",
         "dueAt": "2026-10-18T11:10:00.000Z"
@@ -4474,7 +4486,7 @@
       "updatedAt": "2026-10-17T21:54:44.908Z",
       "bufferId": "6ad3eed4769b45793496ab09",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-17T22:00:43.785Z"
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z"
     },
     "[\"r2-b63cf35e7af6fcc8497f6fbef4530b3af65d989b97f5edac0a3ef6059ddc1761\",\"facebook\"]": {
       "status": "queued",
@@ -4482,7 +4494,8 @@
       "dueAt": "2026-10-18T14:15:00.000Z",
       "updatedAt": "2026-10-17T22:00:43.785Z",
       "bufferId": "6ad3f0110b0d72757af6cb03",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z"
     },
     "[\"r2-51700e95b91894bb0483d35e16bbf6a488f344fd9afe22178714692f2a700d94\",\"facebook\"]": {
       "status": "rejected",
@@ -4497,15 +4510,19 @@
       "dueAt": "2026-10-18T16:00:00.000Z",
       "updatedAt": "2026-10-17T22:00:43.785Z",
       "bufferId": "6ad3f019ae173d6e00d587d7",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z"
     },
     "[\"r2-492a1827a9bdf5ad1c6787384ce50a8a60a6db7d701c9054766994dbee034087\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-17T23:05:00.000Z",
       "updatedAt": "2026-10-17T22:00:43.785Z",
       "bufferId": "6ad3f01d0b0d72757af6cf7b",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z",
+      "externalLink": "https://www.instagram.com/reel/DenP3gFlQut/",
+      "sentAt": "2026-10-17T23:07:58.426Z"
     },
     "[\"r2-caaddc974a8e211c48f0aee2826c20e0edbdb1c1b747dc2597d7b3aef4dfaba7\",\"instagram\"]": {
       "status": "queued",
@@ -4513,7 +4530,8 @@
       "dueAt": "2026-10-18T15:20:00.000Z",
       "updatedAt": "2026-10-17T22:00:43.785Z",
       "bufferId": "6ad3f021769b457934970e9f",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z"
     },
     "[\"r2-1d9ecb8d7718a798dc332b9f72027a66b648e8043f50851d7936d06f9742eb62\",\"instagram\"]": {
       "status": "queued",
@@ -4521,7 +4539,8 @@
       "dueAt": "2026-10-18T16:55:00.000Z",
       "updatedAt": "2026-10-17T22:00:43.785Z",
       "bufferId": "6ad3f025938409f1d0a48946",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z"
     },
     "[\"r2-bc162e18b436837742cf82722d1c332aa1808c63112b7b990c862adf54c68d8b\",\"youtube\"]": {
       "status": "rejected",
@@ -4536,7 +4555,8 @@
       "dueAt": "2026-10-20T01:40:00.000Z",
       "updatedAt": "2026-10-17T22:00:43.785Z",
       "bufferId": "6ad3f02ce272c4918fa27e5d",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z"
     },
     "[\"r2-ff28214c9bda4b98a19b6d0941c0c2b730b713d57656ffa548e1b01382a787d9\",\"youtube\"]": {
       "status": "queued",
@@ -4544,7 +4564,8 @@
       "dueAt": "2026-10-20T08:00:00.000Z",
       "updatedAt": "2026-10-17T22:00:43.785Z",
       "bufferId": "6ad3f030e272c4918fa27fc4",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-18T04:36:13.981Z"
     }
   },
   "r2ListingRequests": {

@@ -4759,10 +4759,11 @@
       "youtubeTitleUpdatedTo": "Look Closely at This Moment 🔥 #Shorts #Viral"
     },
     "[\"r2-4c0469805557fda6625ea7a594474267d4ad24132a71816d2a47f3c49c2cacc9\",\"facebook\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-19T06:35:00.000Z",
-      "updatedAt": "2026-10-18T20:45:20.702Z"
+      "updatedAt": "2026-10-18T20:45:20.702Z",
+      "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     }
   },
   "r2ListingRequests": {

@@ -4827,6 +4827,12 @@
       "updatedAt": "2026-10-18T20:45:20.702Z",
       "bufferId": "6ad5300a769b457934dbcd44",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-fe895cf26c16a8c01ddd918356c28dbe85ac29e429a900c93e1cfede6f0867ca\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-19T11:05:00.000Z",
+      "updatedAt": "2026-10-18T20:45:20.702Z"
     }
   },
   "r2ListingRequests": {

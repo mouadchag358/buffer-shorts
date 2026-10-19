@@ -219,14 +219,14 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     const platform = channel.service;
     const deliveryPlatform = channel.deliveryPlatform || platform;
     const queued = remote.filter(p => p.channelId === channel.id && pending(p) && !imageOnly(p));
-    const summary = { platform, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
+    const summary = { platform, channelId: channel.id, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
     summaries.push(summary);
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
     const queueGoal = targetQueueSize;
     const maxPlatformAttempts = platform === 'facebook' ? 96 : 12;
     while (summary.queued < queueGoal && summary.attempts < maxPlatformAttempts && attempts < maxTotalAttempts) {
       // Un refus explicite de format ne bloque pas le réseau: passer à la prochaine vidéo.
-      const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && (platform !== 'facebook' || !facebookSkipped.has(p.id)) && !accepted(working.deliveries[deliveryKey(p.id, deliveryPlatform)]) && !formatRejection(working.deliveries[deliveryKey(p.id, platform)], platform));
+      const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && (platform !== 'facebook' || !facebookSkipped.has(p.id)) && !accepted(working.deliveries[deliveryKey(p.id, deliveryPlatform)]) && !formatRejection(working.deliveries[deliveryKey(p.id, deliveryPlatform)], platform));
       if (!post) { summary.errors.push('Plus de vidéos disponibles'); break; }
       const key = deliveryKey(post.id, deliveryPlatform);
       const input = { ...inputFor(post, platform, env), channelId: channel.id };

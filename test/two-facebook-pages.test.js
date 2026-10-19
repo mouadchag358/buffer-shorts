@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { resolveQueueChannels } from '../src/discovery.js';
 import { fillQueues, migrateOldSlots, refreshScheduledDescriptions } from '../src/queue.js';
-import { deliveryKey } from '../src/core.js';
+import { deliveryKey, processSlot } from '../src/core.js';
+import { slotComplete } from '../src/batch.js';
+import { migrateFacebookDeliveryKeys } from '../src/checkpoints.js';
 import { dailyVideoCount, isPlannedVideoSlot } from '../src/queue-schedule.js';
 
 const FACEBOOK_ORIGINAL = '6ac8cdf16a5c39ccb6602776';
@@ -78,7 +80,7 @@ test('retient les anciennes publications Facebook seulement sur leur page', asyn
   assert.ok(sent.some(p=>p.channelId===FACEBOOK_SECOND && p.assets[0].video.url.endsWith('/0.mp4')));
 });
 
-test('migraine et descriptions: cible le service facebook avec une cle distincte', async () => {
+test('migration et descriptions: cible le service facebook avec une cle distincte', async () => {
   const { channels } = await resolveQueueChannels(['facebook', 'instagram'], env, async () => ({ channels: apiChannels }));
   const source = { id: 'p0', file: '0.mp4', platforms: ['facebook', 'instagram'] };
   const state = { version:1, slots:{}, deliveries:{
@@ -98,4 +100,50 @@ test('migraine et descriptions: cible le service facebook avec une cle distincte
   await migrateOldSlots({state,remote,channels,env,posts:[source],now,edit,persist:async()=>{}});
   await refreshScheduledDescriptions({state,remote,channels,env,posts:[source],edit,persist:async()=>{}});
   assert.ok(edits >= 1);
+});
+
+test('migration preserve le contenu historique et refuse les conflits', () => {
+  const state = {deliveries:{
+    [deliveryKey('p0','facebook')]:{status:'queued',channelId:FACEBOOK_ORIGINAL,bufferId:'existing'}
+  }};
+  assert.equal(migrateFacebookDeliveryKeys(state, FACEBOOK_ORIGINAL), true);
+  assert.equal(migrateFacebookDeliveryKeys(state, FACEBOOK_ORIGINAL), false);
+  assert.equal(state.deliveries[deliveryKey('p0','facebook')], undefined);
+  assert.equal(state.deliveries[deliveryKey('p0','facebook:' + FACEBOOK_ORIGINAL)].bufferId, 'existing');
+  const bad={deliveries:{[deliveryKey('p1','facebook')]:{status:'queued',channelId:FACEBOOK_SECOND}}};
+  assert.throws(()=>migrateFacebookDeliveryKeys(bad, FACEBOOK_ORIGINAL),/historique/);
+});
+
+test('publication manuelle distribue sur les deux pages Facebook et Instagram sans doublon', async () => {
+  const { channels } = await resolveQueueChannels(['facebook', 'instagram'], env, async () => ({channels:apiChannels}));
+  const posts = [{id:'first',file:'first.mp4',platforms:['facebook','instagram']}];
+  const state = {version:1,slots:{},deliveries:{}};
+  const inputs=[];
+  const options = {posts,state,channels,slot:'manual-test',env,
+    checkMedia:async()=>{},persist:async()=>{},
+    send:async input=>{inputs.push(input);return {status:'queued',bufferId:'b'+inputs.length};}
+  };
+  assert.equal((await processSlot(options)).length,3);
+  assert.deepEqual(inputs.map(p=>p.channelId),[FACEBOOK_ORIGINAL,FACEBOOK_SECOND,INSTAGRAM]);
+  assert.equal(slotComplete(state,posts,{key:'manual-test'},channels),true);
+  assert.deepEqual(await processSlot(options),[]);
+  assert.equal(inputs.length,3);
+  assert.equal(state.deliveries[deliveryKey('first','facebook:' + FACEBOOK_ORIGINAL)].bufferId, 'b1');
+  assert.equal(state.deliveries[deliveryKey('first','facebook:' + FACEBOOK_SECOND)].bufferId, 'b2');
+});
+
+test('publication manuelle complete seulement la page manque', async () => {
+  const {channels}=await resolveQueueChannels(['facebook','instagram'],env,async()=>({channels:apiChannels}));
+  const posts=[{id:'first',file:'first.mp4',platforms:['facebook','instagram']}];
+  const state={version:1,slots:{'manual-test':'first'},deliveries:{
+    [deliveryKey('first','facebook:' + FACEBOOK_ORIGINAL)]:{status:'queued',channelId:FACEBOOK_ORIGINAL},
+    [deliveryKey('first','instagram')]:{status:'queued',channelId:INSTAGRAM}
+  }};
+  assert.equal(slotComplete(state,posts,{key:'manual-test'},channels),false);
+  const sent=[];
+  const options={posts,state,channels,slot:'manual-test',env,checkMedia:async()=>{},persist:async()=>{},
+    send:async input=>{sent.push(input);return {status:'queued',bufferId:'new-b2'};}};
+  assert.equal((await processSlot(options)).length,1);
+  assert.deepEqual(sent.map(p=>p.channelId),[FACEBOOK_SECOND]);
+  assert.equal(slotComplete(state,posts,{key:'manual-test'},channels),true);
 });

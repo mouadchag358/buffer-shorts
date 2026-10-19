@@ -5179,7 +5179,11 @@
       "updatedAt": "2026-10-19T13:18:51.914Z",
       "bufferId": "6ad618ec3e5fb9f3ab93c79f",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-19T18:12:14.599Z"
+      "lastCheckedAt": "2026-10-19T18:12:14.599Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-20T08:00:00.000Z"
+      }
     }
   },
   "r2ListingRequests": {

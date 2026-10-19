@@ -5030,6 +5030,12 @@
       "updatedAt": "2026-10-19T13:18:51.914Z",
       "bufferId": "6ad618c53e5fb9f3ab93bd61",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-1caab18b261038af81ba59631d667afcf4ac1cc7e33c39ba1e2426fb3cd19473\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-20T03:30:00.000Z",
+      "updatedAt": "2026-10-19T13:18:51.914Z"
     }
   },
   "r2ListingRequests": {

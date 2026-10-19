@@ -133,7 +133,7 @@ export function inputFor(post, platform, env) {
   }
   return input;
 }
-export async function processSlot({ posts, state, slot, env, persist, send, checkMedia, dryRun = false, dueAt, mode }) {
+export async function processSlot({ posts, state, slot, env, persist, send, checkMedia, dryRun = false, dueAt, mode, channels }) {
   validate(posts);
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');
   if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer puis corriger state.json (voir README)');

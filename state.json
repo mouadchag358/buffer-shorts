@@ -5208,6 +5208,12 @@
       "updatedAt": "2026-10-19T18:12:14.599Z",
       "bufferId": "6ad65da779591d5804b7ffd5",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-8f36d4a772eb1eb6ee5915e5275e97b62993dfdb8332c9f6312a502bd739adbe\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-19T20:45:00.000Z",
+      "updatedAt": "2026-10-19T18:12:14.599Z"
     }
   },
   "r2ListingRequests": {

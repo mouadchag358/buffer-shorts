@@ -81,7 +81,7 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
     for (const post of scheduled) {
       if (!byId.has(post.id) || post.status !== 'scheduled') continue;
       const key = videoHourKey(post.dueAt);
-      if (isPlannedVideoSlot(post.dueAt, platform) && !reserved.has(key)) {
+      if (isPlannedVideoSlot(post.dueAt, channel.deliveryPlatform || platform) && !reserved.has(key)) {
         reserved.add(key);
       } else {
         needMove.push(post);
@@ -89,7 +89,7 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
     }
 
     if (!needMove.length) continue;
-    const candidates = platformQueueTargets(now, platform, 32);
+    const candidates = platformQueueTargets(now, channel.deliveryPlatform || platform, 32);
     for (const post of needMove) {
       const target = candidates.find(slot => !reserved.has(videoHourKey(slot.dueAt)));
       if (!target) throw new Error('No unique future video slot available for migration');
@@ -135,12 +135,12 @@ export async function refreshScheduledDescriptions({ posts, state, remote, chann
     const record = byBufferId.get(remotePost.id);
     if (!record) continue;
     const [postId, platform] = JSON.parse(record.key);
-    if (platform !== channel.service) continue;
+    if (platform !== (channel.deliveryPlatform || channel.service)) continue;
 
     const source = posts.find(post => post.id === postId);
     if (!source) continue;
 
-    const { channelId, needsApproval, mode, ...content } = inputFor(source, platform, env);
+    const { channelId, needsApproval, mode, ...content } = inputFor(source, channel.service, env);
     const desiredText = content.text;
     const desiredYoutubeTitle = platform === 'youtube' ? content.metadata?.youtube?.title : null;
     const textNeedsUpdate = Boolean(desiredText) && remotePost.text !== desiredText;
@@ -217,6 +217,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
   const maxTotalAttempts = 128;
   for (const channel of channels) {
     const platform = channel.service;
+    const deliveryPlatform = channel.deliveryPlatform || platform;
     const queued = remote.filter(p => p.channelId === channel.id && pending(p) && !imageOnly(p));
     const summary = { platform, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
     summaries.push(summary);
@@ -225,15 +226,15 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     const maxPlatformAttempts = platform === 'facebook' ? 96 : 12;
     while (summary.queued < queueGoal && summary.attempts < maxPlatformAttempts && attempts < maxTotalAttempts) {
       // Un refus explicite de format ne bloque pas le réseau: passer à la prochaine vidéo.
-      const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && (platform !== 'facebook' || !facebookSkipped.has(p.id)) && !accepted(working.deliveries[deliveryKey(p.id, platform)]) && !formatRejection(working.deliveries[deliveryKey(p.id, platform)], platform));
+      const post = posts.find(p => p.enabled !== false && p.platforms.includes(platform) && (platform !== 'facebook' || !facebookSkipped.has(p.id)) && !accepted(working.deliveries[deliveryKey(p.id, deliveryPlatform)]) && !formatRejection(working.deliveries[deliveryKey(p.id, platform)], platform));
       if (!post) { summary.errors.push('Plus de vidéos disponibles'); break; }
-      const key = deliveryKey(post.id, platform);
-      const input = inputFor(post, platform, env);
+      const key = deliveryKey(post.id, deliveryPlatform);
+      const input = { ...inputFor(post, platform, env), channelId: channel.id };
       const existing = remote.find(p => p.channelId === channel.id && p.assets?.some(a => a.source === input.assets[0].video.url));
       if (existing) { working.deliveries[key] = { status: 'queued', bufferId: existing.id, channelId: channel.id, dueAt: existing.dueAt, bufferStatus: existing.status }; if (!dryRun) await persist(state); continue; }
       const occupied = new Set(remote.filter(p => p.channelId === channel.id && pending(p) && !imageOnly(p) && p.dueAt)
         .map(p => videoHourKey(p.dueAt)));
-      const target = platformQueueTargets(now, platform, 32).find(t => !occupied.has(videoHourKey(t.dueAt)));
+      const target = platformQueueTargets(now, deliveryPlatform, 32).find(t => !occupied.has(videoHourKey(t.dueAt)));
       if (!target) throw new Error('Aucun créneau libre');
       Object.assign(input, { mode: 'customScheduled', dueAt: target.dueAt });
       attempts++; summary.attempts++;

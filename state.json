@@ -5032,10 +5032,11 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-1caab18b261038af81ba59631d667afcf4ac1cc7e33c39ba1e2426fb3cd19473\",\"facebook\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-20T03:30:00.000Z",
-      "updatedAt": "2026-10-19T13:18:51.914Z"
+      "updatedAt": "2026-10-19T13:18:51.914Z",
+      "error": "Invalid post: Video width must be at least 540px for Facebook Reels., Video height must be at least 960px for Facebook Reels., Video aspect ratio is too narrow for Facebook Reels."
     }
   },
   "r2ListingRequests": {

@@ -5094,13 +5094,13 @@
     "[\"r2-93d21b37cac2d8f209ca74c803fc52c6522f3df97eaa0cdc74520eb3291c68c9\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
-      "dueAt": "2026-10-20T00:05:00.000Z",
+      "dueAt": "2026-10-20T02:55:00.000Z",
       "updatedAt": "2026-10-19T13:18:51.914Z",
       "bufferId": "6ad618c53e5fb9f3ab93bd61",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-19T18:12:14.599Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-20T02:55:00.000Z"
       }
     },

@@ -41,7 +41,7 @@ try {
     state.queueSync = { ...state.queueSync, lastAttemptAt: now.toISOString(), status: 'running' };
     await persist(state); // Une erreur compte aussi comme passage; pas de rafale horaire.
   }
-  const { env, channels } = await resolveQueueChannels(['facebook', 'instagram', 'youtube']);
+  const { env, channels } = await resolveQueueChannels(['facebook', 'instagram']);
   const remote = await queuedPosts(env.BUFFER_ORGANIZATION_ID, channels.map(c => c.id), env);
   if (!dryRun) await reconcileDeliveries({ state, remote, get: id => getPost(id, env), persist, now, channels });
   const existingPosts = await read('posts.json');
@@ -61,6 +61,6 @@ try {
       ...(request && complete ? { completedRequestId: request.id } : {}) };
     await persist(state);
   }
-  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 10 vidéos d'avance par réseau, Facebook et Instagram 12 vidéos/jour, YouTube 4 vidéos/jour, heures variables (Africa/Casablanca), synchronisation 6h`);
+  console.log(`${dryRun ? 'Simulation' : 'Synchronisation'}: objectif 10 vidéos d'avance par réseau, Facebook (2 pages) et Instagram 12 vidéos/jour, heures variables (Africa/Casablanca), synchronisation 6h`);
   if (!complete) throw new Error('Files incomplètes: consulter les résultats par réseau');
 } catch (error) { console.error(error.message); process.exitCode = 1; }

@@ -101,7 +101,7 @@ export async function migrateOldSlots({ state, remote, channels, edit, persist, 
       if (!dryRun) {
         record.delivery.scheduleUpdate = { status: 'pending', dueAt: target.dueAt };
         await persist(state);
-        const { channelId, needsApproval, mode, ...content } = inputFor(source, platform, env);
+        const { channelId, needsApproval, mode, ...content } = inputFor(source, channel.service, env);
         const result = await edit(post.id, target.dueAt, { ...content, text: post.text ?? content.text });
         if (result.status !== 'scheduled' || Date.parse(result.dueAt) !== Date.parse(target.dueAt))
           throw new Error('Buffer did not confirm rescheduled video; stopping safely');
@@ -214,7 +214,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
   const summaries = [];
   // Facebook rejects many low-resolution source videos. Limit trials but
   // continue past explicit per-file format errors to find 8 valid Reels.
-  const maxTotalAttempts = 128;
+  const maxTotalAttempts = 240;
   for (const channel of channels) {
     const platform = channel.service;
     const deliveryPlatform = channel.deliveryPlatform || platform;

@@ -137,11 +137,26 @@ export async function processSlot({ posts, state, slot, env, persist, send, chec
   validate(posts);
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');
   if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer puis corriger state.json (voir README)');
+  const destinations = p => Array.isArray(channels)
+    ? channels.filter(ch => p.platforms.includes(ch.service)).map(ch => ({
+      network: ch.service, key: ch.deliveryPlatform || ch.service, channelId: ch.id
+    }))
+    : p.platforms.map(network => ({ network, key: network }));
   const assigned = state.slots[slot];
-  const post = assigned ? posts.find(p => p.id === assigned) : posts.find(p => p.enabled !== false && p.platforms.some(platform => !isFinalDelivery(state.deliveries[deliveryKey(p.id, platform)])));
+  const post = assigned ? posts.find(p => p.id === assigned) : posts.find(p => p.enabled !== false &&
+    destinations(p).some(destination => !isFinalDelivery(state.deliveries[deliveryKey(p.id, destination.key)])));
   if (!post) { if (assigned) throw new Error('Le post du créneau a été retiré'); return []; }
   if (post.enabled === false) return [];
-  const work = post.platforms.filter(platform => !isFinalDelivery(state.deliveries[deliveryKey(post.id, platform)])).map(platform => ({ platform, input: { ...inputFor(post, platform, env), ...(mode === 'shareNow' ? { mode: 'shareNow' } : dueAt ? { mode: 'customScheduled', dueAt } : {}) } }));
+  const work = destinations(post)
+    .filter(destination => !isFinalDelivery(state.deliveries[deliveryKey(post.id, destination.key)]))
+    .map(destination => ({
+      platform: destination.key,
+      input: {
+        ...inputFor(post, destination.network, env),
+        ...(destination.channelId ? { channelId: destination.channelId } : {}),
+        ...(mode === 'shareNow' ? { mode: 'shareNow' } : dueAt ? { mode: 'customScheduled', dueAt } : {})
+      }
+    }));
   if (!work.length || dryRun) return work;
   await checkMedia(work[0].input.assets[0].video.url);
   state.slots[slot] = post.id;

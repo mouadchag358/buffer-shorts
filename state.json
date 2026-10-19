@@ -5085,7 +5085,11 @@
       "updatedAt": "2026-10-19T04:42:46.172Z",
       "bufferId": "6ad59fdf0a208cb323949c72",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-19T18:12:14.599Z"
+      "lastCheckedAt": "2026-10-19T18:12:14.599Z",
+      "scheduleUpdate": {
+        "status": "pending",
+        "dueAt": "2026-10-20T00:00:00.000Z"
+      }
     },
     "[\"r2-93d21b37cac2d8f209ca74c803fc52c6522f3df97eaa0cdc74520eb3291c68c9\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",

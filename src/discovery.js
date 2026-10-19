@@ -32,6 +32,17 @@ export async function resolveQueueChannels(platforms, env = process.env, request
   }`, { input: { organizationId } }, env);
   const result = { ...env, BUFFER_ORGANIZATION_ID: organizationId }, channels = [];
   for (const platform of platforms) {
+    if (platform === 'facebook' && env.BUFFER_FACEBOOK_CHANNEL_IDS) {
+      const ids = env.BUFFER_FACEBOOK_CHANNEL_IDS.split(',').map(s => s.trim()).filter(Boolean);
+      if (ids.length !== 2 || new Set(ids).size !== 2) throw new Error('Deux IDs Facebook distincts requis');
+      for (const id of ids) {
+        const match = (data.channels || []).find(c => c.service.toLowerCase() === 'facebook' && c.id === id);
+        if (!match) throw new Error('Page Facebook absente de Buffer: ' + id);
+        channels.push({ ...match, service: 'facebook', deliveryPlatform: 'facebook:' + id });
+      }
+      result.BUFFER_FACEBOOK_CHANNEL_ID = ids[0];
+      continue;
+    }
     const configured = env[`BUFFER_${platform.toUpperCase()}_CHANNEL_ID`];
     const matches = (data.channels || []).filter(c => c.service.toLowerCase() === platform && (!configured || c.id === configured));
     if (matches.length !== 1) throw new Error(`Buffer ${platform}: ${matches.length} comptes trouvés; renseigner un ID pour choisir`);

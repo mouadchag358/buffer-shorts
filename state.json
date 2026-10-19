@@ -5037,6 +5037,12 @@
       "dueAt": "2026-10-20T03:30:00.000Z",
       "updatedAt": "2026-10-19T13:18:51.914Z",
       "error": "Invalid post: Video width must be at least 540px for Facebook Reels., Video height must be at least 960px for Facebook Reels., Video aspect ratio is too narrow for Facebook Reels."
+    },
+    "[\"r2-c00cb1d7d2c79bde4b19d6b048d48dbcaccf662206327b7eba35ac2d6690ab73\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-20T03:30:00.000Z",
+      "updatedAt": "2026-10-19T13:18:51.914Z"
     }
   },
   "r2ListingRequests": {

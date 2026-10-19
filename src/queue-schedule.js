@@ -13,7 +13,7 @@ const timeKey = p => `${p.hour}:${p.minute}`;
 // Facebook/Instagram: 12 créneaux par jour, un par fenêtre de deux heures.
 // YouTube/TikTok restent à quatre créneaux/jour.
 // Chaque minute est pseudo-aléatoire, par pas de cinq minutes, et stable par date/réseau.
-export const dailyVideoCount = platform => ['facebook', 'instagram'].includes(platform) ? 12 : 4;
+export const dailyVideoCount = platform => (platform === 'facebook' || platform.startsWith('facebook:') || platform === 'instagram') ? 12 : 4;
 const fourWindowStarts = [1, 7, 13, 19];
 const twelveWindowStarts = Array.from({ length: 12 }, (_, i) => i * 2);
 

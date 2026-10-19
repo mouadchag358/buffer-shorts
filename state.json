@@ -5047,10 +5047,11 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-6b38d12327dadeb5e91ce16f507b20b779f4aa2193ac0595da46aa2bc3b0fc74\",\"facebook\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-20T04:20:00.000Z",
-      "updatedAt": "2026-10-19T13:18:51.914Z"
+      "updatedAt": "2026-10-19T13:18:51.914Z",
+      "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     }
   },
   "r2ListingRequests": {

@@ -5081,13 +5081,13 @@
     "[\"r2-393ef4ef69cc1eae1db218c6b8e5722456b138ebaba191104f0583ca34a64d0b\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
-      "dueAt": "2026-10-19T23:45:00.000Z",
+      "dueAt": "2026-10-20T00:00:00.000Z",
       "updatedAt": "2026-10-19T04:42:46.172Z",
       "bufferId": "6ad59fdf0a208cb323949c72",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-19T18:12:14.599Z",
       "scheduleUpdate": {
-        "status": "pending",
+        "status": "done",
         "dueAt": "2026-10-20T00:00:00.000Z"
       }
     },

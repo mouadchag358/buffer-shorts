@@ -171,7 +171,7 @@ export async function refreshScheduledDescriptions({ posts, state, remote, chann
 export async function initFacebookFromInstagram({ posts, state, persist, dryRun = false }) {
   if (state.resume?.facebookFromInstagram) return state.resume.facebookFromInstagram;
   if (Object.keys(state.deliveries).some(key => {
-    try { return JSON.parse(key)[1] === 'facebook'; } catch { return false; }
+    try { return String(JSON.parse(key)[1]).startsWith('facebook'); } catch { return false; }
   })) return null; // Une page ayant déjà commencé ne doit pas être réinitialisée.
 
   const instagram = Object.entries(state.deliveries).flatMap(([key, delivery]) => {

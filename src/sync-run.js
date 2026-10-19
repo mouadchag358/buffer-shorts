@@ -5,6 +5,7 @@ import { queuedPosts, getPost, reschedulePost, createPost } from './buffer.js';
 import { loadCatalog } from './catalog.js';
 import { reconcileDeliveries, migrateOldSlots, refreshScheduledDescriptions, fillQueues } from './queue.js';
 import { syncDue } from './queue-schedule.js';
+import { migrateFacebookDeliveryKeys } from './checkpoints.js';
 const read = async path => JSON.parse(await readFile(path, 'utf8'));
 const dryRun = process.argv.includes('--dry-run');
 async function persist(state) {
@@ -41,23 +42,8 @@ try {
     state.queueSync = { ...state.queueSync, lastAttemptAt: now.toISOString(), status: 'running' };
     await persist(state); // Une erreur compte aussi comme passage; pas de rafale horaire.
   }
-  // Migrate legacy Facebook delivery keys to the original Facebook page.
-  // Preserve checkpoints so previously queued videos cannot be duplicated.
   const originalFacebookId = (process.env.BUFFER_FACEBOOK_CHANNEL_IDS || '').split(',')[0]?.trim();
-  if (originalFacebookId) {
-    let migrated = false;
-    for (const [key, delivery] of Object.entries(state.deliveries)) {
-      let parsed;
-      try { parsed = JSON.parse(key); } catch { continue; }
-      if (!Array.isArray(parsed) || parsed[1] !== 'facebook') continue;
-      const nextKey = JSON.stringify([parsed[0], 'facebook:' + originalFacebookId]);
-      if (state.deliveries[nextKey]) continue;
-      state.deliveries[nextKey] = delivery;
-      delete state.deliveries[key];
-      migrated = true;
-    }
-    if (migrated && !dryRun) await persist(state);
-  }
+  if (migrateFacebookDeliveryKeys(state, originalFacebookId) && !dryRun) await persist(state);
   const { env, channels } = await resolveQueueChannels(['facebook', 'instagram']);
   const remote = await queuedPosts(env.BUFFER_ORGANIZATION_ID, channels.map(c => c.id), env);
   if (!dryRun) await reconcileDeliveries({ state, remote, get: id => getPost(id, env), persist, now, channels });

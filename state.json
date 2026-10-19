@@ -5022,6 +5022,12 @@
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-19T13:18:51.914Z",
       "youtubeTitleUpdatedTo": "Would You Replay This? 👇 #Shorts #Viral"
+    },
+    "[\"r2-93d21b37cac2d8f209ca74c803fc52c6522f3df97eaa0cdc74520eb3291c68c9\",\"facebook\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-20T00:05:00.000Z",
+      "updatedAt": "2026-10-19T13:18:51.914Z"
     }
   },
   "r2ListingRequests": {

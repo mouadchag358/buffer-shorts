@@ -5313,10 +5313,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-48b71548b29344c31b59437ce4d601a102e0a4b83e327b980e7654c93d22c424\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-20T07:00:00.000Z",
-      "updatedAt": "2026-10-19T18:12:14.599Z"
+      "updatedAt": "2026-10-19T18:12:14.599Z",
+      "bufferId": "6ad65ddfbb5d496eb94c2fe5",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -4940,10 +4940,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-5666b1c5d82631df47b00125643c98be906c0b498cea53568d87953caccb4516\",\"facebook\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-19T20:05:00.000Z",
-      "updatedAt": "2026-10-19T04:42:46.172Z"
+      "updatedAt": "2026-10-19T04:42:46.172Z",
+      "bufferId": "6ad59fdc0a208cb323949c22",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

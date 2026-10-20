@@ -5818,10 +5818,12 @@
       "lastCheckedAt": "2026-10-20T21:38:49.745Z"
     },
     "[\"r2-69425020915c6aae43e1890ed69d750794b996d115cb79d6ba4cda335e267636\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-21T09:10:00.000Z",
-      "updatedAt": "2026-10-20T21:38:49.745Z"
+      "updatedAt": "2026-10-20T21:38:49.745Z",
+      "bufferId": "6ad7df71a40664bdbaeb2b71",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

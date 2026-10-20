@@ -5544,6 +5544,12 @@
       "updatedAt": "2026-10-20T04:53:11.942Z",
       "bufferId": "6ad6f3e5e9c669def5edbf65",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-bc162e18b436837742cf82722d1c332aa1808c63112b7b990c862adf54c68d8b\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-20T19:20:00.000Z",
+      "updatedAt": "2026-10-20T04:53:11.942Z"
     }
   },
   "r2ListingRequests": {

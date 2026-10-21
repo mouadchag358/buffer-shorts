@@ -6022,6 +6022,12 @@
       "bufferId": "6ad7dfc4a40664bdbaeb3f2b",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-21T04:50:20.742Z"
+    },
+    "[\"r2-f185acda4aabf935c437d76f9c3633eb6e6e86e954b893fb1f90b0004e2a7810\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-21T19:55:00.000Z",
+      "updatedAt": "2026-10-21T04:50:20.742Z"
     }
   },
   "r2ListingRequests": {

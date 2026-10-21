@@ -6431,6 +6431,12 @@
       "bufferId": "6ad8a7843021c1ef52b41057",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-21T21:44:06.284Z"
+    },
+    "[\"r2-b2aa9188fd5f1ab8ffab790e0ef675d7e6d92d7b76a88764e0974e6062e209b0\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-22T08:45:00.000Z",
+      "updatedAt": "2026-10-21T21:44:06.284Z"
     }
   },
   "r2ListingRequests": {

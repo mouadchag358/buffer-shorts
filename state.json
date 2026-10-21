@@ -6220,6 +6220,12 @@
       "bufferId": "6ad844e2aff466fe09005968",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-21T11:51:11.028Z"
+    },
+    "[\"r2-b99af3b8938c9d98ef4ed68f168c0d022e593cadc3777f9c8707ec03d7638aa7\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-22T03:45:00.000Z",
+      "updatedAt": "2026-10-21T11:51:11.028Z"
     }
   },
   "r2ListingRequests": {

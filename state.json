@@ -6110,6 +6110,12 @@
       "updatedAt": "2026-10-21T04:50:20.742Z",
       "bufferId": "6ad844bfaff466fe090055c5",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-712b96d63b3aa0b07f5410da987dc8515ca374a1595b461231d497e9da126cbe\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-21T19:50:00.000Z",
+      "updatedAt": "2026-10-21T04:50:20.742Z"
     }
   },
   "r2ListingRequests": {

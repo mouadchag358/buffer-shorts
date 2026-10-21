@@ -6492,6 +6492,12 @@
       "dueAt": "2026-10-22T09:55:00.000Z",
       "updatedAt": "2026-10-21T21:44:06.284Z",
       "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
+    },
+    "[\"r2-6aef79cd44ada403ee585955da57cad33de1a19e039aea5790fc13f05b7a3acc\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-22T09:55:00.000Z",
+      "updatedAt": "2026-10-21T21:44:06.284Z"
     }
   },
   "r2ListingRequests": {

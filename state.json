@@ -6032,10 +6032,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-3043262d278b464560ffba3b0b74b667a6325f655a47d166e3d6d5df496bf4b2\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-21T20:30:00.000Z",
-      "updatedAt": "2026-10-21T04:50:20.742Z"
+      "updatedAt": "2026-10-21T04:50:20.742Z",
+      "bufferId": "6ad8449c9fdbc474fbfed174",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

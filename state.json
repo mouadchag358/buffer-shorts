@@ -6518,10 +6518,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-6d44077f4df4a9c4d6739a7167aec51faf20ae8d74e3aeaaa27a759e10213d15\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-22T15:10:00.000Z",
-      "updatedAt": "2026-10-21T21:44:06.284Z"
+      "updatedAt": "2026-10-21T21:44:06.284Z",
+      "bufferId": "6ad9325765ffc170d00a2c2b",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

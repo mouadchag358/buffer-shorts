@@ -6433,10 +6433,12 @@
       "lastCheckedAt": "2026-10-21T21:44:06.284Z"
     },
     "[\"r2-b2aa9188fd5f1ab8ffab790e0ef675d7e6d92d7b76a88764e0974e6062e209b0\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-22T08:45:00.000Z",
-      "updatedAt": "2026-10-21T21:44:06.284Z"
+      "updatedAt": "2026-10-21T21:44:06.284Z",
+      "bufferId": "6ad9322db71cd0e4248fcc68",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

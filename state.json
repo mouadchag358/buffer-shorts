@@ -6324,10 +6324,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-6d0dda29db10ec4e685228fa487d1affc405c236d3a514de99f1ff6c085c2293\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-22T03:25:00.000Z",
-      "updatedAt": "2026-10-21T11:51:11.028Z"
+      "updatedAt": "2026-10-21T11:51:11.028Z",
+      "bufferId": "6ad8a7670807acdda1268265",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -6383,6 +6383,12 @@
       "updatedAt": "2026-10-21T11:51:11.028Z",
       "bufferId": "6ad8a7800807acdda126884c",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-4e37cac59c906136fd0061c4411144abbcbd8c32176629456c1c595b0754085e\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-22T06:10:00.000Z",
+      "updatedAt": "2026-10-21T11:51:11.028Z"
     }
   },
   "r2ListingRequests": {

@@ -6540,6 +6540,12 @@
       "updatedAt": "2026-10-21T21:44:06.284Z",
       "bufferId": "6ad9325d9c05f711d3c2ca53",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-e3c01b4c436547cc15ac07cbfe1fb6432225a07fcd8c9c0bec31b63177d71ad6\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-22T10:25:00.000Z",
+      "updatedAt": "2026-10-21T21:44:06.284Z"
     }
   },
   "r2ListingRequests": {

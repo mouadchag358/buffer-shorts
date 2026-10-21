@@ -6316,10 +6316,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-df11f3a883f488ff13d4d93ebc63c85d1fe95f18d2b9af4766851f2aec2b7154\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-22T00:10:00.000Z",
-      "updatedAt": "2026-10-21T11:51:11.028Z"
+      "updatedAt": "2026-10-21T11:51:11.028Z",
+      "bufferId": "6ad8a7640807acdda1268161",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -6613,6 +6613,12 @@
       "updatedAt": "2026-10-22T04:48:59.332Z",
       "bufferId": "6ad995c8ecaa6cda04293a7a",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-ef2a61c7a1b9815ce6f2461438a25cfe59a1df2efa05ae13f13623a402f1f094\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-22T20:50:00.000Z",
+      "updatedAt": "2026-10-22T04:48:59.332Z"
     }
   },
   "r2ListingRequests": {

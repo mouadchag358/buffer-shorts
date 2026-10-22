@@ -6607,10 +6607,12 @@
       "lastCheckedAt": "2026-10-22T04:48:59.332Z"
     },
     "[\"r2-acc3be596f9211eccba6cd02ad05c909f7e9ccb406f370decf2a7d2574a53530\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-22T18:25:00.000Z",
-      "updatedAt": "2026-10-22T04:48:59.332Z"
+      "updatedAt": "2026-10-22T04:48:59.332Z",
+      "bufferId": "6ad995c8ecaa6cda04293a7a",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

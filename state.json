@@ -7092,6 +7092,12 @@
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada824a03768a8d4fd780c6",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-caaddc974a8e211c48f0aee2826c20e0edbdb1c1b747dc2597d7b3aef4dfaba7\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-23T15:35:00.000Z",
+      "updatedAt": "2026-10-22T21:37:25.674Z"
     }
   },
   "r2ListingRequests": {

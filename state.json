@@ -7455,6 +7455,12 @@
       "updatedAt": "2026-10-23T11:41:01.525Z",
       "bufferId": "6adb47fe7af88b8f19af7ff4",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-f06f5b1b2071c2929dce151dfb117b85eb5a59120e474052be21e989553a67b4\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-24T05:10:00.000Z",
+      "updatedAt": "2026-10-23T11:41:01.525Z"
     }
   },
   "r2ListingRequests": {

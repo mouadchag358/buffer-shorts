@@ -6706,13 +6706,15 @@
       "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     },
     "[\"r2-5d021a29dce74c6ff6fa15dcb3c321a075ccbec2041325cd2fb577ef8930ac4a\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-22T22:35:00.000Z",
       "updatedAt": "2026-10-22T04:48:59.332Z",
       "bufferId": "6ad995e17dadc432f73ce16a",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.facebook.com/reel/2570403843457383/",
+      "sentAt": "2026-10-22T22:35:09.244Z"
     },
     "[\"r2-626996ae04363090218ac98106a5426d41a8f3c3cb20d035dbe2d8ce0b60da22\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
       "status": "published",
@@ -6747,22 +6749,26 @@
       "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     },
     "[\"r2-af32b936bda1e6d8413f89bb1ce0f7f45528f5d79e8307863b7022e534646df9\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-22T21:40:00.000Z",
       "updatedAt": "2026-10-22T04:48:59.332Z",
       "bufferId": "6ad995f41093844846df641c",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.facebook.com/reel/3416112078568628/",
+      "sentAt": "2026-10-22T21:40:09.044Z"
     },
     "[\"r2-ed5bd815da4e10efb203bb05de3ce1e2fb392532504b368ee9fcc7f6c2eabb3c\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-22T22:50:00.000Z",
       "updatedAt": "2026-10-22T04:48:59.332Z",
       "bufferId": "6ad995f81093844846df646d",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.facebook.com/reel/1624736829330861/",
+      "sentAt": "2026-10-22T22:50:07.848Z"
     },
     "[\"r2-fdbda37a8095ea374108cf0fda7f5261c3364e990cc5f905a2e89fc1cb258102\",\"instagram\"]": {
       "status": "published",
@@ -6787,13 +6793,15 @@
       "sentAt": "2026-10-22T20:51:01.607Z"
     },
     "[\"r2-d6f87223424b1216d029cb69d6123b6b9fdd5d85ca58658061d6304a59f40211\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-22T23:00:00.000Z",
       "updatedAt": "2026-10-22T04:48:59.332Z",
       "bufferId": "6ad99602deacf5d2532d6dc1",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.instagram.com/reel/De0HXa2DA9b/",
+      "sentAt": "2026-10-22T23:02:04.654Z"
     },
     "[\"r2-ca59eb369091faa23eece8c1451dae02586d8203b51374e999ee523b9934d822\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "rejected",
@@ -6873,13 +6881,15 @@
       "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     },
     "[\"r2-a2ea8c4c6cd86497ed00dafb6d5bd87fca8b7d4efcf1b00b70b399630876fbc0\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-23T01:20:00.000Z",
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9bfbcda36d1d4198c27",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.facebook.com/reel/1841195553906862/",
+      "sentAt": "2026-10-23T01:20:08.843Z"
     },
     "[\"r2-a9476128651b42e010ed39f51fdb1857bd74ed92609fd661ac997194300c2a69\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "rejected",
@@ -6896,13 +6906,15 @@
       "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     },
     "[\"r2-b109c9d7833e6038b9c7fdd6c6018808802e95c49def87cdc3c3c1967bff335b\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-23T02:40:00.000Z",
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9caebec8224f3be3bcb",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.facebook.com/reel/1039480802444416/",
+      "sentAt": "2026-10-23T02:40:08.725Z"
     },
     "[\"r2-f9deab17df0c7584d9e6b7ea872aa2403d71e2e8a1ce5983e514bf54d83f8251\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",
@@ -6911,7 +6923,7 @@
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9cdbcda36d1d4198eae",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-6ca80817804c898b0e75e40e22463df2054b159f2e2d8001e88a9a821f88f61c\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",
@@ -6920,25 +6932,29 @@
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9d1b3b4a1914c97dc99",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-5da8469fb0866a8a50dedcf9c0a405e5dcb3e7ad87a176ac54a4b9aeb423ba59\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-23T00:40:00.000Z",
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9d4b3b4a1914c97dd86",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.facebook.com/reel/1437656708323371/",
+      "sentAt": "2026-10-23T00:40:09.283Z"
     },
     "[\"r2-7ba4aef459ef6681381fbe7e09e475f499925b3ab79503fca65e632d411121fc\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-23T02:00:00.000Z",
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9d8ebec8224f3be3f4e",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.facebook.com/reel/1427869475490317/",
+      "sentAt": "2026-10-23T02:00:27.367Z"
     },
     "[\"r2-a45cc704c82795ef0fd449e9a70a4eda731eaa61f40398b37982c33d8a415ca6\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
       "status": "queued",
@@ -6947,7 +6963,7 @@
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9dcbcda36d1d41991c6",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-c27dfb2884e0ff9cf0448c803e8706fb443ab451f97b335155130205130173d4\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
       "status": "queued",
@@ -6956,25 +6972,29 @@
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9df28df0d23e7391897",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-e879a975e569d979a48a0e9be5859406395493618cd246d93a308054dfba469e\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-23T01:10:00.000Z",
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9e3ebec8224f3be4188",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.instagram.com/reel/De0WF8AEvu6/",
+      "sentAt": "2026-10-23T01:10:57.742Z"
     },
     "[\"r2-b3b9f5a175029fd7524bedb671c2c10e9f7108485ff38112da57db3b54d341fa\",\"instagram\"]": {
-      "status": "queued",
+      "status": "published",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-23T02:05:00.000Z",
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9e7b7096b8d38130fa6",
-      "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "bufferStatus": "sent",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z",
+      "externalLink": "https://www.instagram.com/reel/De0cYqgDSAP/",
+      "sentAt": "2026-10-23T02:05:27.401Z"
     },
     "[\"r2-62d26201640215286b336659436ac62466baf1eb93f9e27e38fc661924f28bfc\",\"instagram\"]": {
       "status": "queued",
@@ -6983,7 +7003,7 @@
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9eabcda36d1d4199508",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-cb36b5ee77796ff4560c4e71bd79bde7cca810074cf86fbfc101688e754f2fe7\",\"instagram\"]": {
       "status": "queued",
@@ -6992,7 +7012,7 @@
       "updatedAt": "2026-10-22T11:54:53.869Z",
       "bufferId": "6ad9f9eeb3b4a1914c97e4f1",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-22T21:37:25.674Z"
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-1fb8c4eabf5cf199c6eeebaa1d2f91c9a953da93a630e67e63a2defa1523ea85\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",
@@ -7000,7 +7020,8 @@
       "dueAt": "2026-10-23T09:45:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada821d65d602339aee948a",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-b85c2b267c52f47046779e8ec2e99233feb92dc23cd6b1122e146e5f36baa288\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",
@@ -7008,7 +7029,8 @@
       "dueAt": "2026-10-23T10:20:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada8220aa18e1c19385793d",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-e30623152910ce8d26f31ac63d60e44d00f147799daa830ec053a448d2b4dea9\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "rejected",
@@ -7030,7 +7052,8 @@
       "dueAt": "2026-10-23T13:40:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada822b9c5989803a9a0e10",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-3212c0b78a2c2758eda88d5835ba0a27316a7b5c318e3095afc0ce2613502164\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",
@@ -7038,7 +7061,8 @@
       "dueAt": "2026-10-23T15:20:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada822f9daa16478769f09e",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-985e3c19705df48741d01ef1277e7733c0c095254909b785062661bef70c2d86\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",
@@ -7046,7 +7070,8 @@
       "dueAt": "2026-10-23T16:45:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada8233128ac937cfd19f68",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-b33019de9118c82ae0d97a887d70db2e4bb7958aa471b72143eb4e6497c79da2\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
       "status": "rejected",
@@ -7068,7 +7093,8 @@
       "dueAt": "2026-10-23T09:45:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada823e65d602339aee995c",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-e0384cd6617a1ded976fe8d4df2c9f91eaaeeaa3beb10666658d44e0e6a2a86e\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
       "status": "rejected",
@@ -7083,7 +7109,8 @@
       "dueAt": "2026-10-23T11:10:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada82469daa16478769f704",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-492a1827a9bdf5ad1c6787384ce50a8a60a6db7d701c9054766994dbee034087\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
       "status": "queued",
@@ -7091,7 +7118,8 @@
       "dueAt": "2026-10-23T13:55:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada824a03768a8d4fd780c6",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-caaddc974a8e211c48f0aee2826c20e0edbdb1c1b747dc2597d7b3aef4dfaba7\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
       "status": "queued",
@@ -7099,7 +7127,8 @@
       "dueAt": "2026-10-23T15:35:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada824f9c5989803a9a129b",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-ede26a1bfe68b38b298caa19e10cba2ee438b0f812be91d0e6c9168c219e94f0\",\"instagram\"]": {
       "status": "queued",
@@ -7107,7 +7136,8 @@
       "dueAt": "2026-10-23T09:50:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada82539daa16478769fa26",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-a651c4fc9a008f8f2b2d35f96b783eef89a311d72daa24a2adc4a87b596ae987\",\"instagram\"]": {
       "status": "queued",
@@ -7115,7 +7145,8 @@
       "dueAt": "2026-10-23T10:05:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada8257aa18e1c1938581ff",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-85bfbd4cb55053ca8152261ba86401a0deab2c7f66402ac878bc7561f8a2f872\",\"instagram\"]": {
       "status": "queued",
@@ -7123,7 +7154,8 @@
       "dueAt": "2026-10-23T12:55:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada825baa18e1c193858287",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-dad91bd45a0fa939f158b2f7b0cdc11f315a4e1c08e7dd85e83f5d92adddd1c0\",\"instagram\"]": {
       "status": "queued",
@@ -7131,7 +7163,8 @@
       "dueAt": "2026-10-23T14:45:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada825f65d602339aee9dfa",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     },
     "[\"r2-4c68f97987c8cdf3501efaabd73d4da43ad6329d7a53265314a03730edcf45ba\",\"instagram\"]": {
       "status": "queued",
@@ -7139,7 +7172,8 @@
       "dueAt": "2026-10-23T16:40:00.000Z",
       "updatedAt": "2026-10-22T21:37:25.674Z",
       "bufferId": "6ada8264aa18e1c1938583b3",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "lastCheckedAt": "2026-10-23T04:51:38.610Z"
     }
   },
   "r2ListingRequests": {

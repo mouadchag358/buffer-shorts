@@ -7756,10 +7756,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-cdc95ba126d9d5115fe0a728db6163151d0b8e50730c81c40a543e0789cf5080\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-24T17:35:00.000Z",
-      "updatedAt": "2026-10-23T21:25:42.206Z"
+      "updatedAt": "2026-10-23T21:25:42.206Z",
+      "bufferId": "6adbd1518b3d437ddc88b073",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

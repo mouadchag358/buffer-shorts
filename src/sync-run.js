@@ -62,7 +62,7 @@ try {
   await migrateOldSlots({ state, remote, channels, posts: existingPosts, env, edit: (id, dueAt, content) => reschedulePost(id, dueAt, env, undefined, content), persist, now, dryRun });
   // L'existence des objets est confirmée par le catalogue R2. Buffer valide la vidéo
   // lors de createPost; aucun HEAD supplémentaire dans le remplissage des files.
-  const posts = dryRun ? (state.catalog?.posts || await read('posts.json')) : await loadCatalog({ state, persist, env });
+  const posts = dryRun ? (state.catalog?.posts || await read('posts.json')) : await loadCatalog({ state, persist, env, forceRefresh: Boolean(request) });
   if (!dryRun && JSON.stringify(await read('posts.json')) !== JSON.stringify(posts)) {
     await writeFile('posts.json', JSON.stringify(posts, null, 2) + '\n'); await persist(state);
   }

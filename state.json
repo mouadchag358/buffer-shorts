@@ -7850,13 +7850,14 @@
       "sentAt": "2026-10-24T19:30:45.242Z"
     },
     "[\"r2-dc727b067ef9ee7d6b1d65d4cad67452863a79a61b459428846d741d52186d55\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "queued",
+      "status": "missing_in_buffer",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-24T21:05:00.000Z",
       "updatedAt": "2026-10-24T04:38:42.419Z",
       "bufferId": "6adc36623d5b27036b68fd76",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-24T20:51:46.172Z"
+      "lastCheckedAt": "2026-10-24T21:28:04.090Z",
+      "error": "Ancien post absent de Buffer; republication désactivée pour éviter un doublon"
     },
     "[\"r2-ee9868c0cf675896e6dda525ead5fd5807251b0cc89aa473f420162ccf41f4a0\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "rejected",

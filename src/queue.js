@@ -207,7 +207,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
   validate(posts);
   if (!Number.isInteger(targetQueueSize) || targetQueueSize < 1 || targetQueueSize > 10) throw new Error('Réserve vidéo invalide (maximum 10)');
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');
-  if (Object.values(state.deliveries).some(d => d.status === 'sending')) throw new Error('Envoi en cours: vérifier Buffer avant toute nouvelle création');
+  if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain ou en cours: vérifier Buffer avant toute nouvelle création');
   const working = dryRun ? structuredClone(state) : state;
   const resume = channels.some(c => c.service === 'facebook')
     ? await initFacebookFromInstagram({ posts, state: working, persist, dryRun })

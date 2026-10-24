@@ -473,3 +473,16 @@ test('arrête toute la synchronisation au premier refus de lecture vidéo Buffer
   assert.equal(s.sent.length, 1);
   assert.equal(s.state.deliveries[deliveryKey('0', 'tiktok')].status, 'rejected');
 });
+
+test('invalide le catalogue journalier si Buffer ne peut pas lire une source R2', async () => {
+  const s = setup();
+  s.state.catalog = { day: '2026-10-24', posts: structuredClone(s.posts) };
+  s.options.send = async input => {
+    s.sent.push(input);
+    return { status: 'rejected', error: 'Invalid post: Video could not be read from its URL.' };
+  };
+  await assert.rejects(fillQueues(s.options), /catalogue R2 invalidé/);
+  assert.equal(s.sent.length, 1);
+  assert.equal(s.state.catalog, undefined);
+  assert.ok(s.saved.some(saved => saved.catalog === undefined));
+});

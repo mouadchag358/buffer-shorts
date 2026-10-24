@@ -8350,11 +8350,10 @@
       "lastCheckedAt": "2026-10-24T21:30:35.458Z"
     },
     "[\"r2-b76bdff57195e5841d8632e3a8037f1b020265c9152ba9c11e57bcd3602f1291\",\"instagram\"]": {
-      "status": "rejected",
+      "status": "sending",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-24T22:15:00.000Z",
-      "updatedAt": "2026-10-24T21:30:35.458Z",
-      "error": "Invalid post: Video could not be read from its URL."
+      "updatedAt": "2026-10-24T21:38:33.989Z"
     },
     "[\"r2-fe53542babe62972bc82626bdcc638e55b880e7a8515b04ac3bfadab9965edf3\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "rejected",

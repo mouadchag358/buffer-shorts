@@ -8242,10 +8242,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-37d00c468b0edb75650603f75ed73bc70545941f83a3b369202353818ab373ee\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-25T15:35:00.000Z",
-      "updatedAt": "2026-10-24T20:51:46.172Z"
+      "updatedAt": "2026-10-24T20:51:46.172Z",
+      "bufferId": "6add1a820b5343d070a01c2e",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

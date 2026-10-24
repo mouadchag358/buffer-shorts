@@ -259,7 +259,13 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
         summary.rejected++;
         if (summary.rejectionSamples.length < 3) summary.rejectionSamples.push({ file: post.file, error: String(result.error || 'Refus Buffer').slice(0, 240) });
         if (/Video could not be read from its URL|unable to download (?:the )?video|could not fetch (?:the )?video/i.test(String(result.error || ''))) {
-          throw new Error(`Buffer ne peut pas lire la vidéo source (${post.file}). Arrêt immédiat après un seul refus pour éviter de multiplier les requêtes; vérifiez l’URL R2 et le fichier.`);
+          // A same-day catalogue can outlive objects removed directly from R2.
+          // Invalidate it so the next run relists the bucket and drops stale keys.
+          if (state.catalog?.posts?.some(cached => cached.id === post.id)) {
+            delete state.catalog;
+            await persist(state);
+          }
+          throw new Error(`Buffer ne peut pas lire la vidéo source (${post.file}). Arrêt immédiat après un seul refus pour éviter de multiplier les requêtes; catalogue R2 invalidé pour une nouvelle lecture.`);
         }
         if (!formatRejection(result, platform)) { summary.errors.push(result.error || 'Refus Buffer'); break; }
       }

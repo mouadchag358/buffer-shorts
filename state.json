@@ -8112,10 +8112,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-ede26a1bfe68b38b298caa19e10cba2ee438b0f812be91d0e6c9168c219e94f0\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-25T04:25:00.000Z",
-      "updatedAt": "2026-10-24T11:03:01.910Z"
+      "updatedAt": "2026-10-24T11:03:01.910Z",
+      "bufferId": "6adc90930b5343d0707bdc44",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -222,7 +222,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
     const platform = channel.service;
     const deliveryPlatform = channel.deliveryPlatform || platform;
     const queued = remote.filter(p => p.channelId === channel.id && pending(p) && !imageOnly(p));
-    const summary = { platform, channelId: channel.id, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], dueAt: queued.map(p => p.dueAt) };
+    const summary = { platform, channelId: channel.id, queued: queued.length, added: 0, rejected: 0, attempts: 0, errors: [], rejectionSamples: [], dueAt: queued.map(p => p.dueAt) };
     summaries.push(summary);
     if (blocked(channel)) { summary.errors.push('Compte déconnecté, verrouillé ou en pause'); continue; }
     const queueGoal = targetQueueSize;
@@ -257,6 +257,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
         summary.queued++; summary.added++; summary.dueAt.push(target.dueAt);
       } else {
         summary.rejected++;
+        if (summary.rejectionSamples.length < 3) summary.rejectionSamples.push({ file: post.file, error: String(result.error || 'Refus Buffer').slice(0, 240) });
         if (!formatRejection(result, platform)) { summary.errors.push(result.error || 'Refus Buffer'); break; }
       }
     }

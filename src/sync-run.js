@@ -38,17 +38,18 @@ try {
   if (!dryRun && request && state.queueSync?.completedRequestId === request.id) { console.log('Demande déjà effectuée; aucun appel réseau'); process.exit(0); }
   if (!dryRun && !forced && !syncDue(state, now.getTime())) { console.log('Moins de 6 heures depuis le dernier passage: aucun appel Buffer ou R2'); process.exit(0); }
   if (Object.values(state.deliveries).some(d => d.status === 'sending')) throw new Error('Envoi en cours: vérifier Buffer avant de continuer');
-  // User confirmed Buffer is empty: retire uncertain checkpoints without retrying their source videos.
-  let skippedUncertain = false;
-  for (const delivery of Object.values(state.deliveries)) {
-    if (delivery.status === 'uncertain') {
-      delivery.status = 'skipped_uncertain';
-      delivery.error = 'Ignoré à la demande de l’utilisateur après confirmation que Buffer est vide';
-      delivery.updatedAt = now.toISOString();
-      skippedUncertain = true;
-    }
+  const uncertain = Object.values(state.deliveries).filter(d => d.status === 'uncertain');
+  if (uncertain.length && request?.confirm_buffer_empty !== true) {
+    throw new Error(`${uncertain.length} envoi(s) Buffer ont un résultat incertain. Vérifiez-les dans Buffer avant toute relance; pour confirmer que Buffer est vide, ajoutez confirm_buffer_empty: true à .github/requests/sync.json.`);
   }
-  if (skippedUncertain && !dryRun) await persist(state);
+  if (uncertain.length) {
+    for (const delivery of uncertain) {
+      delivery.status = 'skipped_uncertain';
+      delivery.error = 'Ignoré après confirmation explicite que Buffer est vide';
+      delivery.updatedAt = now.toISOString();
+    }
+    if (!dryRun) await persist(state);
+  }
   if (!dryRun) {
     state.queueSync = { ...state.queueSync, lastAttemptAt: now.toISOString(), status: 'running' };
     await persist(state); // Une erreur compte aussi comme passage; pas de rafale horaire.

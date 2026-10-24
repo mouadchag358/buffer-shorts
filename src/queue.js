@@ -1,7 +1,7 @@
 import { deliveryKey, inputFor, validate } from './core.js';
 import { platformQueueTargets, isPlannedVideoSlot, videoHourKey } from './queue-schedule.js';
 const pending = p => ['scheduled', 'sending'].includes(p.status);
-const accepted = d => ['queued', 'published', 'failed_in_buffer', 'missing_in_buffer'].includes(d?.status);
+const accepted = d => ['queued', 'published', 'failed_in_buffer', 'missing_in_buffer', 'skipped_uncertain'].includes(d?.status);
 // Les rejets explicites de format sont propres au réseau: on saute seulement
 // ces vidéos incompatibles, sans masquer les autres refus Buffer.
 const formatRejection = (delivery, platform) => {
@@ -207,7 +207,7 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
   validate(posts);
   if (!Number.isInteger(targetQueueSize) || targetQueueSize < 1 || targetQueueSize > 10) throw new Error('Réserve vidéo invalide (maximum 10)');
   if (state.version !== 1 || !state.slots || !state.deliveries) throw new Error('État invalide');
-  if (Object.values(state.deliveries).some(d => ['sending', 'uncertain'].includes(d.status))) throw new Error('Envoi incertain: vérifier Buffer avant toute nouvelle création');
+  if (Object.values(state.deliveries).some(d => d.status === 'sending')) throw new Error('Envoi en cours: vérifier Buffer avant toute nouvelle création');
   const working = dryRun ? structuredClone(state) : state;
   const resume = channels.some(c => c.service === 'facebook')
     ? await initFacebookFromInstagram({ posts, state: working, persist, dryRun })

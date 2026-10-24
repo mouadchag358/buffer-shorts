@@ -7,6 +7,9 @@ const accepted = d => ['queued', 'published', 'failed_in_buffer', 'missing_in_bu
 const formatRejection = (delivery, platform) => {
   if (delivery?.status !== 'rejected') return false;
   const message = delivery.error || '';
+  // Buffer can reject a single source even when its public URL answers HTTP 200.
+  // Treat this as a per-file rejection and continue with the next source.
+  if (/Video could not be read from its URL|unable to download (?:the )?video|could not fetch (?:the )?video/i.test(message)) return true;
   if (platform === 'youtube') return /Video must be vertical.*YouTube Shorts/i.test(message);
   if (platform === 'instagram') return /Video frame rate must be at least \d+(?:\.\d+)?\s*fps for Instagram Reels/i.test(message);
   if (platform === 'facebook') return /Video (?:height|width) must be at least \d+px for Facebook Reels|Video aspect ratio is too (?:narrow|wide) for Facebook Reels|Video must be no longer than 1m\s*30s for Facebook Reels/i.test(message);

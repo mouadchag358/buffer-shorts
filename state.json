@@ -9660,11 +9660,11 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-3faefdeea0972a6b6357e56acc7989a7f8ae956fce7b5529a5ecfa3c1ca7e4a0\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "uncertain",
+      "status": "skipped_uncertain",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-25T03:25:00.000Z",
-      "updatedAt": "2026-10-24T22:26:54.416Z",
-      "error": "Vérifier Buffer avant toute nouvelle tentative"
+      "updatedAt": "2026-10-24T22:51:49.442Z",
+      "error": "Ignoré après confirmation explicite que Buffer est vide"
     }
   },
   "r2ListingRequests": {

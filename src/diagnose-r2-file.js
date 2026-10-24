@@ -2,7 +2,8 @@ import { createWriteStream } from 'node:fs';
 import { readFile, unlink } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { Readable, Transform } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
@@ -12,13 +13,13 @@ export function publicVideoUrl(base, key) {
   if (typeof key !== 'string' || !key || key.startsWith('/')) throw new Error('Clé R2 invalide');
   const root = new URL(base);
   if (root.protocol !== 'https:') throw new Error('R2_PUBLIC_BASE_URL doit utiliser HTTPS');
-  return root.href.replace(/\\/$/, '') + '/' + key.split('/').map(encodeURIComponent).join('/');
+  return (root.href.endsWith('/') ? root.href.slice(0, -1) : root.href) + '/' + key.split('/').map(encodeURIComponent).join('/');
 }
 
 async function main() {
   const request = JSON.parse(await readFile('.github/requests/diagnose-r2.json', 'utf8'));
   const key = request.key;
-  const base = (process.env.R2_PUBLIC_BASE_URL || '').replace(/\\/$/, '');
+  const base = process.env.R2_PUBLIC_BASE_URL || '';
   if (!base || !key) throw new Error('R2_PUBLIC_BASE_URL ou clé diagnostique manquante');
 
   const listing = await defaultList(process.env)();
@@ -59,6 +60,6 @@ async function main() {
   }
 }
 
-if (process.argv[1] && new URL(import.meta.url).pathname === new URL('file://' + process.argv[1]).pathname) {
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   main().catch(error => { console.error(error.message); process.exitCode = 1; });
 }

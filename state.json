@@ -8756,10 +8756,11 @@
       "error": "Invalid post: Video could not be read from its URL."
     },
     "[\"r2-8fd51d1d73983b3337d7baf0bf3559e7385e1c28fbae205c84f5b2eadaa5a8fc\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-24T22:30:00.000Z",
-      "updatedAt": "2026-10-24T21:41:53.884Z"
+      "updatedAt": "2026-10-24T21:41:53.884Z",
+      "error": "Invalid post: Video could not be read from its URL."
     }
   },
   "r2ListingRequests": {

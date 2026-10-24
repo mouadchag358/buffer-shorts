@@ -8030,10 +8030,12 @@
       "lastCheckedAt": "2026-10-24T11:03:01.910Z"
     },
     "[\"r2-c6312e73ca51507a63b0f53743fa2df733f2e31ad5fc0b80bc968bd0ec981cd2\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-25T03:25:00.000Z",
-      "updatedAt": "2026-10-24T11:03:01.910Z"
+      "updatedAt": "2026-10-24T11:03:01.910Z",
+      "bufferId": "6adc906d6887a2efc1b15a25",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

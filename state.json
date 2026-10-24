@@ -8225,6 +8225,12 @@
       "updatedAt": "2026-10-24T20:51:46.172Z",
       "bufferId": "6add1a776887a2efc1d51dee",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-379c3e53bf1d57dc6386b9c34f2f83e61164a6ed1b737d64a2d8263a22e5a2c0\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-25T12:40:00.000Z",
+      "updatedAt": "2026-10-24T20:51:46.172Z"
     }
   },
   "r2ListingRequests": {

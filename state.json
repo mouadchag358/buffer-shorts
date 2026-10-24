@@ -8128,10 +8128,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-06fe461ba347d4a44e0f41110c43ee86ede448e3199f7f06090afc3417891572\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-25T01:45:00.000Z",
-      "updatedAt": "2026-10-24T11:03:01.910Z"
+      "updatedAt": "2026-10-24T11:03:01.910Z",
+      "bufferId": "6adc909a6887a2efc1b169a1",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

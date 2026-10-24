@@ -462,3 +462,14 @@ test('les plateformes ont des horaires variés mais ne reprogramment pas leurs c
   assert.equal(edits,0);
   assert.deepEqual(remote.map(x=>x.dueAt),targets.map(x=>x.dueAt));
 });
+
+test('arrête toute la synchronisation au premier refus de lecture vidéo Buffer', async () => {
+  const s = setup();
+  s.options.send = async input => {
+    s.sent.push(input);
+    return { status: 'rejected', error: 'Invalid post: Video could not be read from its URL.' };
+  };
+  await assert.rejects(fillQueues(s.options), /Arrêt immédiat après un seul refus/);
+  assert.equal(s.sent.length, 1);
+  assert.equal(s.state.deliveries[deliveryKey('0', 'tiktok')].status, 'rejected');
+});

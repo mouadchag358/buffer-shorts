@@ -33040,8 +33040,8 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-24T21:40:46.409Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-24T21:38:33.989Z",
+    "status": "partial",
+    "lastCompletedAt": "2026-10-24T21:40:46.409Z",
     "summaries": [
       {
         "platform": "facebook",

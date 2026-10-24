@@ -7813,6 +7813,12 @@
       "updatedAt": "2026-10-24T04:38:42.419Z",
       "bufferId": "6adc36623d5b27036b68fd76",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-ee9868c0cf675896e6dda525ead5fd5807251b0cc89aa473f420162ccf41f4a0\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-24T22:30:00.000Z",
+      "updatedAt": "2026-10-24T04:38:42.419Z"
     }
   },
   "r2ListingRequests": {

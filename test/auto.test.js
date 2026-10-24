@@ -105,3 +105,16 @@ test('deux créneaux futurs malgré le retard de GitHub, jamais de rattrapage en
     assert.ok(targets.every(t => new Date(t.dueAt) - now >= 10 * 60000));
   }
 });
+
+test('une demande de synchro forcée rafraîchit le catalogue R2 du jour', async () => {
+  const state = { catalog: { day: '2026-10-03', posts: postsFromKeys(['deleted.mp4']) } };
+  let calls = 0;
+  const posts = await loadCatalog({
+    state, now: Date.parse('2026-10-03T12:00:00Z'), forceRefresh: true,
+    persist: async () => {},
+    list: async () => { calls++; return { Contents: [{ Key: 'live.mp4' }] }; }
+  });
+  assert.equal(calls, 1);
+  assert.deepEqual(posts.map(post => post.file), ['live.mp4']);
+  assert.deepEqual(state.catalog.posts.map(post => post.file), ['live.mp4']);
+});

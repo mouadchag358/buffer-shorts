@@ -8062,13 +8062,14 @@
       "error": "Ancien post absent de Buffer; republication désactivée pour éviter un doublon"
     },
     "[\"r2-c6312e73ca51507a63b0f53743fa2df733f2e31ad5fc0b80bc968bd0ec981cd2\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "queued",
+      "status": "missing_in_buffer",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-25T03:25:00.000Z",
       "updatedAt": "2026-10-24T11:03:01.910Z",
       "bufferId": "6adc906d6887a2efc1b15a25",
       "bufferStatus": "scheduled",
-      "lastCheckedAt": "2026-10-24T20:51:46.172Z"
+      "lastCheckedAt": "2026-10-24T21:28:04.090Z",
+      "error": "Ancien post absent de Buffer; republication désactivée pour éviter un doublon"
     },
     "[\"r2-4da92879184803fa378f2895a1828ee4370d68ccbef32dfaf95ee23fdf40c910\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "rejected",

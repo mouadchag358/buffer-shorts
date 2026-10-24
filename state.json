@@ -8255,12 +8255,14 @@
       "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     },
     "[\"r2-45631a84c4888dd8f81dbf5c0fa564c70a1fdcd291c22aa050b605615af6cc30\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "queued",
+      "status": "missing_in_buffer",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-25T12:40:00.000Z",
       "updatedAt": "2026-10-24T20:51:46.172Z",
       "bufferId": "6add1a7e8b3d437ddcd94abf",
-      "bufferStatus": "scheduled"
+      "bufferStatus": "scheduled",
+      "error": "Ancien post absent de Buffer; republication désactivée pour éviter un doublon",
+      "lastCheckedAt": "2026-10-24T21:28:04.090Z"
     },
     "[\"r2-37d00c468b0edb75650603f75ed73bc70545941f83a3b369202353818ab373ee\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
       "status": "queued",

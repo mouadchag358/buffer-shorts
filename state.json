@@ -7959,10 +7959,11 @@
       "error": "Invalid post: Video aspect ratio is too narrow for Facebook Reels."
     },
     "[\"r2-31c44a9b6b33ebf343bd1973544511b4a6579b2811ef109e7737c52e240868c2\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-24T23:40:00.000Z",
-      "updatedAt": "2026-10-24T04:38:42.419Z"
+      "updatedAt": "2026-10-24T04:38:42.419Z",
+      "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     }
   },
   "r2ListingRequests": {

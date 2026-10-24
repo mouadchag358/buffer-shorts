@@ -258,6 +258,9 @@ export async function fillQueues({ posts, state, remote, channels, env, persist,
       } else {
         summary.rejected++;
         if (summary.rejectionSamples.length < 3) summary.rejectionSamples.push({ file: post.file, error: String(result.error || 'Refus Buffer').slice(0, 240) });
+        if (/Video could not be read from its URL|unable to download (?:the )?video|could not fetch (?:the )?video/i.test(String(result.error || ''))) {
+          throw new Error(`Buffer ne peut pas lire la vidéo source (${post.file}). Arrêt immédiat après un seul refus pour éviter de multiplier les requêtes; vérifiez l’URL R2 et le fichier.`);
+        }
         if (!formatRejection(result, platform)) { summary.errors.push(result.error || 'Refus Buffer'); break; }
       }
     }

@@ -8203,6 +8203,12 @@
       "updatedAt": "2026-10-24T20:51:46.172Z",
       "bufferId": "6add1a6b8b3d437ddcd948a2",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-257a2520b665cd3d28eb8b170ed89845eb6e5d7f2642b6800089f641a705e222\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-25T11:15:00.000Z",
+      "updatedAt": "2026-10-24T20:51:46.172Z"
     }
   },
   "r2ListingRequests": {

@@ -8060,10 +8060,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-102856126e740bbf5e05a2e4968fb7213fb94d4f7fd2701056e5d05714b96174\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-25T07:05:00.000Z",
-      "updatedAt": "2026-10-24T11:03:01.910Z"
+      "updatedAt": "2026-10-24T11:03:01.910Z",
+      "bufferId": "6adc907b6887a2efc1b15f93",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

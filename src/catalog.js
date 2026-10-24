@@ -66,9 +66,9 @@ export function defaultList(env) {
   };
 }
 
-export async function loadCatalog({ state, persist, env = process.env, now = Date.now(), list }) {
+export async function loadCatalog({ state, persist, env = process.env, now = Date.now(), list, forceRefresh = false }) {
   const day = new Date(now).toISOString().slice(0, 10);
-  if (state.catalog?.day === day && Array.isArray(state.catalog.posts)) {
+  if (!forceRefresh && state.catalog?.day === day && Array.isArray(state.catalog.posts)) {
     const posts = state.catalog.posts.map(p => ({ ...p, platforms: ['facebook', 'instagram'], title: videoTitle({ file: p.file }), text: `${videoTitle({ file: p.file })}\n#fyp #fy #viral #ai` }));
     if (JSON.stringify(posts) !== JSON.stringify(state.catalog.posts)) {
       state.catalog.posts = posts;

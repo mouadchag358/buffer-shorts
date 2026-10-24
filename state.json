@@ -8248,6 +8248,12 @@
       "updatedAt": "2026-10-24T20:51:46.172Z",
       "bufferId": "6add1a820b5343d070a01c2e",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-85bfbd4cb55053ca8152261ba86401a0deab2c7f66402ac878bc7561f8a2f872\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-25T09:35:00.000Z",
+      "updatedAt": "2026-10-24T20:51:46.172Z"
     }
   },
   "r2ListingRequests": {

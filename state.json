@@ -8309,10 +8309,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-b63cf35e7af6fcc8497f6fbef4530b3af65d989b97f5edac0a3ef6059ddc1761\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-25T14:50:00.000Z",
-      "updatedAt": "2026-10-24T20:51:46.172Z"
+      "updatedAt": "2026-10-24T20:51:46.172Z",
+      "bufferId": "6add1aa20b5343d070a01fbe",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

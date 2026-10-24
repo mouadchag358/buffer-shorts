@@ -23,7 +23,8 @@ async function main() {
   if (!base || !key) throw new Error('R2_PUBLIC_BASE_URL ou clé diagnostique manquante');
 
   const listing = await defaultList(process.env)();
-  if (!(listing.Contents || []).some(item => item.Key === key)) throw new Error('La clé demandée est introuvable dans le listing R2');
+  const foundInListing = (listing.Contents || []).some(item => item.Key === key);
+  console.log('Présente dans le listing R2: ' + foundInListing);
   const url = publicVideoUrl(base, key);
   const response = await fetch(url, { redirect: 'error', signal: AbortSignal.timeout(120000) });
   console.log(JSON.stringify({

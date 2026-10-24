@@ -8197,10 +8197,12 @@
       "lastCheckedAt": "2026-10-24T20:51:46.172Z"
     },
     "[\"r2-6168d4ed7bfd747b581c4354489789f965f49fd43641979f8c44e3ebc9bc5897\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-25T09:50:00.000Z",
-      "updatedAt": "2026-10-24T20:51:46.172Z"
+      "updatedAt": "2026-10-24T20:51:46.172Z",
+      "bufferId": "6add1a6b8b3d437ddcd948a2",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

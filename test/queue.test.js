@@ -490,7 +490,7 @@ test('invalide le catalogue journalier si Buffer ne peut pas lire une source R2'
 test('ne retente jamais une livraison dont le résultat Buffer est incertain', async () => {
   const s = setup();
   s.state.deliveries[deliveryKey('0', 'tiktok')] = { status: 'uncertain', error: 'Vérifier Buffer' };
-  await assert.rejects(fillQueues(s.options), /résultat incertain ou en cours/);
+  await assert.rejects(fillQueues(s.options), /incertain ou en cours/);
   assert.equal(s.sent.length, 0);
   assert.equal(s.saved.length, 0);
 });

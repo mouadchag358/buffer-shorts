@@ -9670,10 +9670,12 @@
       "error": "Ignoré après confirmation explicite que Buffer est vide"
     },
     "[\"r2-6ba42b7c438c078851142d63a199109f492901eeebb685e75c107f6efd3f5dbd\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-26T09:05:00.000Z",
-      "updatedAt": "2026-10-26T04:48:56.344Z"
+      "updatedAt": "2026-10-26T04:48:56.344Z",
+      "bufferId": "6adedbc13d5b27036b0e60d4",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

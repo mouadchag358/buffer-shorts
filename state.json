@@ -9668,6 +9668,12 @@
       "dueAt": "2026-10-25T03:25:00.000Z",
       "updatedAt": "2026-10-24T22:51:49.442Z",
       "error": "Ignoré après confirmation explicite que Buffer est vide"
+    },
+    "[\"r2-6ba42b7c438c078851142d63a199109f492901eeebb685e75c107f6efd3f5dbd\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-26T09:05:00.000Z",
+      "updatedAt": "2026-10-26T04:48:56.344Z"
     }
   },
   "r2ListingRequests": {

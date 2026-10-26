@@ -9821,10 +9821,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-8306b1dd6a9f125a25554ac08384501a6c7d326947d55dd2d5f7d8608b798923\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-26T13:50:00.000Z",
-      "updatedAt": "2026-10-26T04:48:56.344Z"
+      "updatedAt": "2026-10-26T04:48:56.344Z",
+      "bufferId": "6adedc06bd33ce99c3ac6346",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

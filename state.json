@@ -10303,10 +10303,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-a79097d935bdabfc10e024e846345a47f0f5ced1821187449200464712a8319d\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-27T11:05:00.000Z",
-      "updatedAt": "2026-10-26T22:41:13.577Z"
+      "updatedAt": "2026-10-26T22:41:13.577Z",
+      "bufferId": "6adfd76176c9ef5aa2219460",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

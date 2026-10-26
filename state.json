@@ -9857,10 +9857,12 @@
       "lastCheckedAt": "2026-10-26T13:05:23.241Z"
     },
     "[\"r2-76f34af9f023579f9bc018c623557c21466e7e8109eb847f3506036d4c985177\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-26T16:05:00.000Z",
-      "updatedAt": "2026-10-26T13:05:23.241Z"
+      "updatedAt": "2026-10-26T13:05:23.241Z",
+      "bufferId": "6adf5019e09544fe900f0ce7",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

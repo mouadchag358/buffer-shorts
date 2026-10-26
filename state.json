@@ -9700,6 +9700,12 @@
       "updatedAt": "2026-10-26T04:48:56.344Z",
       "bufferId": "6adedbcd8b3d437ddc46d59e",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-007ac129927a3e9ecf5e91b727966b8b61ceb49880ddd1560972bcac19ca090a\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-26T09:55:00.000Z",
+      "updatedAt": "2026-10-26T04:48:56.344Z"
     }
   },
   "r2ListingRequests": {

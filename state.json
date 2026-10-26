@@ -10131,10 +10131,11 @@
       "sentAt": "2026-10-26T21:31:11.649Z"
     },
     "[\"r2-708257580ae9148051a7dbf6732f85c0f514b299dbc88a638ed57d16f0bc22b9\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-27T01:35:00.000Z",
-      "updatedAt": "2026-10-26T22:41:13.577Z"
+      "updatedAt": "2026-10-26T22:41:13.577Z",
+      "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
     }
   },
   "r2ListingRequests": {

@@ -9797,10 +9797,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-007ac129927a3e9ecf5e91b727966b8b61ceb49880ddd1560972bcac19ca090a\",\"instagram\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac1825dea19ca0bde6abcd1",
       "dueAt": "2026-10-26T07:10:00.000Z",
-      "updatedAt": "2026-10-26T04:48:56.344Z"
+      "updatedAt": "2026-10-26T04:48:56.344Z",
+      "bufferId": "6adedbfb0b5343d0700d9cd6",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -9980,6 +9980,12 @@
       "updatedAt": "2026-10-26T13:05:23.241Z",
       "bufferId": "6adf50539e56d704c2cb728c",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-ca0b4e6f1754d51d156d992c1321b0a12878df47f426272b534deca20f9cb934\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
+      "status": "sending",
+      "channelId": "6ad65667778b240e2f5bb5bc",
+      "dueAt": "2026-10-26T21:20:00.000Z",
+      "updatedAt": "2026-10-26T13:05:23.241Z"
     }
   },
   "r2ListingRequests": {

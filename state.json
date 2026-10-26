@@ -9781,10 +9781,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-4b6207096d55fcfe50cfb66bd5e1de494e7a2a5da46f524743d58f62f9deb487\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-26T12:30:00.000Z",
-      "updatedAt": "2026-10-26T04:48:56.344Z"
+      "updatedAt": "2026-10-26T04:48:56.344Z",
+      "bufferId": "6adedbf5bd33ce99c3ac60da",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

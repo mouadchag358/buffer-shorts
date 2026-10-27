@@ -11328,6 +11328,12 @@
       "updatedAt": "2026-10-27T22:15:21.188Z",
       "bufferId": "6ae122f303bc55f7e02f3cef",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-c409a9f1f9317118f2bf399bbd0bba044e199d1cf72199980c68d943002fa767\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-28T04:05:00.000Z",
+      "updatedAt": "2026-10-27T22:15:21.188Z"
     }
   },
   "r2ListingRequests": {

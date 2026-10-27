@@ -11093,6 +11093,12 @@
       "bufferId": "6ae095ea808b263d2d4ce731",
       "bufferStatus": "scheduled",
       "lastCheckedAt": "2026-10-27T22:15:21.188Z"
+    },
+    "[\"r2-24d21b1a709a779d07fee7d3028a04d921a8539e867be618c933a2998f4fb3f5\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-28T04:20:00.000Z",
+      "updatedAt": "2026-10-27T22:15:21.188Z"
     }
   },
   "r2ListingRequests": {

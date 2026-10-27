@@ -11320,6 +11320,12 @@
       "updatedAt": "2026-10-27T22:15:21.188Z",
       "bufferId": "6ae122ef452be6aaba44999d",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-9c7aec01ed5e063b8846fa1808b3116ebdbba4cf41a15e2a1512f4b95a0a07f3\",\"instagram\"]": {
+      "status": "sending",
+      "channelId": "6ac1825dea19ca0bde6abcd1",
+      "dueAt": "2026-10-28T03:05:00.000Z",
+      "updatedAt": "2026-10-27T22:15:21.188Z"
     }
   },
   "r2ListingRequests": {

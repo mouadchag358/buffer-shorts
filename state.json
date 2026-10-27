@@ -11285,10 +11285,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-730f77e5ffe6936e2b2027ff19ea9a52e66eca2ce3ddc70fd1dd65914d2abdcd\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-28T13:25:00.000Z",
-      "updatedAt": "2026-10-27T22:15:21.188Z"
+      "updatedAt": "2026-10-27T22:15:21.188Z",
+      "bufferId": "6ae122e17ee83e48a97c0615",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

@@ -15255,42 +15255,29 @@
   },
   "queueSync": {
     "lastAttemptAt": "2026-10-27T05:07:30.064Z",
-    "status": "running",
-    "lastCompletedAt": "2026-10-26T22:41:13.577Z",
+    "status": "complete",
+    "lastCompletedAt": "2026-10-27T05:07:30.064Z",
     "summaries": [
       {
         "platform": "facebook",
         "channelId": "6ac8cdf16a5c39ccb6602776",
         "queued": 10,
-        "added": 6,
-        "rejected": 27,
-        "attempts": 33,
+        "added": 2,
+        "rejected": 0,
+        "attempts": 2,
         "errors": [],
-        "rejectionSamples": [
-          {
-            "file": "#genjutsu_#higgsfield_Dds5DoOMJm5_399381_Dds5DoOMJm5.mp4",
-            "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
-          },
-          {
-            "file": "#genjutsu_DdxbdHPqbCT_399509_DdxbdHPqbCT.mp4",
-            "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
-          },
-          {
-            "file": "#genjutsu_r_DdxYD1cMZuW_399508_DdxYD1cMZuW.mp4",
-            "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
-          }
-        ],
+        "rejectionSamples": [],
         "dueAt": [
-          "2026-10-27T08:56:00.000Z",
-          "2026-10-27T09:40:00.000Z",
-          "2026-10-28T08:21:00.000Z",
-          "2026-10-28T09:05:00.000Z",
-          "2026-10-27T01:35:00.000Z",
-          "2026-10-27T03:00:00.000Z",
           "2026-10-27T05:50:00.000Z",
           "2026-10-27T06:10:00.000Z",
+          "2026-10-27T08:56:00.000Z",
+          "2026-10-27T09:40:00.000Z",
           "2026-10-27T11:05:00.000Z",
-          "2026-10-27T13:55:00.000Z"
+          "2026-10-27T13:55:00.000Z",
+          "2026-10-28T08:21:00.000Z",
+          "2026-10-28T09:05:00.000Z",
+          "2026-10-27T14:50:00.000Z",
+          "2026-10-27T17:20:00.000Z"
         ]
       },
       {
@@ -15298,56 +15285,56 @@
         "channelId": "6ad65667778b240e2f5bb5bc",
         "queued": 10,
         "added": 4,
-        "rejected": 21,
-        "attempts": 25,
+        "rejected": 7,
+        "attempts": 11,
         "errors": [],
         "rejectionSamples": [
           {
-            "file": "#genjutsu_#higgsfi_DdxaRLsKtef_399508_DdxaRLsKtef.mp4",
+            "file": "#hig_Dd2mkLFK9_8_399655_Dd2mkLFK9_8.mp4",
             "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
           },
           {
-            "file": "#genjutsu_#higgsfield_Dds5DoOMJm5_399381_Dds5DoOMJm5.mp4",
+            "file": "#hig_DdfRoe3MvHh_398998_DdfRoe3MvHh.mp4",
             "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
           },
           {
-            "file": "#genjutsu_DdxbdHPqbCT_399509_DdxbdHPqbCT.mp4",
+            "file": "#hig_DdsjenXMuFx_399372_DdsjenXMuFx.mp4",
             "error": "Invalid post: Video height must be at least 960px for Facebook Reels."
           }
         ],
         "dueAt": [
-          "2026-10-26T22:44:00.000Z",
-          "2026-10-26T23:35:00.000Z",
+          "2026-10-27T05:45:00.000Z",
+          "2026-10-27T07:30:00.000Z",
           "2026-10-27T08:56:00.000Z",
           "2026-10-27T09:40:00.000Z",
           "2026-10-28T08:20:00.000Z",
           "2026-10-28T09:05:00.000Z",
-          "2026-10-27T01:00:00.000Z",
-          "2026-10-27T03:20:00.000Z",
-          "2026-10-27T05:45:00.000Z",
-          "2026-10-27T07:30:00.000Z"
+          "2026-10-27T10:30:00.000Z",
+          "2026-10-27T12:25:00.000Z",
+          "2026-10-27T15:50:00.000Z",
+          "2026-10-27T17:00:00.000Z"
         ]
       },
       {
         "platform": "instagram",
         "channelId": "6ac1825dea19ca0bde6abcd1",
         "queued": 10,
-        "added": 6,
+        "added": 3,
         "rejected": 0,
-        "attempts": 6,
+        "attempts": 3,
         "errors": [],
         "rejectionSamples": [],
         "dueAt": [
+          "2026-10-27T07:20:00.000Z",
+          "2026-10-27T08:35:00.000Z",
+          "2026-10-27T11:10:00.000Z",
           "2026-10-27T19:10:00.000Z",
           "2026-10-27T20:35:00.000Z",
           "2026-10-28T09:44:00.000Z",
           "2026-10-28T18:51:00.000Z",
-          "2026-10-27T00:45:00.000Z",
-          "2026-10-27T03:45:00.000Z",
-          "2026-10-27T04:30:00.000Z",
-          "2026-10-27T07:20:00.000Z",
-          "2026-10-27T08:35:00.000Z",
-          "2026-10-27T11:10:00.000Z"
+          "2026-10-27T13:45:00.000Z",
+          "2026-10-27T15:15:00.000Z",
+          "2026-10-27T16:15:00.000Z"
         ]
       }
     ],

@@ -10651,10 +10651,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-a79097d935bdabfc10e024e846345a47f0f5ced1821187449200464712a8319d\",\"facebook:6ad65667778b240e2f5bb5bc\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ad65667778b240e2f5bb5bc",
       "dueAt": "2026-10-27T12:25:00.000Z",
-      "updatedAt": "2026-10-27T05:07:30.064Z"
+      "updatedAt": "2026-10-27T05:07:30.064Z",
+      "bufferId": "6ae031a58f5aed9e2e399491",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

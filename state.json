@@ -11409,10 +11409,12 @@
       "lastCheckedAt": "2026-10-28T05:44:28.358Z"
     },
     "[\"r2-2aa966d2f7a2ae339654fff1dd6453570f22c5af1bf9e83b8098069891995e3b\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-28T16:25:00.000Z",
-      "updatedAt": "2026-10-28T05:44:28.358Z"
+      "updatedAt": "2026-10-28T05:44:28.358Z",
+      "bufferId": "6ae18bc7a48463c22757c78b",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

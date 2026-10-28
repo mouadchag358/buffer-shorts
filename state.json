@@ -11447,10 +11447,11 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-3b1183af33483e731537499ac4a02bdfd9effac16f67cf1f9dc5673342d09542\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "rejected",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-28T22:10:00.000Z",
-      "updatedAt": "2026-10-28T05:44:28.358Z"
+      "updatedAt": "2026-10-28T05:44:28.358Z",
+      "error": "Invalid post: Video could not be read from its URL."
     }
   },
   "r2ListingRequests": {

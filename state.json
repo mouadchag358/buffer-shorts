@@ -11625,6 +11625,12 @@
       "updatedAt": "2026-10-29T05:49:43.527Z",
       "bufferId": "6ae2deb1446afb54e8df84eb",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-0ea9130f0457ebe1f123805b0b2b31280c1447eb5c954a1a9eb50771a7964cad\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-29T12:20:00.000Z",
+      "updatedAt": "2026-10-29T05:49:43.527Z"
     }
   },
   "r2ListingRequests": {

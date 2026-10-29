@@ -11642,10 +11642,12 @@
       "bufferStatus": "scheduled"
     },
     "[\"r2-cda6c877bd68fdf2a0e9496a1c772c83ce0a32871037223dddf845bc5ebe98b2\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
-      "status": "sending",
+      "status": "queued",
       "channelId": "6ac8cdf16a5c39ccb6602776",
       "dueAt": "2026-10-29T15:35:00.000Z",
-      "updatedAt": "2026-10-29T05:49:43.527Z"
+      "updatedAt": "2026-10-29T05:49:43.527Z",
+      "bufferId": "6ae2debc6b4b6463f8ca76e6",
+      "bufferStatus": "scheduled"
     }
   },
   "r2ListingRequests": {

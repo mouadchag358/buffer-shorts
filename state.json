@@ -11648,6 +11648,12 @@
       "updatedAt": "2026-10-29T05:49:43.527Z",
       "bufferId": "6ae2debc6b4b6463f8ca76e6",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-97ebe0195b2b7e35b3d1142ad8ae19aa94db210b518f04b1b6cc42e6bf7fc1e0\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-29T16:20:00.000Z",
+      "updatedAt": "2026-10-29T05:49:43.527Z"
     }
   },
   "r2ListingRequests": {

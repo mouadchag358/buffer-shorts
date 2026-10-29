@@ -11553,6 +11553,12 @@
       "updatedAt": "2026-10-29T05:49:43.527Z",
       "bufferId": "6ae2de8e12c13da6079ffdcf",
       "bufferStatus": "scheduled"
+    },
+    "[\"r2-c01ff1ce3fb491087691e5f59451b76dc45c9b99ae5d501f2622c6e43f3b1e65\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-29T09:30:00.000Z",
+      "updatedAt": "2026-10-29T05:49:43.527Z"
     }
   },
   "r2ListingRequests": {

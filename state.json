@@ -11517,6 +11517,12 @@
       "dueAt": "2026-10-29T00:55:00.000Z",
       "updatedAt": "2026-10-28T12:56:34.801Z",
       "error": "Invalid post: Video could not be read from its URL."
+    },
+    "[\"r2-a2607bb4186ffa2e9b5d30bd254b6a2659c867fd7adf515b5c75e707f9b45f9c\",\"facebook:6ac8cdf16a5c39ccb6602776\"]": {
+      "status": "sending",
+      "channelId": "6ac8cdf16a5c39ccb6602776",
+      "dueAt": "2026-10-29T07:55:00.000Z",
+      "updatedAt": "2026-10-29T05:49:43.527Z"
     }
   },
   "r2ListingRequests": {
